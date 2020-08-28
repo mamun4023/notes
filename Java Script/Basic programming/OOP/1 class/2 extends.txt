@@ -1,0 +1,27 @@
+<script type="text/javascript">
+
+
+ class Phone {
+ 	// don't declare variable outside the function
+
+ 	show(){
+ 		document.write("inherited class");
+ 	}
+ }
+
+ class Phone2 extends Phone{
+ 	
+ 	display(){
+ 		document.write(" second class");
+ 	}
+ }
+
+
+ // creating object
+
+ myPhone = new Phone2();
+ myPhone.show();
+
+ 
+
+</script>

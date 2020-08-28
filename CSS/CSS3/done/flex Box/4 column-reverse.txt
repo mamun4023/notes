@@ -1,0 +1,31 @@
+<h3>The flex direction property</h3>
+
+<div id="main">
+   <div style="background-color: coral">A</div>
+   <div style="background-color: lightblue">B</div>
+   <div style="background-color: khaki">C</div>
+   <div style="background-color: pink">D</div>
+   <div style="background-color: lightgrey">C</div>
+
+</div>
+
+
+<style type="text/css">
+   #main{
+      height: 400px;
+      width: 400px;
+      border: 1px solid gray;
+      display: flex;
+      flex-direction: column-reverse;
+   }
+
+   #main div{
+      width: 50px;
+      height: 50px;
+   }
+</style>
+
+
+
+
+<p>Same as column but inverse order</p>

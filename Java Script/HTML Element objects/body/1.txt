@@ -1,0 +1,16 @@
+<button onclick="myFunction()">Click</button>
+
+
+
+
+<script type="text/javascript">
+	function myFunction()
+	{
+	   var x = document.getElementsByTagName('body')[0];
+	   x.style.backgroundColor = 'red';
+	
+		
+	}
+
+
+</script>

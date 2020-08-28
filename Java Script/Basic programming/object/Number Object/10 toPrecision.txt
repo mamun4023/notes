@@ -1,0 +1,5 @@
+
+<script>  
+var a=98.9721;  
+document.writeln(a.toPrecision());  
+</script>  

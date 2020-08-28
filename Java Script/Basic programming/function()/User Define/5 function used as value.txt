@@ -1,0 +1,7 @@
+<script type="text/javascript">
+	
+	var x = function(a,b) { return a+b;}
+	var z = x(2,2)+2;
+	document.write(z);
+
+</script>

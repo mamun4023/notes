@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+<style type="text/css">
+  
+  ul{
+  	list-style-type: none;
+  	margin: 0px;
+  	padding: 0px;
+  	width: 200px;
+  	background-color: gray;
+  }
+
+  li a{
+
+  	 padding: 5px 6px;
+  	 text-decoration: none;
+  	 display: block;
+
+  }
+
+  li a:hover{
+  	background-color: white;
+  	color: black;
+  }
+
+
+	
+</style>
+
+
+</head>
+<body>
+
+<ul>
+	<li><a href="">Home</a></li>
+	<li><a href="">Services</a></li>
+	<li><a href="">About Us</a></li>
+	<li><a href="">Contact</a></li>
+</ul>
+
+</body>
+</html>

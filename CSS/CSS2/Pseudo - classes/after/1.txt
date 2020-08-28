@@ -1,0 +1,11 @@
+<p>Tohid</p>
+<p>Roton</p>
+<p>Korim</p>
+<p>Abdullah</p>
+
+
+<style type="text/css">
+	p::after{
+		content: " - player";
+	}
+</style>

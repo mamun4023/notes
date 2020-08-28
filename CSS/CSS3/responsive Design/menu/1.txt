@@ -1,0 +1,56 @@
+<ul>
+	<li>Home</li>
+	<li>Services</li>
+	<li>Contact</li>
+	<li>About Us</li>
+</ul>
+
+
+<style type="">
+	
+	ul{
+		list-style-type: none;
+		padding: 0px;
+		margin: 0px;
+
+	}
+	li{
+		background: orange;
+		width: 10%;
+		padding: 5px 10px;
+		border-bottom: 1px solid gray;
+		border-radius: 10px;
+		font-size: 90%;
+		text-align: center;
+	}
+	li:hover{
+		background: gray;
+		cursor:pointer;
+	}
+
+@media screen and (max-width: 1200px){
+	li{
+		width: 10%;
+	}
+}
+@media screen and (max-width: 800px){
+	li{
+		width: 20%;
+	}
+}
+@media screen and (max-width: 500px){
+	li{
+		width: 30%;
+	}
+}
+@media screen and (max-width: 400px){
+	li{
+		width: 100%;
+	}
+}
+
+
+
+
+
+</style>

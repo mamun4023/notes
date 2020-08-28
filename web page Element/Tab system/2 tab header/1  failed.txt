@@ -1,0 +1,100 @@
+
+<div id="London" class="tabcontent">
+   <h2>London</h2>
+   <p>This is the  City of England</p>
+ </div>
+
+
+
+<div id="Paris" class="tabcontent">
+   <h2>Paris</h2>
+   <p>This is the city of France</p>
+ </div>
+
+
+
+
+<div id="Tokyo" class="tabcontent">
+   <h2>Tokyo</h2>
+   <p>This is the city of Japan</p>
+ </div>
+
+
+
+ <button class="tablink" onclick="openCity('London',this,'red')">London</button>
+
+
+ <button class="tablink" onclick="openCity('Paris',this,'blue')">Paris</button>
+
+
+ <button class="tablink" onclick="openCity('Tokyo',this,'orange')">Tokyo</button>
+
+
+
+ <style type="text/css">
+    
+    .tablink{
+      background: #555;
+      color: white;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 5px 10px;
+      font-size: 15px;
+      width: 25%;
+    }
+
+    .tablink:hover{
+      background: #777;
+    }
+
+
+    .tabcontent{
+      color: white;
+      display: none;
+      padding: 50px;
+      text-align: center;
+    }
+
+
+    #London{background:red;}
+    #Paris{background:blue;}
+    #Tokyo{background: orange;}
+
+ </style>
+
+
+
+ <script type="text/javascript">
+    
+    function openCity(cityName,elmnt,color){
+      //hide all elemnts with class tabcontent
+
+      var i tabcontent, tablink;
+
+      tabcontent = document.getElementsByClassName('tabcontent');
+      for(i=0; i<tabcontent.length; i++)
+      {
+         tabcontent[i].style.display= 'none';
+      }
+
+      tablink = document.getElementsByClassName('tablink');
+
+      for(i=0; i<tablink.length; i++)
+      {
+         tablink[i].style.backgroundColor= '';
+      }
+
+      //show the specific tab content 
+      document.getElementById(cityName).style.display= 'block';
+
+
+      // adding the specific color on the button
+      elmnt.style.backgroundColor = color;
+
+
+    }
+
+
+ </script>

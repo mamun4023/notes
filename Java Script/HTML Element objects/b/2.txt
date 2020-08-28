@@ -1,0 +1,21 @@
+<button onclick="myFunction()">Click</button>
+
+
+
+
+
+
+<script type="text/javascript">
+	function myFunction()
+	{
+	   var b = document.createElement('b');
+	   var txt = document.createTextNode('WHO making Noise');
+	   b.appendChild(txt);
+	   document.body.appendChild(b); 
+
+	
+		
+	}
+
+
+</script>

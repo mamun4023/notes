@@ -1,0 +1,15 @@
+<button onclick="myFunction()">Click</button>
+
+<script type="text/javascript">
+	function myFunction() {
+		var x = document.createElement('form');
+		x.setAttribute('id','myForm');
+		document.body.appendChild(x);
+
+		var y = document.createElement('input');
+		y.setAttribute('type', 'text');
+		y.setAttribute('value','Donal');
+		document.getElementById('myForm').appendChild(y);
+	}
+
+</script>

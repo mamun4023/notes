@@ -1,0 +1,8 @@
+
+<script type="text/javascript">
+  
+
+ var d = Math.LOG2E;        // base 2 logarithmic of E 
+ document.write(d);
+
+</script>

@@ -1,0 +1,37 @@
+<button class="accordion">Section 1</button>
+<div class="panel"><p>Loren ipsum...</p></div>
+
+
+<button class="accordion">Section 2</button>
+<div class="panel"><p>Loren ipsum......</p></div>
+
+
+<button class="accordion">Section 3</button>
+<div class="panel"><p>Loren ipsum.....</p></div>
+
+
+<style type="text/css">
+	.accordion{
+		background-color: #eee;
+		color:#444;
+		cursor: pointer;
+		padding: 18px;
+		width: 400px;
+		text-align: center;
+		border:none;
+		outline: none;
+		-webkit-transition:0.4s;
+	}
+
+	.active , .accordion:hover{
+		background-color: #ccc;
+	}
+
+	.panel{
+		padding: 0 18px;
+		background-color: white;
+		display: none;
+		overflow: hidden;
+	}
+
+</style>

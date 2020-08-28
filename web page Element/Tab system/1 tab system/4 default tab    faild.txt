@@ -1,0 +1,90 @@
+\<div class="tab">
+   <button class="tablinks" id="defaultOpen" onclick="openCity(event,'London')">London</button>
+
+    <button class="tablinks" onclick="openCity(event,'Paris')">Paris</button>
+
+     <button class="tablinks" onclick="openCity(event,'Tokyo')">Tokyo</button>
+</div>
+
+
+ <div id="London" class="tabcontent">
+   <h3>London</h3>
+   <p>This is the london city </p>
+    <span onclick="this.parentElement.style.display='none'">X</span>
+ </div>
+
+
+ <div id="Paris" class="tabcontent">
+   <h3>Paris</h3>
+   <p>This is the Paris </p>
+    
+ </div>
+
+
+ <div id="Tokyo" class="tabcontent">
+   <h3>Tokyo</h3>
+   <p>This is the Tokyo city </p>
+    
+ </div>
+
+
+ <style type="text/css">
+    
+    .tab{
+      overflow: hidden;
+      border:1px solid #ccc;
+      background: #f1f1f1;
+    }
+    .tab button{
+      background: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 4px 10px;
+      transition: 0.4s;
+    }
+    .tab button:hover{
+      background: red;
+    }
+    .active{
+      background: red;
+    }
+
+    .tabcontent{
+      display: none;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      border-top:none;
+    }
+
+ </style>
+
+
+
+ <script type="text/javascript">
+    function openCity(evt,cityName){
+      //declare all variable 
+      var i, tabcontent, tablinks;
+
+      tabcontent = document.getElementsByClassName('tabcontent');
+      for(i=0; i<tabcontent.length; i++)
+      {
+         tabcontent[i].style.display='none';
+      }
+
+
+      tablinks = document.getElementsByClassName('tablinks');
+      for(i=0; i<tablinks.length; i++)
+      {
+         tablinks[i].className = tablinks[i].className.replace('active', '');
+      }
+
+      //show to the current tab 
+      document.getElementById(cityName).style.display = 'block';
+       evt.currentTarget.className = 'active';
+
+     // default open
+     document.getElementById('defaultOpen').onload();
+    }
+ </script>

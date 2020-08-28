@@ -1,0 +1,12 @@
+<script type="text/javascript">
+	
+	function myFunction(){
+		var w = window.innerWidth;
+		var h = window.innerHeight;
+
+		document.getElementById('demo').innerHTML = w +"</br>" + h;
+	}
+
+</script>
+<button onclick="myFunction()">click</button>
+<p id="demo"></p>

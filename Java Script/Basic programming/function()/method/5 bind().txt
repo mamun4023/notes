@@ -1,0 +1,15 @@
+
+
+
+<script type="text/javascript">
+	
+var greek = {
+	name : "ABC",
+	func : function(){
+		document.write(this.name);
+	}
+}
+var bindFunction = greek.func.bind(greek);
+bindFunction();
+</script>
+    

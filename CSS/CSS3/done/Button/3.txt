@@ -1,0 +1,18 @@
+<button>button</button>
+
+
+<style type="text/css">
+  
+  button{
+    padding: 10px 20px;
+    font-size: 15px;
+    border:1px red solid;
+    border-radius: 10px;
+    outline: none;
+    transition: 1s;
+
+  }
+  button:hover{
+    background: red;
+  }
+</style>

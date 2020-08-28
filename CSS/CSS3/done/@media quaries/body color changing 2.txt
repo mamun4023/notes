@@ -1,0 +1,23 @@
+<style type="text/css">
+	
+	body{
+		background-color: tan;
+
+	}
+
+	@media screen and (max-width: 992px)
+	{
+		body{
+			background-color: blue;
+			color: white;
+		}
+	}
+
+	@media screen and (max-width: 600px){
+		body{
+			background-color: olive;
+			color: white;
+		}
+	}
+
+</style>

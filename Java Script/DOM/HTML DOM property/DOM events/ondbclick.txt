@@ -1,0 +1,17 @@
+
+<button ondblclick="myFunction()">Click</button>
+
+
+
+<script type="text/javascript">
+	function myFunction()
+	{
+		
+		alert("cut..")
+
+
+	}
+</script>
+
+
+

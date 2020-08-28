@@ -1,0 +1,20 @@
+<button onclick="myFunction()" >Click</button>
+
+<p id="demo"></p>
+
+
+<script type="text/javascript">
+	function myFunction()
+	{
+	   var x = document.createElement('address');
+	   var y = document.createTextNode('Dacoda 222, USA');
+	   x.appendChild(y);
+	   document.getElementById('demo').appendChild(x);
+	}
+</script>
+
+
+
+
+
+<p> Get the addres tag as an input</p>

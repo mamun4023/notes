@@ -1,0 +1,11 @@
+
+<script type="text/javascript">
+
+function check(x,y){
+	return x/y;
+}
+document.write(Number.isFinite(0,10));
+
+
+
+</script>

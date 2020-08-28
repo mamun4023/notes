@@ -1,0 +1,23 @@
+
+<button onclick="myFunction()">click</button>
+<div class="div1" id="demo">div</div>
+<style type="text/css">
+   .div1{
+      height: 100px;  
+      background: red;
+   }
+   .div2{
+      background: gray;
+
+
+   }
+
+</style>
+
+
+<script type="text/javascript">
+   function myFunction() {
+   var x = document.getElementById('demo');
+   x.classList.toggle('div2');
+   }
+</script>

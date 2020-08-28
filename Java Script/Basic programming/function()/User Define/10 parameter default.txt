@@ -1,0 +1,12 @@
+<script type="text/javascript">
+	
+	function myFunction(x=2,y=2) {
+		if(y===undefined){
+			y=0;
+		}
+		return x*y;
+	}
+	
+	document.write(myFunction());
+
+</script>

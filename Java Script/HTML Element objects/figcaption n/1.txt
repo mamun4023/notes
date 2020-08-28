@@ -1,0 +1,22 @@
+
+<button onclick="myFunction()">Click</button>
+
+<figure>
+	<img src="dd">
+	<figcaption id="get">This is an order text</figcaption>
+</figure>
+
+
+<script type="text/javascript">
+	function myFunction()
+	{
+		var  x = document.getElementById('get');
+		x.style.color ="red";
+		
+
+	
+		
+	}
+
+
+</script>

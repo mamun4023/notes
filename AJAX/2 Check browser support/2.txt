@@ -1,0 +1,32 @@
+<div id="demo">
+	<h2>The xhmHttpRequest Object</h2>
+	<button type="button" onclick="loadDoc()">Change Content</button>
+</div>
+
+
+
+<script type="text/javascript">
+	
+	function loadDoc() {
+		
+		var xhttp;
+		if(window.XMLHttpRequest){
+			//code for modern browsers
+			xhttp = new XMLHttpRequest();
+		}else
+		{
+			xhttp = new ActiveXObject('Microsoft.XMLHTTP');
+
+		}
+		xhttp.onreadystatechange = function(){
+			if(this.readyState ==4 && this.status =200){
+            
+            document.getElementById('demo').innerHTML = this.responseText;
+			}
+			};	
+				xhttp.open('GET','ajax_info.txt',true);
+				xhttp.send();
+	}
+
+
+</script>

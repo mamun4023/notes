@@ -1,0 +1,21 @@
+
+<button onclick="myFunction()">Click</button>
+<article id="get">
+	<h3>Article heading</h3>
+	<p>Article text</p>
+</article>
+
+
+<script type="text/javascript">
+	function myFunction()
+	{
+		var x = document.getElementById('get');
+		x.style.color= 'red';
+	}
+
+
+</script>
+
+
+
+Changing the article color

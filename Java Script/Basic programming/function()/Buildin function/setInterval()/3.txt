@@ -1,0 +1,16 @@
+<button onclick="setInterval(myTimer,1000)">Start</button>
+	<p id="demo"></p>
+
+
+<script type="text/javascript">
+
+
+     
+
+    function myTimer(){
+    	var d = new Date();
+    	document.getElementById('demo').innerHTML = d.toLocaleTimeString();
+    }
+
+
+</script> 

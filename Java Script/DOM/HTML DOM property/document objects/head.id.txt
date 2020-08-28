@@ -1,0 +1,22 @@
+<button onclick="myFunction()">
+	click
+</button>
+
+<p id="demo"></p>
+<head id="myhead"></head>
+
+
+<script type="text/javascript">
+	
+	function myFunction() {
+
+		var x = document.head.id;
+		document.getElementById('demo').innerHTML = x;
+		
+
+
+
+	}
+
+</script>
+

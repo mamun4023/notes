@@ -1,0 +1,15 @@
+<button onclick="myFunction()">Click</button>
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+   
+  function myFunction() {
+
+   var x = localStorage.getItem('mytime');
+   var y = sessionStorage.getItem("mytime");
+   document.getElementById('demo').innerHTML =x;
+
+  }
+
+</script>

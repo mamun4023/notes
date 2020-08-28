@@ -1,0 +1,9 @@
+
+<script type="text/javascript">
+  
+   var d = new Date();
+   var time = d.getTime();
+   document.write(time);  
+   
+
+</script>

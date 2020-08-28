@@ -1,0 +1,17 @@
+
+<script type="text/javascript">
+	
+   person = {
+   	firstName : 'Mychel',
+   	lastName  : 'Jhon',
+   	Company   : 'Alto',
+   	fullName  : function(){
+   		return this.firstName +" " +this.lastName;
+
+   	}
+   }
+
+   document.write(person.fullName());
+
+
+</script>

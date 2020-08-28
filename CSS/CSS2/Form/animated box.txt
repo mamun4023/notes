@@ -1,0 +1,23 @@
+
+<input type="text" name="">
+
+<style type="text/css">
+
+ input[type=text]{
+ 	width: 100px;
+ 	
+ 	-webkit-transition:width 0.4s ease-in-out;
+ 	
+
+
+ }
+
+ input[type=text]:focus{
+ 	width: 200px;
+
+
+ }
+ 
+
+</style>
+

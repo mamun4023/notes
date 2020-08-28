@@ -1,0 +1,16 @@
+
+	<p id="demo"></p>
+
+
+<script type="text/javascript">
+
+
+    var myVar = setInterval(myTimer,1000);
+
+    function myTimer(){
+    	var d = new Date();
+    	document.getElementById('demo').innerHTML = d.toLocaleTimeString();
+    }
+
+
+</script>

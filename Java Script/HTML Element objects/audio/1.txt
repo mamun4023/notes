@@ -1,0 +1,18 @@
+<audio id="get" controls="">
+<source src="" type="">
+</audio>
+
+<p id="demo"></p>
+<button onclick="myfunction()">click</button>
+<script type="text/javascript">
+			
+	function myFunction()
+	{
+		var x = document.getElementById('get').duration;
+		document.getElementById('demo').innerHTML =x ;
+	}
+
+</script>
+
+
+<p>return duration of audio record</p>

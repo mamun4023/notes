@@ -1,0 +1,7 @@
+<script type="text/javascript">
+	
+	localStorage.setItem('lastname', "Tohid");
+
+	// Retrive
+	document.write(localStorage.getItem('lastname'));
+</script>

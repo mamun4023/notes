@@ -1,0 +1,16 @@
+<button onclick="myFunction()">
+	click
+</button>
+
+<p id="demo"></p>
+
+
+<script type="text/javascript">
+	
+	function myFunction() {
+		
+		var x = document.inputEncoding;
+		document.getElementByid("demo").innerHTML = x;
+	}
+
+</script>

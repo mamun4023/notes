@@ -1,0 +1,13 @@
+<input value="hello wolrd" ><br>
+<input type="" readonly value="Read only">
+
+<style type="text/css">
+
+input:read-write{
+	color: red;
+}
+
+</style>
+
+
+<p>only select write input from lot of input</p>

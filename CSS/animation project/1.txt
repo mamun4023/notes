@@ -1,0 +1,106 @@
+
+<div class="container">
+
+   <!-- eyes -->
+	<div class="left">
+		<div class="eye-ball"></div>
+	</div>
+	<div class="right">
+		<div class="eye-ball"></div>
+	</div>
+
+  <!-- mouth -->
+  <div class="mouth"> </div>
+
+
+
+</div>
+
+
+<style type="text/css">
+	.container {
+		width: 500px;
+		height: 400px;
+		background: red;
+		position: relative;
+		border-radius: 50%/ 80 80 80 80;
+
+		
+	}
+	.left {
+		position: absolute;
+		height: 100px;
+		width: 100px;
+		background: white;
+		border-radius: 50px;
+		left: 100px;
+		top: 30px;
+	}
+	.right{
+		position: absolute;
+		height: 100px;
+		width: 100px;
+		background: white;
+		border-radius: 50px;
+		left: 300px;
+		top: 30px;
+
+	}
+	.eye-ball {
+		position: absolute;
+		width: 50px;
+		height: 50px;
+		background: black;
+		border-radius: 50px;
+		
+		-webkit-animation-name:example;
+		-webkit-animation-duration: 2s;
+		-webkit-animation-iteration-count:infinite;
+	}
+
+	.mouth{
+		position: absolute;
+		height: 50px;
+		width: 200px;
+		background: white;
+		top: 200px;
+		left: 150px;
+		border-radius: 60%/40px;
+		-webkit-animation-name:examplel;
+		-webkit-animation-duration:2s;
+		-webkit-animation-iteration-count:infinite;
+
+	}
+
+ @-webkit-keyframes example{
+ 	0%{ left: 20px; }
+ 	20%{ left: 40px; }
+ 	40%{  top: 10px; }
+ 	60%{ left: 10px; }
+ 	80%{ top: 40px; }
+ 	100%{ left: 40px; }	
+ 	}
+
+
+
+ 	@-webkit-keyframes examplel{
+ 	from{ border-radius: 60%/20px; }
+ 	to{   border-radius: 60%/-20px;
+ 		background: gray;
+ 		
+ 	}
+ }
+
+ }
+
+ 
+
+
+
+
+    
+
+
+
+
+</style>

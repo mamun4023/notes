@@ -1,0 +1,15 @@
+ <style type="text/css">
+ 	body{
+ 		counter-reset: section;
+ 	}
+ 	h3::before {
+ 		counter-increment: section;
+ 		content: "section" counter(section)": ";
+ 	}
+ </style>
+
+
+ <h3>h3</h3>
+ <h3>h3</h3>
+ <h3>h3</h3>
+ <h3>h3</h3>

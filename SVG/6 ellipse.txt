@@ -1,0 +1,14 @@
+<svg width ="400" height = "400">
+
+<ellipse cx ='200' cy = '100' rx= '220' ry='30' 
+  style='fill: purple'/>
+  <ellipse cx ='220' cy = '70' rx= '190' ry='20' 
+  style='fill: red'/>
+
+  <ellipse cx ='250' cy = '50' rx= '150' ry='20' 
+  style='fill: gray'/>
+  
+
+
+
+</svg>

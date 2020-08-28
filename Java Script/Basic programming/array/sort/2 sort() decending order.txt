@@ -1,0 +1,9 @@
+
+<script type="text/javascript">
+   
+   var cars = [5,0,6,8,10,2,5];
+        
+      cars.sort(function(a,b){return b-a}) ;                 
+   document.write(cars);               
+
+</script>

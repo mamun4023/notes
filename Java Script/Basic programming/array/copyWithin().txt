@@ -1,0 +1,12 @@
+
+<script type="text/javascript">
+	
+	
+	var a1 = ['1','2','3','4','5','6'];
+	// copy the first two element to the third and fourth
+	var copy = a1.copyWithin(2,0);
+	document.write(copy);
+
+	
+
+</script>

@@ -1,0 +1,8 @@
+
+<script type="text/javascript">
+   
+   var cars = ['BMW','Tesla','Pageroo'];
+   cars.pop();
+   document.write(cars);
+
+</script>

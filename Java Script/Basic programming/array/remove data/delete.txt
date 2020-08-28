@@ -1,0 +1,9 @@
+
+<script type="text/javascript">
+   
+   var cars = ['BMW','Tesla','Pageroo'];
+        
+    delete cars[0];          // delete and item
+   document.write(cars);
+
+</script>

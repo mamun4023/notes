@@ -1,0 +1,15 @@
+<button id="myFunction()" >click</button>
+
+
+
+
+<script type="text/javascript">
+	function myFunction()
+	{
+		
+		alert("can play the video");
+
+	}
+</script>
+
+<video oncanplay="myFunction()"></video>

@@ -1,0 +1,14 @@
+<div> </div>
+
+<style type="text/css">
+	
+	div{
+	     height: 0;
+	     width: 0;
+	     border-left: 100px solid red;
+	     border-bottom: 50px solid transparent;
+	     border-top: 50px solid transparent;
+
+	
+	}
+</style>

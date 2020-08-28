@@ -1,0 +1,4 @@
+<form>
+   <input type="file" name="">
+   <input type="submit" name="">
+</form>

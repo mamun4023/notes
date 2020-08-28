@@ -1,0 +1,19 @@
+<button onclick="myFunction()" id="mybtn">Click</button>
+
+<ul id="myList">
+	<a href=""></a>
+</ul>
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+    function myFunction() {
+	var x = document.getElementById('myList').hasChildNodes();
+	document.getElementById('demo').innerHTML = x;
+	}
+</script>
+<body>
+	
+</body>
+<p> return the child node of ul</p>
+

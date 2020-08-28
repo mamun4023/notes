@@ -1,0 +1,16 @@
+
+<button onclick="myFunction()">Download</button>
+<a id="get" href="" download="logo"><img src="dd"></a>
+<p id="demo"></p>
+<script type="text/javascript">
+	function myFunction()
+	{
+		var x = document.getElementById('get').download;
+		document.getElementById('demo').innerHTML= x;
+	}
+
+</script>
+
+<p>Download a image</p>
+
+

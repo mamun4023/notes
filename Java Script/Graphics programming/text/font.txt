@@ -1,0 +1,25 @@
+<button onclick="draw()">Click</button>
+<canvas id="canvas"  width="400 " height="200" style="border: 1px solid gray;">
+	
+</canvas>
+
+
+
+
+
+
+<script type="text/javascript">
+	   function draw(){
+		
+		var c = document.getElementById('canvas');
+		var d = c.getContext('2d');
+		
+		d.font = '50px arial';
+		d.fillText("Hellow world",10,50);
+		d.fillStyle = 'red';
+		d.fill();
+	
+
+	   }
+	    
+</script>

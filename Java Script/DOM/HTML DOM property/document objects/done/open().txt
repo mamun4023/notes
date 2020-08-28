@@ -1,0 +1,16 @@
+<button onclick="myFunction()">
+	click
+</button>
+
+
+<script type="text/javascript">
+	
+	function myFunction() {
+		
+		document.open();
+		document.write("<h1>Hello world</h1> <button>Close</button");
+		document.close();
+	}
+
+</script>
+<p>Open a new stream</p>

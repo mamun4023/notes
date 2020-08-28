@@ -1,0 +1,19 @@
+
+
+<button onclick="myFunction()" >click</button>
+
+
+<p id="demo"></p>
+<script type="text/javascript">
+	
+	function myFunction(){
+	    var a = document.getElementsByTagName('button')[0];
+	    var x = a.attributes.item('onclick').name;
+	    document.getElementById('demo').innerHTML = x;
+	}
+
+</script>  
+
+
+<p>It will return event name under a function works on</p>
+

@@ -1,0 +1,22 @@
+
+<button id="demo1">Full Screen</button>
+<button id="demo2">Close Screen</button>
+
+<script type="text/javascript">
+
+	function fullScreen()
+	{
+		var x =document.documentElement;
+		x.webkitRequestFullscreen();		
+	}	
+
+	function closeScreen()
+	{
+		var x =document.documentElement;
+		x.webkitExitFullscreen();
+	}
+</script>
+
+
+
+<p> </p>

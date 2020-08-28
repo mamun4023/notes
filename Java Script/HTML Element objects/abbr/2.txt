@@ -1,0 +1,17 @@
+<button onclick="myFunction()" >Click</button>
+
+
+<p id="demo"></p>
+
+
+
+<script type="text/javascript">
+	function myFunction()
+	{
+		 var x = document.createElement('abbr');
+		 var t = document.createTextNode('WHO');
+		 x.setAttribute('title','World Health Organization');
+		 x.appendChild(t);
+		 document.getElementById('demo').appendChild(x);
+	}
+</script>

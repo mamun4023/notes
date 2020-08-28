@@ -1,0 +1,19 @@
+
+<div class="div">
+  <p>This is overflow content. That will not show in the same places in the many other content. With all the parameter you can check the positive allocation to make a new oposite </p>
+</div>
+<style type="text/css">
+
+  p{
+    white-space: nowrap;
+    width: 200px;
+    border:1px solid red;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  p:hover{
+    text-overflow: inherit;
+    overflow: visible;
+  }
+
+</style>

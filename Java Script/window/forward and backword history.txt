@@ -1,0 +1,17 @@
+
+<script type="text/javascript">
+	
+	function Backword()
+	{
+		window.history.back();
+
+	}
+
+	function Forward()
+	{
+		window.history.forward();
+	}
+
+</script>
+<button onclick="Backword()">Back</button>
+<button onclick="Forward()">Forward</button>

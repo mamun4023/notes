@@ -1,0 +1,15 @@
+<script type="text/javascript">
+	
+   person = {
+   	firstName : 'Mychel',
+   	lastName  : 'Jhon',
+   	Company   : 'Alto',
+   	Date : new Date()
+   }
+
+   for(i in person)
+   {
+   	document.write(person[i],"<br>");
+   }
+
+</script>

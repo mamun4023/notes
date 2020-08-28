@@ -1,0 +1,7 @@
+
+<script type="text/javascript">
+  
+   var d = Date();
+   document.write(d);
+
+</script>

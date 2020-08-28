@@ -1,0 +1,9 @@
+<h2>Hello world</h2>
+
+
+<style type="text/css">
+    h2{
+        direction: rtl;
+      /*  specify the indentation of first line */
+    }
+</style>

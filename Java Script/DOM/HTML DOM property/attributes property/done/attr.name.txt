@@ -1,0 +1,20 @@
+
+
+<button onmouseover="myFunction()" >click</button>
+
+
+<p id="demo"></p>
+<script type="text/javascript">
+	
+	function myFunction(){
+		var btn =document.getElementsByTagName('button')[0];
+		var x = btn.attributes[0].name;
+		document.getElementById('demo').innerHTML=x;
+	}
+
+</script>
+
+
+
+
+<p>Display the  event name of button tag under function works   </p>

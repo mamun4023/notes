@@ -1,0 +1,107 @@
+<button  class="tablink"  onclick="openPage('Home',this,'red')">Home</button>
+
+<button  class="tablink"  onclick="openPage('News',this,'green')">News</button>
+
+
+<button  class="tablink"  onclick="openPage('Contact',this,'blue')">Contact</button>
+
+
+
+<button  class="tablink"  onclick="openPage('About',this,'orange')">About</button>
+
+
+
+
+
+<div id="Home" class="tabcontent">
+   <h3>Home</h3>
+   <p>This is a Home page</p>
+</div>
+
+
+
+<div id="News" class="tabcontent">
+   <h3>News</h3>
+   <p>This is a News page</p>
+</div>
+
+
+
+
+<div id="Contact" class="tabcontent">
+   <h3>Contact</h3>
+   <p>This is a Contact page</p>
+</div>
+
+
+
+
+<div id="About" class="tabcontent">
+   <h3>About</h3>
+   <p>This is a About page</p>
+</div>
+
+
+
+
+
+
+<style type="text/css">
+   
+   .tablink{
+      background-color: #555;
+      color: white;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 4px 10px;
+      font-size: 10px;
+      width: 25%;
+   }
+
+   .tabcontent{
+      color: black;
+      display: none;
+      padding: 10px 2px;
+      height: 100%;
+   }
+
+
+   #Home {background-color: red;}
+   #News {background: green;}
+   #Contact{background: blue;}
+   #About { background: orange; }
+
+
+</style>
+
+
+
+<script type="text/javascript">
+   
+   function openPage(pageName,elmnt,color)
+   {
+      //hide all elemnts with class 
+      var i, tabcontent,tablink;
+      tabcontent = document.getElementsByClassName('tabcontent');
+      for(i=0; i<tabcontent.length; i++)
+      {
+         tabcontent[i].style.display = 'none';
+      }
+
+      tablink = document.getElementsByClassName('tablink');
+      for(i=0; i<tablink.length; i++)
+      {
+         tablink[i].style.backgroundColor = '';
+      }
+
+
+      // show the specific tab content 
+      document.getElementById(pageName).style.display = 'block';
+      elmnt.style.backgroundColor = color;
+      
+   }
+
+
+</script>

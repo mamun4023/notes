@@ -1,0 +1,18 @@
+<button onclick="myFunction()">click</button>
+<style type="text/css">
+	.democlass{
+		color: red;
+	}
+</style>
+<h1 class="democlass"> Hello world</h1>
+
+
+
+<script type="text/javascript">
+	function myFunction()
+	{
+		var elmnt = document.getElementsByTagName('h1')[0];
+		var attr  = elmnt.getAttributeNode('class');
+		elmnt.removeAttributeNode(attr);
+	}
+</script>

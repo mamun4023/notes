@@ -1,0 +1,12 @@
+
+<button onclick="myFunction()">Click</button>
+
+
+<script type="text/javascript">
+	
+	function myFunction(){
+		var myWindow = window.open("", "", "width = 200, height =100");
+		myWindow.document.write("New window");
+		myWindow.focus();
+	}
+</script>

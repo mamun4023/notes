@@ -1,0 +1,8 @@
+
+<script type="text/javascript">
+  
+
+ var d = Math.LOG10E;        // base 10 logarithmic of E 
+ document.write(d);
+
+</script>

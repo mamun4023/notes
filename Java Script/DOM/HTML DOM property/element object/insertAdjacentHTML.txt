@@ -1,0 +1,13 @@
+<button id="btn" onclick="myFunction() ">click</button>
+<h1> click to shift the tag </h2>
+<h id="myH2">Header 2</h2>
+<p id="demo">Paragraph Tag</p>
+
+<script type="text/javascript">
+	 function myFunction() {
+	
+	  var h = document.getElementById('myH2');
+	  h.insertAdjacentHTML('afterend',"<p>Heading 2</p>");
+	}
+</script>
+

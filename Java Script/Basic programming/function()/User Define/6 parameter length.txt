@@ -1,0 +1,7 @@
+<script type="text/javascript">
+	
+	var x = function(a,b) { return arguments.length;}
+	var z = x(2,2);
+	document.write("Parameter length: " ,z);
+
+</script>

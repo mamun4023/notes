@@ -1,0 +1,8 @@
+<script type="text/javascript">
+	
+	function myFunction(a,b) {
+		return a+b;
+	}
+    
+    document.write(myFunction(2,2));
+</script>

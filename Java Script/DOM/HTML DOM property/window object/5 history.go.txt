@@ -1,0 +1,7 @@
+<button onclick="goBack()">Go Back 2 Pages</button>
+
+<script>
+function goBack() {
+  window.history.go(-2);
+}
+</script>

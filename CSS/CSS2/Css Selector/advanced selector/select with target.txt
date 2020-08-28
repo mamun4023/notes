@@ -1,0 +1,17 @@
+<a target="_blank" href="">Link 1</a> <br>
+<a href="">Link 1</a><br>
+
+<a target="" href="">Link 1</a> <br>
+
+<style type="text/css"> 
+	
+   a[target]{
+   	  background-color: red;
+   }
+
+</style>
+
+
+ select all the tags those have target property
+
+

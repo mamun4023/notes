@@ -1,0 +1,65 @@
+
+
+<form>
+<div class="container">
+   <h2>Register</h2>
+   <p>Please fill in this form to create an account</p>
+   <hr>
+   <label for="email"><b>Email</b></label>
+   <input type="text" placeholder="Enter email..." name="">
+   <label for="pws"><b>PassWord</b></label>
+   <input type="password" placeholder="Enter password..." name="">
+   <label for="pws-repeat"><b>Repeat-Password</b></label>
+   <input type="passWord" name="" placeholder="Retype password...">
+   <hr>
+   <input type="submit" value="Register" name="">
+
+</div>   
+
+</form>
+
+
+<style type="text/css">
+   *{
+      box-sizing: border-box;
+
+   }
+   .container{
+      padding: 16px;
+
+   }
+   input[type=text],input[type=password]{
+      width: 100%;
+      padding: 14px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background-color: #f1f1f1;
+   }
+   input[type=text]:focus,input[type=password]:focus{
+      background-color: #ddd;
+      outline: none;
+
+   }
+   hr{
+      border:1px solid #f1f1f1;
+      margin-bottom: 25px;
+   }
+
+   input[type=submit]
+   {
+      background: #4caf50;
+      color: white;
+      padding: 15px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9px;
+
+   }
+   .signin{
+      background-color: #f1f1f1;
+      text-align: center;
+   }
+
+</style>

@@ -1,0 +1,8 @@
+
+<script type="text/javascript">
+  
+   var d = new Date("2020-3-25  12:00:00");         // complete date
+   document.write(d.toDateString());  
+   
+
+</script>

@@ -1,0 +1,12 @@
+<script type="text/javascript">
+	
+
+   var newWindow = open("/","example","width=100","height=100");
+      alert(newWindow.location.href);
+      newWindow.onload=function(){
+      	var html ='<div style="color:red;">Hello</div>';
+         newWindow.document.body.insertAdjancentHTML('afterbegin',html);
+      }
+
+ 
+</script>

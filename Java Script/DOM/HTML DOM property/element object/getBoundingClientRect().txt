@@ -1,0 +1,22 @@
+<script type="text/javascript">
+	
+	function myFunction()
+	{
+		var div = document.getElementById('mydiv');
+		var rect = div.getBoundingClientRect();
+		x =rect.left;
+		y =rect.top;
+		w =rect.width;
+		h =rect.height;
+		alert("Left: " +x+ ", Top: " +y+ ", width: " +w+"height: " +h);
+	}
+</script>
+
+<div style="height: 200px; width: 300px; overflow: auto;">
+	<div id="mydiv" style="border: 1px solid red;">Return the top left-corner of this element relative to the top left corner of the viewport with the button below<br>
+	Also try to use the scrollbars to test the method for different positions
+	</div>
+	
+</div>
+
+<button onclick="myFunction()">Click</button>

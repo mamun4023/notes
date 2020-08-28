@@ -1,0 +1,10 @@
+
+<script type="text/javascript">
+	
+	 var x  = function myFunction(a,b) {
+		return a+b;
+	}
+
+    
+    document.write(x);
+</script>

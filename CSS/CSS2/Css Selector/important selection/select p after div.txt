@@ -1,0 +1,16 @@
+<div>
+	<p>Hellow</p>
+	<p>Wolrd</p>
+</div>
+ <p>I like programming</p>
+
+
+
+<style type="text/css">
+	div+p{
+		color: red;
+	}
+</style>
+
+
+<p>Select p after div </p>

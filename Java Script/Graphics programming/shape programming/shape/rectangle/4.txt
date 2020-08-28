@@ -1,0 +1,28 @@
+<button onclick="draw()">Click</button>
+<canvas id="canvas"  width="400 " height="200" style="border: 1px solid gray;">
+	
+</canvas>
+
+
+
+
+
+
+<script type="text/javascript">
+	   function draw(){
+		
+		var c = document.getElementById('canvas');
+		var ctx = c.getContext('2d');
+		 
+		 ctx.beginPath();
+		 ctx.lineWidth = '4';
+		 ctx.strokeStyle = 'green';
+		 ctx.rect(30,30,50,50);
+		 ctx.stroke();                                                                                                               
+
+	   }
+	   
+    
+
+
+</script>

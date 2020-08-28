@@ -1,0 +1,18 @@
+<button onclick="myFunction()">Click</button>
+
+<div id="demo"></div>
+<form></form>
+
+<script type="text/javascript">
+
+
+	
+	function myFunction() {
+ 
+ 		var x = document.forms.length;
+ 		document.getElementById('demo').innerHTML = x;
+
+	}
+
+</script>
+

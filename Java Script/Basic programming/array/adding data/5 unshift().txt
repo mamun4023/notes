@@ -1,0 +1,8 @@
+
+<script type="text/javascript">
+   
+   var cars = ['BMW','Tesla','Pageroo'];
+   cars.unshift('ddd');      //add in the first position and set index from 0
+   document.write(cars);
+
+</script>

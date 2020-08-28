@@ -1,0 +1,8 @@
+
+<script type="text/javascript">
+  
+
+ var d = Math.round(4.2);      // return nearest number
+ document.write(d);
+
+</script>

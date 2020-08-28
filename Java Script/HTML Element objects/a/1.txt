@@ -1,0 +1,16 @@
+<button onclick="myFunction()">Click</button>
+<a id="get" href="www.google.com">link</a>
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+	
+	function myFunction()
+	{
+		var x = document.getElementById('get').href;
+		document.getElementById('demo').innerHTML= x;
+
+	}
+</script>
+
+<p>get the link from the anchor object</p>

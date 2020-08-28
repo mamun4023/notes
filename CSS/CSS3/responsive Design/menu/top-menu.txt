@@ -1,0 +1,75 @@
+<div>
+	<ul class="list">
+		<li>Home</li>
+		<li>Services</li>
+		<li>Contact</li>
+	</ul>
+	
+</div>
+
+
+<style type="text/css">
+	
+*{
+   box-sizing: border-box;
+   padding: 0px;
+   margin: 0px;
+}
+ 
+ div{
+ 	height: 300px;
+ 	width: 100%;
+ 	background: gray;
+ }
+
+ .list{
+ 	list-style-type: none;
+ 	text-align: center;
+
+ }
+ .list li{
+ 	width: 10%;
+ 	background: orange;
+ 	padding: 5px 10px;
+ 	border-bottom: 1px solid white;
+ 	border-radius: 10px;
+ 	font-size: 20vw;
+ 	display: inline;
+ 	cursor: pointer;
+ 	position: relative;
+ 	float: left;
+ 	top: 300px;
+ 	left: 450px;
+ }
+ .list li:hover{
+ 	background: gray;
+ }
+
+ @media screen and (max-width: 1000px)
+    {
+      .list li{
+      	width: 15%;
+      	left: 300px;
+      }
+
+    }
+ @media screen and (max-width: 600px)
+    {
+      .list li{
+      	width: 15%;
+      	left: 200px;
+      }
+
+    }
+ @media screen and (max-width: 400px)
+    {
+      .list li{
+      	width: 100%;
+      	display: block;
+      	left: 0px;
+
+      }
+
+    }
+
+</style>

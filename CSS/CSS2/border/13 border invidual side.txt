@@ -1,0 +1,20 @@
+<div></div>
+
+
+
+<style type="text/css">
+  div{
+    height: 100px;
+    width: 100px;
+    border-style: solid;
+     border-color: red;
+     border-left: dotted;
+     border-top:dashed;
+     border-right: solid;
+     border-bottom: dotted;
+    border-width: 10px;
+
+
+
+  }
+</style>

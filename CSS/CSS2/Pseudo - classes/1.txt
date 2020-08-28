@@ -1,0 +1,23 @@
+<div></div>
+
+<style type="text/css">
+    div{
+    	background: #aaa;
+    	height: 100px;
+    	width: 100px;
+    }
+	div:link{
+		background: red;
+
+	}
+	div:visited{
+		background: red;
+
+	}
+	div:hover{
+		background-color: gray;
+	}
+	div:active{
+		background-color: orange;
+	}
+</style>

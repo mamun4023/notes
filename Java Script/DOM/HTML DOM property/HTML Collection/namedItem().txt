@@ -1,0 +1,12 @@
+<button onclick="myFunction()" >Click</button>
+
+<p id="myElement"></p>
+<p></p>
+<script type="text/javascript">
+	function myFunction() {
+	var l = document.getElementsByTagName('p').nameedItem("myElement");
+	    alert(l);
+	}
+</script>
+
+

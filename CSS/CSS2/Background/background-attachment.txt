@@ -1,0 +1,18 @@
+
+<body></body>
+<style type="text/css">
+   body{
+       background-image:url('ddd.png');
+       background-repeat: no-repeat;
+       background-position: center;
+       background-attachment: fixed;
+
+
+       /* attachment can be fixed   */
+
+
+
+   }
+
+
+</style>

@@ -1,0 +1,11 @@
+<div></div>
+
+
+<style type="text/css">
+	div {
+		width: 500px;
+		height: 200px;
+		background: red;	
+		border-radius: 20px /50% ;
+	}
+</style>

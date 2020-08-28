@@ -1,0 +1,15 @@
+<form id="get" name="form1" >
+	First Name: <input type="text" name=""> <br>
+	Last Name: <input type="text" name=""> <br>
+	<input type="submit" value="submit" name="">
+</form>
+
+<button onclick="myFunction()">Submit</button>
+<p id="demo"></p>
+
+<script type="text/javascript">
+	function myFunction() {
+	 document.getElementById('get').submit(); 
+	}
+
+</script>

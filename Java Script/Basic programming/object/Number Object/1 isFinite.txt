@@ -1,0 +1,10 @@
+
+<script type="text/javascript">
+	
+	var x = 0;
+	var y = 1;
+	var z = 1;
+
+	document.write(Number.isFinite(x));
+   // check whether is finite or not
+</script>

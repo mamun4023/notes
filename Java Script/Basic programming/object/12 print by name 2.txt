@@ -1,0 +1,12 @@
+<script type="text/javascript">
+	
+	var cars = {
+		type: 'Fiat',
+		model: '300m',
+		color: 'black'
+	};
+
+
+	document.write(cars.type);
+
+</script>

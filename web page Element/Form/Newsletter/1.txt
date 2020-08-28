@@ -1,0 +1,45 @@
+<form>
+   <div class="container">
+      <h3>Subscribe to our Newsletter</h3>
+      <p>Lorem ipsum.. Lorem ipsum.Lorem ipsum.Lorem ipsum.Lorem ipsum.Lorem ipsum.Lorem ipsum.Lorem ipsum.Lorem ipsum.Lorem ipsum.Lorem ipsum.Lorem ipsum.Lorem ipsum.Lorem ipsum.Lorem ipsum.Lorem ipsum.Lorem ipsum.Lorem ipsum.Lorem ipsum.Lorem ipsum.Lorem ipsum.Lorem ipsum.Lorem ipsum.Lorem ipsum.Lorem ipsum.Lorem ipsum.Lorem ipsum.Lorem ipsum.Lorem ipsum.</p>
+   </div>
+   <div class="container" style="background-color: white">
+      <input type="text" placeholder="name" name="" required="">
+      <input type="text" placeholder="email" name="">
+      <label><input type="checkbox" checked="checked" name="">Daily Newsletter</label>
+   </div>
+
+   <div class="container">
+      <input type="submit" value="Subscribe" name="">
+   </div>
+</form>
+
+
+<style type="text/css">
+   .container{
+      padding: 20px;
+      background: #f1f1f1;
+
+   }
+   input[type=text],input[type=submit]
+   {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      display: inline-block;
+      border:1px solid #ccc;
+      box-sizing: border-box;
+
+   }
+
+   input[type=checkbox]{
+      margin-top: 16px;
+   }
+
+   input[type=submit]{
+      background: #4caf50;
+      color: white;
+      border: noe;
+
+   }
+</style>

@@ -1,0 +1,24 @@
+
+<body onkeydown="myFunction(event)">
+	<p te >paragraph</p>
+
+	<h2>h2 heading</h2>
+</body>
+
+<script type="text/javascript">
+
+   document.designMode ="on";
+	
+	function myFunction(event) {
+ 
+ 		if(event.keyCode ==16)
+ 		{
+ 			document.execCommand("bold");
+ 		}
+
+	}
+
+</script>
+
+<p>Select the text and pres shift </p>
+

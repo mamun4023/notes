@@ -1,0 +1,14 @@
+<p>Hello world</p>
+
+
+<style type="text/css">
+:root{
+  	--main-bg-color:red;
+
+}
+  p{
+
+  	background: var(--main-bg-color);
+  }
+
+</style>

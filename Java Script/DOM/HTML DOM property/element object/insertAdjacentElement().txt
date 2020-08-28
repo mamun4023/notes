@@ -1,0 +1,14 @@
+<button id="btn" onclick="myFunction() ">click</button>
+<h1>click to shift the tag </h2>
+<span style="color: red;">my span</span>
+<h2 id="myH2">Header 2</h2>
+<p id="demo"></p>
+
+<script type="text/javascript">
+	 function myFunction() {
+	  var s = document.getElementsByTagName('span')[0];
+	  var h = document.getElementById('myH2');
+	  h.insertAdjacentElement('afterend',s);
+	}
+</script>
+

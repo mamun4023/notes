@@ -1,0 +1,11 @@
+
+
+<script type="text/javascript">
+	function add(a,b){
+		return a + b;
+	}
+
+	document.write(add.toString());
+	document.write("<br>");
+	document.write(typeof add.toString())
+</script>

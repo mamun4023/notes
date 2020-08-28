@@ -1,0 +1,25 @@
+<div>
+	
+	
+</div>
+
+
+<style type="text/css">
+	div{
+		height: 50px;
+		width: 200px;
+		background-color: red;
+		margin: 100px;
+		
+		border-radius: 20px;
+		
+	}
+
+
+	div:hover{
+		height: 400px;
+		width: 400px;
+		-webkit-transition: height 1s, width 5s ;
+		-webkit-transition-timing-function:ease;
+	}
+</style>

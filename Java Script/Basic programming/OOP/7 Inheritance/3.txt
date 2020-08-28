@@ -1,0 +1,22 @@
+
+<script type="text/javascript">
+	
+	class Bike{
+		constructor()
+		{
+			this.company = "Honda";
+		}
+	}
+
+	class Vehicle extends Bike{
+		constructor(name, price){
+			super();
+			this.name = name;
+			this.price = price;
+		}
+	}
+
+
+	var v = new Vehicle("shine","23232");
+	document.write(v.company + " " + v.price);
+</script>

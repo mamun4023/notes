@@ -1,0 +1,11 @@
+<div>
+	<p>Hellow</p>
+	<p>Wolrd</p>
+</div>
+
+
+<style type="text/css">
+	div p{
+		color: red;
+	}
+</style>

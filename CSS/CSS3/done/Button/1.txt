@@ -1,0 +1,13 @@
+<button>button</button>
+
+
+<style type="text/css">
+  
+  button{
+    padding: 5px 10px;
+    font-size: 15px;
+    background: green;
+    border:none;
+
+  }
+</style>

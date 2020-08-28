@@ -1,0 +1,8 @@
+<h1>javascript console.assert() method</h1>
+
+<p>Press F12 on you keyboard to view the message n the console view</p>
+
+<script type="text/javascript">
+	
+	console.assert(document.getElementById('demo'),"you have no element with ID 'demo' ");
+</script>

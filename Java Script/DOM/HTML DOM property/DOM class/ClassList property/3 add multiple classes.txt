@@ -1,0 +1,24 @@
+
+<button onclick="myFunction()">click</button>
+<div id="demo"></div>
+<style type="text/css">
+   .div1{
+      height: 100px;    
+   }
+   .div2{
+      background: red;
+   }
+   
+   .div3{
+      width: 100px;
+   }
+
+</style>
+
+
+<script type="text/javascript">
+   function myFunction() {
+   var x = document.getElementById('demo');
+   x.classList.add('div1','div2','div3');
+   }
+</script>

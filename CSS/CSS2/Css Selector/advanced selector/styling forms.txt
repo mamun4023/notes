@@ -1,0 +1,8 @@
+<input type="text" name="">
+
+
+<style type="text/css">
+	
+  input[type="text"];
+
+</style>

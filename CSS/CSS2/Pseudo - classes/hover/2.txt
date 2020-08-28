@@ -1,0 +1,9 @@
+<div class="ex1">
+<p  >Hello world</p>
+</div>
+
+<style type="text/css">
+	div.ex1:hover{
+		color: red;
+	}
+</style>

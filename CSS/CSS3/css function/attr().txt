@@ -1,0 +1,9 @@
+<a href="www.who.com">WHO</a><br>
+<a href="www.btcl.com">BTCL</a>
+
+
+<style type="text/css">
+	a:after{
+		content: " " attr(href) "";
+	}
+</style>

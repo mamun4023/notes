@@ -1,0 +1,23 @@
+<button onclick="myFunction()">
+	click
+</button>
+<p  id="demo"></p>
+
+
+<script type="text/javascript">
+	
+	function myFunction() {
+		var x=document.scripts.length;
+		document.getElementById('demo').innerHTML = x;
+	}
+
+</script>
+
+
+<script type="text/javascript">
+	
+</script>
+
+
+
+<p>return the number of script is used </p>

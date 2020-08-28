@@ -1,0 +1,16 @@
+
+<button onclick="myFunction()">copy</button>
+
+
+<p id="mydir">Hello world</p>
+
+<script type="text/javascript">
+	function myFunction()
+	{
+
+		document.getElementById('mydir').dir ="rtl";
+	   
+	}
+</script>
+
+<p> Changing the direction of text </p>

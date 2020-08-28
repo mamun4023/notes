@@ -1,0 +1,10 @@
+
+<script type="text/javascript">
+	
+	function check(x,y){
+		return x/y;
+	}
+
+
+	document.write(Number.isInteger(check(12,5)));
+</script>

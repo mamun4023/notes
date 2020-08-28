@@ -1,0 +1,8 @@
+
+<script type="text/javascript">
+  
+
+ var d = Math.abs(3.2);        // absolute value 
+ document.write(d);
+
+</script>

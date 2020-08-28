@@ -1,0 +1,25 @@
+<button onclick="myFunction()">
+	click
+</button>
+
+<p id="demo"></p>
+<img src="dd.png">
+<img src="dd.png">
+
+
+<script type="text/javascript">
+	
+	function myFunction() {
+
+		var x = document.images.length;
+		document.getElementById('demo').innerHTML = x;
+		
+
+
+
+	}
+
+</script>
+
+
+<p> count number of image in this document</p>

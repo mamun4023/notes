@@ -1,0 +1,18 @@
+
+<button onclick="myFunction()">Click</button>
+
+<div id="demo"></div>
+
+
+<script type="text/javascript">
+
+
+	
+	function myFunction() {
+
+		document.getElementById('demo').innerHTML="hello world";
+
+	}
+
+</script>
+

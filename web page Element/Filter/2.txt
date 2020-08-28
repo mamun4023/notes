@@ -1,0 +1,36 @@
+<input type="text" name="" id="get" onkeyup="myFunction()">
+<ul class="list">
+	<li><a href="">Rohim</a></li>
+	<li><a href="">Korim</a></li>
+	<li><a href="">Forid</a></li>
+	<li><a href="">Hakim</a></li>
+	<li><a href="">Faruk</a></li>
+	
+</ul>
+
+
+
+<script type="text/javascript">
+	
+	function myFunction(){
+		var input,filter,li,a,textValue;
+
+		input = document.getElementById('get');
+		filter = input.value.toUpperCase();
+		li = document.getElementsByTagName('li');
+
+		for(var i=0; i<li.length; i++)
+		{
+			a = li[i].getElementsByTagName('a')[0];
+			textValue= a.textContent || a.innerText;
+			if(textValue.toUpperCase().indexOf(filter)>-1)
+			{
+				li[i].style.display =" ";
+			}
+			else{
+				li[i].style.display = 'none';
+			}
+		}
+	}
+
+</script>

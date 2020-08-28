@@ -1,0 +1,10 @@
+<div></div>
+
+
+<style type="text/css">
+	div{
+		height: 100px;
+		width:  100px;
+		background: hsla(120,100%,50%,0.3);
+	}
+</style>

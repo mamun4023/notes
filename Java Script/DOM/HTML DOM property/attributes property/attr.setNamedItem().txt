@@ -1,0 +1,25 @@
+<h1>Hello world</h1>
+<button onclick="myFunction()">Click it</button>
+
+<style type="text/css">
+	.democlass{
+		color: red;
+	}
+</style>
+
+<script type="text/javascript">
+	
+	function myFunction() 
+	{
+		var h= document.getElementsByTagName("h1")[0];
+		var typ = h.createAttribute("class");
+		typ.value = "democlass";
+		h.attributes.setNamedItem(typ);
+	}
+
+
+</script>
+
+
+<p> It will change the h1 to color red</p>
+

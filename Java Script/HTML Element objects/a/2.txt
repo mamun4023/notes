@@ -1,0 +1,19 @@
+<button onclick="myFunction()">Click</button>
+
+
+
+<script type="text/javascript">
+	
+	function myFunction()
+	{
+		var x = document.createElement('A');
+		var t = document.createTextNode('tutorial');
+		x.setAttribute('href','www.fb.com');
+		x.appendChild(t);
+		document.body.appendChild(x);
+	}
+
+</script>
+
+
+<p>Create a link</p>

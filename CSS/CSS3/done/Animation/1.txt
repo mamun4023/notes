@@ -1,0 +1,21 @@
+<h3>Hello World</h3>
+
+
+
+<style type="text/css">
+	
+	h3{
+		
+		-webkit-animation-name:example;
+		-webkit-animation-iteration-count:infinite;
+		-webkit-animation-duration: 1s;
+		-webkit-animation-direction:alternate;
+		-webkit-animation-timing-function:ease;
+	}
+
+	@-webkit-keyframes example{
+		from{ font-size: 20px;  }
+		to{ font-size: 50px;  }
+	}
+
+</style>

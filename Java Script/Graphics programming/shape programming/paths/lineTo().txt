@@ -1,0 +1,31 @@
+<body onload="draw()">
+<canvas id="canvas"  width="400 " height="200" style="border: 1px solid gray;">
+   
+   </body>
+
+
+
+
+
+
+<script type="text/javascript">
+	   function draw(){
+		
+		var c = document.getElementById('canvas');
+		var d = c.getContext('2d');
+		 d.beginPath();
+		 d.moveTo(20,20);
+		 d.lineTo(20,100);
+		 d.lineTo(70,100);
+		 d.closePath();
+		 d.stroke();
+		 d.fillStyle= 'red';
+		 d.fill();
+
+
+	   }
+	   
+    
+
+
+</script>

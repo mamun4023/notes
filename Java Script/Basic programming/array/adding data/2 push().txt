@@ -1,0 +1,13 @@
+
+<script type="text/javascript">
+
+
+var d = ['a','b','c'];
+
+d.push("ddd");
+
+for( x in d){
+	document.write(d[x]+ "<br>")
+}
+
+</script>

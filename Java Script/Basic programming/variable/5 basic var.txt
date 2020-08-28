@@ -1,0 +1,16 @@
+
+
+
+<script type="text/javascript">
+	
+	
+	document.write(x);
+	var x = 5;
+	document.write( "</br>After declare: "+ x);
+
+
+</script>
+    
+
+
+//variable declared with var is defined throughout the program as compared

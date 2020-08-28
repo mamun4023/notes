@@ -1,0 +1,13 @@
+
+<p>Paragraph</p>
+
+<script type="text/javascript">
+   
+   var x = document.getElementsByTagName('p');
+   document.write(x.length);
+
+
+
+</script>
+
+

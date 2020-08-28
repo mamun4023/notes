@@ -1,0 +1,16 @@
+
+<h2>This is heading</h2>
+<p>I live in Italy</p>
+<p>I live in Rome</p>
+<p>I live in Dhaka</p>
+<div>This is dev section</div>
+
+<style type="text/css">
+	p{
+		color:green;
+	}
+  :not(p){
+  	color: red;
+  }
+
+</style>

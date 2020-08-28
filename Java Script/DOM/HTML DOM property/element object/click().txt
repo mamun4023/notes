@@ -1,0 +1,14 @@
+<button id="mychech"  onmouseover="myFunction()" onclick="alert('click event occurs')">Click</button>
+
+
+
+<script type="text/javascript">
+
+	function myFunction()
+	{
+		document.getElementById('mychech').click();
+	}
+
+</script>
+
+

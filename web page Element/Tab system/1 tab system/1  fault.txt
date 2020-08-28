@@ -1,0 +1,68 @@
+<button class="accordion"> Selection 1</button>
+ <div class="panel">
+    <p>This is first selection</p>
+ </div>
+
+
+ <button class="accordion"> Selection 2</button>
+ <div class="panel">
+    <p>This is first selection</p>
+ </div>
+
+
+
+ <button class="accordion"> Selection 2</button>
+ <div class="panel">
+    <p>This is first selection</p>
+ </div>
+
+ <style type="text/css">
+    .accordion{
+      background: #eee;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      text-align: left;
+      border: none;
+      outline: none;
+      transition: 0.4s;
+    }
+
+    .panel{
+      padding: 0 18px;
+      background: white;
+      display: none;
+      overflow: hidden;
+      transition: max-height 0.3s linear;
+    }
+
+    .active, .accordion:hover{
+      background: #ccc;
+    }
+
+ </style>
+
+
+
+ <script type="text/javascript">
+    var acc = getElementsByClassName('accordion');
+
+    for(var i =0; i<acc.length; i++)
+    {
+      acc[i].addEventListener('click',function(){
+
+         this.classList.toggle('active');
+
+         var panel = this.nextElementSibling;
+         if(panel.style.maxHeight){
+            panel.style.maxHeight= null;
+         }
+         else
+         {
+            panel.style.maxHeight = panel.scrollHeight + 'px';
+         }
+      });
+    }
+
+ </script>

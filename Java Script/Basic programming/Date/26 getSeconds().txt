@@ -1,0 +1,9 @@
+
+<script type="text/javascript">
+  
+   var d = new Date();
+   var time = d.getSeconds();     // get the seconds (0-59)
+   document.write(time);  
+   
+
+</script>

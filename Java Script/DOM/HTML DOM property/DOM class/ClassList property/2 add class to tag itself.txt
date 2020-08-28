@@ -1,0 +1,18 @@
+
+<button onclick="myFunction(this)">click</button>
+<style type="text/css">
+   .div{
+      height: 100px;
+      width: 100px;
+      background: red;
+   }
+
+</style>
+
+
+
+<script type="text/javascript">
+   function myFunction(x) {
+   x.classList.toggle('div');
+   }
+</script>

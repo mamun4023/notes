@@ -1,0 +1,16 @@
+<a href="#news1">hello 1</a>
+<a href="#news2">Hello 2</a>
+
+
+<p id="news1">New content 1</p>
+<p id="news2">New content 2</p>
+<style type="text/css">
+	
+	:target{
+		background: #aaa;
+		column-gap: red;
+		padding: 5px 12px;
+	}
+
+</style>
+

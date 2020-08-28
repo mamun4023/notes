@@ -1,0 +1,18 @@
+
+<canvas id="get" height="400" width="400" style="border: 1px solid gray;"></canvas>
+	
+
+
+
+
+
+<script type="text/javascript">
+	var x = document.getElementById('get');
+    var d = x.getContext('2d');
+    d.beginPath();
+    d.arc(100,100,40,0,7);
+
+
+    d.stroke();
+
+</script>

@@ -1,0 +1,23 @@
+
+<script type="text/javascript">
+
+
+class CompanyName {
+	constructor(){
+		this.company = "javascript";
+	}
+}
+
+
+class Employee extends CompanyName{
+	constructor(id, name){
+		super();
+		this.id = id;
+		this.name = name;
+	}
+}
+
+var emp = new Employee(1, "jhon");
+document.write(emp.id+ " " + emp.name + " "+ emp.company); 
+
+</script>

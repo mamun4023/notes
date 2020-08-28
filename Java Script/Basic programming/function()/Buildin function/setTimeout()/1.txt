@@ -1,0 +1,15 @@
+
+<body onload="setTimeout(myFunction,2000)"></body>
+
+<script type="text/javascript">
+	 
+
+
+
+	function myFunction()
+	{
+		
+		document.write("hello world");
+		
+	}
+</script>

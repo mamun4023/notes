@@ -1,0 +1,18 @@
+<button onclick="myFunction()">
+  click
+</button>
+<p  class="example"><b>This is paragraph  </b><span>ddd</span></p>
+<p  class="example">This is paragraph 2</p>
+<h2 class="example">This is heading 2</h2>
+
+<script type="text/javascript">
+  
+  function myFunction() {
+    
+    
+     document.querySelector(".example b").style.backgroundColor = "red";
+    
+  }
+
+</script>
+<p> set css property </p> 

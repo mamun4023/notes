@@ -1,0 +1,13 @@
+
+<button class="myFunction()">back</button>
+
+
+
+<script type="text/javascript">
+	
+	function myFunction()
+	{
+		window.history.go(-2);
+	} 
+
+</script>

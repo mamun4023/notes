@@ -1,0 +1,23 @@
+<button onclick="displayItems()">Click</button>
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+   
+  function createItems() {
+   localStorage.setItem('myname',Date.now());
+   localStorage.setItem('myname','jhon');
+   localStorage.setItem('myage',29);
+  }
+
+  function displayItems() {
+   var l,i;
+   document.getElementById('demo').innerHTML = '';
+   for(i=0; i<localStorage.length; i++)
+   {
+      x = localStorage.key(i);
+      document.getElementById('demo').innerHTML += x + " <br>";
+   }
+  }
+
+</script>

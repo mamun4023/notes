@@ -1,0 +1,14 @@
+<div id="get"> div content</div>
+
+
+<script type="text/javascript">
+	
+	var x = document.getElementById('get').textContent;
+	document.write(x);
+	
+
+</script>
+
+
+
+

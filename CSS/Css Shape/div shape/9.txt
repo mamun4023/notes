@@ -1,0 +1,13 @@
+<div></div>
+
+
+<style type="text/css">
+	div{
+		width: 500px;
+		height: 100px;
+		border: solid 5px #aaa;
+		border-color: #aaa transparent transparent transparent;
+		border-radius: 5%/ 100px 100px 0 0;
+
+	}
+</style> 

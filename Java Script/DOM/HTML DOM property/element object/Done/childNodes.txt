@@ -1,0 +1,27 @@
+<button onclick="myFunction()">Click</button>
+<body>
+	<p>paragraph</p>
+	<h2>heading</h2>
+	
+
+</body>
+<p id="demo"></p>
+<script type="text/javascript">
+ 
+
+  	function myFunction()
+  	{
+  		var x = document.body.childNodes;
+  		var txt =" ";
+  		var i;
+  		for(i=0; i<x.length; i++)
+  		{
+  			txt = txt + x[i].nodeName + "<br>";
+  		}
+
+  		document.getElementById('demo').innerHTML = txt;
+  	}  	
+
+</script>
+
+

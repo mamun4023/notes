@@ -1,0 +1,7 @@
+
+<script type="text/javascript">
+   
+   var cars = ['BMW','Tesla','Pageroo'];
+   document.write(cars.toString());
+
+</script>

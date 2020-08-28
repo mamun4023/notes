@@ -1,0 +1,38 @@
+<button onclick="draw()">Click</button>
+<canvas id="canvas"  width="400 " height="200" style="border: 1px solid gray;">
+	
+</canvas>
+
+
+
+
+
+
+<script type="text/javascript">
+	   function draw(){
+		
+		var c = document.getElementById('canvas');
+		var d = c.getContext('2d');
+
+		d.font ="20px arial";
+		d.strokeText("Hello World",10,50);
+
+		d.font = "30px arial";
+		//create gradient
+
+		var gradient = d.createLinearGradient(0,0,c.width,0);
+		gradient.addColorStop('0','magenta');
+		gradient.addColorStop('0.5','blue');
+		gradient.addColorStop('1.0','red');
+
+
+		// fill with Gradient 
+
+		d.strokeStyle = gradient;
+		d.strokeStyle = gradient;
+		d.strokeText('Big smile',10,90);
+	
+
+	   }
+	    
+</script>

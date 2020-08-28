@@ -1,0 +1,19 @@
+<button onclick="myFunction()">Click</button>
+
+
+<fieldset id="get">This is the date section to overcome this assumtion</fieldset>
+
+
+<script type="text/javascript">
+	function myFunction()
+	{
+		var  x = document.getElementById('get');
+		x.style.color ="red";
+		
+
+	
+		
+	}
+
+
+</script>

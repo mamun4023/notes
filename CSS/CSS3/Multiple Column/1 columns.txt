@@ -1,0 +1,15 @@
+<div>
+  
+</div>
+
+
+<style type="text/css">
+  div{
+    -webkit-column-count: 3;
+    -webkit-column-gap:30px;
+    -webkit-column-rule-style:solid;
+    -webkit-column-rule-width:1px;
+    -webkit-column-rule-color:red;
+    -webkit-columns:shorhadn property;
+  }
+</style>

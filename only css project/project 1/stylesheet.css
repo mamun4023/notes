@@ -1,0 +1,189 @@
+*{
+	box-sizing: border-box;
+	padding: 0px;
+	margin: 0px;
+
+	
+
+}
+
+.header{
+	height: 400px;;
+
+	width: 100%;
+	position: relative;
+}
+ .banner img{
+ 	overflow: auto;
+ 	width: 100%;
+ 	height: 400px;
+ 	position: relative;
+ }
+
+.main-body{
+	height: 500px;
+	width: 100%;
+	background: #deecf9;
+	position: relative;
+}
+ 
+ .text-heading{
+ 	padding-top: 20px;
+
+ }
+ .text-heading h3{
+ 	font-weight: bold;
+ 	font-size: 30px;
+ 	text-align: center;
+
+ }
+
+.left-sider{
+	position: relative;
+	width: 20%;
+	height: 80%;
+	background: #70afe5;
+	border-radius: 10px;
+	float: left;
+	top: 0px;
+	left:20px;
+
+}
+.mid {
+	position: relative;
+	float: left;
+	background: #70afe5;
+	width:  55%;
+	height: 80%;
+	left: 40px;
+	border-radius: 10px;
+}
+
+
+.right-sider{
+	position: relative;
+	float: left;
+	background: #70afe5;
+	width:  20%;
+	height: 80%;
+	left: 60px;
+	border-radius: 10px
+
+}
+
+
+.contact{
+	width: 100%;
+	height: 300px;
+	background: #deecf9;
+}
+
+
+.contact-info{
+	position: relative;
+	height: 250px;
+	width: 250px;
+	background: #70afe5;
+	border-radius: 10px;
+	float: left;
+	margin: 10px;
+	left: 100px;
+}
+ 
+ .contact-info img{
+ 	height: 150px;
+ 	width: 150px;
+ 	position: relative;
+ 	background: white;
+ 	border-radius: 50%;
+ 	left: 50px;
+ 	margin-top: 10px;
+ }
+ .contact-info h3{
+ 	text-align: center;
+ 	font-weight: bold;
+ 	color: white;
+ }
+
+.footer{
+	position: relative;
+	height: 182px;
+	width: 100%;
+	background: gray;
+
+}
+
+.top-menu{
+	list-style-type: none;
+	
+	position: relative;
+	top: 60vw;
+}
+
+
+.top-menu li{
+	display: inline;
+	position: relative;
+	padding: 10px 20px;
+	border-radius: 10px;
+	background: #70afe5;
+	font-size: 20px;
+	text-align: center;
+	border-bottom: 2px solid #004578;
+	width: 10vw;
+	left: 35%;
+	font-weight: bold;
+	
+
+
+}
+
+.top-menu li:hover{
+	background: teal;
+	color: white;
+	cursor: pointer;
+	-webkit-transition:1s;
+	font-weight: ;
+}
+
+@media screen and (max-width: 1000px)
+{
+	.top-menu li{
+		width: 15vw;
+		left: 28%;
+	}
+}
+
+@media screen and (max-width: 800px)
+{
+	.top-menu li{
+		width: 20vw;
+		left: 20%;
+	}
+}
+@media screen and (max-width: 600px)
+{
+	.top-menu{
+		width: 100%
+	}
+	.top-menu li{
+		width: 100vw;
+		left: 0;
+		display: block;
+	}
+}
+
+
+@media screen and (max-width: 400px)
+{
+	.top-menu li{
+		width: 100%;
+	}
+}
+
+
+
+
+
+
+

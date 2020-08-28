@@ -1,0 +1,9 @@
+<button onclick="goForward()"> goForward</button>
+
+<script type="text/javascript">
+	
+	function goForward(){
+		window.history.forward();
+	}
+
+</script>

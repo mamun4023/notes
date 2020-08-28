@@ -1,0 +1,9 @@
+<input type="" readonly value="Read only">
+
+<style type="text/css">
+
+input:read-only{
+	color: red;
+}
+
+</style>

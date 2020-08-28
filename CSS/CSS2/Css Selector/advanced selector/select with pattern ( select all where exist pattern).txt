@@ -1,0 +1,15 @@
+<p class="terti">Selector 1</p>
+<p class="ititer">Selector 1</p>
+<p class="titr">Selector 1</p>
+
+
+<style type="text/css">
+	
+  [class *="te" ]{
+  	background-color: red;
+  }
+
+</style>
+
+
+select all class those are form "te" 

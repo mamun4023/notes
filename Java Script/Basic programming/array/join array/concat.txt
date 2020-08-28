@@ -1,0 +1,13 @@
+
+
+<script type="text/javascript">
+  
+
+  var a1 = ['1','2','3'];
+  var a2 = ['a','b','c'];
+  var a3 =['d'];
+  var a4 = ['all'];
+  var add = a1.concat(a2,a3,a4);    // it can take any number of argument
+  document.write(add);
+
+</script>

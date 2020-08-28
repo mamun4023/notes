@@ -1,0 +1,19 @@
+
+<button onclick="myFunction()" >Click</button>
+
+<p id="demo"></p>
+
+
+<script type="text/javascript">
+    
+    function myFunction()
+    {
+    	
+    	var  x = location.pathname;
+    	document.getElementById('demo').innerHTML = x;
+    
+    }
+
+</script>
+
+ 

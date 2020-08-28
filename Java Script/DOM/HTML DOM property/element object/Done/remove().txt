@@ -1,0 +1,13 @@
+<button  onclick="myFunction() ">click</button>
+<p id="demo"> hello world</p>
+
+<script type="text/javascript">
+	 function myFunction() {
+   
+    var x = document.getElementById('demo');
+    	x.remove();
+
+	}
+
+</script>
+

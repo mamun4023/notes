@@ -1,0 +1,19 @@
+<button>button</button>
+
+
+<style type="text/css">
+  
+  button{
+    padding: 10px 20px;
+    font-size: 15px;
+    background: green;
+    border-radius: 10px;
+    outline: none;
+    transition: 1s;
+    box-shadow: 4px 4px 30px black;
+
+  }
+  button:hover{
+    background: red;
+  }
+</style>

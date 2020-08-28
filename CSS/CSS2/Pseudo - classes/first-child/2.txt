@@ -1,0 +1,10 @@
+<div>
+	<p>Hello <i>Mohid</i> Hydon from <i>Dhaka</i>Banlgadesh</p>
+	<p>we <i>like to </i>here you from different account. More and more public sentiment are procedure on that <i>productive </i>manu</p>
+</div>
+
+<style type="text/css">
+	p i:first-child{
+		color:red;
+	}
+</style>

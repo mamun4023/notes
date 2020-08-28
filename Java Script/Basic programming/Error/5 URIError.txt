@@ -1,0 +1,12 @@
+<script type="text/javascript">
+
+
+try{
+	 decodeURI("%%%");
+
+}catch(err){
+	document.write(err.name);
+}
+
+
+</script>

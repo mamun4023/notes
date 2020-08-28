@@ -1,0 +1,16 @@
+
+<button onclick="myFunction()">copy</button>
+
+<div id="mydiv ">
+	<span id="myspan"></span>
+</div>
+<p id="demo"></p>
+
+<script type="text/javascript">
+	function myFunction()
+	{
+		var span = document.getElementById('myspan');
+		var div = document.getElementById('mydiv').contains(span);
+		document.getElementById('demo').innerHTML = div;
+	}
+</script>

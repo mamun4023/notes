@@ -1,0 +1,106 @@
+<div class="banner">
+	<img class="banner-img" src="ddd.png">
+
+
+ 
+  <ul class="menu">
+  	<li>Home</li>
+  	<li>Services</li>
+  	<li>About US</li>
+  	<li>Contact</li>
+  </ul>
+
+
+</div>
+<div class="left">left side</div>
+<div class="main">Main content</div>
+<div class="Right content">Right content</div>
+
+<div class="footer">Footer section</div>
+
+<style type="text/css">
+	
+
+
+	* {
+		box-sizing: border-box;
+		margin: 0px;
+		padding: 0px;
+
+	}
+
+	.banner{
+		height: 30%;
+		width: 100%;
+		background-color: orange;
+		text-align: center;
+		top: 0px;
+	}
+
+
+	.left{
+		height: 60%;
+		width: 15%;
+		background: gray;
+		float: left;
+		text-align: center;
+	}
+
+	.main{
+		width: 70%;
+		background: #f1f1f6;
+		height: 60%;
+		float: left;
+		text-align: center;
+	}
+	.right{
+		float: left;
+		width: 15%;
+		height: 60%;
+		background: gray;
+		text-align: center;
+	}
+
+	.footer{
+		height: 20px;
+		width: 20px;
+		background: red;
+	}
+
+	.footer{
+		height: 10%;
+		width: 100%;
+		background-color: red;
+	}
+
+
+@media screen and (max-width: 500px){
+	.left, .main, .right{
+		width: 100%;
+	}
+}
+
+
+.banner-img{
+	height: 100%;
+	width: 100%;
+	position: relative;
+	overflow:auto;
+}
+.menu{
+	z-index: 1;
+	list-style-type: none;
+	position: absolute;
+
+}
+.menu li{
+
+	z-index:1;
+}
+
+
+
+
+
+
+</style>

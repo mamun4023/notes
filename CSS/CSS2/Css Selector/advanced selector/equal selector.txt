@@ -1,0 +1,18 @@
+<a class="d" >Link 1</a> <br>
+<a class="d" >Link 1</a><br>
+
+<a class="l">Link 1</a> <br>
+
+<style type="text/css"> 
+   
+   [class = d]
+   {
+      background: red;
+   }
+
+</style>
+
+
+It can get any tag and select with its property. example [target=_blank]
+
+

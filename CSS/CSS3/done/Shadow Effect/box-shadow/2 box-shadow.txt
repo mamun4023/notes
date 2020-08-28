@@ -1,0 +1,10 @@
+<div></div>
+<style type="text/css">
+
+  div{
+    height: 200px;
+    width: 200px;
+    background: green;
+    box-shadow: 10px 10px 10px gray,-10px -10px 10px red;
+  }
+</style>

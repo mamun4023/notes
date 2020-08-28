@@ -1,0 +1,60 @@
+<button class="accordion">Section1</button>
+<div class="panel">
+	<p>My fevorite coding style</p>
+</div>
+
+<button class="accordion">Section2</button>
+<div class="panel">
+	<p>My fevorite coding style</p>
+</div>
+
+<button class="accordion">Section3</button>
+<div class="panel">
+	<p>My fevorite coding style</p>
+</div>
+
+<style type="text/css">
+	
+
+	.accordion {
+		background-color: #eee;
+		color: #444;
+		cursor: pointer;
+		padding: 18px;
+		width: 100%;
+		text-align: left;
+		border: none;
+		-webkit-transition: 1s;;
+	}
+	.active .accordion:hover{
+		background-color: #ccc;
+	}
+	.panel{
+		padding: 0 18px;
+		background-color: white;
+		display: none;
+		overflow: hidden;
+	}
+</style>
+
+<script type="text/javascript">
+	var acc = document.getElementByClassName('accordion');
+
+	var i;
+
+	for (i=0; i<acc.lenght; i++)
+	{
+		acc[i].addEventListener("click",function(){
+			this.classList.toggle("active");
+
+			var panel=this.nextElementSibling;
+			if(panel.style.display==="block"){
+				panel.style.display="none";
+			}else 
+			{
+				panel.style.display="block";
+			}
+		});
+	}
+
+</script>

@@ -1,0 +1,23 @@
+<button onclick="myFunction()">
+	click
+</button>
+<p  class="example">This is paragraph 1</p>
+<p  class="example">This is paragraph 2</p>
+<h2 class="example">This is heading 2</h2>
+
+<script type="text/javascript">
+	
+	function myFunction() {
+		
+		var x, i;
+		x = document.querySelectorAll(".example");
+		for(i=0; i<x.length; i++)
+		{
+			x[i].style.backgroundColor = "red";
+		}
+	}
+
+</script>
+
+
+<p> class protery changing </p> 

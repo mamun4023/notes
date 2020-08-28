@@ -1,0 +1,9 @@
+
+<script type="text/javascript">
+  
+   var d = new Date();
+   var time = d.setHours(20); //      set the hour as number (1-23) 
+   document.write(time);  
+   
+
+</script>

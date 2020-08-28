@@ -1,0 +1,16 @@
+<button onclick="myFunction()">
+	click
+</button>
+<p  id="demo"></p>
+
+<script type="text/javascript">
+	
+	function myFunction() {
+		var x=document.readyState;
+		document.getElementById('demo').innerHTML = x;
+	}
+
+</script>
+
+
+<p>display the loading status of the current document</p>

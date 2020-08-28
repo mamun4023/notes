@@ -1,0 +1,19 @@
+
+
+<button class="dd" onclick="myFunction()" >click</button>
+
+
+<input type="submit" name="">
+<script type="text/javascript">
+	
+	function myFunction(){
+		var btn = document.getElementsByTagName('input')[0];
+		btn.attributes.removeNamedItem('type');
+
+	}
+
+</script>
+
+
+<p>It will return function name under works on</p>
+

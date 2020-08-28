@@ -1,0 +1,18 @@
+
+<button onclick="myFunction()">Click</button>
+
+<p>This article was written by <b id="get">WHO</b></p>
+
+
+
+
+<script type="text/javascript">
+	function myFunction()
+	{
+		document.getElementById('get').style.color='red';
+	
+		
+	}
+
+
+</script>

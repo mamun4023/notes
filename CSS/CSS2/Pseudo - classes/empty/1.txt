@@ -1,0 +1,15 @@
+
+<p></p>
+<p>Hello world</p>
+<p> Hello moscow</p>
+
+
+<style type="text/css">
+	
+	p:empty{
+		height: 20px;
+		width: 10px;
+		background: red;
+	}
+
+</style>

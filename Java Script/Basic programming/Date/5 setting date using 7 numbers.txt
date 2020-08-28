@@ -1,0 +1,7 @@
+
+<script type="text/javascript">
+  // use of seven number to allocate date 
+   var d = new Date(12,12,12,12,12,12,12);
+   document.write(d);
+
+</script>

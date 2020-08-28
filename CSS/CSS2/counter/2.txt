@@ -1,0 +1,21 @@
+
+<style type="text/css">
+
+div{
+	counter-reset: number;
+
+}
+p:before{
+	counter-increment: number;
+	content: counter(number)" : ";
+}
+	
+</style>
+
+<div>
+	<p>online olive</p>
+	<p>online olive</p>
+	<p>online olive</p>
+	<p>online olive</p>
+	<p>online olive</p>
+</div>

@@ -1,0 +1,5 @@
+<script type="text/javascript">
+	
+     console.info("Information message");
+
+</script>

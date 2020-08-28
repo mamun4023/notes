@@ -1,0 +1,64 @@
+<div class="tooltip">
+   over me
+
+  <div class="tooltip-text">
+    Tooltip
+  </div>
+  
+</div> 
+
+
+<div class="tooltip">
+     ddd
+   <div class="tooltip-text">
+      This is all
+   </div> 
+</div>
+
+
+
+<style type="text/css">
+  .tooltip{
+    position: relative;
+    width: 20%;
+    margin:100px;
+    cursor: pointer;
+    background-color: gray;
+    padding: 5px 10px;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+
+  .tooltip .tooltip-text{
+    display: none;
+    position: absolute;
+    width: 100px;
+    background: black;
+    color: white;
+    padding: 5px 0;
+    text-align: center;
+    border-radius: 10px;
+    top: -5px;
+    left: 100px;
+  }
+
+
+
+  .tooltip .tooltip-text:before{
+    position: absolute;
+    content: " ";
+    height: 0;
+    width: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px  solid transparent;
+    border-right: 30px solid black;
+    left: -15px;
+  }
+
+
+  .tooltip:hover .tooltip-text{
+    display: block;
+  }
+
+</style>

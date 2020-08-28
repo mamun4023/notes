@@ -1,0 +1,13 @@
+
+
+	<script src="ddd.js"></script>
+
+	<script type="text/javascript">
+		function myfunction()
+		{
+			document.getElementById('demo').style.color="red";
+		}
+	</script>
+
+<button onclick="myfunction()"></button>
+	<h3 id="demo">Hello</h3>

@@ -1,0 +1,6 @@
+<input type="checkbox" name="" >
+<style type="text/css">
+	input:indeterminate {
+		box-shadow: 0 0 1px 1px red;
+	}
+</style>

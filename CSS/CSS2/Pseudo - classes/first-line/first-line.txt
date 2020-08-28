@@ -1,0 +1,11 @@
+<p>This is the first line selector that will select only first line This is the first line selector that will select only first line </p>
+
+
+<style type="text/css">
+	
+  p:first-line{
+  	color: red;
+  	font-size: 29px;
+  }
+
+</style>

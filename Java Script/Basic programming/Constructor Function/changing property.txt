@@ -1,0 +1,20 @@
+<script type="text/javascript">
+	
+	function person(first,last,age,eye){
+		this.firstName = first;
+		this.lastName = last;
+		this.age = age;
+		this.eyeColor = eye;
+		this.changeName = function(name){
+			return this.lastName =name;
+		};
+	}
+
+	// create and person object
+	var myFather = new person('mychel','john',50,'black');
+
+     myFather.changeName('Feraday');
+	//display age
+	document.write(myFather.lastName);
+ 
+</script>

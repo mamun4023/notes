@@ -1,0 +1,25 @@
+<body onload="draw()">
+<canvas id="canvas"  width="400 " height="200" style="border: 1px solid gray;">
+   
+   </body>
+
+
+
+
+
+<script type="text/javascript">
+
+   
+    var x = document.getElementById('get');
+    var d = x.getContext('2d');
+
+    d.moveTo(20,20);
+    d.lineTo(20,100);
+    d.lineTo(100,100);
+    d.fillStyle ="red";
+    d.fill();
+    d.closePath();
+    d.stroke();
+         
+         
+</script>

@@ -1,0 +1,14 @@
+
+
+<p>This is heading</p>
+<p>I live in Italy</p>
+<p>I live in Rome</p>
+<p>I live in Dhaka</p>
+<p>this is p tag</p>
+
+<style type="text/css">
+p:nth-child(odd){
+	color: red;
+}
+
+</style>

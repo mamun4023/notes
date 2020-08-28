@@ -1,0 +1,9 @@
+<div id="get">Hello</div>
+
+
+<script type="text/javascript">
+  var x = document.getElementById('get');
+  var d = x.addEventListener('click',function(){
+    document.write("hello world");
+   });
+</script>

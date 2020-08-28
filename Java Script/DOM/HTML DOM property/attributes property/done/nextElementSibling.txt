@@ -1,0 +1,20 @@
+
+<ul>
+	<li id="item1">Coffee </li>
+	<li id="item2">Tea</li>
+</ul>
+
+
+<button onclick="myFunction()"> Button</button>
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+	
+	function myFunction(){
+		var x = document.getElementById('item1').nextElementSibling.innerHTML;
+	document.getElementById('demo').innerHTML= x;
+	}
+
+
+</script>

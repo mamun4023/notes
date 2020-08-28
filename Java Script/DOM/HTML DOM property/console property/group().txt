@@ -1,0 +1,7 @@
+<script type="text/javascript">
+	
+     console.error("you made a mistake");
+     console.group();
+     console.log("hello again... this time inside the group");
+
+</script>

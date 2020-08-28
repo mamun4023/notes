@@ -1,0 +1,16 @@
+
+<button class="myFunction()">click</button>
+
+<p >P tag</p>
+
+<script type="text/javascript">
+	
+	function myFunction()
+	{
+		var x = document.getElementsByTagName('p')[0];
+		   x.innerHTML = "changed";
+
+		
+	} 
+
+</script>

@@ -1,0 +1,19 @@
+
+<button onclick="myFunction()">Click</button>
+
+	<p id="demo"></p>
+</body>
+
+<script type="text/javascript">
+	
+	function myFunction()
+	{
+		var x = document.anchors.length;
+		document.getElementById('demo').innerHTML = x;
+	}
+    
+</script>
+
+
+
+

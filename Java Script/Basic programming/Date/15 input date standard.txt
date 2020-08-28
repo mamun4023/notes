@@ -1,0 +1,8 @@
+
+<script type="text/javascript">
+  
+   var d = new Date("03/25/2020");         // MM/DD/YYYY
+   document.write(d.toDateString());  
+   
+
+</script>

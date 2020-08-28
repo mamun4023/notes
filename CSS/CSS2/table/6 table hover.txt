@@ -1,0 +1,35 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Roll</th>
+    <th>Department</th>
+  </tr>
+  <tr>
+    <td>Mamun</td>
+    <td>154116</td>
+    <td>CSE</td>
+  </tr>  
+  <tr>
+    <td>Rofiq</td>
+    <td>2323232</td>
+    <td>Civil</td>
+  </tr>
+</table>
+
+
+<style type="text/css">
+  tr{
+    border-bottom:1px solid gray;
+    background: #999;
+    cursor: pointer;
+
+  }
+  td,th{
+    padding: 14px;
+  }
+
+
+  tr:hover{
+    background: white;
+  }
+</style>

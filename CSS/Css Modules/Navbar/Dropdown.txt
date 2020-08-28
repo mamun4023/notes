@@ -1,0 +1,35 @@
+
+
+<style type="text/css">
+
+ .dropdown{
+ 	position: relative;
+ 	display: inline-block;
+
+ }
+
+ .dropdown-content{
+ 	display: none;
+ 	position: absolute;
+ 	min-width: 100px;
+ 	background-color: gray;
+
+ }
+
+ .dropdown:hover .dropdown-content{
+ 	display: block;
+ }
+
+
+
+
+</style>
+
+
+
+<div class="dropdown">
+	<span>Click</span>
+	<div class="dropdown-content">
+		<p>Content</p>
+	</div>
+</div>

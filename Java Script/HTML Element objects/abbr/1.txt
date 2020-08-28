@@ -1,0 +1,15 @@
+
+<button onclick="myFunction()" >Click</button>
+
+<p> This is commited by <abbr id="get" title="World Health Organization">WHO</abbr> </p>
+<p id="demo"></p>
+
+
+
+<script type="text/javascript">
+	function myFunction()
+	{
+		var x = document.getElementById('get').title;
+		document.getElementById('demo').innerHTML = x;
+	}
+</script>

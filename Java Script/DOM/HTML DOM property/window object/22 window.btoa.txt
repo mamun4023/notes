@@ -1,0 +1,9 @@
+
+
+<script type="text/javascript">
+   
+   var str = "Hello World";
+   var enc = window.btoa(str);
+   document.write(enc);
+
+</script>

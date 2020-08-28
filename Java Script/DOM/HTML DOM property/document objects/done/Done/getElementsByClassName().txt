@@ -1,0 +1,19 @@
+<button onclick="myFunction()">Click</button>
+
+<div class="example">ddd</div>
+
+
+<script type="text/javascript">
+
+
+  
+  function myFunction() {
+    
+    var x = document.getElementsByClassName('example')[0];
+      x.style.color ='red';
+
+
+  }
+
+</script>
+

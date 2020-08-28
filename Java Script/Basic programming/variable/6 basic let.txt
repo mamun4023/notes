@@ -1,0 +1,10 @@
+<script type="text/javascript">
+	
+	
+	document.write(x);
+	let x = 5;
+	document.write( "</br>After declare: "+ x);
+
+
+</script>
+     //variable declared let is block scoped 
