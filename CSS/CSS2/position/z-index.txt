@@ -1,0 +1,16 @@
+
+<img src="1.png">
+we have the poerp to intigra
+add dl
+<h3>position must be absolute</h3>
+<style type="text/css">
+
+
+ img{
+ 	width: 200px;
+ 	position: absolute;
+ 	z-index: -1;
+ }
+
+
+</style>

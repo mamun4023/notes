@@ -10,3 +10,12 @@
   }
 
 </style>
+
+
+
+-----------------color property----------
+
+ color name : red
+ hex : #000000
+ RGB: rgb(0,0,0)
+ 

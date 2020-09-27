@@ -16,3 +16,14 @@
 
 
 </style>
+
+
+
+
+------------- attachment property -----------
+
+scroll : Image will be scroll with page. Its default.
+fixed : Image will not scroll with the page.
+local : The background image will scroll with the element's contents
+initial : Sets the default value.
+inherit : from its parent 
