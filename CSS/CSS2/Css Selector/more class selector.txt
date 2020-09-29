@@ -1,16 +1,22 @@
-	
-	<p class="color size ">only select internal p element</p>
 
 
 
+<div>
+		<p class="color">hello world</p>
+		<h3 class="color">Hello world</h3>
+		<div class="color">Hello world</div>
+		<h2 class="color">Hello world</h2>
+</div>
 
 <style type="text/css">
-	
-	 p.color{
-		color: red;
+	p.color {
+		color:  red;
 	}
-	p.size{
-		font-size: 50px;
+	h3.color{
+		color: green;
 	}
 
+	h2.color{
+		background-color: gray;
+	}
 </style>

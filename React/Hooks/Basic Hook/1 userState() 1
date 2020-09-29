@@ -1,0 +1,26 @@
+import React, {useState} from 'react';
+
+function App (){
+  // Declare new state variable, which we'll call count
+const [count,setCount] = useState(0);
+
+  return(
+
+      <>
+        <p> you Cliked {count} times </p>
+        <button onClick ={() => setCount(count+1)}> Click</button>
+
+      </> 
+
+    );
+
+}
+
+export default App;
+
+
+
+
+
+
+

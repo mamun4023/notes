@@ -1,0 +1,29 @@
+
+import React,{useEffect,useRef} from 'react'
+
+
+function  App() {
+	
+	const inputRef = useRef(null)
+
+	useEffect(()=>{
+	// focus the input element
+	inputRef.current.focus()
+	},[])
+
+	return(
+
+		<>
+
+			<input ref={inputRef} type='text' />
+
+		</>
+		)
+}
+
+
+
+
+
+
+export default App;

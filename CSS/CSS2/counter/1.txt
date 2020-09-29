@@ -13,3 +13,11 @@
  <h3>h3</h3>
  <h3>h3</h3>
  <h3>h3</h3>
+
+
+
+ ------------ css Counter propertis----------
+ 
+ content : used with the :: before and after pseudo-elements, to insert generated content
+ counter-increment : increment one or more counter value
+ counter-reset :  create or reset on or more counters

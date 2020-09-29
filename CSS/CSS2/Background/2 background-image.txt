@@ -1,0 +1,25 @@
+<div></div>
+
+
+<style type="text/css">
+
+  div{
+    height: 100px;
+    width: 100px;
+    background-image: url('ddd.png');
+  }
+
+</style>
+
+
+
+--------- image property-------
+	
+	url(url) : url of an image, to set more image separate using comma
+	none : no image will displayed
+	linear-gradient() : set gradient
+	radial gradient ()
+	repeating-linear-gradient()
+	repeating-radial-gradient()
+	initial
+	inherit

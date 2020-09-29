@@ -11,7 +11,8 @@
   
   div+p{
     color:red;
-      /*  Adjacent Sibling selector used space  */
+      /*  Adjacent Sibling selector used space  
+	it takes only one element*/
   }
 
 

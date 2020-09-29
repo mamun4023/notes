@@ -1,0 +1,48 @@
+import React from 'react';
+const axios = require('axios');
+
+
+class App extends React.Component{
+
+  state =  {
+  	person : []
+  }
+
+  componentDidMount(){
+   
+   async function getUser(){
+   	try{
+   		const res = await axios.get('http://jsonplaceholder.typicode.com/posts?ID=75');
+   		
+   		this.setState({
+   			person : res.data
+   		})
+   	} catch(err){
+   		console.log(err);
+   	}
+   }
+
+  }
+
+	render(){
+            
+		return(
+        	     
+			<>
+			  <ul>
+
+			     {this.state.person.map(p => <li> {p.body} </li>)}
+			  
+			  </ul>
+
+
+			</>
+			)
+
+	}
+}
+
+
+
+export default App;
+

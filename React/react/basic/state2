@@ -1,0 +1,32 @@
+import React,{Component} from 'react'
+import Data from './head'
+
+class App extends Component{
+  constructor(props){
+    super(props);
+
+    this.state = {
+      persion: [
+        {
+          name: 'korim',
+          age: 23
+        }
+
+      ]
+    }
+
+  }
+
+  render(){
+    return(
+      <>
+          <h2> {this.state.persion[0].name}</h2>
+          <h2> {this.state.persion[0].age}</h2>
+     </>
+      );
+  }
+
+}
+ 
+
+export default App;

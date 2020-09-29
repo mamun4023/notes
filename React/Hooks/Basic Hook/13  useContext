@@ -1,0 +1,124 @@
+import React from 'react'
+import ComponentC from './componentC'
+ 
+export const userContext = React.createContext();
+
+function App(){
+
+
+
+		return(
+
+
+				<>
+				<userContext.Provider value={"Tohid Ahmed"}>
+               
+                 <ComponentC/>
+
+                 </userContext.Provider>
+
+				</>
+			)
+	}
+
+
+export default App;
+
+
+
+
+
+
+
+
+
+import React from 'react'
+import ComponentE from './componentE'
+
+
+function ComponentC(){
+
+
+
+		return(
+
+
+				<>
+               
+               <ComponentE/>
+					
+
+				</>
+			)
+	}
+
+
+export default ComponentC;
+
+
+
+
+
+
+
+import React from 'react'
+import ComponentF from './componentF'
+
+
+function ComponentE(){
+
+
+
+		return(
+
+
+				<>
+
+					<ComponentF />
+
+				</>
+			)
+	}
+
+export default ComponentE;
+
+
+
+
+
+
+
+import React from 'react'
+import {userContext} from './App'
+
+
+function ComponentF(){
+
+		return(
+
+
+				<>
+
+				<userContext.Consumer>
+					{
+						user => {
+							return <div> user Name: {user}</div>
+						}
+					}
+
+				</userContext.Consumer>
+
+					
+
+				</>
+			)
+	}
+
+
+
+export default ComponentF;
+
+
+
+
+

@@ -1,0 +1,88 @@
+
+import React,{Component} from 'react'
+import './style.css'
+
+
+
+class App extends Component{
+ 
+
+state ={
+  name: [],
+  email: [],
+  pass: []
+}
+
+
+
+
+handleName = (event) => {
+  this.setState({ name: event.target.value
+
+  })
+}
+
+
+handleEmail = (event) => {
+  this.setState({email: event.target.value
+
+  })
+}
+
+
+handlePass = (event) => {
+  this.setState({pass: event.target.value})
+}
+
+
+handleSubmit =(event) => {
+   alert(this.state.name)
+  event.preventDefault();
+}
+
+
+
+
+  render(){
+
+    return(
+          
+          <>
+              <div className ='container_frame'>
+              <form onSubmit={this.handleSubmit}>
+
+                  <div className="form-group">
+                    <input className="form-control" onChange={this.handleName} type="text" placeholder="Enter Name"/> 
+                  </div>
+                  <div className="form-group">
+                    <input className="form-control" onChange={this.handleEmail}  type="text" placeholder="Enter Email"/> 
+                  </div>
+
+                  <div>
+                    <input  className="form-control" type ="password" onChange={this.handlePass}  placeholder="Type Password"  />
+
+                  </div>
+
+                  <hr/>
+                  <input className="btn btn-info d-block" type="submit" />
+
+
+              </form>
+              </div>
+
+              <h4> {this.state.name} </h4>
+              <h4> {this.state.email} </h4>
+              <h4> {this.state.pass} </h4>
+          </>
+
+      );
+  }
+}
+
+
+
+
+export default App;
+
+
+

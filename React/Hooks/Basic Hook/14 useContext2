@@ -1,0 +1,72 @@
+import React from 'react'
+import ComponentC from './componentC'
+ 
+export  const userContext = React.createContext();
+export const channelContext = React.createContext();
+
+
+function App(){
+
+
+
+		return(
+
+
+				<>
+				<userContext.Provider value={"Tohid Ahmed"}>
+                 <channelContext.Provider value={"Anik"}>
+                 <ComponentC/>
+                 </channelContext.Provider>
+                 </userContext.Provider>
+
+				</>
+			)
+	}
+
+
+export default App;
+
+
+last componet  
+
+
+
+import React from 'react'
+import {userContext,channelContext} from './App'
+
+function ComponentF(){
+
+		return(
+
+
+				<>
+
+				<userContext.Consumer>
+					{
+						user => {
+							return <div> user Name: {user}</div>
+						}
+					}
+
+				</userContext.Consumer>
+
+					
+				<channelContext.Consumer>
+
+				   {
+				   	user=> {
+				   		return <div> {user} </div>
+				   	}
+				   }
+
+				</channelContext.Consumer>
+
+				</>
+			)
+	}
+
+
+
+export default ComponentF;
+
+

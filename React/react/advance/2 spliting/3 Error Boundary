@@ -1,0 +1,29 @@
+
+import React,{Suspense} from 'react'
+
+import MyErrorBoundary from './MyErrorBoundary'
+
+const Other = React.lazy(()=> 
+	import ('./contact'));
+
+const Other1 = React.lazy(() => 
+	import('./service'));
+
+function App(){
+	 // Error boundary 
+    return(
+
+    		<>
+    		<MyErrorBoundary>
+             <Suspense fallback  = {<div> Loading...</div>} >
+             	
+             	<Other/>
+             	<Other1/>
+             </Suspense>
+    		</MyErrorBoundary>
+    		</>
+    	)
+
+}
+
+export default App;

@@ -1,0 +1,36 @@
+import React,{useState,useEffect} from 'react'
+
+
+function App(){
+
+
+	const [count, setCount] = useState(0);
+
+	const trick = () =>{
+		setCount(count+1)
+	}
+
+
+useEffect(() =>{
+	const interval = setInterval(trick,1000)
+	return() =>{
+		clearInterval(interval);
+	}
+})
+
+
+	return(
+
+		<>
+		  
+			{count}
+		</>
+		)
+
+
+}
+
+
+
+
+export default App;

@@ -1,0 +1,19 @@
+
+import React,{Suspense} from 'react'
+const Other = React.lazy(()=> 
+	import ('./contact'))
+
+function App(){
+    return(
+
+    		<>
+             <Suspense fallback  = {<div> Loading...</div>} >
+             	<Other/>
+             </Suspense>
+
+    		</>
+    	)
+
+}
+
+export default App;

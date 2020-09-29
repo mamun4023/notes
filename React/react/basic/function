@@ -1,0 +1,35 @@
+
+import React from 'react'
+
+
+
+
+
+function formatName(user){
+	return user.firstName+ " "+user.lastName;
+ }
+
+ const user = {
+ 	firstName: 'Tohid',
+ 	lastName: 'Ahmed'
+
+}
+function App()
+
+	return(
+
+		<>
+
+		  {formatName(user)}
+		
+     
+		</>
+
+		)
+}
+
+export default App;
+
+
+
+

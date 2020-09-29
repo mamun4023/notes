@@ -1,0 +1,14 @@
+import React from 'react'
+
+
+const InputForm=(props) => {
+	return(
+				<div className='jumbotron'>
+					<input className="form-control" type="text" onChange={props.changed} /> 
+				</div>
+		)
+
+}
+
+
+export default InputForm;

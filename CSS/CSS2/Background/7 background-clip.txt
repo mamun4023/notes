@@ -1,0 +1,21 @@
+
+<style type="text/css">
+
+
+body{
+	background-image: url('1.jpg');
+	background-clip:  border-box;   	
+
+}
+ 
+
+</style>
+
+
+---------- clip property ------------
+	
+	border-box : Default value
+	padding-box:   
+	content-box
+	initial : 
+	inherit : 

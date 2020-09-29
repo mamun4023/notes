@@ -1,0 +1,38 @@
+import React,{Component} from 'react'
+import InputForm from './inputForm'
+import OutputForm from './outputForm'
+
+class App extends Component{
+  
+   state = {
+     userName: 'max'
+   }
+
+   changeHandler =(event) =>{
+    this.setState({
+      userName: event.target.value
+    })
+   } 
+
+
+  render(){
+
+    return(
+
+        <div>
+
+          <InputForm changed={this.changeHandler}  />
+          <OutputForm name={this.state.userName} />
+        </div>
+
+
+      )
+  }
+
+
+
+
+
+}
+
+export default App;

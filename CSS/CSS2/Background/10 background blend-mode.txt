@@ -1,0 +1,35 @@
+
+<style type="text/css">
+
+
+div{
+  width: 200px;
+  height: 300px;
+  background-size: 200px 200px;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to right,blue 0%,red 100%),url('1.png');
+  background-blend-mode:color;
+}
+ 
+ 
+
+</style>
+
+
+
+
+
+
+
+------------- blend-mode-------------
+
+ normal : default
+ multiply : set the blending mode to multiply
+ screen : set blending mode to sceen
+ overlay : set the blending mode to overlay
+ darken : set the blending mode to darken
+ lighten : set the blending mode to lighten
+ color-dodge : color dodge
+ saturation : to saturation
+ color : mode to color
+ luminosity : luminosity

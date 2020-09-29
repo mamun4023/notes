@@ -1,0 +1,18 @@
+
+import React,{Fragment} from 'react'
+
+
+function App(){
+
+	return(
+		 // When you don’t need any props on the Fragment tag you can use the short syntax, if your tooling supports it:
+		<>
+
+			hello world
+
+		</>
+
+		)
+}
+
+export default App;
