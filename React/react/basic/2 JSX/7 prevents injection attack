@@ -1,0 +1,4 @@
+
+
+const title = response.potentiallyMaliciousInput;
+const element = <h1> {title} </h1>

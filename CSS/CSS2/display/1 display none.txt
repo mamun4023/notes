@@ -1,13 +1,9 @@
-<div></div>
 
+<h4>The element is completely removed</h4>
 
 <style type="text/css">
-  
-  div{
-    height: 100px;
-    width: 100px;
-    background: red;
-    display: none;
-  }
-
+	h4{
+		background-color: red;
+		display: none;
+	}
 </style>

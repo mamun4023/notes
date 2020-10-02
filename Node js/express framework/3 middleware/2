@@ -1,0 +1,26 @@
+
+var express = require('express');
+var app = express();
+
+
+
+
+//middleware function to log request protocol
+app.use((req,res,next)=>{
+	console.log("A new request received at"+ Date.now());
+
+	next();
+});
+
+
+// Route handler that sends the respose                                                                          
+
+app.get('/things',(req,res)=>{
+	res.send("Things")
+});
+
+
+
+app.listen(3000,()=> {
+	console.log("Server is running...");
+})

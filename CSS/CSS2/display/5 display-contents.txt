@@ -1,0 +1,9 @@
+
+<h4>Makes the container disappear, making the child elements children of the element the next level up in the DOM</h4>
+
+<style type="text/css">
+	h4{
+		background-color: red;
+		display: contents;
+	}
+</style>

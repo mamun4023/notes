@@ -1,0 +1,4 @@
+
+// this is not a string 
+// this syntax is called JSX
+const element = <h1> Welcome to JSX </h1>

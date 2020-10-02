@@ -1,0 +1,7 @@
+
+// run first
+console.log('dd.js');
+
+// run last
+var name = "tohid";
+console.log(name);

@@ -1,0 +1,31 @@
+
+const express = require('express');
+const app = express();
+const fs = require('fs');
+
+
+// create a new file using the writeFile() method
+fs.writeFile('data.txt', 'Hello world',(err)=>{
+	if(err) throw err;
+		console.log("file has created and written daata")
+})
+
+
+
+
+// reading data 
+
+app.get('/',(req, res)=>{
+	fs.readFile('data.txt',(err, data)=>{
+		res.write(data);
+		return res.end();
+	});
+})
+
+
+app.listen(2000, ()=>{
+	console.log("server is running...");
+})
+
+
+

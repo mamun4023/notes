@@ -1,0 +1,17 @@
+
+const express = require('express');
+const app = express();
+
+
+
+app.get('/',(req, res)=> {
+	// send html tag
+	res.send({
+		name : 'tohid'
+	});
+})
+
+
+app.listen(2000,()=>{
+	console.log("server is running...")
+})

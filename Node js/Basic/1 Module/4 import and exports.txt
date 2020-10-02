@@ -1,0 +1,18 @@
+
+// importing function 
+const sum = require('./dd');
+var d = sum(2,2);
+console.log(d);
+
+
+
+
+
+
+
+// exporting function
+const sum = function(a, b){
+	return a + b;
+}
+
+module.exports = sum;

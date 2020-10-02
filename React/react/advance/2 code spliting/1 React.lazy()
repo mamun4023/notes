@@ -1,20 +1,19 @@
 
+
+// the lazy component should then be rendered inside a Suspense component
+// athat allows us to show some fallback content (loading inticatro)
+//while we are waiting for the lazy component to load 
+
 import React,{Suspense} from 'react'
 const Other = React.lazy(()=> 
-	import ('./contact'));
-
-const Other1 = React.lazy(() => 
-	import('./service'));
+	import ('./contact'))
 
 function App(){
-	 // wraping multiple component
     return(
 
     		<>
              <Suspense fallback  = {<div> Loading...</div>} >
-             	
              	<Other/>
-             	<Other1/>
              </Suspense>
 
     		</>

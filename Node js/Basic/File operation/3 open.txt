@@ -1,0 +1,30 @@
+
+const express = require('express');
+const app = express();
+const fs = require('fs');
+
+
+// Create a new, empty file using the open() method:
+	fs.open('data.txt', 'w',(err, file)=>{
+		if(err) throw err;
+		console.log("File has opened..");
+	});
+
+
+
+// reading data 
+
+app.get('/',(req, res)=>{
+	fs.readFile('data.txt',(err, data)=>{
+		res.write(data);
+		return res.end();
+	});
+})
+
+
+app.listen(2000, ()=>{
+	console.log("server is running...");
+})
+
+
+

@@ -1,0 +1,14 @@
+
+const express = require('express');
+const app = express();
+const fs = require('fs');
+app.get('/',(req, res)=>{
+	fs.readFile('dd.html',(err, data)=>{
+		res.write(data);
+		return res.end();
+	});
+})
+
+app.listen(2000, ()=>{
+	console.log("server is running...");
+})

@@ -1,0 +1,5 @@
+
+const name = "Tohidul Amin";
+
+const element = <h1> Hello, {name}</h1>
+

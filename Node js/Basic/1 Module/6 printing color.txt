@@ -1,0 +1,4 @@
+const chalk = require('chalk');
+
+var meg = chalk.green("success");
+console.log(meg);

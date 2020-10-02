@@ -1,8 +1,5 @@
 
 import React,{Suspense} from 'react'
-
-import MyErrorBoundary from './MyErrorBoundary'
-
 const Other = React.lazy(()=> 
 	import ('./contact'));
 
@@ -10,17 +7,17 @@ const Other1 = React.lazy(() =>
 	import('./service'));
 
 function App(){
-	 // Error boundary 
+	 // wraping multiple component
     return(
 
     		<>
-    		<MyErrorBoundary>
              <Suspense fallback  = {<div> Loading...</div>} >
-             	
-             	<Other/>
-             	<Other1/>
+             	<section>
+                	<Other/>
+             	    <Other1/>
+             	</section>
              </Suspense>
-    		</MyErrorBoundary>
+
     		</>
     	)
 
