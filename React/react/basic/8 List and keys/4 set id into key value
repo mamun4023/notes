@@ -1,0 +1,26 @@
+import React from 'react';
+
+
+
+const numbers = [1,2,3,4];
+// list component
+// assign key value
+const listItem = numbers.map((number)=> 
+              		<li key ={number.id}> {number} </li>
+              )
+
+class App extends React.Component{
+ 
+
+	render(){
+		return(
+			<>
+			  // displying list
+              	<ul> {listItem} </ul>	
+			</>
+			)
+	}
+}
+
+export default App;
+
