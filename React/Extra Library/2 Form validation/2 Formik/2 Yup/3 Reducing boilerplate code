@@ -92,7 +92,7 @@ const onSubmit = values => {
 }
 
 
-export default Form;npm i yup
+export default Form;
 
 
 
