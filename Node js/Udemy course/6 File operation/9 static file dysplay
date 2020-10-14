@@ -1,0 +1,10 @@
+
+const express = require('express');
+const app = express();
+
+app.use('/home', express.static(__dirname, + "./index.html"));
+
+
+app.listen(3000,()=> {
+	console.log("Server is running....");
+})

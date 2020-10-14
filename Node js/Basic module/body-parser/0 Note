@@ -1,0 +1,43 @@
+
+
+------- only works on Post Method--------
+
+
+----------------Body parser-------------
+In order to read HTTP POST data , we have to use "body-parser" node module. body-parser is a piece of express middleware that reads a form's input and stores it as a javascript object accessible through req.body
+
+
+
+
+With express you can read any data inside HTTP request, such as headers req.headers (array), you can read the body of the http packet as req.body explained by @CleanCrispCode and you can read as query parameter req.query.variable, It helps since express automatically transforms the request in javascript objects – Fernando Zamperin Jul 11 '16 at 17:54
+
+
+
+this might be one of the many reasons we have to use body parser, but it doesn't say what it does, i.e. that HTTP request and response objects are streams and that they're not 'readable' as single object like res.body without the entire
+ stream being buffered into res.body first.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+With Express version 4.16+ they have included their own version of body-parser built in so you don't have to pull in this package. –
+
+
+
+
+body-parser extract the entire body portion of an incoming request stream and exposes it on req.body.
+
+The middleware was a part of Express.js earlier but now you have to install it separately.
+
+This body-parser module parses the JSON, buffer, string and URL encoded data submitted using HTTP POST request. Install body-parser using NPM as shown below.
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+const fs = require('fs');
+
+// asynchronously working 
+console.log("executed before");
+
+var data = fs.readFile("./file.txt", 'utf-8', (err, data)=> {
+	console.log(data);
+});
+
+
+console.log("Executed after")

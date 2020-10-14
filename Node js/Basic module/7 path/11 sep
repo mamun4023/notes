@@ -1,0 +1,7 @@
+
+const path = require('path');
+
+// return sepation 
+var d = 'foo/bar/baz'.split(path.sep);
+// Returns: ['foo', 'bar', 'baz']
+console.log(d);

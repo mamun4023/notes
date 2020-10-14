@@ -1,0 +1,17 @@
+const mongoClient = require("mongodb").MongoClient;
+const url = "mongodb://127.0.0.1:27017/"
+
+
+// without create collection database will not show
+mongoClient.connect(url, (err, db)=> {
+	if(err) throw err;
+	var db = db.db('test');
+
+	// sorting data 
+	// for decending sort use -1 
+	var mySort = {age : 1 };
+	db.collection("student").find().sort(mySort).toArray((err, res)=> {
+		if(err) throw err;
+		console.log(res);
+	})
+	})

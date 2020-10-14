@@ -1,0 +1,9 @@
+
+const path = require('path');
+
+
+// show directory name 
+console.log(__dirname,'/view/add_product.js');
+
+// return file file name
+console.log(path.basename('/view/add_product.js'));

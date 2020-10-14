@@ -1,0 +1,6 @@
+
+const path = require('path');
+
+// return absolute path 
+// view directry inside add-product folder
+console.log(path.resolve('view','add_product.html'));

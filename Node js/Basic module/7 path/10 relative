@@ -1,0 +1,6 @@
+
+const path = require('path');
+
+// return relative path
+var d = path.relative('/data/orandea/test/aaa', '/data/orandea/impl/bbb');
+console.log(d);

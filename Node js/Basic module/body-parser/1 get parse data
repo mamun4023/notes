@@ -1,0 +1,30 @@
+const express = require('express');
+const app = express();
+const path = require('path');
+const bodyParser = require('body-parser');
+
+
+//use body parser not need to use before callback function
+app.use(bodyParser())
+
+
+// diplay html file to home route
+app.get('/',(req, res)=> {
+	res.sendFile('index.html', {root : path.join(__dirname, './view')});
+
+});
+
+
+// body parser requrest
+app.post('/',(req, res)=> {
+
+	res.end(JSON.stringify(req.body));
+
+});
+
+
+
+app.listen(3000,()=>{
+
+	console.log("server is running....");
+})

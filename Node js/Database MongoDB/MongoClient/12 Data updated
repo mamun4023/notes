@@ -1,0 +1,20 @@
+const mongoClient = require("mongodb").MongoClient;
+const url = "mongodb://127.0.0.1:27017/"
+
+
+// without create collection database will not show
+mongoClient.connect(url, (err, db)=> {
+	if(err) throw err;
+	var db = db.db('test');
+
+	// update data 
+
+	 var query = {name : "Hasan"};
+	 var replaceData = {$set : {name : "BBB"}};
+	db.collection("student").updateOne(query, replaceData, (err, res)=> {
+		if(err) throw err;
+		console.log("Data updated....")
+		console.log(res.name);
+		
+})
+})

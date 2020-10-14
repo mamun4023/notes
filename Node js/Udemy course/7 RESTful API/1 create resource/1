@@ -1,0 +1,20 @@
+
+
+
+use postman and set prost request
+
+http://localhost:3000/user
+
+raw json data                }
+
+
+{
+        "name" : "Tohid",
+            "email" : "tohid34@gmail.com",
+                "password" : "allddllala@dl"
+                 }
+
+
+
+
+
