@@ -1,0 +1,64 @@
+const express = require('express');
+const app  = express();
+
+const productRoutes = require('./routes/products')
+
+
+
+app.use('/products', productRoutes);
+
+
+app.listen(3000, ()=> {
+	console.log("server is start");
+})
+
+
+
+
+
+
+
+
+const express = require('express');
+const router = express.Router();
+
+
+
+router.get('/',(req, res)=> {
+	res.status(200).json({
+		message : "get request..."
+	})
+})
+
+
+
+
+
+router.post('/',(req, res)=> {
+	res.status(200).json({
+		message : "post request..."
+	})
+})
+
+
+
+// get using product id
+
+router.get('/:productId',(req, res)=> {
+	const id = req.params.productId;
+	if(id === 'special'){
+		res.status(200).json({
+			message : "you discovered the special id",
+			id: id
+		})
+	}else{
+		res.status(200).json({
+			message : "you passed an ID"
+		})
+	}
+})
+
+
+
+
+module.exports = router;
