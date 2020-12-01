@@ -1,0 +1,25 @@
+
+// reuseable code 
+%placeHolder{
+	height : 200px;
+	width : 200px;
+}
+
+
+
+
+.container{
+	background : red;
+	@extend %placeHolder ;
+
+}
+
+.container2{
+	background: green;
+	@extend %placeHolder;
+}
+
+
+
+
+

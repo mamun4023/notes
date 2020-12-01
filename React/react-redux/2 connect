@@ -1,0 +1,7 @@
+// subscribe to store 
+export default connect(mapStateToProps,mapDispatchToProps
+)(App)
+
+
+
+

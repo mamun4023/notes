@@ -1,0 +1,17 @@
+
+const bcrypt = require('bcrypt');
+
+
+
+async function myFunction(){
+
+	const password =  'dddaaaccc';
+	const hassPass = await bcrypt.hash(password, 8);
+
+	console.log(password);
+	console.log(hassPass);
+}
+
+
+myFunction();
+

@@ -1,0 +1,7 @@
+onClick={shoot}  instead of onClick="shoot()".
+
+React:
+<button onClick={shoot}>Take the Shot!</button>
+
+
+

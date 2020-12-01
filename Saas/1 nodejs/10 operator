@@ -1,0 +1,17 @@
+
+.container{
+	padding : arial == "arial";   // true
+	padding : (5px 7px 10px) == (5px 7px 10px);  //true
+	padding : (5px 7px 10px) != (5px 7px 10px);  // true
+	padding : 10px > 20px;     					// false
+	padding : 1000sm >= 1s;     				// true
+    
+
+    
+    // we can also use  AND, OR, and NOT logic 
+
+    padding : arial = 'arial' and 10px == 20; 
+    padding : arial == "arial" or 10px == 20;
+    padding : not 10 != 10px;
+
+}

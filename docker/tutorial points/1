@@ -1,0 +1,18 @@
+1. install docker
+	sudo apt-get install -y docker.io
+
+
+2. check docker version
+	docker --version
+
+3.  install docker image / download centos from docker hub
+	sudo docker pull centos:latest
+
+4. to see docker images
+	sudo docker images
+
+5. To start CentOS, we need to issue a command to the OS to get a thread started
+	sudo docker run -it centos /bin/bash
+
+
+6. 

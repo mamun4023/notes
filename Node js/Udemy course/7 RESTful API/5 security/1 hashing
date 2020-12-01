@@ -1,0 +1,14 @@
+
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+const myTextPass = "lllddaa";
+
+
+// hashing the passwaord 
+
+bcrypt.genSalt(saltRounds, (err, salt)=>{
+
+	bcrypt.hash(myTextPass, salt, (err, hash)=>{
+		console.log(hash);
+	})
+})

@@ -1,0 +1,41 @@
+
+import React from 'react';
+
+
+
+
+class App extends React.Component{
+   constructor(props){
+   	super(props);
+   	this.state = {userName : ""};
+   }
+
+   submitHandler = (event) => {
+   	  event.preventDefault();
+   	  alert(this.state.userName)
+   }
+    
+
+
+   changeHandler = (event) => {
+   	this.setState({userName : event.target.value})
+   }
+
+
+
+    render(){
+
+    	return(
+
+    		<>
+    			<h1> Hello </h1>
+    			<form onSubmit = {this.submitHandler}>
+    			<input  type = "text" onChange = {this.changeHandler}  />
+    			 <button> click </button>
+    			</form>
+    		</>
+    		)
+    }
+}
+
+export default App;

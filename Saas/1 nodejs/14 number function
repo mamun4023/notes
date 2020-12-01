@@ -1,0 +1,128 @@
+
+
+// return absolute value 
+.container{
+	font-size : abs(-40px);
+}
+
+
+
+
+
+
+
+
+// Rounds number up to the nearest 
+.container{
+	font-size : ceil(13.20); // return 14 
+}
+
+
+
+
+
+
+// whether num1 and num2 are comparable  
+.container{
+	font-size : comparable(14px, 10px) // return true
+	font-size : comparable(10px, 10em) // return false
+}
+
+
+
+
+
+
+
+ // Rounds number down to the nearest integer
+.container{
+	font-size : floor(10.5);   // return 10	
+}
+
+
+
+
+
+
+
+
+ // Returns the highest value of several integers
+
+.container{
+	font-size : max(4,4,5,6,7,88,8);  // return 88
+}
+
+
+
+
+
+
+
+
+
+
+
+ // Returns the lowest value of several integers
+
+.container{
+	font-size : min(4,4,5,6,7,88,8);  // 4
+}
+
+
+
+
+
+
+
+
+
+ // Returns the lowest value of several integers
+
+.container{
+	font-size : percentage(1.3)  // return 120
+}
+
+
+
+
+
+
+
+
+
+
+ // random number 0 to 1
+
+.container{
+	font-size : random();
+}
+
+
+
+
+
+
+
+
+
+
+
+ // Rounds number to the nearest integer
+
+.container{
+	font-size : round(14.3);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

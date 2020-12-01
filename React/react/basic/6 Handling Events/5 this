@@ -1,0 +1,21 @@
+
+import React from 'react';
+
+
+
+class App extends React.Component {
+  shoot =()=> {
+    alert(this);
+    // refer to this component objects
+  }
+  render() {
+    return (
+      <button onClick={this.shoot}>Take the shot!</button>
+    );
+  }
+}
+
+
+
+
+export default App;

@@ -1,0 +1,21 @@
+
+
+
+
+
+.container{
+	background : red;
+	height : 200px;
+	width : 200px;
+}
+
+// use different color 
+.container2{
+	background: green;
+	@extend .container;
+}
+
+
+
+
+

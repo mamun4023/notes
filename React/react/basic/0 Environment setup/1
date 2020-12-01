@@ -1,0 +1,6 @@
+
+===== must have nodejs and npm packages installed====
+
+1. create react app
+	npx create-react-app "app name"
+	

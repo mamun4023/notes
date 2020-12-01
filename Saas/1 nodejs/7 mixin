@@ -1,0 +1,20 @@
+@mixin bd-radius($value) {
+	-webkit-border-radius: $value;
+	   -moz-border-radius: $value;
+	        border-radius: $value;
+}
+
+
+
+
+.container{
+	@include bd-radius(40px);
+	background : red;
+	height : 200px;
+	width : 200px;
+}
+
+
+
+
+

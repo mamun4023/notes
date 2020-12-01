@@ -1,0 +1,10 @@
+$primary_3: green;
+
+
+h4{
+	color : $primary_3;
+}
+
+h2 {
+	color: $primary_3;
+}

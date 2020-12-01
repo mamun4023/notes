@@ -1,0 +1,10 @@
+import {createStore, applyMiddleware} from 'redux';
+import logger  from 'redux-logger'
+
+import cakeReducer from './cake/cakeReducer';
+
+// applying middle ware to see on console prev state of store 
+const store = createStore(cakeReducer, applyMiddleware(logger));
+
+
+export default store;
