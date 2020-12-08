@@ -1,0 +1,42 @@
+<body>
+<select id="demo" onchange="display()">
+	<option value="select color">Select color</option>
+	<option value="yellow">Yellow</option>
+	<option value="green">Green</option>
+	<option value="red">Red</option>
+</select>
+
+</body>
+
+<style type="text/css">
+	body{
+		transition: 2s;
+	}
+	select {
+		transition: 0.4s;
+	}
+</style>
+
+<script type="text/javascript">
+	function display(){
+		var value = document.getElementById('demo').value;
+
+		if(value != "select color"){
+			document.bgColor = value;
+			document.cookie = "color=" +value;
+		}
+	}
+
+
+	window.onload = function(){
+		if(document.cookie.length != 0)
+		{
+			var array = document.cookie.split("=");
+			document.getElementById("demo").value = array[2];
+
+			document.bgColor = "red"
+
+		}
+
+	}
+</script>

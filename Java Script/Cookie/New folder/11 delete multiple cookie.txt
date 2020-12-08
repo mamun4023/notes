@@ -1,0 +1,89 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+</head>  
+<body>  
+     
+<input type="button" value="Set Cookie1" onclick="setCookie1()">  
+<input type="button" value="Get Cookie1" onclick="getCookie1()">  
+<input type="button" value="Delete Cookie1" onclick="deleteCookie1()">  
+<br>  
+<input type="button" value="Set Cookie2" onclick="setCookie2()">  
+<input type="button" value="Get Cookie2" onclick="getCookie2()">  
+<input type="button" value="Delete Cookie2" onclick="deleteCookie2()">  
+<br>  
+<input type="button" value="Display all cookies" onclick="displayCookie()">  
+  
+<script>  
+function setCookie1()   
+{  
+    document.cookie="name=Martin Roy";  
+     cookie1=  document.cookie;  
+}   
+function setCookie2()   
+{  
+    document.cookie="name=Duke William";  
+     cookie2=  document.cookie;  
+}   
+  
+function getCookie1()  
+{  
+    if(cookie1.length!=0)  
+    {  
+    alert(cookie1);  
+    }  
+    else  
+    {  
+        alert("Cookie not available");  
+    }  
+}  
+  
+function getCookie2()  
+{  
+    if(cookie2.length!=0)  
+    {  
+    alert(cookie2);  
+    }  
+    else  
+    {  
+        alert("Cookie not available");  
+    }  
+}  
+  
+function deleteCookie1()  
+{  
+    document.cookie=cookie1+";max-age=0";  
+    cookie1=document.cookie;  
+    alert("Cookie1 is deleted");  
+}  
+  
+function deleteCookie2()  
+{  
+    document.cookie=cookie2+";max-age=0";  
+    cookie2=document.cookie;  
+   alert("Cookie2 is deleted");  
+}  
+  
+function displayCookie()  
+{  
+if(cookie1!=0&&cookie2!=0)  
+{  
+    alert(cookie1+" "+cookie2);  
+}  
+else if(cookie1!=0)  
+{  
+    alert(cookie1);  
+}  
+else if(cookie2!=0)  
+{  
+    alert(cookie2);  
+}  
+else{  
+    alert("Cookie not available");  
+}  
+  
+}  
+  
+</script>  
+</body>  
+</html>  

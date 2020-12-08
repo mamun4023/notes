@@ -1,0 +1,29 @@
+Different ways to delete a Cookie
+These are the following ways to delete a cookie:
+
+A cookie can be deleted by using expire attribute.
+A cookie can also be deleted by using max-age attribute.
+We can delete a cookie explicitly, by using a web browser.
+
+
+
+
+
+use expires date
+
+function setCookie()   
+{  
+    document.cookie="name=Martin Roy; expires=Sun, 20 Aug 2000 12:00:00 UTC";  
+    
+}   
+
+
+
+max-age
+
+function setCookie()   
+{  
+    document.cookie="name=Martin Roy;max-age=0";  
+}  
+
+

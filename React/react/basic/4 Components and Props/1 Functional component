@@ -8,3 +8,5 @@ function welcome (props){
 welcome =(props)=> {
 	return <h1> hello {props.name} </h1>
 }
+
+

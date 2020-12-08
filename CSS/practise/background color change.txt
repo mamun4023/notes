@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+      
+     <div></div>
+
+     <style type="text/css">
+
+          .color-container{
+               height: 200px;
+               width: 200px;
+               background: gray;
+               position: relative;
+          }
+
+          .box {
+               height: 100px;
+               width: 200px;
+          }
+
+        
+          .list{
+               list-style-type: none;
+               background: gray;
+               width: 200px;
+               margin: 20px;
+
+          }
+
+          .list li{
+               display: inline;
+          }
+
+
+
+
+          .red, .green, .blue {
+               height: 20px;
+               width: 20px;
+               border-radius: 50%;
+               margin: 5px;
+          }
+
+          .red{
+               background: red;
+               float: left;
+               transition: 0.4s;
+
+          }
+          .green{
+               background: green;
+               float: left;
+               transition: 0.4s;
+          }
+
+          .blue{
+               background: blue;
+               float: left;
+               transition: 0.4s;
+          }
+
+          .red:hover{
+               box-shadow: 2px 2px 10px red;
+               cursor: pointer;
+               transition: 0.4s;
+          }
+
+           .green:hover{
+               box-shadow: 2px 2px 10px green;
+               cursor: pointer;
+               transition: 0.4s;
+          }
+
+           .blue:hover{
+               box-shadow: 2px 2px 10px blue;
+               cursor: pointer;
+               transition: 0.4s;
+          }
+
+     </style>
+
+       
+     <div id="demo" class="color-container">
+
+
+     </div>
+
+      <ul class="list">
+           <li><div onclick="Red(this)" class="red"></div></li>
+           <li><div onclick="Green(this)" class="green"></div></li>
+           <li><div onclick="Blue(this)" class="blue"></div></li>
+
+      </ul>
+
+
+      <script type="text/javascript">
+           
+           function Red(red){
+
+               var red = document.getElementById('demo');
+               red.style.backgroundColor = "red"
+           }
+
+            function Green(green){
+
+               var green = document.getElementById('demo');
+               green.style.backgroundColor = "green"
+           }
+
+            function Blue(blue){
+
+               var blue = document.getElementById('demo');
+               blue.style.backgroundColor = "blue"
+           }
+      </script>
+   
+
+
+
+
+</body>
+</html>

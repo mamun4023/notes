@@ -1,0 +1,17 @@
+
+.table {
+   font-size: 15px;
+   text-align: left;
+
+}
+
+.table th {
+	background: gray;
+	padding: 10px 20px;
+	background: #eee;
+}
+.table tr td {
+	background: gray;
+	padding: 10px 20px;
+	background: #eee;
+}

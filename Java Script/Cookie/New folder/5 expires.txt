@@ -1,0 +1,5 @@
+    function setCookie()  
+    {  
+        document.cookie="username=Duke Martin;expires=Sun, 20 Aug 2030 12:00:00 UTC";  
+        
+    }  

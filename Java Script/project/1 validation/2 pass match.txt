@@ -1,0 +1,23 @@
+
+<form name="f1" onsubmit=" return myFunction()">
+    <input type="password" name="password1">
+    <input type="password" name="password2">
+    <input type="submit" >
+
+</form>
+
+
+<script type="text/javascript">
+    function myFunction(){
+        var password1 = document.f1.password1.value;
+        var password2 = document.f1.password2.value;
+
+        if(password1 == password2)
+
+            return true;
+        else {
+            alert("not match")
+           return false;
+        }
+    }
+</script>

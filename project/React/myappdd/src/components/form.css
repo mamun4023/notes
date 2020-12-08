@@ -1,0 +1,12 @@
+
+.container{
+	margin: auto;
+	background: #eee;
+	width: 300px;
+	position: relative;
+	top: 30px;
+}
+
+.message{
+	color : red;
+}
