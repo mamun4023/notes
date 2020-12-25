@@ -1,0 +1,29 @@
+const express = require('express');
+const app = express();
+const path = require('path');
+const bodyParser = require('body-parser');
+
+
+app.use(bodyParser());
+//display static file
+
+app.use('/static', express.static(path.join(__dirname, 'public' )))
+
+
+
+app.post('/static', (req, res)=> {
+	res.end(JSON.stringify(req.body))
+})
+
+
+
+
+app.listen(3000, ()=> {
+	console.log("server is running....")
+})
+
+
+
+
+
+
