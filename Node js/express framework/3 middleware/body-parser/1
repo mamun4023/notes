@@ -10,9 +10,10 @@ app.use(bodyParser());
 app.use('/static', express.static(path.join(__dirname, 'public' )))
 
 
-
+// getting form data 
+// body-parser is used to get form data
 app.post('/static', (req, res)=> {
-	res.end(JSON.stringify(req.body))
+	res.end(JSON.stringify(req.body.name))
 })
 
 
