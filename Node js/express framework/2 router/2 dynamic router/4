@@ -6,7 +6,7 @@ app.get('/things/:id([0-9]{5})', function(req, res){
    res.send('id: ' + req.params.id);
 });
 
-//Other routes here
+//default route
 app.get('*', function(req, res){
    res.send('Sorry, this is an invalid URL.');
 });
