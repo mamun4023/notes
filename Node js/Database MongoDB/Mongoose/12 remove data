@@ -1,0 +1,46 @@
+const express = require('express');
+const app = express();
+const mongoose = require('mongoose');
+
+
+
+mongoose.connect('mongodb://127.0.0.1:27017/test',{useNewUrlParser : true}, (err)=> {
+	if(!err){
+		console.log("Database Connected")
+	}
+})
+
+
+
+const userSchema = new mongoose.Schema({
+	name : String,
+	id : Number
+})
+
+
+const user = new mongoose.model('user', userSchema);
+
+
+
+
+// remove data
+app.get('/delete', (req, res)=> {
+	user.remove({name : "Tohid"},(err, data)=> {
+		if(err){
+			console.log(err)
+		}
+		else{
+			res.send("data has been removed");
+		}
+	})
+})
+
+
+
+
+
+
+
+app.listen(3000,()=> {
+	console.log("server is running...")
+})
