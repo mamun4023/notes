@@ -1,0 +1,12 @@
+router.post('/delete', function(req, res) {
+    StudentModel.findByIdAndDelete((req.body.id), 
+    function(err, data) {
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.send(data);
+            console.log("Data Deleted!");
+        }
+    });  
+});
