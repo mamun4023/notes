@@ -1,0 +1,360 @@
+                                                                        GIT
+Git is a distributed revision control and source code management system with an emphasis on speed. Git was initially designed and developed by Linus Torvalds for Linux kernel development.
+
+
+Version Control System (VCS) is a software that helps software developers to work together and maintain a complete history of their work.
+
+
+
+Listed below are the functions of a VCS −
+    • Allows developers to work simultaneously.
+    • Does not allow overwriting each other’s changes.
+    • Maintains a history of every version.
+
+Following are the types of VCS −
+    • Centralized version control system (CVCS).
+    • Distributed/Decentralized version control system (DVCS).
+
+Git falls under distributed version control system.
+
+
+
+Distributed Version Control System
+Centralized version control system (CVCS) uses a central server to store all files and enables team collaboration. But the major drawback of CVCS is its single point of failure, i.e., failure of the central server. Unfortunately, if the central server goes down for an hour, then during that hour, no one can collaborate at all. And even in a worst case, if the disk of the central server gets corrupted and proper backup has not been taken, then you will lose the entire history of the project. Here, distributed version control system (DVCS) comes into picture.
+DVCS clients not only check out the latest snapshot of the directory but they also fully mirror the repository. If the server goes down, then the repository from any client can be copied back to the server to restore it. Every checkout is a full backup of the repository. Git does not rely on the central server and that is why you can perform many operations when you are offline. You can commit changes, create branches, view logs, and perform other operations when you are offline. You require network connection only to publish your changes and take the latest changes.
+
+
+
+Advantages of Git
+– free and open source
+– fast and small
+– implicit backup
+– security
+– no need powerful hardware
+– easier branching
+
+
+
+
+
+
+Working Directory and Staging Area or Index
+The working directory is the place where files are checked out. In other CVCS, developers generally make modifications and commit their changes directly to the repository. But Git uses a different strategy. Git doesn’t track each and every modified file. Whenever you do commit an operation, Git looks for the files present in the staging area. Only those files present in the staging area are considered for commit and not all the modified files.
+Let us see the basic workflow of Git.
+Step 1 − You modify a file from the working directory.
+Step 2 − You add these files to the staging area.
+Step 3 − You perform commit operation that moves the files from the staging area. After push operation, it stores the changes permanently to the Git repository.
+     
+
+
+
+
+
+
+reference link :
+https://www.tutorialspoint.com/git/
+
+
+
+git command cycle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Git Repository Structure
+It consists of 4 parts:
+    1. Working directory : This is your local directory where you make the project (write code) and make changes to it.
+    2. Staging Area (or index) : this is an area where you first need to put your project before committing. This is used for code review by other team members.
+    3. Local Repository : this is your local repository where you commit changes to the
+project before pushing them to central repository on Github. This is what is provided by distributed version control system. This corresponds to the .git folder in our directory.
+    4. Central Repository : This is the main project on the central server, a copy of which
+is with every team member as local repository.
+All the repository structure is internal to Git and are transparent to developer.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                          git operation
+
+
+
+clone operation
+
+git clone is primarily used to point to an existing repo and make a clone or copy of that repo at in a new directory, at another location. The original repository can be located on the local filesystem or on remote machine accessible supported protocols.
+
+We can use ssh key or http request 
+ 
+first make a directory where you want to copy the repository.
+Command :
+	git clone https://github.com/mamun4023/notes.git
+
+
+
+
+
+git pull operation 
+The git pull command is used to fetch and download content from a remote repository and immediately update the local repository to match that content. ... In the first stage of operation git pull will execute a git fetch scoped to the local branch that HEAD is pointed at.
+
+
+ Command : 
+	git pull  https://github.com/mamun4023/notes.git
+
+
+
+
+
+
+connection :
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+connect remote repository/ hub
+git remote add origin repoLink
+git remote add origin https://github.com/mamun4023/ddd.git
+
+
+
+
+
+
+
+
+
+
+
+Branch operation
+
+– show the branch in which you are working
+  
+    cmd : git branch 
+
+– create new branch
+   cmd : git branch new_branch
+
+– switch to new branch
+  cmd : git checkout new_branch
+
+– create branch and switch as one command
+  cmd : git checkout -b test_branch
+
+– delete a branch 
+ Note: we have to switch another branch
+ cmd : git branch -D test_branch
+
+–  rename the branch 
+  cmd : git branch -m oldName newName
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Stash   operation
+
+Git allows multiple users to work on the same project simultaneously. Suppose if a developer is working on a feature in a branch and he needs to pull changes from some other developer’s branch or if he has to work urgently on some other feature, but the feature he is currently working on is incomplete. In this case, you cannot commit the partial code of the currently working feature. To add this new feature, you have to remove your current changes and store them somewhere else. For this type of situation, Git offers a very useful command known as ‘git stash‘.
+git stash command saves the previously written code and then goes back to the last commit for a fresh start. Now you can add the new feature without disturbing the old one as it is saved locally. After committing the new feature you can go on with working on the old feature which was incomplete and uncommitted.
+
+
+
+
+
+
+
+Stashing current changes
+To save the uncommitted changes for later usage, you can use the ‘git stash‘ command. This command saves your local modifications away and reverts the working directory to match the HEAD commit, so it will give you clean working directory.
+
+
+
+  Cmd :  git stash
+
+
+see all stash  changes
+	cmd : git stash list
+
+
+stash with message 
+	git stash save "message"
+
+
+
+
+
+
+
+Getting back the Stashed changes
+You can reapply the previously stashed changes with the ‘git stash pop‘ or ‘git stash apply‘ command. “pop” removes the state from the stash list while “apply” does not remove the state from the stash list.
+
+
+git stash pop
+git stash apply
+
+
+
+find the specific stash with id
+
+git stash pop stash@{2})
+
+
+display the summary of operations performed on the stash.
+
+git stash show
+
+
+
+Creating a Branch from stash
+   git stash branch branch_name stash_name
+  git stash branch newbranch stash@{0}
+
+
+Deleting Stashes
+
+git stash drop stash@{1}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Merge operation
+
+
+git merge myBranch (writing in master branch)
+
+another way
+git rebase myBranch
+
+
+
+
+
+
+
+SSH Key 
+
+An SSH key is an alternate way to identify yourself that doesn't require you to enter you username and password every time. SSH keys come in pairs, a public key that gets shared with services like GitHub, and a private key that is stored only on your computer. If the keys match, you're granted access.
+
+
+
+
+To see if the ssh key  is exist 
+
+  ls -al ~/.ssh
+
+
+
+to see the public key 
+  i cat ~/.ssh/id_rsa.pub
+
+to see the private key 
+   cat ~/.ssh/id_rsa
+
+
+
+Generating a new SSH key
+  ssh-keygen -t ed25519 -C "your_email@example.com"
+  ssh-keygen -t ed25519 -C "mamun754023@gmail.com"
+
+then enter  and put a secure password Phrase 
+
+
+
+
+Adding your SSH key to the ssh-agent
+Before adding a new SSH key to the ssh-agent to manage your keys, you should have checked for existing SSH keys and generated a new SSH key.
+
+
+Start the ssh-agent in the background.
+$ eval "$(ssh-agent -s)"
+> Agent pid 59566
+
+
+
+Add your SSH private key to the ssh-agent. If you created your key with a different name, or if you are adding an existing key that has a different name, replace id_ed25519 in the command with the name of your private key file.
+$ ssh-add ~/.ssh/id_ed25519
+
+
+
+testing you ssh connection
+ssh -T git@github.com
+
+
+
+
+Adding or changing a passphrase
+ssh-keygen -p
+
+
+connect to repository
+  git remote add  origin SSH KEY
+
+
+
+
+
+
+https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh
+
+https://www.geeksforgeeks.org/ultimate-guide-git-github/
