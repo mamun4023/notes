@@ -1,0 +1,86 @@
+const express = require("express");
+const app = express();
+const mongoose = require("mongoose");
+const path = require('path');
+const bodyParser = require('body-parser');
+
+
+
+app.use(bodyParser());
+// database connection
+mongoose.connect("mongodb://127.0.0.1:27017/DB",(err)=> {
+  if(!err){
+    console.log("database connected")
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+// index.html file into view directory 
+app.get('/',(req, res)=> {
+  res.sendFile('index.html', {root : path.join(__dirname, './views')});
+
+});
+
+
+
+
+
+
+//make data Schema
+
+const userSchema = new mongoose.Schema({
+  name : String,
+  email : String
+})
+
+
+const userModel = new mongoose.model('userModel', userSchema);
+
+
+
+     // geting form data
+app.post('/post', (req, res)=> {
+  var data = new userModel({
+    name : req.body.name,
+    email : req.body.email
+  });
+ 
+  data.save().then((item)=> {
+    res.send("data is saved")
+  })
+
+  .catch(err=> {
+    res.send("err is happend")
+  })
+
+})
+
+
+
+
+app.get('/fetch',(req, res)=> {
+  userModel.find((err, data)=> {
+      if(err)
+        res.send("err happened")
+      else
+        res.send(data)
+  })
+})
+
+
+
+
+
+app.listen(3000, ()=> {
+  console.log("server is running...")
+})
