@@ -1,0 +1,29 @@
+
+app.get('/fetch', (req, res)=> {
+  userModel.find((err, data)=> {
+    if(err)
+      res.send("data not found")
+    else{
+        const newObject = {
+        article : data.map(d=> {
+          return{
+            name : d.name,
+            email: d.email,
+            id : d._id
+          }
+        })
+      }
+
+      res.render("list", {
+
+
+        article : newObject.article
+      })
+    }
+  })
+
+})
+
+
+
+
