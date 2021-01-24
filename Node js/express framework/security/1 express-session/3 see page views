@@ -1,0 +1,74 @@
+const express = require('express');
+const cookieParser = require('cookie-parser');
+const app = express();
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy
+const expressHandlebars = require('express-handlebars');
+const session = require('express-session');
+const mongoose = require('mongoose');
+
+
+
+app.engine("hbs", expressHandlebars({
+	extname : "hbs",
+	defaultLayout : "mainLayout",
+	layoutsDir : __dirname + "/views"
+}))
+
+
+
+app.set('view engine', 'hbs');
+
+
+
+
+const mongoStore = require("connect-mongo")(session);
+
+
+
+const db_string = "mongodb://127.0.0.1:27017/tutorial_db";
+const dbOption = {
+	useNewUrlParser : true,
+	useUnifiedTopology : true
+}
+
+const connection = mongoose.createConnection(db_string, dbOption)
+
+
+
+const sessionStore = new mongoStore({
+	mongooseConnection : connection,
+	collection : "sessions"   // collection name in databse 
+
+})
+
+
+
+app.use(session({
+	secret : "some secret",
+	resave : false,
+	saveUninitialized : true,
+	store : sessionStore,
+	cookie : {
+		maxAge : 1000 * 60 * 60 * 24
+	}
+}))
+
+
+app.get('/',(req, res)=> {
+	 if(req.session.view){
+	 	req.session.view++
+	 	res.send("you have visited :" + req.session.view + "times")
+	 }else{
+	 	req.session.view = 1;
+	 	res.send("you have visited : "+ req.session.view + "times")
+	 }
+	
+})
+
+
+
+
+app.listen(3000, ()=> {
+	console.log("server is running....")
+})

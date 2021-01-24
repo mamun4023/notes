@@ -1,0 +1,23 @@
+function sayName(){
+	var name = "Tohid";
+	console.log(name);
+}
+
+
+ sayName();
+
+// not allow to access outside of function
+console.log(name);
+
+
+
+
+
+//ES6
+
+// introduces let and const
+
+const counter;
+let counter; 
+
+
