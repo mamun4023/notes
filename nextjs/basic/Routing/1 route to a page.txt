@@ -1,0 +1,17 @@
+make posts directory under pages directory and create a first_post.js file 
+
+past the code
+
+
+export default function FirstPost() {
+  return <h1>First Post</h1>
+}
+
+
+
+
+open brower and search 
+
+http://localhost:3000/posts/first-post
+
+
