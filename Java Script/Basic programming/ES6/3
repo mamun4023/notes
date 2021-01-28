@@ -1,0 +1,13 @@
+// normal javascript 
+
+var name = "Tohid";
+console.log("my name is " + name);
+
+
+//ES6
+
+const name = "dd"
+console.log( 'my name is : ${name} ');
+
+
+
