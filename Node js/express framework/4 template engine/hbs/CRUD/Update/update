@@ -1,0 +1,28 @@
+<div class="jumbotron">
+	<h3> Update Record </h3>
+<form method="post" action="/update_data/{{students.id}}" >
+	<label>Name</label>
+	<input class="form-control" type="text" name="name" value="{{students.name}}" >
+
+	<label>Email</label>
+	<input class="form-control" type="text" name="email" value="{{students.email}}" >
+    <hr>
+	<button class="btn btn-info">Update</button>
+</form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

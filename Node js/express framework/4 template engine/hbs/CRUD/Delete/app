@@ -1,0 +1,16 @@
+
+
+
+// delete data
+app.get('/delete/:id', (req, res)=> {
+	userModel.findByIdAndRemove(req.params.id, (err, data)=> {
+		if(!err)
+			res.redirect('/')
+		else
+			res.send("err is happend")
+	})
+})
+
+
+
+
