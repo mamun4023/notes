@@ -1,0 +1,38 @@
+<script type="text/javascript">
+
+
+const personOne = {
+	name : "Tohid",
+	age : 24,
+	address : {
+		city : "Gazipur",
+		state : "Dhaka"
+	}
+}
+
+
+const personTwo = {
+	name : "Akram",
+	age : 21,
+	address: {
+		city : "Bogra",
+		state : "Rajshahi"
+	}
+}
+
+// default value 
+const {name : firstName, age , favoriteFood = "rice"} = personTwo;
+console.log(firstName);
+console.log(age);
+console.log(favoriteFood)
+
+
+
+
+
+
+
+
+
+
+</script>

@@ -1,0 +1,24 @@
+const personOne = {
+	name : "Tohid",
+	age : 24,
+	address : {
+		city : "Gazipur",
+		state : "Dhaka"
+	}
+}
+
+
+const personTwo = {
+	name : "Akram",
+	age : 21,
+	address: {
+		city : "Bogra",
+		state : "Rajshahi"
+	}
+}
+
+
+const {name, age} = personTwo;
+console.log(name);
+console.log(age);
+

@@ -1,0 +1,27 @@
+<script type="text/javascript">
+
+// destructuring 
+
+var arr1 = ['A', 'B', 'C', 'D', 'E', 'F']
+
+// spread operator is used
+var [a,,b, ...rest] = arr1; // skip b 
+ 
+console.log(a);
+console.log(b);
+console.log(rest);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
