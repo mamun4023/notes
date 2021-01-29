@@ -183,7 +183,10 @@ sudo userdel “username”
 43. output the contents of file as it grows, starting with the last 10 lines
 	tail -f file
 
-
+44.  returns the system information about the Linux system
+	uname
+	uname -a 
+	
         
  
 	

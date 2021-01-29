@@ -1,0 +1,30 @@
+app.post('/fetch', (req, res)=> {
+
+
+
+
+     const body_data = req.body.name
+
+
+	userModel.find((err, data)=> {
+		if(err)
+			res.send("err happed")
+		else
+		{
+
+			
+			if((data[0].name) === body_data)
+				res.send("matched")
+			else
+				res.send( "not  matched")
+	
+
+			
+		}
+
+
+
+	})
+
+})
+

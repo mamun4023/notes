@@ -1,0 +1,36 @@
+// update route
+
+app.get('/update/:id',(req, res)=> {
+
+	userModel.findById(req.params.id, (err, data)=> {
+		if(err)
+			console.log("data not found");
+		else{
+			const objects = {
+				name : data.name,
+				email: data.email,
+				id : data._id
+			}
+
+			console.log(objects);
+						
+			res.render("update", { students : objects})
+		
+		}      
+
+	})
+
+})
+
+
+
+app.post("/update_data/:id", (req, res, next)=> {
+	userModel.findOneAndUpdate({_id: req.params.id},{name : req.body.name, email : req.body.email}, (err)=> {
+		if(!err)
+			res.render("list", {})
+
+	})
+
+	next();
+})
+
