@@ -1,0 +1,41 @@
+
+import React, {useState, useEffect} from 'react';
+
+
+
+function Pagination ({showPerPage, onPaginationChange}){
+
+  const[counter, setCounter] = useState(1);
+  
+  useEffect(()=> {
+    const value = showPerPage * counter
+    onPaginationChange(value - showPerPage, value)
+  }, [counter]);
+
+  
+  
+
+  return(
+    <>
+      
+       <div className = "d-flex justify-content-between">
+          <button 
+            onClick = {()=> setCounter(counter - 1)}
+          className = "btn btn-primary"> prev </button>
+          <button
+            onClick = {()=> setCounter(counter + 1)}
+           className = "btn btn-primary" > next </button>
+            
+       </div>
+
+
+
+    </>
+    )
+}
+
+
+export default Pagination;
+
+
+

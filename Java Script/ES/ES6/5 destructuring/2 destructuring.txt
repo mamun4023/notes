@@ -1,0 +1,13 @@
+// destructuring
+
+var arr1 = ['a','b','c','d','e'];
+var arr2 = ['A', 'B', 'C', 'D']
+
+
+var [a,b] = arr1; 
+ 
+console.log(a);
+console.log(b);
+
+
+

@@ -1,0 +1,53 @@
+
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
+
+
+
+
+const App = ()=> {
+
+const [posts, setPosts] = useState([]);
+const [loading, setLoading] = useState(false);
+const [pagination, setPagination] = useState({
+	start : 0,
+	end : 10
+})
+
+useEffect(()=> {
+	const fetch = async()=> {
+		setLoading(true)
+		const res = await axios.get("https://jsonplaceholder.typicode.com/posts ")
+		setPosts(res.data)
+		setLoading(false)
+		setPosts(res.data)
+	}
+
+	fetch()
+
+}, [])
+
+	if(loading){
+		return(<h1> Loading... </h1>)
+	}
+   
+
+	else {
+		return(
+		<> 
+
+		   {
+		   	// use variable to set pagination
+		   	posts.slice(pagination.start, pagination.end).map(post=> <li>  {post.title} </li>)
+		   }
+
+
+		</>
+
+		)
+	}
+
+
+}
+
+export default App;

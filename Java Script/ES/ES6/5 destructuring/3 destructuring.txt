@@ -1,0 +1,15 @@
+<script type="text/javascript">
+
+// destructuring
+
+var arr1 = ['A', 'B', 'C', 'D']
+
+
+var [a,,b] = arr1; // skip b 
+ 
+console.log(a);
+console.log(b);
+
+
+
+

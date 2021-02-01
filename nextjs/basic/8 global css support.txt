@@ -1,0 +1,1 @@
+https://www.tutorialspoint.com/nextjs/nextjs_global_css_support.htm

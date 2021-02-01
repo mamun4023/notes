@@ -1,0 +1,20 @@
+
+const personOne = {
+	name : "Tohid",
+	age : 24,
+	address : {
+		city : "Gazipur",
+		state : "Dhaka"
+	}
+}
+
+
+const personTwo = {
+	name : "Akram",
+	age : 21
+}
+
+// object adding 
+const newObjects = {...personOne, ...personTwo}
+console.log(newObjects);
+

@@ -1,0 +1,9 @@
+	var  a = () => {};
+	var b = data => {}; // single reference no need paranthasis 
+	var b = (a, b) => {}; 
+    
+   
+    var dd = ()=> {console.log("function is working...")}
+
+    dd();
+

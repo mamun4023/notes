@@ -1,0 +1,10 @@
+{
+	var a  = 10;
+	let b = 10;    // not worked out of scope
+	const c = 10;  // not worked out of scope
+
+}
+
+console.log(a);
+console.log(b);
+console.log(c);

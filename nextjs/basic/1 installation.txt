@@ -1,0 +1,13 @@
+
+1. install nextjs
+	
+	npx create-next-app "appName"
+
+
+2 run nextjs
+	npm run dev
+
+
+
+
+

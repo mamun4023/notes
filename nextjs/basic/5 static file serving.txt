@@ -1,0 +1,18 @@
+
+
+import Head from 'next/head'
+
+function HomePage() {
+   return (
+      <>
+         <Head>
+            <title>Welcome to Next.js!</title>
+         </Head>
+         <div>Welcome to Next.js!</div>
+         <h4> put image named with logo </h4>
+         <img src="/logo.png" alt="TutorialsPoint Logo" />
+      </>	    
+   )
+}
+
+export default HomePage

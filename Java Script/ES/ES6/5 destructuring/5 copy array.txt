@@ -1,0 +1,36 @@
+// destructuring 
+
+var arr1 = ['A', 'B', 'C', 'D', 'E', 'F']
+var arr2 = [1,2,3,4,5];
+
+
+// normal concat
+var newArray = arr1.concat(arr2);
+
+console.log(newArray);
+
+
+
+
+
+
+
+
+
+
+
+
+// destructuring 
+
+var arr1 = ['A', 'B', 'C', 'D', 'E', 'F']
+var arr2 = [1,2,3,4,5];
+
+
+// copy all the array
+var newArray = [...arr1, ...arr2];
+
+console.log(newArray);
+
+
+
+

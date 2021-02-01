@@ -1,0 +1,10 @@
+{
+  function name (n) {
+    console.log(n);		
+  }
+   // name("Steve");	called in scoped    
+}
+
+name("Tohid");       // called out of scoped 
+
+  

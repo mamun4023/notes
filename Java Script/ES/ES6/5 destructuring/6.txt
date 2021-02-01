@@ -1,0 +1,14 @@
+
+// destructuring 
+
+function SumAndMultiply(a, b){
+	return [a+b, a*b]
+}
+
+const [sum, multiply] = SumAndMultiply(2,10);
+
+console.log(sum);
+console.log(multiply);
+
+
+
