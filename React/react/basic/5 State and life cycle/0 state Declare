@@ -5,3 +5,6 @@ this.state.comment = "hello";
 
 // correct
 this.setState({comment : 'Hello'});
+
+
+

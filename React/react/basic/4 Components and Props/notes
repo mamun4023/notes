@@ -1,0 +1,19 @@
+Components are independent and reusable bits of code. They serve the same purpose as JavaScript functions, but work in isolation and return HTML via a render() function.
+
+Components come in two types, 
+	1. Class base components and
+	2. Functional components
+	
+	
+When creating a React component, the component's name must start with an upper case letter
+
+
+
+
+Different between functional and class base component
+
+
+https://www.geeksforgeeks.org/differences-between-functional-components-and-class-components-in-react/
+
+
+
