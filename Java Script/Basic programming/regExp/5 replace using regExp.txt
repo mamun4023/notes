@@ -1,0 +1,4 @@
+
+var str = "Visit Microsoft!";
+var res = str.replace(/microsoft/i, "W3Schools");
+console.log(res);

@@ -1,0 +1,5 @@
+  // one Array
+   // contact 
+   var a = [1,2,3]
+	var b = [...a,'food'];
+	console.log(b);

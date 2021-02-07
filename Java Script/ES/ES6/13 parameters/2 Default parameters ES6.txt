@@ -1,0 +1,6 @@
+// ES6
+function  func(c =10){
+	return c;
+}
+
+console.log(func())

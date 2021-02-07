@@ -1,0 +1,9 @@
+// ES6
+var params = ["first", true, 5];
+
+function func(x, y, a, b){
+	return b;
+}
+
+console.log(func(1,2, ...params));
+

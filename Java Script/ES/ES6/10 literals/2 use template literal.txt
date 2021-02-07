@@ -1,0 +1,7 @@
+
+
+var name = "Tohid";
+
+// use template literal 
+console.log(`Name is : ${name}`)
+

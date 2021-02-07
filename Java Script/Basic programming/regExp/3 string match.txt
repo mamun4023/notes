@@ -1,0 +1,8 @@
+
+var str = "visit w3school";
+var part = /w3school/i;
+// if match then return an array 
+// if does not then return null
+var result = str.match(part);
+console.log(result);
+

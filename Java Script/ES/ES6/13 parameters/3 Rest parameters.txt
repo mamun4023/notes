@@ -1,0 +1,9 @@
+// ES6
+function  func( a, b, ...rest){
+	return rest.length;
+}
+
+// take extra 2 parameters 
+
+console.log(func(10, 10, 30, 40))
+

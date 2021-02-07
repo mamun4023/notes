@@ -1,0 +1,3 @@
+
+///pattern/modifiers;
+var patt = /w3schools/i;
