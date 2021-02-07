@@ -1,0 +1,16 @@
+---------Docker Volume ----------
+
+1 run container and show a html file 
+	-first create a folder named website
+	-create a index.html file 
+	-use this command
+	sudo docker run --name website -v $(pwd):/usr/share/nginx/html:ro -d -p 3000:80 nginx
+	
+	now run on port 3000
+	
+
+copy a web template and placed in hosting folder
+
+place it in website folder that created on desktop
+
+
