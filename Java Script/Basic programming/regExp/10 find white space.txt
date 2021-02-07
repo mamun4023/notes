@@ -1,0 +1,6 @@
+
+  // find white space 
+  var str = "Is this all there is?";
+  var patt1 = /\s/g;
+  var result = str.match(patt1);
+  console.log(result);

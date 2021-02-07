@@ -1,0 +1,6 @@
+Find any of the digits between the brackets
+  var str = "123456789444";
+  var patt1 = /[1-4]/g;
+  var result = str.match(patt1);
+
+  console.log(result);

@@ -1,0 +1,5 @@
+  //find digit in given string
+  var str = "Give 100%!"; 
+  var patt1 = /\d/g;
+  var result = str.match(patt1);
+  console.log(result);

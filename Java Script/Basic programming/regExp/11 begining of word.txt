@@ -1,0 +1,6 @@
+
+// return index of the word that start with L
+var str = "HELLO, LOOK AT YOU!"; 
+var patt1 = /\bLO/;
+var result = str.search(patt1);
+  console.log(result);
