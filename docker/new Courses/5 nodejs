@@ -1,0 +1,27 @@
+make image with node js
+
+
+1. create a folder 
+2. install npm ini and i --save (must have npm)
+3. install express 
+   make 
+3. create express server with port 3000
+4. create Dockerfile 
+	
+	FROM node:latest
+	WORKDIR /app
+	ADD . .
+	RUN npm install
+	CMD node app.js
+
+
+ run termianl and use this command
+ 	sudo docker build -t api:latest .
+ 	
+ 
+ -- check images 
+ 	sudo docker images
+ --run container (use same port that used in express server)
+ 	sudo docker run -d -p 3000:3000 api:latest
+ 
+			
