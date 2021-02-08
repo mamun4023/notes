@@ -1,0 +1,7 @@
+	
+   // one Array
+   // array spliting 
+	var b = [...'food'];
+	console.log(b);
+	console.log(b[3]);
+

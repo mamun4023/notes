@@ -1,0 +1,6 @@
+var number = function func(x){
+	return x + x;
+}
+
+
+console.log(number(10))

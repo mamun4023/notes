@@ -1,0 +1,8 @@
+//Find the Unicode character specified by the hexadecimal number xxxx
+
+var str = "Visit W3Schools. Hello World!"; 
+var patt1 = /\u0057/g;
+var result = str.match(patt1);
+
+console.log(result);
+

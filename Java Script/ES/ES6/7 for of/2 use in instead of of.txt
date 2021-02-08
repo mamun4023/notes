@@ -1,0 +1,17 @@
+
+  var person = {
+  	name : "Toid",
+  	age : 12
+
+
+  }
+
+ for(let i of person)
+ {
+ 	console.log(i)     //  not work in object
+ }
+
+  for(let i in person){
+  	console.log(i);     // use in to iterate object
+  }
+

@@ -1,0 +1,5 @@
+//Matches any string that contains zero or more occurrences of n
+var str = "Hellooo World! Hello W3Schools!"; 
+var patt1 = /lo*/g;
+var result = str.match(patt1);
+console.log(result);

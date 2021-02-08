@@ -1,0 +1,18 @@
+
+// javascript normal literal 
+// Objects {}
+// Boolean true, false
+// String  ' ' or " "
+
+const message = " This is the most \n famous city in the world";
+
+console.log(message);
+
+
+
+// ES6 added  literal 
+// template  literal use backtack character  ` `
+
+const message1 = ` this is the most do 
+but not ingored `
+console.log(message1);

@@ -1,0 +1,6 @@
+//Matches any string that contains at least one n
+ var str = "Hello"; 
+  var patt1 = /o+/g;
+  var result = str.match(patt1);
+  console.log(result);
+
