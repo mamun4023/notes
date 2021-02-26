@@ -1,0 +1,35 @@
+
+const express = require("express");
+const app = express();
+const session = require('express-session');
+
+
+
+
+app.use(session({
+	secret : "secret key",
+	resave : false,
+	// not show the session ID
+	saveUninitialized : false
+}));
+
+
+
+app.get('/', (req,res)=> {
+
+	// show the session
+	req.session.isAuth = true;
+	console.log(req.session);
+	res.send("hello session")
+
+	// show the session id 
+	console.log(req.session.id);
+})
+
+
+
+
+
+app.listen(3000,()=> {
+	console.log("server is running....");
+})

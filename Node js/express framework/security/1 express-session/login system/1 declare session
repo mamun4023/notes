@@ -1,0 +1,29 @@
+
+const express = require("express");
+const app = express();
+const session = require('express-session');
+
+
+
+
+app.use(session({
+	secret : "secret key",
+	resave : false,
+	// not show the session ID
+	saveUninitialized : false
+}));
+
+
+
+app.get('/', (req,res)=> {
+	console.log(req.session);
+	res.send("hello session")
+})
+
+
+
+
+
+app.listen(3000,()=> {
+	console.log("server is running....");
+})

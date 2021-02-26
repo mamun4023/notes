@@ -1,0 +1,26 @@
+// login route
+app.post('/login', async(req, res)=> {
+	const {email, password} = req.body;
+
+	const user = await userModel.findOne({email});
+	if(!user)
+		return res.redirect("/login");
+
+	const isMatch = await bcrypt.compare(password, user.password);
+	if(!isMatch)
+		return res.redirect('/login')
+
+    req.session.isAuth = true; 
+	res.redirect('/dashboard');
+})
+
+
+// logout route
+
+app.post('/logout', (req, res)=> {
+	req.session.destroy((err)=> {
+		if(err) throw err;
+		res.redirect('/')
+	})
+})
+

@@ -1,0 +1,165 @@
+
+const express = require("express");
+const app = express();
+const bcrypt = require("bcrypt");
+const session = require('express-session');
+const mongoDBSession = require('connect-mongodb-session')(session);
+const mongoose = require('mongoose');
+const expressHandlebars = require('express-handlebars');
+const bodyParser = require('body-parser');
+
+
+// include model
+const userModel = require('./models/user');
+
+
+
+app.engine('hbs', expressHandlebars({
+	extname : "hbs",
+	defaultLayout : "mainLayout",
+	layoutsDir : __dirname + "/views"
+}))
+
+
+app.set('view engine', 'hbs')
+
+
+
+
+app.use(bodyParser.urlencoded({extended : true}));
+
+
+
+
+// make db connection
+const mongoURI = "mongodb://127.0.0.1:27017/sessions";
+mongoose.connect(mongoURI,{ useNewUrlParser: true, useUnifiedTopology: true  },(err)=> {
+	if(!err)
+		console.log("DB is connected");
+})
+
+
+
+// make session store 
+const store = new mongoDBSession({
+	uri : mongoURI,
+	collection : "mySessions"
+})
+
+
+
+
+
+
+
+
+
+
+app.use(session({
+	secret : "secret key",
+	resave : false,
+	// not show the session ID
+	saveUninitialized : false,
+	store : store
+}));
+
+
+
+app.get('/', (req,res)=> {
+	res.render('landing', {})
+
+})
+
+
+
+
+const isAuth = (req, res, next)=> {
+	if(req.session.isAuth){
+		next();
+	}else{
+		res.redirect('/login')
+	}
+}
+
+
+
+
+
+
+
+// setting route 
+
+app.get('/login', (req, res)=> {
+	res.render("login", {})
+})
+
+
+
+
+// show register page
+app.get('/register', (req, res)=> {
+	res.render("register", {})
+})
+
+app.get('/dashboard',isAuth, (req, res)=> {
+	res.render("dashboard", {})
+})
+
+
+// registration route
+app.post('/register', async(req, res)=> {
+	const {username, email, password} = req.body;
+	let user = await userModel.findOne({email});
+	if(user)
+		return res.redirect('/register');
+
+
+	const hasedPws = await bcrypt.hash(password, 12);
+
+	user = new userModel({
+		username,
+		email,
+		password : hasedPws
+	});
+
+	await user.save()
+	.then(()=>{
+		res.redirect('/login')
+	})
+	.catch((err)=> {
+		res.send("Failed to register")
+	})
+})
+
+
+// login route
+app.post('/login', async(req, res)=> {
+	const {email, password} = req.body;
+
+	const user = await userModel.findOne({email});
+	if(!user)
+		return res.redirect("/login");
+
+	const isMatch = await bcrypt.compare(password, user.password);
+	if(!isMatch)
+		return res.redirect('/login')
+
+    req.session.isAuth = true; 
+	res.redirect('/dashboard');
+})
+
+
+// logout route
+
+app.post('/logout', (req, res)=> {
+	req.session.destroy((err)=> {
+		if(err) throw err;
+		res.redirect('/')
+	})
+})
+
+
+
+app.listen(3000,()=> {
+	console.log("server is running....");
+})

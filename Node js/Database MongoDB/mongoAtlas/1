@@ -1,0 +1,72 @@
+const express = require('express');
+const app = express();
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const expressHandlebars = require('express-handlebars');
+
+
+
+app.use(bodyParser.urlencoded({extended : true}))
+
+app.engine("hbs", expressHandlebars({
+	extname : "hbs",
+	defaultLayout : "mainLayout",
+	layoutsDir : __dirname + "/views"
+}))
+
+app.set('view engine', 'hbs');
+
+
+
+app.get('/', (req, res)=> {
+	res.render("register", {})
+})
+
+
+//DB
+
+mongoose.connect("mongodb+srv://mamun4023:Roshid01734754023@cluster0.02vzm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{useNewUrlParser: true, useUnifiedTopology: true}, (err)=> {
+	if(!err)
+		console.log("DB is connected");
+}) 
+
+
+
+const usreSchema = mongoose.Schema({
+	name : String
+})
+
+const userModel = mongoose.model("userModel", usreSchema)
+
+
+
+
+
+app.post('/data_send', (req, res)=>{
+	const data = new userModel({
+		name : req.body.name
+	})
+
+	data.save()
+	.then(()=> {
+		res.send("data is saved")
+	})
+	.catch((err)=> {
+		res.send("data is not saved")
+	})
+})
+
+
+app.get('/list', (req, res)=> {
+	userModel.find((err, data)=> {
+		if(err)
+			console.log("Data not found");
+		else
+			res.send(data)
+	})
+})
+
+
+app.listen(3000, ()=> {
+	console.log("server is running....");
+})

@@ -1,0 +1,24 @@
+// registration route
+app.post('/register', async(req, res)=> {
+	const {username, email, password} = req.body;
+	let user = await userModel.findOne({email});
+	if(user)
+		return res.redirect('/register');
+
+
+	const hasedPws = await bcrypt.hash(password, 12);
+
+	user = new userModel({
+		username,
+		email,
+		password : hasedPws
+	});
+
+	await user.save()
+	.then(()=>{
+		res.redirect('/login')
+	})
+	.catch((err)=> {
+		res.send("Failed to register")
+	})
+})

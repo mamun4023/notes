@@ -1,0 +1,58 @@
+
+const express = require("express");
+const app = express();
+const session = require('express-session');
+const mongoDBSession = require('connect-mongodb-session')(session);
+const mongoose = require('mongoose');
+
+
+
+// make db connection
+const mongoURI = "mongodb://127.0.0.1:27017/sessions";
+mongoose.connect(mongoURI,{ useNewUrlParser: true, useUnifiedTopology: true  },(err)=> {
+	if(!err)
+		console.log("DB is connected");
+})
+
+
+
+// make session store 
+const store = new mongoDBSession({
+	uri : mongoURI,
+	collection : "mySessions"
+})
+
+
+
+
+
+
+
+app.use(session({
+	secret : "secret key",
+	resave : false,
+	// not show the session ID
+	saveUninitialized : false,
+	store : store
+}));
+
+
+
+app.get('/', (req,res)=> {
+
+	// show the session
+	req.session.isAuth = true;
+	console.log(req.session);
+	res.send("hello session")
+
+	// show the session id 
+	console.log(req.session.id);
+})
+
+
+
+
+
+app.listen(3000,()=> {
+	console.log("server is running....");
+})
