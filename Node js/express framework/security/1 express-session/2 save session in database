@@ -1,31 +1,33 @@
-const mongoStore = require("connect-mongo")(session);
+const express = require('express');
+const app = express();
+const session = require('express-session');
+const mongoStore = require('connect-mongo').default;
 
 
 
 const db_string = "mongodb://127.0.0.1:27017/tutorial_db";
-const dbOption = {
-	useNewUrlParser : true,
-	useUnifiedTopology : true
-}
-
-const connection = mongoose.createConnection(db_string, dbOption)
-
-
-
-const sessionStore = new mongoStore({
-	mongooseConnection : connection,
-	collection : "sessions"   // collection name in databse 
-
-})
-
 
 
 app.use(session({
 	secret : "some secret",
 	resave : false,
 	saveUninitialized : true,
-	store : sessionStore,
+	store : mongoStore.create({
+		mongoUrl: db_string
+	}),
 	cookie : {
 		maxAge : 1000 * 60 * 60 * 24
 	}
 }))
+
+app.get('/', (req, res)=> {
+	res.send("hello")
+})
+
+
+
+
+
+app.listen(4000, ()=> {
+	console.log("server is running...");
+})
