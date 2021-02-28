@@ -1,0 +1,18 @@
+<div class="jumbotron">
+<nav class="navbar navbar-expand-md d-flex flex-row-reverse bd-highlight">
+	<ul class="navbar-nav">
+		
+		<li class="nav-item flex-d "> 
+			<form method="post" action="/logout">
+				<button class="btn btn-secondary" > Logout </button>
+			</form>
+
+		</li>
+		
+		
+	</ul>
+</nav>
+
+	<h3> welcome to Dashboard </h3>
+
+</div>
