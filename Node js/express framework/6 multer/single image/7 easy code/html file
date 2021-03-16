@@ -1,0 +1,6 @@
+<div class="jumbotron">
+    <p> {{title}}</p>
+	<img class=" img-thumbnail" height="100" width="100" src="data:image/jpeg;base64,{{img}}"/>
+
+
+</div>

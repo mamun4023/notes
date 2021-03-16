@@ -1,0 +1,8 @@
+fileFilter: function(req, file, cb) {
+    if (file.mimetype !== 'image/png' || file.mimetype !== 'image/gif' || file.mimetype !== 'image/jpeg') 
+    {
+        return cb(null, false);
+    } else {
+        cb(null, true);
+    }
+}
