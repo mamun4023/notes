@@ -1,0 +1,10 @@
+app.get("/fetch", (req, res)=> {
+	const data = req.body.name
+	userModel.findOne({name : data},(err, data)=> {
+		if(err)
+			res.send("Failed to find data")
+		else{
+			res.send(data)
+		}
+	})
+})
