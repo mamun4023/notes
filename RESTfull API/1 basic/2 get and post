@@ -1,49 +1,47 @@
 const express = require('express');
 const app  = express();
+const mongoose = require('mongoose');
+const bodyParser = require("body-parser");
 
-const productRoutes = require('./routes/products')
+
+app.use(bodyParser.urlencoded({extended : true}));
+mongoose.connect("mongodb://127.0.0.1:27017/myDB", {useUnifiedTopology: true, useNewUrlParser: true }, (err)=> {
+	if(!err)
+		console.log("connected")
+})
 
 
+// make model
+const userSchema =  mongoose.Schema({
+	name : String,
+	email : String
+})
 
-app.use('/products', productRoutes);
+const userModel = mongoose.model("userModel", userSchema);
+
+// insert 
+app.post('/post', (req, res)=> {
+	const {name, email} =  req.body;
+	const data = new userModel({
+		name,
+		email
+	})
+
+	data.save()
+	.then(()=> {
+		res.json({message : "success to insert data"})
+	})
+	.catch(()=> {
+		res.json({message : "Failed to insert data"})
+	})
+})
+
+//s
+app.get('')
+
+
 
 
 app.listen(3000, ()=> {
 	console.log("server is start");
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-const express = require('express');
-const router = express.Router();
-
-
-
-router.get('/',(req, res)=> {
-	res.status(200).json({
-		message : "get request..."
-	})
-})
-
-
-
-
-
-router.post('/',(req, res)=> {
-	res.status(200).json({
-		message : "post request..."
-	})
-})
-
-
-module.exports = router;
