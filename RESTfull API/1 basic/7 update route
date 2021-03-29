@@ -1,0 +1,9 @@
+// update route
+app.put("/update/:id", (req, res)=> {
+	userModel.findOneAndUpdate({_id : req.params.id}, {name: "Ahad", email : "ahad@gmail.com"}, (err)=> {
+		if(err)
+			res.send("failed to update")
+		else
+			res.send("data updated")
+	})
+})

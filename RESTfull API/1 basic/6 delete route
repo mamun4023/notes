@@ -1,0 +1,12 @@
+
+// delete route
+
+app.delete('/delete/:id', (req, res)=> {
+	userModel.findOneAndDelete({_id : req.params.id }, (err)=> {
+		if(err)
+			res.send("Failed to delete")
+		else
+			res.send("success to delete")
+
+	})
+})

@@ -1,0 +1,9 @@
+app.get("/fetch/:id", (req, res)=> {
+	userModel.findById({_id : req.params.id},(err, data)=> {
+		if(err)
+			res.send("Failed to find data")
+		else{
+			res.send(data)
+		}
+	})
+})
