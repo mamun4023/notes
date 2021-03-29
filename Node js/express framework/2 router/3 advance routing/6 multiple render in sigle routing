@@ -1,0 +1,15 @@
+const dd = false;
+
+app.get('/', (req, res)=> {
+	
+	if(dd){
+		res.render('list', {})
+	}else{
+		res.render("home", {})
+	}
+	
+	
+	
+})
+
+
