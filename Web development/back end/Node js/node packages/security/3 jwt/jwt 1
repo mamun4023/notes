@@ -1,0 +1,119 @@
+
+
+const express = require('express');
+const app = express();
+const mongoose  = require("mongoose");
+const bodyParser = require('body-parser');
+const jwt = require("jsonwebtoken");
+
+app.use(bodyParser.urlencoded({extended : true}));
+
+
+
+// database  connection
+
+const db_string = "mongodb://127.0.0.1:27017/myDB";
+
+mongoose.connect(db_string, {useNewUrlParser : true, useUnifiedTopology: true}, (err)=> {
+    if(!err)
+        console.log("DB connected")
+})
+
+
+
+// define model
+
+const userSchema = mongoose.Schema({
+    name : String,
+    email : String,
+    password : String
+})
+
+const userModel = mongoose.model('userModel', userSchema);
+
+
+const auth = (req, res, next)=> {
+
+    const toke = req.header("x-auth-token");
+
+    //check token
+    if(!token) res.status(401).json({msg : "no token, authrization denied"});
+
+    try{
+        // varify token
+        const decoded =jwt.verify(token, "secret");
+        // add user from payload
+        req.user = decoded;
+        next();
+
+    } catch(e) {
+        res.status(400).json({msg : "Token is not valid"});
+    }
+}
+
+
+// user registration
+
+app.post('/register', auth, (req, res)=> {
+    const {name, email, password} = req.body;
+
+    if(!name || !email || !password) return res.status(400).json({msg : "fill all the fields"})
+
+    // find exist email
+    userModel.findOne({email})
+      .then(user=> {
+          if(user) return   res.status(400).json({msg: "email already exists"})
+          else{
+            const data = userModel({
+                name,
+                email,
+                password
+            })
+        
+            data.save()
+                .then((user)=> {
+                    
+                    jwt.sign(
+                        {id : user.id},
+                        'secret', 
+                        { expiresIn: 60 * 60 },
+                        (err, token)=> {
+                          if(err) throw err;
+                          res.json({
+                              token,
+                              user : {
+                                  id : user.id,
+                                  name : user.name,
+                                  email : user.email
+                                  
+                              }
+                          });
+                      }
+                      )
+                })
+          }
+      })
+        
+})
+
+
+// app.get('/fetch', (req, res)=> {
+//     userModel.find((err, data)=> {
+//         if(err)
+//             return res.status(400).json({msg : "faild to retrieve data"})
+//         else
+//             return res.status(300).json(data)
+//     })
+// })
+
+
+
+
+
+
+
+app.listen(3000, ()=> {
+    console.log("server is running...")
+})
+
+

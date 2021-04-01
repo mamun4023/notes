@@ -1,0 +1,16 @@
+function auth(req, res, next){
+
+
+	const token = req.header('auth-token');
+	if(!token) return res.send("Access denied")
+
+	try {
+		const varified = jwt.varify(token, "secret");
+		req.user = varified;
+		next();
+	
+	} catch (err){
+		res.send("invalid token")
+	}
+}
+

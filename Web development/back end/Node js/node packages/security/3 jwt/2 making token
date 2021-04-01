@@ -1,0 +1,102 @@
+
+const express = require("express");
+const app = express();
+const jwt = require("jsonwebtoken");
+const mongoose = require("mongoose");
+const bodyParser = require('body-parser');
+
+
+
+
+app.use(bodyParser.urlencoded({extended : true}))
+// database connection 
+const db_string = "mongodb://127.0.0.1:27017/DB";
+
+mongoose.connect( db_string,{useNewUrlParser : true, useUnifiedTopology : true},(err)=> {
+	if(!err)
+		console.log("DB connected ")
+})
+
+
+
+// make model
+const userSchema = mongoose.Schema({
+	name : String,
+	email : String,
+	password : String
+});
+
+const userModel = mongoose.model("userModel", userSchema);
+
+
+
+app.get('/', (req, res)=> {
+	res.send("hello world")
+})
+
+
+
+// register route
+app.post("/register", (req,res)=> {
+	const {name, email, password} = req.body;
+
+	if(!name || !email || !password) return res.send("fill all the field")
+
+	const data = new userModel({
+		name,
+		email,
+		password
+	})
+
+	data.save()
+		.then(()=> {
+			res.send("saved")
+		})	
+		.catch(()=> {
+			res.send("failed to saved")
+		})
+
+
+})
+
+
+
+function auth(req, res, next){
+
+
+	const token = req.header('auth-token');
+	if(!token) return res.send("Access denied")
+
+	try {
+		const varified = jwt.varify(token, "secret");
+		req.user = varified;
+		next();
+	
+	} catch (err){
+		res.send("invalid token")
+	}
+}
+
+
+// login route
+app.post('/login', (req,res)=> {
+	const {email, password} = req.body;
+
+	userModel.findOne({email})
+		.then(user=> {
+			if(!user)
+				return res.send("email not found")
+			if(!user.password == password)
+				return res.send("password not matched")
+
+			// token creating 
+		    const token = jwt.sign({_id:user._id},"secret");
+		    res.header('auth-token', token).send(token);
+		})
+});
+
+
+
+app.listen(3000, ()=> {
+	console.log("server is running....")
+})
