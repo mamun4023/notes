@@ -1,0 +1,6 @@
+<!-- MULTIPLE FILES -->
+
+<form action="/uploadmultiple"  enctype="multipart/form-data" method="POST">
+  Select images: <input type="file" name="myFiles" multiple>
+  <input type="submit" value="Upload your files"/>
+</form>

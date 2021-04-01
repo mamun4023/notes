@@ -1,0 +1,15 @@
+<div>
+  
+</div>
+
+<style type="text/css">
+  div{
+      height: 100%;
+      width: 100%;
+      background: url('ddd.png') no-repeat;
+      background-origin: content-box;
+   
+   /* start from upper left corner of the border */
+      
+     
+</style>

@@ -1,0 +1,19 @@
+
+
+<div>
+	
+</div>
+
+<style type="text/css">
+	div{
+		height: 100px;
+		width: 100px;
+		background-color: red;
+	}
+	div:active{
+		background: gray;
+	}
+</style>
+
+
+<p>It works on cliking on object</p>

@@ -1,0 +1,125 @@
+
+import React from 'react';
+import {Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+
+function FormValidation(){
+
+const initialValues = {
+	name : "",
+	email : "",
+	channel : "",
+	comments : "",
+	address : ""
+}
+
+const onSubmit = values => {
+	console.log("form data : ", values);
+}
+
+
+
+// this is schema validation
+ const validationSchema = Yup.object({
+ 	name : Yup.string().required("Required !"),
+ 	email: Yup.string().email("Invalid email format").required("Required"),
+ 	channel : Yup.string().required("Required")
+ })
+ 
+
+     
+    
+    
+
+	return(
+
+		<Formik
+			initialValues = {initialValues}
+			validationSchema = {validationSchema}
+			onSubmit = {onSubmit}
+			>
+		  <div className = "container">
+		  	<Form className ="form-group">
+		  		
+		  		<div>
+		  			 <label htmlFor = "name"> Name </label>
+		  	 		 <Field className ="form-control" 
+		  	 		 		type = "text" 
+		  	 		 		id = "name" 
+		  	 		 		name = "name" 
+		  	 		 		 />
+		  	 		 		
+		  	 		 		
+              		<ErrorMessage  name = "name" >
+              		  {errorMsg=> <div className = "text-danger"> {errorMsg}</div>}
+              		</ ErrorMessage>
+
+            	</div>
+
+            	<div>
+		  	 		<label htmlFor = "email"> email </label>
+		  	 		<Field className ="form-control" 
+		  	 				type = "email" 
+		  	 				id = "email" 
+		  	 				name = "email" 
+		  	 				/>
+		  	 		<ErrorMessage  name = "email" >
+              		  {errorMsg=> <div className = "text-danger"> {errorMsg}</div>}
+              		</ ErrorMessage> 
+		  	 	</div>
+
+		  	 	<div>
+		  	 		<label htmlFor = "channel"> channel </label>
+		  	 		<Field className ="form-control" 
+		  	 				type = "text" 
+		  	 				id = "channel" 
+		  	 				name = "channel" 
+		  	 				/>
+		     		<ErrorMessage  name = "channel" >
+              		  {errorMsg=> <div className = "text-danger"> {errorMsg}</div>}
+              		</ ErrorMessage>
+		     	</div>
+
+		     	<div>
+		     		<label htmlFor ="comments" > Comments</label>
+		     		<Field className ="form-control" as = "textarea" name = 'comments' /> 
+		     	</div>
+
+		     	<div>
+		     		<label htmlFor = "address">Address </label>
+		     		<Field name = 'address' className = "form-control"> 
+		     			{
+		     				(props)=> {
+		     					const {field, form, meta} = props
+		     					console.log("Render props", props)
+		     					return (
+		     						
+		     						<div>
+		     							<input type = "text" className ="form-control"{...field} /> 
+		     							{meta.touched && meta.error? <div> {meta.error} </div>: null}
+		     						</div>
+
+		     						)
+		     				}
+		     			}
+		     		</Field>
+		     	</div>
+
+
+		     		<input type = "submit"  className = "form-control"/>
+		    </Form>
+
+		  
+		    
+		  </div>
+		</Formik>
+
+
+)
+}
+
+
+export default FormValidation;npm i yup
+
+
+

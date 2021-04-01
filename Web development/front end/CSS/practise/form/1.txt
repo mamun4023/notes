@@ -1,0 +1,52 @@
+
+<fieldset>
+  <legend>Info</legend>
+  <form>
+    <label>Name : </label>
+    <input type="text" name="">
+    <label>Email :  </label>
+    <input type="email" name="">
+    <label>Password :<input type="password" name=""> </label>
+    <label>Date : </label>
+    <input type="date" name="">
+    <hr>
+    <input type="submit" name="Send">
+   
+  </form>
+</fieldset>
+
+
+<style type="text/css">
+  
+  fieldset{
+    background: #eee;
+  }
+
+  input[type=date]{
+    padding: 5px 10px;
+    font-size: 15px;
+  }
+  input[type=text],input[type=password],input[type=email]{
+    width: 100%;
+    outline: none;
+    border: 1px solid gray;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+
+  input[type=text]:focus,input[type=password]:focus,input[type=email]:focus{
+    background: #aaa;
+    border-bottom: 1px solid red;
+  }
+
+  input[type=submit]{
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: teal;
+    width: 100%;
+  }
+
+</style>
