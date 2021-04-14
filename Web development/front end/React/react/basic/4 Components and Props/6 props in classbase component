@@ -1,0 +1,45 @@
+
+import React from 'react';
+
+
+
+
+class DD extends React.Component{
+
+	render(props){
+
+
+		return(
+
+			<>
+				<h2> my name is : {this.props.name} </h2>
+
+			</>
+			)
+	}
+}
+
+
+
+
+
+
+class App extends React.Component{
+
+	render(){
+
+
+		return(
+
+			<>
+				
+				<DD name = "asand" />
+			</>
+			)
+	}
+}
+
+
+
+
+export default App;

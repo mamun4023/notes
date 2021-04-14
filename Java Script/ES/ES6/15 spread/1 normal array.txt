@@ -1,0 +1,4 @@
+ // one object
+   // normal object display
+	var b = ['food'];
+	console.log(b[0]);

@@ -1,0 +1,13 @@
+<button onclick="myFunction()" >Click</button>
+
+<p></p>
+<p></p>
+<script type="text/javascript">
+	function myFunction() {
+	var l = document.getElementsByTagName('p').length;
+	alert(l);
+	}
+</script>
+
+<p>return counting of p element</p>
+

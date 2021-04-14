@@ -1,0 +1,18 @@
+
+<div>
+	
+
+</div>
+
+
+<style type="text/css">
+	div{
+		height: 10px;
+		width: 20px;
+		background-color: gray;
+		margin: 100px;
+		-webkit-transform:scaleY(10);
+
+	}
+
+</style>

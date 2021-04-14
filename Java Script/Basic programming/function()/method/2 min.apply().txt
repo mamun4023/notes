@@ -1,0 +1,9 @@
+<script type="text/javascript">
+	
+	var arr = [2,3,4,4,5];
+	var max = Math.min.apply(null,arr);
+	document.write(max);
+	
+
+</script>
+    

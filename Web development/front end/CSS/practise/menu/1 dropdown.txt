@@ -1,0 +1,79 @@
+<div>
+  <ul class="outer-list">
+    <li class="outer-item" ><a href="#">Home</a></li>
+    <li class="outer-item" >
+      <div class="inner-drop">
+        Services
+        <div class="inner-content">
+           <ul>
+             <li><a href="#"> Admission</a></li>
+             <li>Registration</li>
+             <li>All</li>
+             <li>All</li>
+           </ul>
+          
+        </div>
+      </div>
+    </li>
+    <li class="outer-item"><a href="#">Contact</a></li>
+    <li class="outer-item"><a href="#">About</a></li>
+  </ul>
+</div>
+
+
+<style type="text/css">
+  .outer-list{
+    list-style-type: none;
+    padding: 0;
+
+
+  }
+  .outer-list .outer-item{
+    background: gray;
+    float: left;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  .outer-list .outer-item a{
+    text-decoration: none;
+    font-size: 15px;
+  }
+  .outer-list .outer-item:hover {
+    background: #555;
+  }
+
+  .inner-drop{
+    position: relative;
+
+  }
+  .inner-drop ul{
+    list-style-type: none;
+  }
+  .inner-content{
+    display: none;
+    background: #eee;
+    z-index: 1;
+    position: absolute;
+    width: auto;
+    padding: 10px;
+    font-size: 15px;
+    border:1px solid red;
+    border-radius: 5px;
+    top: 20px;
+    transition: 1s;
+  }
+  .inner-content li{
+    padding: 5px 10px;
+    border-bottom: 1px;
+    border-radius: 10px;
+  }
+   .inner-content li:hover{
+    background: green;
+}
+
+  .inner-drop:hover .inner-content{
+    display: block;
+  }
+
+
+</style>

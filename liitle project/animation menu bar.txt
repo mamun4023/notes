@@ -1,0 +1,34 @@
+<div onclick="myFunction(this)">
+<div class="bar1"></div>
+<div class="bar2"></div>
+<div class="bar3"></div>
+</div>
+<style type="text/css">
+	.bar1, .bar2, .bar3{
+		height: 5px;
+		width: 35px;
+		background-color: black;
+		margin: 5px;
+		-webkit-transition:.5s;
+	}
+
+	.change .bar1{
+		-webkit-transform: rotate(-45deg) translate(-9px,6px)
+		}
+
+	.change .bar2{
+		opacity: 0;
+
+	}
+	.change .bar3{
+		-webkit-transform: rotate(45deg) translate(-8px, -8px);
+	}
+</style>
+
+
+<script type="text/javascript">
+	function myFunction(x)
+	{
+		x.classList.toggle('change');
+	}
+</script>

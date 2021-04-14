@@ -1,0 +1,14 @@
+
+<div></div>
+
+
+<style type="text/css">
+	div {
+		width: 500px;
+		height: 200px;
+		background: red;
+	
+
+		border-radius: 100px 100px/100px 100px ;
+	}
+</style>

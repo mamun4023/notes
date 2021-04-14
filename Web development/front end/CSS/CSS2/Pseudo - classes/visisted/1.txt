@@ -1,0 +1,13 @@
+<a href="#">Home</a>
+<a href="#">Home</a>
+<a href="#">Home</a>
+
+
+<style type="text/css">
+
+   a:visited{
+   	color: pink;
+   }
+
+</style>
+

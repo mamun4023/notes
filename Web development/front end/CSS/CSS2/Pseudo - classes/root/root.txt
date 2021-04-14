@@ -1,0 +1,13 @@
+<input value="hello wolrd" required ><br>
+<input type="" value="Read only">
+
+<style type="text/css">
+
+:root{
+	background: red;
+}
+
+</style>
+
+
+

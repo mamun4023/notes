@@ -1,0 +1,51 @@
+
+import React from 'react';
+
+
+
+
+class App extends React.Component{
+    constructor(props){
+    	super(props);
+
+    	this.state = {
+    		age : null,
+    		errorMessage : ""
+    	}
+    }
+ 
+
+   changeHandler = (event) => {
+      let age  = this.state.age;
+      let err  = "";
+      if(!Number(age)){
+      	 err = " enter a number";
+      }
+
+      this.setState({errorMessage : err});
+      this.setState({age : age})
+
+   }
+
+    render(){
+
+    	return(
+
+    		<>
+
+
+                  <form>
+
+                  	 <input type = 'text' onChange= {this.changeHandler} />
+                  	 {this.state.errorMessage}
+                  </form>
+
+    		</>
+
+    		)
+    }
+}
+
+
+
+export default App;

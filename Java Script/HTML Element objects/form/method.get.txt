@@ -1,0 +1,18 @@
+<form id="get" action="/action_page.php">
+	First Name: <input type="text" name=""> <br>
+	Last Name: <input type="text" name=""> <br>
+	<input type="submit" value="submit" name="">
+</form>
+
+<button onclick="myFunction()">Click</button>
+<p id="demo"></p>
+
+<script type="text/javascript">
+	function myFunction() {
+	
+	 var x = document.getElementById('get').method='get';
+	 document.getElementById('demo').innerHTML = "the method is set : "+ x;
+     
+	}
+
+</script>

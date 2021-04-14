@@ -1,0 +1,13 @@
+// normal javascript code
+
+var arr1 = ['a','b','c','d','e'];
+var arr2 = ['A', 'B', 'C', 'D']
+
+
+var a = arr1[0];
+var b = arr1[1];
+ 
+console.log(a);
+console.log(b);
+
+

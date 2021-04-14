@@ -1,0 +1,19 @@
+
+<select id="mySelect" onchange ="myFunction()">
+	<option value="BMW">BMW</option>
+	<option value="rose">Rose</option>
+	<option value="volvo">Volvo</option>
+</select>
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+	function myFunction()
+	{
+		var x = document.getElementById('mySelect').value;
+		document.getElementById('demo').innerHTML=" you have selected: "+x;
+
+
+	}
+</script>
+

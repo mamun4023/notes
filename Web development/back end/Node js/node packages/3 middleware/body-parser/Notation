@@ -1,0 +1,22 @@
+
+The data can take on a few different forms,
+
+application/x-www-form-urlencoded: Data in this encoding is formatted like a query string you'd see in a URL,
+with key-value paris being separated by & characters. For example: foo=bar&abc=123&stack=abuse.
+This is the default encoding.
+
+multipart/form-data: This encoding is typically used for sending files. In short, each key-value is sent in the
+same request, but different "parts", which are separated by "boundaries" and include more meta-data.
+
+
+text/plain: This data is just sent as unstructured plain text, and typically is not used.
+
+
+And while urlencoded is one of the most commonly used parsers that body-parser provides, you can also use the following:
+
+.json(): Parses JSON-formatted text for bodies with a Content-Type of application/json.
+.raw(): Parses HTTP body in to a Buffer for specified custom Content-Types, although the default accepted Content-Type is 
+application/octet-stream.
+.text(): Parses HTTP bodies with a Content-Type of text/plain, which returns it as a plain string.
+Each of these parsers also supports automatic inflation of data encoded with gzip or deflate, so compression can still be 
+transparently used without any extra work by your application code.

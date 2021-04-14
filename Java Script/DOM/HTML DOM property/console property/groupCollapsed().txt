@@ -1,0 +1,7 @@
+<script type="text/javascript">
+	
+     console.log("Hello world");
+     console.groupCollapsed();
+     console.log("Hello again, this time inside a collapsed group!");
+
+</script>

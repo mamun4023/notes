@@ -1,0 +1,20 @@
+<button  onclick="myFunction() ">click</button>
+<p id="demo" class="dd"> hello world</p>
+
+
+<style type="text/css">
+	.dd{
+		color: red;
+	}
+</style>
+<script type="text/javascript">
+	 function myFunction() {
+   
+    document.getElementsByTagName('p')[0].removeAttribute('class');
+
+	}
+
+</script>
+
+<p>Remove css property</p>
+

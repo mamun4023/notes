@@ -1,0 +1,35 @@
+const express = require('express');
+const app = express();
+const path = require('path');
+const bodyParser = require('body-parser');
+
+
+// create application/json parser
+// it get post data 
+var jsonParser = bodyParser.json()
+
+// create application/x-www-form-urlencoded parser
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
+// diplay html file to home route
+app.get('/',(req, res)=> {
+	res.sendFile('index.html', {root : path.join(__dirname, './view')});
+
+});
+
+
+// body parser requrest
+app.post('/',jsonParser, (req, res)=> {
+	// get data for validation 
+     if(req.body.name === "Mamun")
+     	res.send("Name is already exist");
+     else
+     	res.send("saved!")
+	
+});
+
+
+
+app.listen(3000,()=>{
+
+	console.log("server is running....");
+})

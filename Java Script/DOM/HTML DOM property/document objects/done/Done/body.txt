@@ -1,0 +1,18 @@
+
+<button onclick="myFunction()">Click</button>
+
+	<p id="demo"></p>
+</body>
+
+<script type="text/javascript">
+	
+	function myFunction()
+	{
+		document.body.style.backgroundColor ="red";
+	}
+    
+</script>
+
+
+
+

@@ -1,0 +1,32 @@
+
+// state may contain several independent variable
+
+
+constructor(props){
+	super(props);
+	this.state = {
+		posts : [],
+		comments : []
+	}
+}
+
+
+
+// update several value independently 
+
+componentDidMount(){
+	fetchPosts().then(res=> {
+		this.setState({
+			posts : res.posts;
+		});
+	});
+
+
+
+	fetchComments().then(res=> {
+		this.setState({
+			comments : res.comments
+		});
+	});
+}
+

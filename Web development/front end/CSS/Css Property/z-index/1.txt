@@ -1,0 +1,26 @@
+
+<div class="div1">
+	<div class="div2">
+		
+		
+	</div>
+</div>
+
+<style type="text/css">
+   .div1{
+   	height: 240px;
+   	width: 240px;
+   	background:gray;
+
+   }
+   .div2{
+   	height: 250px;
+   	width: 250px;
+   	background:red;
+   	position: absolute;
+   	z-index: -1;
+   }
+  
+	
+
+</style>

@@ -1,0 +1,32 @@
+<style type="text/css">
+
+.tooltip{
+	position: relative;
+	display: inline-block;
+
+
+}
+.tooltip .tooltip-text{
+	visibility: hidden;
+	width: 100px;
+	background-color: black;
+	color: white;
+	
+
+
+}
+
+.tooltip:hover .tooltip-text{
+	visibility: visible;
+}
+
+
+
+</style>
+
+
+<div class="tooltip">
+	Over
+	<span class="tooltip-text">show text</span>
+	
+</div>

@@ -1,0 +1,12 @@
+<div class="jumbotron">
+	<h3> Add New Record </h3>
+<form method="post" action="/post_data" >
+	<label>Name</label>
+	<input class="form-control" type="text" name="name">
+
+	<label>Email</label>
+	<input class="form-control" type="text" name="email">
+    <hr>
+	<button class="btn btn-info">Add</button>
+</form>
+</div>

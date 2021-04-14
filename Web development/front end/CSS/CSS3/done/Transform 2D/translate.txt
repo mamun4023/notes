@@ -1,0 +1,28 @@
+
+
+<div>
+<div class="bar1"></div>
+<div class="bar2">
+	
+
+</div>
+</div>
+
+<style type="text/css">
+	.bar1{
+		height: 20px;
+		width: 100px;
+		background-color: black;
+		margin: 100px;
+		-webkit-transform:rotate(45deg);
+
+	}
+	.bar2{
+		height: 20px;
+		width: 100px;
+		background-color: black;
+		margin: 100px;
+		-webkit-transform: rotate(-45deg) translate(85px,-92px);
+
+	}
+</style>

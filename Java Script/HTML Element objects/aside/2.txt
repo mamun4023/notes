@@ -1,0 +1,30 @@
+
+<button onclick="myFunction()">Click</button>
+
+
+
+
+
+
+<script type="text/javascript">
+	function myFunction()
+	{
+	   var x = document.createElement('aside');
+	   x.setAttribute('id','get');
+	   document.body.appendChild(x);
+
+
+	   var heading = document.createElement('h4');
+	   var txt1 = document.createTextNode('epi center');
+	   heading.appendChild(txt1);
+	   document.getElementById('get').appendChild(heading);
+
+	   var para = document.createElement('p');
+	   var txt2 = document.createTextNode('The epcot ceter is a theme park in disney world');
+	   para.appendChild(txt2);
+	   document.getElementById('get').appendChild(para);
+		
+	}
+
+
+</script>

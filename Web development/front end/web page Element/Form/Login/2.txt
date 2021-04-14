@@ -1,0 +1,78 @@
+<body>
+<div class="container">
+	
+	<h3>Fill up </h3>
+	<form>
+		<label>Username : </label>
+		<hr>
+		<input type="text" name="">
+		<label>Email :</label>
+		<hr>
+		<input type="emial" name="">
+		<label>Password :</label>
+		<hr>
+		<input type="password" name="">
+		<lebel>Confirm Password :</lebel>
+		<hr>
+		<input type="password" name="">
+		<hr>
+		<input type="submit" name="" value="Signup">
+
+	</form>
+
+</div>
+
+</body>
+<style type="text/css">
+	*{
+		box-sizing: border-box;
+	}
+	body{
+		background: gray;
+	}
+	.container{
+		max-height: 60%;
+		max-width: 50%;
+		background: #ddd;
+		margin: auto;
+		border-radius: 10px;
+		position: relative;
+		top: 50px;
+		padding: 10px;
+
+	}
+	.container h3{
+		text-align: center;
+		padding: 10px 20px;
+		width: 100%;
+		background: rgb(10,100,100);
+	}
+	input{
+		width: 100%;
+		border-radius: 20px;
+		font-size: 20px;
+		outline: none;
+		border:none;
+		padding: 10px;
+		transition: 1s;
+
+
+	}
+	label{
+	     font-size: 20px;
+	}
+	input[type=submit]{
+		background: rgb(10,100,100);
+		padding: 10px 30px;
+		cursor: pointer;
+		font-size: 20px;
+		color: white;
+	}
+	input[type=submit]:hover{
+		background: rgb(50,130,100);
+	}
+	input:focus{
+		background: gray;
+	}
+
+</style>

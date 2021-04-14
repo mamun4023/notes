@@ -1,0 +1,16 @@
+<script type="text/javascript">
+	
+	class Test{
+		constructor(){
+			document.write(Test.display()+ "<br>");
+			document.write(this.constructor.display());
+		}
+
+		static display(){
+			return "static method is invoked"
+		}
+	}
+
+	var t = new Test();
+	
+</script>

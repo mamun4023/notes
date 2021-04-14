@@ -1,0 +1,19 @@
+<button>button</button>
+<button>2nd </button>
+
+
+<style type="text/css">
+  
+  button{
+    padding: 10px 20px;
+    font-size: 15px;
+    background: green;
+    border:none;
+    float: left;
+    
+
+  }
+  button:hover{
+    background: red;
+  }
+</style>

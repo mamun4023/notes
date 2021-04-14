@@ -1,0 +1,10 @@
+<input id="get" type="text" name="" value="alll" >
+
+<button onclick="myFunction()">Click</button>
+
+<script type="text/javascript">
+   
+   function myFunction(){
+     var x = document.getElementById('get').value = '';
+   }
+</script>

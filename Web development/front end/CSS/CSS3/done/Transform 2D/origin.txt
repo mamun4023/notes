@@ -1,0 +1,27 @@
+
+<div class="div1" ></div>
+<div class="div2"></div>
+
+
+<style type="text/css">
+	.div1{
+		position: relative;
+		height: 100px;
+		width: 200px;
+		background-color: gray;
+		margin: 100px;
+		border: 1px solid red;
+
+	}
+		.div2{
+		position: relative;
+		height: 100px;
+		width: 200px;
+		background-color: gray;
+		margin: 100px;
+		border: 1px solid red;
+		-webkit-transform:rotate(45deg);
+		-webkit-transform-origin: 20% 40%;
+
+	}
+</style>

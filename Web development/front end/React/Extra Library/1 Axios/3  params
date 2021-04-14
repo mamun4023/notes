@@ -1,0 +1,49 @@
+import React from 'react';
+const axios = require('axios');
+
+
+class App extends React.Component{
+
+  state =  {
+  	person : []
+  }
+
+  componentDidMount(){
+ 	axios.get("http://jsonplaceholder.typicode.com/posts", {
+ 		params :{
+ 			id: 75
+ 		}
+ 	})
+ 	.then(res => {
+ 		this.setState({
+ 			person : res.data
+ 		})
+ 	})
+
+   
+
+
+
+  }
+
+	render(){
+		return(
+
+			<>
+			  <ul>
+
+			     {this.state.person.map(p => <li> {p.body} </li>)}
+			  
+			  </ul>
+
+
+			</>
+			)
+
+	}
+}
+
+
+
+export default App;
+

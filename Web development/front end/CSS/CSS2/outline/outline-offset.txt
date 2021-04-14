@@ -1,0 +1,14 @@
+<div></div>
+
+
+<style type="text/css">
+  div{
+    margin:100px;
+    height: 100px;
+    width: 100px;
+    outline: 1px solid;
+    outline-color: red;
+    border:1px solid gray;
+    outline-offset: 20px;
+  }
+</style>

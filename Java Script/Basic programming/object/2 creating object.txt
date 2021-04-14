@@ -1,0 +1,10 @@
+<script type="text/javascript">
+	
+   var emp =  new Object();
+   emp.id = 101;
+   emp.name = "Tohid";
+   emp.salary = 3000;
+
+   document.write(emp.id + " " + emp.name + " "+ emp.salary);
+
+</script>

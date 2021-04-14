@@ -1,0 +1,27 @@
+<body onload="draw()">
+<canvas id="canvas"  width="400 " height="200" style="border: 1px solid gray;">
+   
+   </body>
+
+
+
+
+
+
+<script type="text/javascript">
+	   function draw(){
+		
+		var c = document.getElementById('canvas');
+		var d = c.getContext('2d');
+		 d.rect(20,20,150,100);
+		 if(d.isPointInPath(20,50)){
+		 	d.stroke();
+		 }
+
+
+	   }
+	   
+    
+
+
+</script>

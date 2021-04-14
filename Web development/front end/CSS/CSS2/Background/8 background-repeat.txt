@@ -1,0 +1,30 @@
+
+<body></body>
+<style type="text/css">
+   body{
+       background-image:url('ddd.png');
+       background-repeat: repeat-x;
+   }
+
+
+</style>
+
+
+
+
+-------------- propertis---------------
+	
+	-- repeat
+	-- round
+	-- repeat-x
+	-- repeat-y
+	-- no-repeat 
+
+	
+
+
+ repeat : It repeats image horizontal and vartical axies both
+ round : It covers image all the place that assigned
+ repeat-x : It repeats image only to x axis 
+ repeat-y : It repeats image only to y axis
+ no-repeat : Its not repeat image

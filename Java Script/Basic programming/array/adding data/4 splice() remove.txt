@@ -1,0 +1,9 @@
+
+<script type="text/javascript">
+   
+   var cars = ['BMW','Tesla','Pageroo'];
+        
+      cars.splice(0,0,'aa')              // first 0 means position
+   document.write(cars);                // second 0 means elements 
+
+</script>

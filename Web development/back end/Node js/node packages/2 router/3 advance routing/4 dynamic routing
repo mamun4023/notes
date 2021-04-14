@@ -1,0 +1,29 @@
+
+const express = require('express');
+const app = express();
+const router = express.Router();
+
+
+
+app.use('/customers', router);
+
+
+// we can make more : dynamic routing...
+router.get('/:user',(req, res)=>{
+	res.send(JSON.stringify(req.params));
+});
+
+
+
+router.get("/user/:id", (req, res)=> {
+	res.send(req.params);
+});
+
+
+
+app.listen(3000,()=>{
+	console.log("server is running...");
+});
+
+
+

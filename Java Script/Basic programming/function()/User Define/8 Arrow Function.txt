@@ -1,0 +1,9 @@
+<script type="text/javascript">
+	
+	// Arrow function 
+
+	const x = (x,y) =>x+y;
+	document.write(x(2,2));
+	
+
+</script>

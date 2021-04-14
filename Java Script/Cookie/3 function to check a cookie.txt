@@ -1,0 +1,20 @@
+
+<script type="text/javascript">
+   
+   function checkCookie() {
+      var username = getCookie('username');
+      if(username!=""){
+         alert("welcome again"+username);
+      }
+      else
+      {
+         username = prompt("please enter yur name:","");
+         if(username!="" && username !=null)
+         {
+            setCookie('username',username,365);
+         }
+      }
+   }
+
+
+</script>

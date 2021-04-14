@@ -1,0 +1,9 @@
+<h2>Hello world</h2>
+
+
+<style type="text/css">
+    h2{
+      text-decoration: line-through;
+      /*  may be none, overline, underline,linethrough */
+    }
+</style>

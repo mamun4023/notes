@@ -1,0 +1,6 @@
+Attributes	Description
+
+expires		It maintains the state of a cookie up to the specified date and time.
+max-age		It maintains the state of a cookie up to the specified time. Here, time is given in seconds.
+path		It expands the scope of the cookie to all the pages of a website.
+domain		It is used to specify the domain for which the cookie is valid.

@@ -1,0 +1,15 @@
+
+<button class="myFunction()">Click</button>
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+	
+	function myFunction()
+	{
+		var x = history.length;
+		document.getElementById('demo').innerHTML = x;
+
+	} 
+
+</script>

@@ -1,0 +1,33 @@
+
+
+<button onclick="myFunction()">Click</button>
+<div id="myDiv">
+	<p id="demo"></p>
+</div>
+
+<style type="text/css">
+	
+	#myDiv{
+		height: 250px;
+		width: 400px;
+		padding: 10px;
+		margin: 15px;
+		border-top: 15px solid black;
+		border-left: 10px solid red;
+		background-color: lightblue;
+	}
+
+</style>
+
+
+
+
+<script type="text/javascript">
+	function myFunction(){
+	var elmnt  = document.getElementById('myDiv');
+	var txt = "border top width: " + elmnt.clientTop + "px <br>";
+	txt += "Border left width: " +elmnt.clientLeft + "px";
+	txt += "Border left width: " +elmnt.clientLeft + "px";
+	document.getElementById('demo').innerHTML = txt;
+}
+</script>

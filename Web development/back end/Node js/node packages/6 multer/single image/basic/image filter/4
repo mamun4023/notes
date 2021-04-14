@@ -1,0 +1,24 @@
+This is now possible in 1.0.0.
+
+If you want to abort the upload:
+
+multer({
+  fileFilter: function (req, file, cb) {
+    if (path.extension(file.originalname) !== '.pdf') {
+      return cb(new Error('Only pdfs are allowed'))
+    }
+
+    cb(null, true)
+  }
+})
+If you want to skip any files that is not pdf:
+
+multer({
+  fileFilter: function (req, file, cb) {
+    if (path.extension(file.originalname) !== '.pdf') {
+      return cb(null, false)
+    }
+
+    cb(null, true)
+  }
+})

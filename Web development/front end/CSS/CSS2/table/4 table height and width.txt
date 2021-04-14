@@ -1,0 +1,23 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Roll</th>
+  </tr>
+  <tr>
+    <td>Mamun</td>
+    <td>154116</td>
+  </tr>  
+</table>
+
+
+<style type="text/css">
+  table,th,td{
+    border:1px solid red;
+  }
+  table{
+    border-collapse: collapse; 
+    width: 200px;
+    height: 200px;
+      /* setting single border */
+  }
+</style>

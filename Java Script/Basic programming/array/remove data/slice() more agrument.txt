@@ -1,0 +1,11 @@
+
+<script type="text/javascript">
+  
+
+  var a1 = ['1','2','3','4'];
+
+  var add = a1.slice(0,3);             // from 0 to 3 printed
+
+  document.write(add);
+
+</script>

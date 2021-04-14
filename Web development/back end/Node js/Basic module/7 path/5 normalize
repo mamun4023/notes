@@ -1,0 +1,8 @@
+
+const path = require('path');
+
+// it is string arguments, fixed up, slash, resolve,
+// remove duplicate slash 
+const dir =  '////view//add_product.js';
+
+console.log(path.normalize(dir));

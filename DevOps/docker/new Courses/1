@@ -1,0 +1,77 @@
+1. Sownload nginx images
+
+	docker pull nginx
+	
+2. run a nginx container 
+	docker run nginx:latest
+	
+3 check the running container
+	dokcer ps
+	docker container ls
+
+4 display only container id
+
+	docker ps -aq
+	
+5 run container in detached mode 
+	docker run -d nginx:latest
+
+6 stop the container 
+	docker stop "ContainerID"
+
+7 run nginx container in port 3000 (single port)
+	docker run -d -p 3000:80 nginx:latest
+	
+8 run nginx in multiport 
+	docker run -d -p 4000:80 -p 3000:80 nginx:latest
+
+9 stop running container with name 
+	docker stop "containerName"
+
+10 show help commands
+	docker ps --help
+	docker images --help
+
+11 show all stop/running containers
+	docker ps -a
+
+12 remove container 
+	docker rm "ContainerID"
+
+13 remove all the container at a single command
+     sudo docker rm $(sudo docker ps -aq)
+	
+  Note : you have to stop the container before remove. you can not remove a running container 
+ 
+ 
+14 stop all running and stop container with force 
+	sudo docker rm -f $(sudo docker ps -aq)
+ 
+----- How to name container -------
+
+15  run container with given name 
+	sudo docker run --name website -d nginx:latest
+
+16 stop container with name 
+	sudo docker stop website
+	
+18 start container with name 
+	sudo docker start website
+	
+19 show more readable screen 
+	sudo docker ps --format="D\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.CreatedAt}}\nSTATUS\t{{.Status}}\n"
+
+
+20 save the format code in format variable
+ 	export FORMAT="D\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.CreatedAt}}\nSTATUS\t{{.Status}}\n"
+
+21 show the format
+	sudo docker ps --format=$FORMAT
+
+
+
+	
+			
+	
+
+

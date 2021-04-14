@@ -1,0 +1,25 @@
+
+<button onclick="myFunction()">click</button>
+<div class="div1 div2 " id="get">div</div>
+<p id="demo"></p>
+<style type="text/css">
+   .div1{
+      height: 100px;  
+      background: red;
+   }
+   .div2{
+      background: gray;
+
+
+   }
+
+</style>
+
+
+<script type="text/javascript">
+   function myFunction() {
+      var x = document.getElementById('get').classList.item(0);
+      document.getElementById('demo').innerHTML  = x;
+ 
+   }
+</script>

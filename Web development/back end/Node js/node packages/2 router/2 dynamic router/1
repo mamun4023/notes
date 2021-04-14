@@ -1,0 +1,13 @@
+
+var express = require('express');
+var app = express();
+
+app.get('/:id',(req,res)=>{
+	res.send("id specified" + req.params.id)
+})
+
+app.listen(3000,()=>{
+	console.log("server is running...")
+})
+
+

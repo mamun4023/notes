@@ -1,0 +1,8 @@
+<script type="text/javascript">
+	
+	var x = function(a,b) { return arguments.length;}
+	var z = x(2,2).toString();
+
+	document.write("Result converted to string : " ,typeof(z));
+
+</script>

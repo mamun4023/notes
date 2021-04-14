@@ -1,0 +1,2 @@
+<Route path = "*" component = {404Page} > </Route>
+

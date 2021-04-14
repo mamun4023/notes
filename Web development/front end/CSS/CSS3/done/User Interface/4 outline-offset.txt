@@ -1,0 +1,18 @@
+<div></div>
+<style type="text/css">
+   div{
+    margin:100px;
+    height: 200px;
+    width: 200px;
+    background: red;
+    border:5px solid green;
+    outline: 5px solid red;
+    outline-offset: 12px;
+
+
+
+  
+   
+
+   }
+</style>

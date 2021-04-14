@@ -1,0 +1,20 @@
+
+var express = require("express");
+var app = express();
+
+
+
+
+// show on terminal which request you have send
+app.use('/user/:id', function (req, res, next) {
+  console.log('Request Type:', req.method)
+  next()
+})
+
+
+
+app.listen(3000,()=> {
+	console.log("server is running...")
+})
+
+

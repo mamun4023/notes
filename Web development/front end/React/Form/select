@@ -1,0 +1,48 @@
+
+import React,{Component} from 'react'
+
+
+
+class App extends Component{
+  
+  state ={
+    value: 'coconut'
+  }
+
+handleChange=(event) =>{
+  this.setState({ value: event.target.value});
+}
+
+handleSubmit= (event) =>{
+  alert("Food is : " +this.state.value);
+  event.preventDefault();
+}
+
+
+  render(){
+    return(
+
+          <>
+
+            <form onSubmit={this.handleSubmit}>
+
+                <select value ={this.state.value} onChange={this.handleChange}>
+                  <option value="grapefruit">Grapefruit</option>
+                  <option value ="poteto"> poteto</option>
+
+                </select>
+                <input type="submit"/>
+
+            </form>
+
+
+          </>
+
+
+      )
+  }
+}
+
+
+
+export default App;

@@ -1,0 +1,17 @@
+const mongoClient = require("mongodb").MongoClient;
+const url = "mongodb://127.0.0.1:27017/"
+
+
+// without create collection database will not show
+mongoClient.connect(url, (err, db)=> {
+	if(err) throw err;
+	var db = db.db('test');
+
+	// you can delete one or many
+	var query = {age : 25 };
+	db.collection("student").deleteMany(query, (err, res)=> {
+		if(err) throw err;
+		console.log("data deleted...")
+		console.log(res);
+})
+})

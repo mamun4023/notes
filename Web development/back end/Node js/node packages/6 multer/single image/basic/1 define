@@ -1,0 +1,53 @@
+
+const express = require('express');
+const  app = express();
+const multer = require('multer');
+const bodyParser = require('body-parser');
+const path = require("path");
+
+app.use(bodyParser.urlencoded({extended : true}))
+
+
+
+
+app.get('/', (req, res)=> {
+	res.sendFile(__dirname + "/public/index.html")
+})
+
+/*
+ basic multer setting
+ 1. include multer package
+ 2. define multer storage 
+ 3. make route for upload image 
+
+
+*/
+
+
+
+
+// make store 
+
+const multerStorage = multer.diskStorage({
+	destination : "./uploads/pics",
+	filename : (req, file, cb)=> {
+		cb(null, file.fieldname +"-"+Date.now() + path.extname(file.originalname))
+	}
+})
+
+
+
+const upload = multer({
+	storage : multerStorage
+})
+
+
+
+
+
+app.listen(3000, ()=> {
+	console.log('server is running...')
+})
+
+
+

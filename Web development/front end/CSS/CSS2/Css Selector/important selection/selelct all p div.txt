@@ -1,0 +1,11 @@
+<div>
+	<p>select child tag</p>
+	<p>select child tag</p>
+</div>
+
+
+<style type="text/css">
+	div p{
+		color: red;
+	}
+</style>

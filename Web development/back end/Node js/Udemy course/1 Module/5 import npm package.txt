@@ -1,0 +1,14 @@
+
+
+1. checking the version of nodejs 
+	npm -v
+
+2. initialize the nodejs project
+	npm init
+
+3. install particular package
+	npm install mysql
+	or 
+	npm i mysql
+	or 
+	npm i mysql@2.0.0

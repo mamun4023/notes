@@ -1,0 +1,23 @@
+
+<style type="text/css">
+
+
+body{
+	background-image: url('1.jpg');
+	background-size: cover;
+    	
+
+}
+
+</style>
+
+
+
+-----------------size property ------------
+	auto : Default and image is displayed in its original size
+	length: 
+	percentage : x y , use 100% 100% for responsive
+	cover : resize and cover the entire container, it it is cut or strech
+	contain : resize the image and make sure the image is fully visible
+	initial	: Sets it default
+	inherit : 

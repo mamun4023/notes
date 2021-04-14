@@ -1,0 +1,7 @@
+<script type="text/javascript">
+	
+	 var myFunction  = new Function ('a','b','return a+b');
+
+    var z = myFunction(2,2);
+    document.write(z);
+</script>

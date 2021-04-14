@@ -1,0 +1,21 @@
+<input onclick="getfocus()" type="text" name="">
+<input onclick="losefocus();" type="text" name="">
+
+<style type="text/css">
+	a:focus,a:active{
+		color: green;
+	}
+</style>
+<script type="text/javascript">
+
+		function getfocus(){
+			document.getElementById('myAnchor').focus();
+		}
+
+		function losefocus()
+		{
+			document.getElementById('myAnchor').blur();
+		}
+</script>
+<a id="myAnchor" href="www.facebook.com"></a>
+

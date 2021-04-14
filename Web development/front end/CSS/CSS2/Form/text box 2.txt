@@ -1,0 +1,13 @@
+<input type="text" name="">
+
+<style type="text/css">
+
+input[type=text]{
+	width: 200px;
+	padding: 12px 10px;
+	border: none;
+	border-bottom: 2px solid red;
+}
+	
+
+</style>

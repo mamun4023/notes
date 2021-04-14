@@ -1,0 +1,11 @@
+
+import React, {Fragment} from 'react'
+function ListItem({item}){
+	return(
+		<Fragment key = {item.id}>
+			<dt> {item.term}</dt>
+			<dd> {item.description</dd>}
+		</Fragment>
+		)
+}
+

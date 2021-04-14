@@ -1,0 +1,11 @@
+
+<body></body>
+<style type="text/css">
+   body{
+       background:url('ddd.png') no-repeat center fixed ;
+ 
+
+   }
+
+
+</style>

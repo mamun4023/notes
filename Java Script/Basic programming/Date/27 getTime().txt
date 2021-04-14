@@ -1,0 +1,9 @@
+
+<script type="text/javascript">
+  
+   var d = new Date();
+   var time = d.getTime(); // get time as milliseconds since 1 1970 
+   document.write(time);  
+   
+
+</script>

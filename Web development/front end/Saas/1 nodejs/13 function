@@ -1,0 +1,23 @@
+
+	@function half($value) {
+		
+		@return $value/2 + px;
+	}
+
+
+$aa : 500;
+.container{
+	height : half($aa);
+	width :  $aa px; 
+	background : gray;
+
+
+}
+
+
+
+
+
+
+
+

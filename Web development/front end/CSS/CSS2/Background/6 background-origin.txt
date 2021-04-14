@@ -1,0 +1,24 @@
+
+<style type="text/css">
+
+
+body{
+	background: url('1.jpg');
+	background-repeat: no-repeat;
+	background-origin: padding-box;
+	
+
+}
+ 
+
+</style>
+
+
+
+---------- Origin Properties -----------------------
+
+padding-box : Default value. The background image start from the upper left corner of the padding edge.
+border-box : The background image start from the upper left corner of the border
+content-box : the background image starts from the upper left corner of the content
+initial : Sets the property to its default value 
+inherit : Inherit this property from its parents element.

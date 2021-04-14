@@ -1,0 +1,16 @@
+
+
+<script> 
+  
+    // creating some ArrayBuffers with a size in bytes 
+    const buffer1 = new ArrayBuffer(8); 
+
+    // Creating typedArray object for above buffers 
+    const A = new Uint16Array(buffer1); 
+ 
+  
+    // Getting the length of the arrayBuffer 
+    document.write(A.byteLength); 
+   
+      
+</script> 

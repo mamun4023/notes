@@ -1,0 +1,18 @@
+<script type="text/javascript">
+
+
+ class Car {
+ 	constructor(brand){
+ 		this.carname = brand;
+ 	}
+
+ 	static hello(){  // static method
+ 		document.write("Hello static");
+ 	}
+ }
+
+
+ Car.hello();
+// it is called without create an object 
+
+</script>

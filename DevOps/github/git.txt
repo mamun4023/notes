@@ -1,0 +1,99 @@
+
+email : mamun754023@gmail.com
+pass : Rohsid 01734754023
+
+
+
+1. initialize the git
+	git init
+
+2. set userName
+	 git config --global user.name "mamun"
+
+
+3. set email 
+	git config --global user.email "mamun@gmail.com"
+
+4. see setting username and email
+	git config --list
+
+5. show git status / unstage positiono
+	git status
+
+	
+6. staging single the file 
+	git add 'fileName.ex'
+
+7. staging the all file at once
+	git add --all
+	git add .
+
+8 commit the file / store in local repository
+	git commit 
+    press i and add text then :x and enter
+
+9. commit in a short way
+	git commit -m "message"
+
+10. see all the commit 
+	git log
+
+11. minimize of git log
+	git log --oneline
+
+12. Back to previous state
+	git checkout serialNumber
+
+13  Back to master
+	git checkout master
+
+14 see the latest changes
+	git diff
+
+
+15. find diffrence between two commit
+	git diff commitNumber1	commitNumber2
+
+16. see difference after stage
+	git diff -- staged
+
+17. remove a file
+	git rm filename.ex
+
+18. remove from staging area
+	git reset fileName.ex
+
+19. connect local repository to remote repository
+	 follow repository instruction
+
+20. connect using ssh key 
+
+    follow 
+
+
+21  git fetch
+
+22  git pull
+
+
+23. create a branch
+	git branch firstBranch
+
+24. show branch 
+	git branch 
+
+25. switch to another branch
+	git checkout BranchName
+
+26. merging with master branch
+	git merge branchName
+
+27.  remove code from file
+	git stash
+
+28. back to previos data
+	git stash pop
+
+29. 
+	
+	 

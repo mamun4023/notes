@@ -1,0 +1,12 @@
+<input type="" name="">
+
+
+<style type="text/css">
+	
+	input:focus{
+		background: red;
+		-webkit-transition: 1s;
+		width: 200px;
+	}
+
+</style>

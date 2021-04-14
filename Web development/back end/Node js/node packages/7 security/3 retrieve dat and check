@@ -1,0 +1,23 @@
+app.get('/fetch', (req, res)=> {
+	userModel.find((err, data)=> {
+		if(err)
+			res.send("err happed")
+		else
+		{
+
+			
+			if((data[0].name) === "tohid")
+				res.send("matched")
+			else
+				res.send( "not  matched")
+	
+
+			
+		}
+
+
+
+	})
+
+})
+

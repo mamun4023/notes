@@ -1,0 +1,56 @@
+
+
+
+
+index page
+
+
+
+
+import Link from 'next/link';
+
+export default function FirstPost() {
+  return (
+    <>
+           <h1> Home page </h1>
+
+           <Link href = "/posts/first-post" > go FirstPage </Link>
+    </>
+  )
+}
+
+
+
+
+
+
+
+
+
+
+first-post page
+
+
+import Link from 'next/link'
+
+export default function FirstPost() {
+  return (
+    <>
+      <h1>First Post</h1>
+      <h2>
+        <Link href="/">
+          <a>Back to home</a>
+        </Link>
+      </h2>
+    </>
+  )
+}
+
+
+
+
+
+
+
+
+

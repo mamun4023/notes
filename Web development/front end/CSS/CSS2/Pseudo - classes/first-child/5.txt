@@ -1,0 +1,23 @@
+<ol>
+	<li>Pen</li>
+	<li> Rubber</li>
+	<li>Cotton</li>
+</ol>
+
+
+<ul>
+	<li>Home</li>
+	<li>Contact</li>
+	<li>About Us</li>
+</ul>
+
+
+
+<style type="text/css">
+	
+	li:first-child{
+		color: red;
+	}
+
+
+</style>

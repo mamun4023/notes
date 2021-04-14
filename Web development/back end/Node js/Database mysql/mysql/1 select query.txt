@@ -1,0 +1,11 @@
+app.get('/',(req, res)=>{
+	DB.query("select *from student",(err, rows, fields)=> {
+		if(!err){
+			var dd = rows[0].name;
+			res.send("<h1>"+ dd + "</h1>");
+		}
+		else{
+			console.log(err);
+		}
+	})
+})

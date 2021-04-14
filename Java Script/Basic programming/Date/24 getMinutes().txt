@@ -1,0 +1,9 @@
+
+<script type="text/javascript">
+  
+   var d = new Date();
+   var time = d.getMinutes();     // get the minute (0-59)
+   document.write(time);  
+   
+
+</script>

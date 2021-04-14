@@ -1,0 +1,28 @@
+<button class="btn success">Success</button>
+<button class="btn info">info</button>
+<button class="btn warning">warning</button>
+<button class="btn danger">Danger</button>
+<button class="btn deafult">Default</button>
+
+
+<style type="text/css">
+   .btn{
+      border:none;
+      color: white;
+      padding: 5px 10px;
+      font-size: 16px;
+      cursor: pointer;
+
+   }
+   .success{ background: #4caf50; }
+   .success:hover{background: #46a049;}
+   .info{background: #0b7dda;}
+   .info:hover{background: #2196f3}
+   .warning {background: #ff9800;}
+   .warning:hover{background: #e68a00;}
+   .danger{background: #f44336;}
+   .danger:hover{background: #da190b;}
+   .deafult{background: }
+   .deafult{background: #e7e7e7; color: black;}
+   .deafult:hover{background: #ddd;}
+</style>

@@ -1,0 +1,24 @@
+
+// import module 
+// we can pick any references 
+const name = require('./dd');
+console.log(name);
+
+
+
+
+
+// export module 
+var name = 'Tohid';
+module.exports = name;
+
+
+
+
+
+
+
+
+
+
+

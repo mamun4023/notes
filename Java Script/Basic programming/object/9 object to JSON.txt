@@ -1,0 +1,16 @@
+<script type="text/javascript">
+	
+   person = {
+   	firstName : 'Mychel',
+   	lastName  : 'Jhon',
+   	Company   : 'Alto',
+   }
+
+   var myString = JSON.stringify(person);
+    
+    document.write(myString);
+
+
+
+
+</script>

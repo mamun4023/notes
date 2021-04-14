@@ -1,0 +1,26 @@
+
+// wrong 
+this.setState({
+	counter : this.state.counter + this.props.increment;
+});
+
+
+// correct
+this.setState((state, props)=> ({
+
+	counter : state.counter + props.increment
+
+}));
+
+
+
+
+// correct
+this.setState(function(state, props){
+	return {
+		counter : state.counter + props.increment
+	}
+});
+
+
+

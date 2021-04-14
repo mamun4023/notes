@@ -1,0 +1,49 @@
+import React from 'react';
+
+class App extends React.Component{
+	constructor(props){
+		super(props);
+
+		this.state = { value : ""};
+
+		this.handleChange = this.handleChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
+	}
+
+	handleChange = (e)=> {
+		this.setState({
+			value : e.target.value
+		})
+	}
+
+	handleSubmit = (e)=>{
+		alert("Submitted value : " + this.state.value);
+		e.preventDefault();
+	}
+
+	render(){
+		return(
+			<>
+
+				<form onSubmit = {this.handleSubmit}>
+					
+                   <label>
+                   		Pick your favorite flavor :
+                   		<select value = {this.state.value} onChange = {this.handleChange}> 
+                   			<option value = "grapfruit"> Grapfruit </option>
+                   			<option value = "lime"> Lime </option>
+
+                   		</select>
+                   </label>
+
+
+				<input type = "submit" />
+				</form>
+			</>
+
+			)
+	}
+}
+
+export default App;
+

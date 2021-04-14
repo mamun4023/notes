@@ -1,0 +1,35 @@
+<div> 
+
+</div>
+
+
+<style type="text/css">
+  
+  div{
+      height: 200px;
+      width: 200px;
+      background: red;
+      margin: auto;
+
+
+      /* It is the middle  */
+  }
+
+</style>
+
+
+
+
+--------- Margin property ------------
+
+
+ margin-top
+ margin-right
+ margin-bottom
+ margin-left
+
+ length : px, %, pt, cm, negative value is allowed
+ auto : Browser calculates a margin
+ initial : Sets to its defaul
+ inherit :  
+

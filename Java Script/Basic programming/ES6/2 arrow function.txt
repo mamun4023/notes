@@ -1,0 +1,26 @@
+ const myFunction = ()=> {
+ 	console.log("Hello Arrow function ")
+ }
+  
+
+
+  myFunction();
+
+
+
+
+
+single reference
+
+ const myFunction = a=> {
+ 	console.log("Hello Arrow function ")
+ }
+  
+
+
+double referenc
+
+ const myFunction =(a, b)=> {
+ 	console.log("Hello Arrow function ")
+ }
+  

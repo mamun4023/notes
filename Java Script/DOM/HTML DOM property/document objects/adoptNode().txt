@@ -1,0 +1,16 @@
+<p id="demo">demo</p>
+
+
+<script type="text/javascript">
+      
+	function myFunction(){
+		var frame = document.getElementsByTagName('iframe')[0];
+		var h = frame.contentWindow.document.getElementsByTag['h1'][0];
+
+		var x= document.adoptNode(h);
+		document.body.appendChild(x);
+	}
+
+</script>
+
+<iframe src="/deafult.asp"></iframe>

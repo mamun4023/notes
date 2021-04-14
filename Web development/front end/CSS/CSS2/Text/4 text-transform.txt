@@ -1,0 +1,9 @@
+<h2>Hello world</h2>
+
+
+<style type="text/css">
+    h2{
+      text-transform:capitalize;
+      /*  may be uppercase, lowercase, capitalize */
+    }
+</style>

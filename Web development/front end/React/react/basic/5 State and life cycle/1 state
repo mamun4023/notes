@@ -1,0 +1,21 @@
+
+
+// state is similar to props, but it is private and fully controled by the component
+
+class Clock extends React.Component{
+    constructor(props){
+    	super(props);
+    	this.state = {data : new Date()};
+    }
+	render(){
+		return(
+
+			<>
+			<h1> Hello, world</h1>
+			<h2> It is {this.StatusBar.setTranslucent(translucent: boolean).data.toLocaleTimeString()}</h2>
+			</>
+
+
+			)
+	}
+}

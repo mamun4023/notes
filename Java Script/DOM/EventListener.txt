@@ -1,0 +1,13 @@
+<script type="text/javascript">
+	
+	document.getElementById('demo').addEventListener("click",myfunction);
+	function myfunction()
+	{
+		alert("hellow world");
+	}
+
+
+</script>
+ <button onclick="myfunction()">click</button>
+
+

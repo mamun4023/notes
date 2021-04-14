@@ -1,0 +1,26 @@
+
+import React,{Suspense} from 'react'
+const Other = React.lazy(()=> 
+	import ('./contact'));
+
+const Other1 = React.lazy(() => 
+	import('./service'));
+
+function App(){
+	 // wraping multiple component
+    return(
+
+    		<>
+             <Suspense fallback  = {<div> Loading...</div>} >
+             	<section>
+                	<Other/>
+             	    <Other1/>
+             	</section>
+             </Suspense>
+
+    		</>
+    	)
+
+}
+
+export default App;

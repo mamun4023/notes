@@ -1,0 +1,16 @@
+
+<div>
+<p>This is heading</p>
+</div>
+
+<div>
+	<p>This is big project</p>
+	<p>This is the second bigest project in the world</p>
+</div>
+
+<style type="text/css">
+p:only-child{
+	color:red;
+}
+
+</style>

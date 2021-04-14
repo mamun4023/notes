@@ -1,0 +1,18 @@
+<nav id="get">
+	<a href="">Home |</a>
+	<a href="">Services</a>
+</nav>
+
+<button onclick="myFunction()">Click</button>
+<p id="demo"></p>
+<script type="text/javascript">
+	
+	function myFunction()
+	{
+		var x = document.getElementById('get').innerHTML;
+		
+		document.getElementById('demo').innerHTML = x;
+		
+	}
+	
+</script>

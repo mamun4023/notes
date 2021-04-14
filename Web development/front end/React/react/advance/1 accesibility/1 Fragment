@@ -1,0 +1,19 @@
+
+import React,{Fragment} from 'react'
+
+
+function App(){
+
+	return(
+		// it groups the element 
+		// used instead of div
+		<Fragment>
+
+			hello world
+
+		</Fragment>
+
+		)
+}
+
+export default App;

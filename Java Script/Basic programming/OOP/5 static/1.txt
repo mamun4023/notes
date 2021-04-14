@@ -1,0 +1,11 @@
+<script type="text/javascript">
+	
+	class Test{
+		Static display(){
+			document.write( "Static method is invoked ");
+		}
+	}
+
+    Test.display();
+
+</script>

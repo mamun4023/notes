@@ -1,0 +1,33 @@
+
+<body></body>
+<style type="text/css">
+   body{
+       background-image:url('ddd.png');
+       background-repeat: no-repeat;
+       background-position: center
+       
+   }
+
+
+</style>
+
+
+
+
+
+-------------  position properties -------------------------------
+ 
+ center : Display image on center
+ x% y% : 
+ xPx ypx : 
+ initial : Sets this property to its default value.
+ left : Display image to left
+ right: Display image to right
+ top : Display on top
+ bottom: Display image on down
+ left right : display left right corner
+ left bottom 
+ ---------
+ ----------
+ inherit
+ 

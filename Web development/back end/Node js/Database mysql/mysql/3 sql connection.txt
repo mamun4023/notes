@@ -1,0 +1,38 @@
+const express  = require('express');
+const app = express();
+const mysql = require('mysql');
+
+
+// connection created
+const DB = mysql.createConnection({
+	host :  'localhost',
+	user : 'root',
+	password : '',
+	database : 'db'
+})
+
+
+DB.connect((err)=> {
+	if(err){
+		throw err;
+	}
+	console.log("mysql connected");
+})
+
+app.get('/',(req, res)=>{
+	DB.query("select *from student",(err, rows, fields)=> {
+		if(!err){
+			var dd = rows[0].name;
+			if(dd == 'Tohid')
+			res.send("<h1> this name is exist</h1>");
+		}
+		else{
+			console.log(err);
+		}
+	})
+})
+
+
+app.listen(2000,()=> {
+	console.log("server is start..")
+})

@@ -1,0 +1,28 @@
+
+import React,{useState, useEffect, useRef} from 'react'
+
+function App() {
+	const [timer, setTimer] = useState(0);
+	const inervalRef = useRef()
+
+
+useEffect(() => {
+	inervalRef.current = setInterval(() =>{
+		setTimer(prevTimer => prevTimer+1)
+	},1000)
+	return()=> {
+		clearInterval(inervalRef.current)
+	};
+}, [])
+    
+    return(
+
+    	<div>
+    		Hook timer - {timer}
+    		<button onClick = {() => clearInterval(inervalRef.current)}> stop</button>
+
+    	</div>
+    	)
+
+ }
+export default App;

@@ -1,0 +1,9 @@
+	
+// check data type 
+// return true if match data type otherwise false
+var arr = [1,2,3,4];
+console.log( arr instanceof Array);
+console.log(arr instanceof Number);
+console.log(arr instanceof String);
+console.log(arr instanceof Boolean);
+

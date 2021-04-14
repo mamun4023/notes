@@ -1,0 +1,19 @@
+<div> 
+   <h3>Hello world</h3>
+   <p>Hello p tag</p>
+
+</div>
+
+
+<style type="text/css">
+  
+  div h3{
+    color:red;
+      /*  Decendant selector used space  */
+  }
+
+  div p{
+    color: green;
+  }
+
+</style>

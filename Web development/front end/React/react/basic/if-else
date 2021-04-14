@@ -1,0 +1,33 @@
+
+import React from 'react'
+
+
+function FormatName(user){
+	return user.fistName+ " " +user.lastName
+}
+
+ const user = {
+ 	fistName: 'Tohid',
+ 	lastName: 'Ahmed'
+ }
+
+
+function App(){
+   
+   if(user){
+   	return(<h1> Hello, {FormatName(user)} </h1>);
+   }
+   else
+   {
+   	return(<h1> I stranger</h1>);
+   }
+
+
+		
+}
+
+export default App;
+
+
+
+

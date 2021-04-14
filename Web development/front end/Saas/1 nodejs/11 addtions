@@ -1,0 +1,43 @@
+$a : 40px;
+$b : 10px;
+
+.container{
+	// adding two variable 
+   font-size : $a + $b;
+
+}
+
+
+
+
+
+
+$a : 40;
+$b : 10;
+
+.container{
+	// adding two variable 
+   font-size : $a + $b + px;
+
+}
+
+
+
+
+$a : 40;
+$b : 10;
+
+.container{
+	// multiply two variable 
+   font-size : $a / $b + px;
+
+}
+
+
+
+
+
+
+
+
+

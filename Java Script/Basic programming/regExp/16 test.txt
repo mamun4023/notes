@@ -1,0 +1,5 @@
+
+// return true or false
+var patt = /dd/;
+ var d = patt.test("The best things in life are free!");
+ console.log(d);

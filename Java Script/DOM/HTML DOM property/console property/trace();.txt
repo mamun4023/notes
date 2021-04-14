@@ -1,0 +1,15 @@
+<script type="text/javascript">
+	
+
+	function myFunction(){
+		myOtherfunction();
+	}
+
+	function myotherfunction()
+	{
+		console.trace();
+	}
+
+
+
+</script> 

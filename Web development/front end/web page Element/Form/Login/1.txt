@@ -1,0 +1,78 @@
+<h2>Modal Login form</h2>
+<button onclick="document.getElementById('id01').style.display='block'" style="width: auto;">Login</button>
+
+<div id="id01" class="modal">
+
+   <form class="modal-content animate" method="post">
+      <div class="imgcontainer"></div>
+
+      <div class="container">
+         <label for="uname"><b>Username</b> </label><br>
+         <input type="text" placeholder="Enter name"><br>
+         <label for="pws"><b>Password</b></label><br>
+         <input type="password" placeholder="Enter password"><br>
+         <input type="submit" value="submit"><br>
+         <label><input type="checkbox" name="">Remember Me</label>
+      </div>
+
+      
+   </form>
+
+   
+</div>
+
+
+
+<style type="text/css">
+   input[type=text],input[type=password]{
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+   }
+
+   button {
+      background: #4caf50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+   }
+   button:hover{
+      opacity: .60;
+   }
+
+   .container{padding: 16px;}
+   .modal{
+      display: none;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background: rgba(0,0,0,0.4);
+      padding-top: 60px;
+   }
+   .modal-content{
+      background: #fefefe;
+      margin: 5% auto 15% auto;
+      border: 1px solid #888;
+      width: 80%;
+   }
+</style>
+
+<script type="text/javascript">
+   var modal = document.getElementById('id01');
+
+   window.onclick =function(event){
+      if(event.target == modal)
+      {
+         modal.style.display = 'none';
+      }
+   }
+</script>

@@ -1,0 +1,5 @@
+----------
+use postman 
+
+localhost:4000/upload 
+select file then upload

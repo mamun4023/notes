@@ -1,0 +1,5 @@
+ <!--  SINGLE FILE -->
+<form action="/uploadfile" enctype="multipart/form-data" method="POST"> 
+   <input type="file" name="myFile" />
+   <button> Upload </button>
+</form>

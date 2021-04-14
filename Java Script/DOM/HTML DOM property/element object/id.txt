@@ -1,0 +1,18 @@
+<button onclick="myFunction()" id="mybtn">Click</button>
+
+<a class="anchor"  id="myAnchor"  href="www.fb.com">Home</a>
+<a class="anchor" href="">Services</a>
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+    function myFunction() {
+	var x = document.getElementsByClassName('anchor')[0].id;
+	document.getElementById('demo').innerHTML = x;
+	}
+</script>
+<body>
+	
+</body>
+
+

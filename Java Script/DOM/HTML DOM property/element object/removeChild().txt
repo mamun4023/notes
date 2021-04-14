@@ -1,0 +1,18 @@
+<button onclick="myFunction()">click</button>
+
+<ul class="myList">
+	<li>home</li>
+	<li>Services</li>
+	<li>Contact</li>
+</ul>
+
+
+
+<script type="text/javascript">
+	function myFunction()
+	{
+		var list = document.getElementById('myList');
+		list.removeChild(list.childNodes[0]);
+	}
+</script>
+s

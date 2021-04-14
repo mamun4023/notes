@@ -1,0 +1,17 @@
+
+<textarea oncopy="myFunction()"></textarea>
+
+
+
+<script type="text/javascript">
+	function myFunction()
+	{
+		
+		alert("copied..")
+
+
+	}
+</script>
+
+
+

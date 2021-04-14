@@ -1,0 +1,26 @@
+<button onclick="draw()">Click</button>
+<canvas id="canvas"  width="400 " height="200" style="border: 1px solid gray;">
+	
+</canvas>
+
+
+
+
+
+
+<script type="text/javascript">
+	   function draw(){
+		
+		var c = document.getElementById('canvas');
+		var d = c.getContext('2d');
+		
+		  d.font = '20px arial';
+		  var txt = "hello world";
+		  d.fillText("width : " + d.measureText(txt).width,10,50);
+		  d.fillText(txt,10,100);
+
+	
+
+	   }
+	    
+</script>8:41 PM 4/24/2020

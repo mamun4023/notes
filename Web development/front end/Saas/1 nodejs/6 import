@@ -1,0 +1,74 @@
+
+import React from 'react';
+import './style.scss';
+
+function App(){
+	return(
+		<>	
+			<div className = "header">	
+					<h2> nesting Sass </h2>
+					<p> nesting 1 </p>
+					<p> nesting 2 </p>
+					<p> nesting 3 </p>
+			</div>
+			<div className = "footer">
+				<h3> footer </h3>
+			</div>
+
+		</>
+		)
+}
+
+export default App;
+
+
+
+
+
+
+
+
+style.scss
+
+
+@import "header";
+@import "footer";
+
+
+
+
+
+
+_header.scss
+
+
+$primary_3: green;
+
+  // nesting saas 
+.header{
+	h2{
+		color: $primary_3;
+	}
+	// select all the nesting 
+	&:hover {
+		color : red;
+	}
+
+}
+
+
+
+
+
+_footer.scss
+
+
+
+.footer{
+	color: blue;
+}
+
+
+
+
+

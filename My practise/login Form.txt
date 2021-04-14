@@ -1,0 +1,73 @@
+<body>
+<div class="container">
+   
+   <h3>User Login</h3>
+   <label for="Username">Username</label><br>
+   <input type="text" name=""><br>
+   <label for="password">password</label><br>
+   <input type="password" name=""><br>
+   <input type="submit" value="login">   <br>
+</div>
+
+</body>
+<style type="text/css">
+   body{
+      box-sizing: border-box;
+      position: relative;
+      background: #ddd;
+      overflow: hidden;
+     
+   }
+
+   .container{
+
+      height: 40%;
+      width: 100%;
+      background: #f1f1f1;
+      border: 1px solid black;
+      border-radius: 10px;
+      position: relative;
+      top: 30px;
+      padding: 3px;
+   }
+   .container h3{
+      color: black;
+      text-align: center;
+
+   }
+
+   input[type=text],input[type=password]{
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: none;
+      border: 1px solid gray;
+
+   }
+
+   input[type=submit]
+   {
+      width: 100%;
+      height: 30px;
+      border: none;
+      background: #aaa;
+      padding: 4px 10px;
+      margin-top: 4px;
+      border-radius: 10px;
+   }
+
+   input[type=submit]:hover{
+      background: #666;
+   }
+
+   @media screen and (max-width: )
+   {
+      body{
+         background: red;
+      }
+
+   }
+
+
+
+</style>

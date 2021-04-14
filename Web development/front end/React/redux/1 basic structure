@@ -1,0 +1,31 @@
+import {createStore} from 'redux'
+
+
+
+// redux function
+function counter(state = 0, action){
+  switch(action.type){
+    case 'Increment':
+      return state+1
+    case 'Decrement':
+      return state-1
+
+    default:
+      return state 
+  }
+}
+
+
+  // create store 
+let store = createStore(counter)
+
+store.subscribe(() => console.log(store.getState()))
+
+
+// dispatching data 
+store.dispatch({type: "Increment"})
+
+
+store.dispatch({type: "Increment"})
+
+store.dispatch({type: "Decrement"})

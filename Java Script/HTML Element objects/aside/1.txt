@@ -1,0 +1,23 @@
+
+<button onclick="myFunction()">Click</button>
+
+<aside id="get">
+	<h4>Epi center</h4>
+	<p>The epcot center is a theme park in disney world. Florida</p>
+
+</aside>
+
+
+
+
+<script type="text/javascript">
+	function myFunction()
+	{
+		var x = document.getElementById('get');
+		x.style.color ='red';
+
+		
+	}
+
+
+</script>

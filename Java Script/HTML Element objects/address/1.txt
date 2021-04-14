@@ -1,0 +1,15 @@
+<button onclick="myFunction()" >Click</button>
+
+<area id="get" shape="circle" coords="124, 58, 8" href="venus.html">
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+	function myFunction()
+	{
+	  var x = document.getElementById('get').href;
+	  document.getElementById('demo').innerHTML = x;
+	}
+</script>
+
+

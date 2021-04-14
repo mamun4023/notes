@@ -1,0 +1,9 @@
+
+<script type="text/javascript">
+  
+   var d = new Date();
+   var time = d.getDate();     // get day as a number (1 -31)
+   document.write(time);  
+   
+
+</script>

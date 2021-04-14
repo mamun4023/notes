@@ -1,0 +1,21 @@
+<div class="dropdown">Drop down
+	<div class="dropdown-content">Hello world</div>
+</div>
+
+
+
+<style type="text/css">
+	.dropdown{
+
+		 
+	}
+
+	.dropdown-content{
+		display: none;
+
+	}
+
+	.dropdown:hover .dropdown-content{
+		display: block;
+	}
+</style>

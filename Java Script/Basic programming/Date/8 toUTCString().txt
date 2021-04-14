@@ -1,0 +1,7 @@
+
+<script type="text/javascript">
+  
+   var d = new Date(12,12,12);
+   document.write(d.toUTCString());  // convert to string 
+
+</script>

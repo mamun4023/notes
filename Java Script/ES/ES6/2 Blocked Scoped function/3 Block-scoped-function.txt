@@ -1,0 +1,10 @@
+{
+  var name = function (n) {    // let or const not able to open functon outside
+    console.log(n);		
+  }
+   // name("Steve");	called in scoped    
+}
+
+name("Tohid");       // called out of scoped 
+
+  

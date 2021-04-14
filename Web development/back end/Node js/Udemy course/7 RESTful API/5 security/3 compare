@@ -1,0 +1,25 @@
+
+const bcrypt = require('bcrypt');
+
+
+// recommed to use async function 
+async function myFunction(){
+
+	const password =  'dddaaaccc';
+	const hassPass = await bcrypt.hash(password, 8);
+
+	console.log(password);
+	console.log(hassPass);
+
+	// match the password 
+	const match = await bcrypt.compare(password, hassPass);
+      
+	if(match)
+		console.log("password is correct");
+	else
+		console.log("password not correct");
+}
+
+
+myFunction();
+

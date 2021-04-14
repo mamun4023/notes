@@ -1,0 +1,74 @@
+
+.sidebar-container{
+
+	height: 100%;
+	width: 150px;
+	background: gray;
+	position: absolute;
+
+}
+
+.menu-heading {
+	font-size: 25px;
+	padding: 10px 30px;
+	color: lighten;
+}
+
+
+
+.menu {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+
+}
+
+.menu li{
+	padding: 5px 10px;
+	margin-left: 10px;
+
+}
+
+.menu a{
+	text-decoration: none;
+	color: black;
+
+}
+
+
+.icon {
+	font-size: 20px;
+	padding-right: 5px;
+}
+
+
+
+
+.menu li:hover {
+	background-color: #eee;
+	transition: 0.4s;
+
+}
+
+
+
+
+@media only screen and (max-width: 500px) {
+	.manu-text {
+		display: none;
+	}
+
+	.sidebar-container{
+	    width: 50px;
+	}
+
+	.menu-heading{
+		display: none;
+	}
+
+	.menu li {
+		border-radius: 20px;
+	}
+
+
+}

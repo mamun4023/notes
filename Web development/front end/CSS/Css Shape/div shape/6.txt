@@ -1,0 +1,14 @@
+<div>
+	
+</div>
+
+
+<style type="text/css">
+	div{
+		width: : 500px;
+		height: 300px;
+		background: gray;
+		border-bottom-right-radius: 300px;
+		border-bottom-left-radius: 300px;
+	}
+</style>

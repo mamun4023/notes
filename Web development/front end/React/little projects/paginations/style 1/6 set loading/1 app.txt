@@ -1,0 +1,21 @@
+
+import React from 'react';
+import Loading from './loading';
+
+
+function App(){
+
+
+	return(
+
+		<>
+
+
+		  <Loading />
+
+
+		</>
+		)
+}
+
+export default App;

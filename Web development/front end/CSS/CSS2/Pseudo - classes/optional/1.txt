@@ -1,0 +1,12 @@
+<input><br>
+<input required>
+
+
+<style type="text/css">
+
+ input:optional{
+ 	background: #aaa;
+ }
+
+
+</style>

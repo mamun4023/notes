@@ -1,0 +1,16 @@
+<script type="text/javascript">
+	
+   person = {
+   	firstName : 'Mychel',
+   	lastName  : 'Jhon',
+   	Company   : 'Alto',
+   	language  : 'English',
+     get lang(){
+     	return this.language;
+     }
+   }
+
+   	document.write(person.lang);
+
+
+</script>

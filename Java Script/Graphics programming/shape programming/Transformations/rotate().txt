@@ -1,0 +1,24 @@
+<button onclick="draw()">Click</button>
+<canvas id="canvas"  width="400 " height="200" style="border: 1px solid gray;">
+	
+</canvas>
+
+
+
+
+
+
+<script type="text/javascript">
+	   function draw(){
+		
+		var c = document.getElementById('canvas');
+		var d = c.getContext('2d');
+		d.rotate(30*Math.PI/180);
+		d.fillRect(50,20,100,50);
+
+	   }
+	   
+    
+
+
+</script>

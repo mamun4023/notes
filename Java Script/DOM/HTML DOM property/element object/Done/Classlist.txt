@@ -1,0 +1,29 @@
+<button onclick="myFunction()">Click</button>
+
+<div id="mydiv">I am a div element</div>
+
+
+<style type="text/css">
+	
+	.mystyle{
+		background-color: gray;
+		color: white;
+	}
+</style>
+
+
+
+<script type="text/javascript">
+ 
+  function myFunction() 
+  {
+  		document.getElementById('mydiv').classList.add('mystyle');
+  	}
+
+
+
+
+
+</script>
+
+

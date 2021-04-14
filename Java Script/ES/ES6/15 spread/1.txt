@@ -1,0 +1,7 @@
+
+//Find any of the alternatives separated with |
+ var str = "re, green, green, red, gren, gr, blue, yellow";
+  var patt1 = /(red|green)/g;
+  var result = str.match(patt1);
+
+  console.log(result);

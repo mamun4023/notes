@@ -1,0 +1,14 @@
+
+<span>Hover over me</span>
+<div>I will show on hover</div>
+
+<style type="text/css">
+	div{
+		background-color: red;
+		padding: 20px;
+		display: non;
+	}
+	span:hover +div{                                        
+		display: block;
+	}
+</style>   

@@ -1,0 +1,15 @@
+
+<script type="text/javascript">
+
+var num = 1;
+
+try{
+	num.toUpperCase();
+}
+
+catch(err){
+	document.write(err.name);
+}
+
+
+</script>

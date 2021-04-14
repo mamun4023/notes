@@ -1,0 +1,7 @@
+<h2>Hellow world</h2>
+
+<style type="text/css">
+  h2{
+    text-shadow: 2px 2px 10px red;
+  }
+</style>

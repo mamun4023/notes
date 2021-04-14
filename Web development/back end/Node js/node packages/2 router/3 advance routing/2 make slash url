@@ -1,0 +1,27 @@
+
+const express = require('express');
+const app = express();
+const router = express.Router();
+
+
+// localhost:3000/customers
+// localhost:3000/shop/orders
+
+
+app.use('/shop', router);
+
+router.get("/customers", (req, res)=> {
+	res.send("Customer pages")
+});
+
+router.get('/orders',(req, res)=>{
+	res.send("Order pages")
+});
+
+
+app.listen(3000,()=>{
+	console.log("server is running...");
+});
+
+
+

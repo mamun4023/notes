@@ -1,0 +1,17 @@
+---------Docker Volume ----------
+
+1 run container and show a html file 
+	-first create a folder named website
+	-create a index.html file 
+	-open terminal on index.html directory and 
+	-use this command
+	
+	sudo docker run --name website -v $(pwd):/usr/share/nginx/html:ro -d -p 3000:80 nginx
+	
+	now run on port 3000
+	
+2 enter into the container
+	sudo docker exec -it website bash
+
+
+3  

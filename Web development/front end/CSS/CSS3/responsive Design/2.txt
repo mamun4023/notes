@@ -1,0 +1,71 @@
+<div class="banner">Banner</div>
+<div class="left">left side</div>
+<div class="main">Main content</div>
+<div class="Right content">Right content</div>
+
+<div class="footer">Footer section</div>
+
+<style type="text/css">
+	
+	* {
+		box-sizing: border-box;
+		margin: 0px;
+		padding: 0px;
+
+	}
+
+	.banner{
+		height: 30%;
+		width: 100%;
+		background-color: orange;
+		text-align: center;
+		top: 0px;
+	}
+
+
+	.left{
+		height: 60%;
+		width: 15%;
+		background: gray;
+		float: left;
+		text-align: center;
+	}
+
+	.main{
+		width: 70%;
+		background: #f1f1f6;
+		height: 60%;
+		float: left;
+		text-align: center;
+	}
+	.right{
+		float: left;
+		width: 15%;
+		height: 60%;
+		background: gray;
+		text-align: center;
+	}
+
+	.footer{
+		height: 20px;
+		width: 20px;
+		background: red;
+	}
+
+	.footer{
+		height: 100px;
+		width: 100px;
+		background-color: red;
+	}
+
+
+@media screen and (max-width: 500px){
+	.left, .main, .right{
+		width: 100%;
+	}
+}
+
+
+
+
+</style>

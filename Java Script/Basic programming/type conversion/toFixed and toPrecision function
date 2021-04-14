@@ -1,0 +1,8 @@
+
+
+var d = 10.200232;
+console.log(d.toFixed(4)); // set fater point
+console.log(d.toPrecision(3));  // return given as
+
+
+

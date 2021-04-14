@@ -1,0 +1,8 @@
+
+<script type="text/javascript">
+  
+
+ var d = Math.ceil(4.2);      // return up to  number
+ document.write(d);
+
+</script>

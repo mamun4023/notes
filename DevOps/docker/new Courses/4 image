@@ -1,0 +1,34 @@
+----------Docker image-------
+
+--image is a template for creating an environment of your choice
+
+--snapshot
+--has everything need to run your apps
+-- os, software, app code
+
+
+
+----make a docker image
+
+1. create a docker file in project in root directory named Dockerfile
+
+put into the file 
+
+	FROM nginx:latest
+
+	ADD . /usr/share/nginx/html
+
+
+
+-- open terminal on directory folder
+run 
+	sudo docker build --tag website . // website is name
+
+2. show the images
+	docker images
+
+
+3 run this image as container
+	sudo docker run -d -p 3000:80 website 
+
+

@@ -1,0 +1,20 @@
+Redux
+
+- Redux is a universal data storage
+- A predictible state container for javscript applications
+- Allows you to share the state between components
+- Redux is a state management tool for javascript apps 
+- It integrates nicely with React. can use it with any other view library. It allow us to track changing data.
+
+
+
+
+
+why  use redux?
+
+- when we have big complicated data for complex applications.
+- Any component can pul any piece of data from the redux store. so data needs to be shared between multiple components
+- helop syou write applications that behave consitently
+- run in different environments(client, server, and native) and are easy to test
+- Provides a greate developer experience. such as live code editing combined with a time traveling debugger
+

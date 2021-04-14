@@ -1,0 +1,5 @@
+ function setCookie()  
+    {  
+        document.cookie="username=Duke Martin;max-age=" + (60 * 60 * 24 * 365) + ";"    // set in second 
+
+   }

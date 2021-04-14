@@ -1,0 +1,14 @@
+
+const path = require('path');
+
+
+
+// return path sting from object
+var dir = path.format({
+  root: '/ignored',
+  dir: '/home/user/dir',
+  base: 'file.txt'
+});
+
+console.log(dir);
+// Returns: '/home/user/dir/file.txt'

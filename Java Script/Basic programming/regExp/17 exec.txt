@@ -1,0 +1,5 @@
+
+// return obj or null
+var obj = /ed/.exec("The best things in life are free!");
+ console.log(obj);
+

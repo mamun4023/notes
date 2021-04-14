@@ -1,0 +1,13 @@
+
+
+var decimalNumber = 10;
+console.log(decimalNumber.toString(2));
+console.log(decimalNumber.toString(8));
+console.log(decimalNumber.toString(16));
+
+
+
+
+
+
+

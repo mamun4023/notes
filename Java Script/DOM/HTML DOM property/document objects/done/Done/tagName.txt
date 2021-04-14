@@ -1,0 +1,11 @@
+<div id="get"></div>
+
+<script type="text/javascript">
+	
+	var x = document.getElementById('get').tagName;
+	document.write(x);
+
+</script>
+
+
+<p>used to get tag name</p>

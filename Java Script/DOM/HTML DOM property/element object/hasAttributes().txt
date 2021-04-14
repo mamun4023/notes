@@ -1,0 +1,15 @@
+<button onclick="myFunction()" id="mybtn">Click</button>
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+    function myFunction() {
+	var x = document.body.hasAttributes();
+	document.getElementById('demo').innerHTML = x;
+	}
+</script>
+<body>
+	
+</body>
+<p>find out whether the button element has an onclick attribute or not</p>
+

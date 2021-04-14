@@ -1,0 +1,18 @@
+<div>
+	<p>Hellow</p>
+	<p>Wolrd</p>
+</div>
+
+<div>
+	<h3>Hello</h3>
+</div>
+
+
+<style type="text/css">
+	div> p,h3{
+		color: red;
+	}
+</style>
+
+
+<p>Select all p and h3 child under div </p>

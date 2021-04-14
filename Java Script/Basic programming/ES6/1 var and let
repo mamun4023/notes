@@ -1,0 +1,25 @@
+
+// normal javascript 
+
+// allow to define same name variable
+var counter = 10;
+
+var counter = 3;
+
+console.log(counter);
+
+
+
+
+
+//ES6
+
+// Doesn't allow to define same variable 
+
+
+let counter = 20;
+let counter = 2;
+
+console.log(counter);
+
+

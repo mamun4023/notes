@@ -1,0 +1,10 @@
+
+<body onload="setInterval(myFunction,2000)"></body>
+
+<script type="text/javascript">
+	function myFunction()
+	{
+		document.write("hello world <br>");
+		
+	}
+</script>

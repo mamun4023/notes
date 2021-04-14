@@ -1,0 +1,30 @@
+
+ <ul>
+ 	<li>nodejs</li>
+ 	<li>reactjs</li>
+ </ul>
+ <p>I like programming</p>
+
+ <ul>
+ 	<li>Banana  </li>
+ 	<li>Tea</li>
+ </ul>
+ <div>This is second list</div>
+
+
+ <ul>
+ 	<li>Banana  </li>
+ 	<li>Tea</li>
+ </ul>
+
+
+<style type="text/css">
+	p~ul{
+		color: red;
+	}
+</style>
+
+
+
+<p>Select after only p element </p>
+

@@ -1,0 +1,9 @@
+
+<script type="text/javascript">
+  
+   var d = new Date();
+   var time = d.getMilliseconds();     // get the Miliseconds (0-999)
+   document.write(time);  
+   
+
+</script>

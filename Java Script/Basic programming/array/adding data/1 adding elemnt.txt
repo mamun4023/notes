@@ -1,0 +1,8 @@
+
+<script type="text/javascript">
+   
+   var cars = ['BMW','Tesla','Pageroo'];
+  cars[cars.length] = 'ddd';    // adding in the last of an array 
+   document.write(cars);
+
+</script>

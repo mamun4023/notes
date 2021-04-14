@@ -1,0 +1,77 @@
+import React from 'react';
+import Home from './home';
+
+class App extends React.Component{
+
+	constructor(){
+		super();
+		this.state = {
+			name : 'Tohid'
+		};
+		console.log("constructor");
+	}
+
+ componentDidMount(){
+ 	console.log("componentDidMount")
+ }
+	render(){
+		  console.log("Render");
+		return(
+			 <>
+            
+			  <Home /> 
+			  { console.log(this.state.name)}   
+
+			 </>
+
+			)
+	}
+}
+
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// home page
+
+import React from 'react';
+
+
+
+class Home extends React.Component{
+    constructor(){
+    	super();
+    	console.log("child constructor")
+    }
+
+    componentDidMount(){
+    	console.log("Child componentDidmount")
+    }
+	render(){
+		console.log("Child Render");
+		return(
+			<>
+
+
+			</>
+
+			)
+	}
+}
+
+export default Home;
+

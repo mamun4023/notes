@@ -1,0 +1,16 @@
+<script type="text/javascript">
+	
+	document.getElementById('demo').addEventListener("click",myfunction1);
+	document.getElementById('demo').addEventListener("click",myfunction2);
+	document.getElementById('demo').addEventListener("click",myfunction3);
+
+      
+
+
+	
+	
+
+</script>
+ <button onclick="myfunction()">click</button>
+
+

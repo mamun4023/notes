@@ -1,0 +1,46 @@
+
+const express = require('express');
+const app = express();
+const router = require('./control');
+
+
+
+app.use('/shop', router);
+
+
+
+app.listen(3000,()=>{
+	console.log("server is running...");
+});
+
+
+
+
+
+router page
+
+const express  = require('express');
+const router = express.Router();
+
+
+
+router.get('/orders',(req, res)=>{
+	res.send("Order pages")
+});
+
+
+
+router.get("/customers", (req, res)=> {
+	res.send("Customer pages")
+});
+
+
+module.exports = router;
+
+
+
+
+
+
+
+

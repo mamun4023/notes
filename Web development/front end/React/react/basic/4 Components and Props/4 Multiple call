@@ -1,0 +1,20 @@
+
+
+function Welcome(props){
+	return <h3> hello, {props.name}</h3>
+}
+
+
+
+function App{
+	return(
+
+		<>
+		 // calling multiple times
+			<Welcome name = "Tohid" />
+			<Welcome name = "Roshid" />
+			<Welcome name = "Akbar" />
+		</>
+
+	)
+}

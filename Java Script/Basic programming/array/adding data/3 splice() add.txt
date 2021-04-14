@@ -1,0 +1,9 @@
+
+<script type="text/javascript">
+   
+   var cars = ['BMW','Tesla','Pageroo'];
+        
+      cars.splice(1,1,"DDD")    // 1 means position and 1 means 1 items to be added
+   document.write(cars);       
+
+</script>

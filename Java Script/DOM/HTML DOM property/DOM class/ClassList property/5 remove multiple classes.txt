@@ -1,0 +1,27 @@
+
+<button onclick="myFunction()">click</button>
+<div class="div1 div2 div3" id="demo">div</div>
+<style type="text/css">
+   .div1{
+      height: 100px;  
+      
+     
+   }
+   .div2{
+      width: 100px;
+   }
+
+   .div3{
+       background: red;
+   }
+
+
+</style>
+
+
+<script type="text/javascript">
+   function myFunction() {
+   var x = document.getElementById('demo');
+   x.classList.remove('div1','div2');
+   }
+</script>

@@ -1,0 +1,9 @@
+<script type="text/javascript">
+  
+  var string1 = 'Hello world';
+  var string2 = "hello world"
+ // single and double qottetion are same for string
+
+  document.write(string1);
+
+</script>

@@ -1,0 +1,11 @@
+<svg width ="400" height = "400">
+
+<ellipse cx=  '200' cy = '80' rx ='100' ry= '60'
+
+style='fill: yellow; stroke: purple; stroke-width:4;'
+
+ />
+
+
+
+</svg>

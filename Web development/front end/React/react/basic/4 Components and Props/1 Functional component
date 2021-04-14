@@ -1,0 +1,12 @@
+
+function welcome (props){
+	return <h1> Hello {props.name} </h1>;
+}
+
+
+// arrow function component
+welcome =(props)=> {
+	return <h1> hello {props.name} </h1>
+}
+
+

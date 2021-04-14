@@ -1,0 +1,8 @@
+
+		
+<script type="text/javascript">
+	function func(id) {
+		id.innerHTML="local hst";
+	}
+</script>
+	<h3 onclick="func(this)"> click here</h3>

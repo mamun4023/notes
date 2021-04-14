@@ -1,0 +1,23 @@
+<button onclick="draw()">Click</button>
+<canvas id="canvas"  width="400 " height="200" style="border: 1px solid gray;">
+	
+</canvas>
+
+
+
+
+
+
+<script type="text/javascript">
+	   function draw(){
+		
+		var c = document.getElementById('canvas');
+		var ctx = c.getContext('2d');
+		 ctx.fillRect(20,20,150,100);                                                      
+
+	   }
+	   
+    
+
+
+</script>

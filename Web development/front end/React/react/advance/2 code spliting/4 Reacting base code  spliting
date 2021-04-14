@@ -1,0 +1,32 @@
+
+import React, {Suspense, lazy} from 'react';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+
+const Home  = lazy(()=> import ('./home'))
+const Service = lazy(()=> import('./service'))
+const Contact = lazy(()=> import('./contact'));
+
+function App(){
+
+	return (
+
+			<>
+			<Router>
+				<Suspense fallback = {<div> Loading...</div>}>
+
+				  <Switch>
+				  	<Route exact path="/" component= {Home} />
+				  	<Route  path="/service" component= {Service} />
+				  	<Route  path="/contact" component= {Contact} />
+				  </Switch>
+
+				</Suspense>
+
+			</Router>
+
+
+			</>
+		)
+}
+
+export default App;

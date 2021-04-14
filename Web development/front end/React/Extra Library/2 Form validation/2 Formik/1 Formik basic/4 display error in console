@@ -1,0 +1,76 @@
+
+ 
+ 
+ 
+import React from 'react';
+import {useFormik} from 'formik';
+
+function Form(){
+
+const initialValues = {
+  name : "",
+  email : "",
+  channel : ""
+}
+
+const onSubmit = values => {
+  console.log("form data : ", values);
+}
+
+const validate = values => {
+  let errors = {}
+
+  if(!values.name){
+    errors.name = "Required"
+  }
+  if(!values.email){
+    errors.email = "Reguired"
+  }else if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)){
+    errors.email = "Invalid email format"
+  }
+  if(!values.channel){
+    errors.channel = "Required"
+  }
+
+  return errors;
+}
+    
+    const formik = useFormik({
+      initialValues,
+      onSubmit,
+      validate
+    })
+
+     
+     console.log('form error', formik.errors)
+
+  return(
+
+    <>
+      <div className = "container">
+      <form className ="form-group" onSubmit = {formik.handleSubmit}>
+         <label htmlFor = "name"> Name </label>
+         <input className ="form-control" type = "text" id = "name" name = "name" onChange = {formik.handleChange} value = {formik.values.name} />
+
+
+         <label htmlFor = "email"> email </label>
+         <input className ="form-control" type = "email" id = "email" name = "email" onChange ={formik.handleChange} value = {formik.values.email} />
+
+
+         <label htmlFor = "channel"> channel </label>
+         <input className ="form-control" type = "text" id = "channel" name = "channel" onChange = {formik.handleChange} value = {formik.values.chaneel}  />
+     
+
+
+         <input type = "submit"  className = "form-control"/>
+
+      </form>
+      </div>
+    </>
+
+
+    )
+}
+
+
+export default Form;

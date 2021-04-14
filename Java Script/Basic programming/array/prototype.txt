@@ -1,0 +1,16 @@
+
+<script type="text/javascript">
+	
+	array.prototype.myUcase = function(){
+	{
+		var i;
+		for(i=0; i<this.length; i++)
+		{
+			this[i]= this[i].toUpperCase();
+		}
+	};
+
+	var cars =['bmw','tesla','corola'];
+	document.write( cars.myUcase());
+
+</script>

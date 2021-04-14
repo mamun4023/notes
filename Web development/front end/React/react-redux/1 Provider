@@ -1,0 +1,23 @@
+
+import React from 'react';
+import {Provider} from 'react-redux';
+import store from './store';
+
+// provider link to store 
+function App(){
+
+	return(
+		<>
+		   <Provider store = {store}>
+
+		   		<Shop /> 
+
+		   </Provider>
+
+		</>
+
+		)
+}
+
+
+export default App;

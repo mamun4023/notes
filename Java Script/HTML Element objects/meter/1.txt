@@ -1,0 +1,16 @@
+
+<meter id="get" max="100" value="19"></meter>
+
+<button onclick="myFunction()">Click</button>
+<p id="demo"></p>
+<script type="text/javascript">
+	
+	function myFunction()
+	{
+		var x = document.getElementById('get').value;
+		
+		document.getElementById('demo').innerHTML = x;
+		
+	}
+	
+</script>

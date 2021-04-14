@@ -1,0 +1,14 @@
+
+<script type="text/javascript">
+	function myFunction(){
+		var str = "Hello World";
+		var enc = window.btoa(str);
+		document.write(enc);
+		var dec = window.atob(enc);
+		document.write("<br>");
+		document.write(dec);
+	}
+
+</script>
+
+<button onclick="myFunction()">Click</button>

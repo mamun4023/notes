@@ -1,0 +1,17 @@
+<form name="myForm" method="post" onsubmit="return validateForm()">
+   <input type="text" name="fname"><br>
+   <input type="submit" name="">
+   
+</form>
+
+
+<script type="text/javascript">
+   function validateForm(){
+   var x = document.forms['myForm']['fname'].value;
+      if(x == "")
+         {
+            alert("must be filled");
+           return false;
+   }
+   }
+</script>

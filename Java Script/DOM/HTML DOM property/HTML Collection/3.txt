@@ -1,0 +1,16 @@
+
+<script type="text/javascript">
+   var x, i, l;
+   x = document.getElementsByTagName('*');
+   l = x.length;
+   
+   for(i=0; i<l; i++)
+   {
+   	document.write(x[i].tagName +"<br>");
+   }
+
+
+
+</script>
+
+

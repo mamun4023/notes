@@ -1,0 +1,18 @@
+
+
+<script type="text/javascript">
+ 
+ 
+  	var txt;
+  	var r = confirm("Press a button");
+  		if(r == true){
+  			txt = "you pressed ok";
+  		}
+  		else{
+  			txt = "you pressed cancel";
+  		}
+  		document.write(txt);
+ 
+  
+
+</script>

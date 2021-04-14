@@ -1,0 +1,13 @@
+
+<button class="myFunction()">Forward</button>
+
+
+
+<script type="text/javascript">
+	
+	function myFunction()
+	{
+		window.history.forward();
+	} 
+
+</script>

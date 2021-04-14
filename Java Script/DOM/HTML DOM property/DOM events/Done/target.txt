@@ -1,0 +1,17 @@
+
+<button onclick="myFunction(event)">click</button>
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+	
+	function myFunction(event)
+	{
+		var x = event.target;
+		document.getElementById('demo').innerHTML = x.tagName;
+	} 
+
+</script>
+
+
+<p> return tag name</p>

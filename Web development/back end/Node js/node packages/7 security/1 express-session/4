@@ -1,0 +1,103 @@
+const express = require('express');
+const app = express();
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy
+const expressHandlebars = require('express-handlebars');
+const session = require('express-session');
+const bodyParser = require("body-parser");
+const path = require('path');
+
+
+app.use(bodyParser.urlencoded({extended : true}));
+app.use(bodyParser.json());
+
+
+app.engine("hbs", expressHandlebars({
+	extname : "hbs",
+	defaultLayout : "mainLayout",
+	layoutsDir : __dirname + "/views"
+}))
+
+
+app.set('view engine', 'hbs');
+
+
+
+
+//express session middelware setup
+
+app.use(session({
+	secret : "secret",
+	resave : true,
+	saveUninitialized : true
+}));
+
+
+// passport middleware setup
+
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+
+
+
+app.get('/login', (req, res)=>{
+	res.render("login", {})
+})
+
+
+
+app.get('/dashboard', isLoggedIn, (req, res)=> {
+	res.render("dashboard", {})
+})
+
+
+app.get('/logout', (req, res)=> {
+	req.logout();
+	res.redirect('/login')
+});
+
+
+app.post("/login", passport.authenticate('local', {
+	failureRedirect : "/login",
+	successRedirect : "/dashboard"
+}))
+
+
+
+passport.use(new LocalStrategy(
+	(username, password, done)=> {
+		if(username === "test@gmail.com" && password === "123"){
+			return done(null, {username: "test@gmail.com"});
+		}else{
+			return done(null, false);
+		}
+	}
+
+	));
+
+passport.serializeUser((user, done)=> {
+	done(null, user.username)
+});
+
+
+
+passport.deserializeUser((username, done)=> {
+	done(null, {username : username})
+})
+
+
+function isLoggedIn(req, res, next){
+	if(req.isAuthenticated()){
+		return next();
+	} else{
+		return res.redirect('/login');
+	}
+}
+
+
+app.listen(3000, ()=> {
+	console.log("server is running....")
+})

@@ -1,0 +1,16 @@
+<button onclick="myFunction()">Click</button>
+
+<h1 class="ddd" align="center">Heading 1</h1>
+
+<p id="demo"></p>
+<script type="text/javascript">
+	function myFunction()
+	{
+		
+		var x = document.getElementsByTagName('h1')[0];
+		var attr = x.getAttributeNode('class').value;
+		document.getElementById('demo').innerHTML = attr;
+	}
+</script>
+
+<p> Note: Get the property of h1</p>

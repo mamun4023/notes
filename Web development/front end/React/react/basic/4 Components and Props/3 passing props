@@ -1,0 +1,14 @@
+
+
+// always start component name with capital latter
+function App(props){
+	return <h3> Hello, {props.name} </h3>;
+}
+
+const element = <App name = "Tohid" />
+
+
+ReactDOM.render(element, document.getElementById('root'));
+
+
+

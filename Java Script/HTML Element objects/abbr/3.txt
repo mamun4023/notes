@@ -1,0 +1,19 @@
+<button onclick="myFunction()" >Click</button>
+
+<address id="get">box 333, disneyland, USA</address>
+
+
+<p id="demo"></p>
+
+
+
+<script type="text/javascript">
+	function myFunction()
+	{
+		 var x = document.getElementById('get');
+		 document.getElementById("demo").innerHTML =x.innerHTML ;
+	}
+</script>
+
+
+<p> Get the addres tag as an input</p>

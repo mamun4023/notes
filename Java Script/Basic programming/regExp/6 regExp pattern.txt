@@ -1,0 +1,11 @@
+Find any of the characters between the brackets
+
+ // return how many exist
+  var str = "Is this all there ishh?";
+  var patt1 = /[h]/g; 
+  var result = str.match(patt1)
+  console.log(result);
+
+
+
+

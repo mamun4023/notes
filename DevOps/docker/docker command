@@ -1,0 +1,142 @@
+
+
+
+---------------docker commands--------------
+
+1. Check docker version
+	
+	docker --version
+
+
+
+2. To see all docker commands
+	
+	docker --help
+
+
+
+3. download docker image in local repository
+	
+	docker pull
+	
+	docker pull ubuntu
+
+
+
+
+4. List down all the images in your local repository
+	
+	docker images
+
+
+
+5. Execute a docker image on your local repository
+	
+	docker run
+	
+	docker run ubuntu
+
+
+
+6. To compile the Dockerfile for building custom docker images
+	
+	docker build
+
+	docker build -t myUbuntuImage 
+
+
+
+7 . Docker container
+	
+	-- this command perform various operations
+		
+		docker container logs
+		
+		docker container kill
+		
+		docker container rm
+		
+		docker container run
+		
+		docker container run
+		
+		docker container start
+		                   
+				so on...
+
+
+
+8. login the docker hub
+
+	docker login
+
+
+
+9. push a docker image on you local repository to docker hub
+	docker push 
+	docker push "image name"
+
+10. list of all the running containers in the host -a shutdown container also dislplay
+	docker ps
+	docker ps -a 
+
+11. shut down the container temporarily 
+	docker stop
+	docker stop "id"
+
+12. kill the container
+	docker kill
+	docker kill "id"
+
+13. remove a container
+	docker rm
+	docker rm "id"
+
+14. removes the container 
+	docker rmi
+
+15. to access an running container and perform operations inside the container
+	docker exec
+	docker exec -it "id" bash
+
+
+16. create a new image of an edited container on the local repo
+	docker commit 
+	docker commit "id" "image name"
+
+17. Export a docker image into a tar file in your local system  / like download in you machine 
+	docker export
+	docker export --output = "latest.tar" myContainer
+
+18.  import the content of a tar file into your local repository
+	docker import
+	docker import /home/eduraca/download/demo.tgz
+
+
+
+
+
+----------------- advance command ------------
+
+19. power multi-container applications where various services will be hosted inside different container
+	docker compose 
+	docker -compose build
+	docker -compose up
+
+20. create a network of docker engines/ hosts to execute containers inparallel(for scalling up and high availability)
+	docker swarm
+	docker swarm init --advertise -addr 192.168.1.100
+	docker swarm join
+	docker swarm join-token
+	docker swarm leave
+
+21.  control any existing docker service (container/compose/swarm/other....)
+	docker service 
+	docker service ls
+	docker service ps
+	docker service scale
+	docker service stop
+	docker service logs
+	docker service rm
+
+                                                                                                                                                                                                                                                                                                  

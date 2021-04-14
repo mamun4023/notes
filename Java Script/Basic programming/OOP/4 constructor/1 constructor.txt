@@ -1,0 +1,15 @@
+
+<script type="text/javascript">
+
+
+ class Employee{
+ 	constructor(){
+ 		this.id = 101;
+ 		this.name = "Abdullah ";
+ 	}
+ }
+
+ var emp = new Employee();
+ document.write(emp.id + " " + emp.name);
+
+</script>

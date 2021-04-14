@@ -1,0 +1,13 @@
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+ 
+ var x = navigator.appCodeName;
+ document.getElementById('demo').innerHTML = x;
+
+ }
+
+</script>
+<p id="demo"></p>

@@ -1,0 +1,6 @@
+<p id="demo"></p>
+
+<script type="text/javascript">
+	
+	document.getElementById('demo').innerHTML = "hello world";
+</script>

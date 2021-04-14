@@ -1,0 +1,84 @@
+<!--HTML element -->
+<button class="tablink" onclick="openPage('home',this,'red')">Home</button>
+<button class="tablink" onclick="openPage('News',this,'green')">News</button>
+<button class="tablink" onclick="openPage('home',this,'blue')">Contact</button>
+
+
+
+
+
+<div id="home" class="tabcontent">
+	<h3>Home</h3>
+	<p>This is home page</p>
+
+	
+</div>
+
+<div id="news" class="tabcontent">
+	<h3>News</h3>
+	<p>This is news page</p>
+</div>
+
+<div id="Contact" class="tabcontent">
+	<h3>Contact</h3>
+	<p>This is Contact pages</p>
+</div>
+
+
+<style type="text/css">
+	.tablink{
+		background-color: #555;
+		color: white;
+		float: left;
+		border: none;
+		outline: none;
+		cursor: pointer;
+		padding: 14px 16px;
+		font-size: 17px;
+		width: 25%;
+	}
+	.tabcontent{
+		color: white;
+		display: none;
+		padding: 100px 20px;
+		height: 100%;
+	}
+
+
+ #home {background-color: red;}
+ #news{background-color: green;}
+ #contact{background-color: blue;}
+
+</style>
+
+
+
+<script type="text/javascript">
+	
+	function openPage(pageName,elmnt,color){
+		var i, tabcontent,tablinks;
+
+		//hiding all elements wiht calss ="tabcontent" by default
+		tabcontent = document.getElementByClassName('tabcontent');
+		for(i=0; i<tabcontent.length; i++)
+		{
+			tabcontent[i].style.display="none";
+		} 
+
+		// remove  the background color of all tablinks/buttons
+
+		tablinks = document.getElementByClassName('tablinks');
+		for(i=0; i<tablinks.length; i++)
+		{
+			tablinks[i].style.backgroundColor = "";
+		}
+
+		// show the specific tab content  
+
+		document.getElementById('pageName').style.display="block";
+		//adding specific color to the tab
+		elmnt.style.backgroundColor = color;
+	}
+
+	document.getElementById('default0pen').click();
+</script>

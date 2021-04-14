@@ -1,0 +1,7 @@
+const request = require('request');
+const URL = "https://jsonplaceholder.typicode.com/users";
+
+request({url: URL}, (err, res)=> {
+	const data = JSON.parse(res.body)
+	console.log(data);
+})

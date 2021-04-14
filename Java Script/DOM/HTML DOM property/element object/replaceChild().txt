@@ -1,0 +1,20 @@
+<button onclick="myFunction()">click</button>
+
+<ul class="myList">
+	<li>home</li>
+	<li>Services</li>
+	<li>Contact</li>
+</ul>
+
+
+
+<script type="text/javascript">
+	function myFunction()
+	{
+		
+		var x = document.createTextNode('water');
+		var item = document.getElementById('myList').childNode[0];
+		item.replaceChild(x,item.childNodes);
+
+	}
+</script>

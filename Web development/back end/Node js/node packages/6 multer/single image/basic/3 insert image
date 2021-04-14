@@ -1,0 +1,15 @@
+app.post('/upload', upload.single('avatar'), (req, res)=> {
+   const data = new imageModel({
+      img : {
+        data : fs.readFileSync(path.join(__dirname + "/uploads/" + req.file.filename)),
+      }
+   })
+
+   data.save()
+   .then(()=> {
+    res.send("saved")
+   })
+   .catch(()=> {
+    res.send("Failed to saved")
+   })
+})

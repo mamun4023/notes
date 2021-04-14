@@ -1,0 +1,13 @@
+<div>
+  
+</div>
+
+<style type="text/css">
+  div{
+     overflow: hidden;
+     height: 200px;
+     width: 200px;
+     background: green;
+     border-bottom-left-radius: 30px;
+     
+</style>

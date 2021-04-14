@@ -1,0 +1,6 @@
+{{#with person}}
+{{firstname}} {{lastname}}
+{{/with}}
+
+
+

@@ -1,0 +1,13 @@
+<div> Hello world</div>
+
+
+<style type="text/css">
+  
+  div{
+    height: 100px;
+    width: 100px;
+    background: gray;
+    float: right;
+  }
+
+</style>

@@ -1,0 +1,9 @@
+
+// Asyncrhonus model 
+console.log("start");
+
+setTimeout(()=>{
+	console.log("2 sec");
+},2000);
+
+console.log("stop");

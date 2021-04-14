@@ -1,0 +1,10 @@
+const mapStateToProps = (state)=> {
+	return {
+		// data return for show data 
+	}
+}
+
+
+
+
+

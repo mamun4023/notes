@@ -1,0 +1,28 @@
+
+
+<p id="demo"> </p>
+<head id="myhead"></head>
+
+
+<script type="text/javascript">
+
+	setInterval("myFunction()",1);
+	
+	function myFunction() {
+
+		var x = document.getElementById('demo');
+		if(document.hasFocus())
+		{
+			x.innerHTML = "The document has focus";
+		}else
+		{
+			x.innerHTML = "the document does not have focus";
+		}
+		
+
+
+
+	}
+
+</script>
+

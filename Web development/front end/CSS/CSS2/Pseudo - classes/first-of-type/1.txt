@@ -1,0 +1,14 @@
+
+<p>This is first paragraph</p>
+<p>This is second paragraph</p>
+<p>This is third paragraph</p>
+<p>This is fourth paragraph</p>
+
+<style type="text/css">
+	
+  p:first-of-type{
+  	color: red;
+
+  }
+
+</style>

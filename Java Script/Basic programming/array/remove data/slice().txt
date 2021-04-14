@@ -1,0 +1,11 @@
+
+<script type="text/javascript">
+  
+
+  var a1 = ['1','2','3'];
+
+  var add = a1.slice(2);             // delete front from index 2 included
+
+  document.write(add);
+
+</script>

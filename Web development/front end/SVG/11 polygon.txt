@@ -1,0 +1,8 @@
+<svg width ="400" height = "400">
+
+<polygon points ='100,10,40,198,190,78,10,75,10,78,160,198' style= 'fill: tan; stroke:black; fill-rule: evenodd;'  />
+  
+
+
+
+</svg>

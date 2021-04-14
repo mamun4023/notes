@@ -1,0 +1,11 @@
+<div></div>
+
+
+<style type="text/css">
+	div{
+		position: absolute;
+		height: 50px;
+		width: calc(100%-100px);
+		background: red;
+	}
+</style>

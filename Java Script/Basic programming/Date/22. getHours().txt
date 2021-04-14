@@ -1,0 +1,9 @@
+
+<script type="text/javascript">
+  
+   var d = new Date();
+   var time = d.getHours();     // get the hour (0-23)
+   document.write(time);  
+   
+
+</script>

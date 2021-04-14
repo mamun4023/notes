@@ -1,0 +1,16 @@
+
+<button oncontextmenu ="myFunction()">Click</button>
+
+
+<script type="text/javascript">
+	function myFunction()
+	{
+		
+		document.write("hello world");
+
+
+	}
+</script>
+
+<p>clink on right button of mouse</p>
+

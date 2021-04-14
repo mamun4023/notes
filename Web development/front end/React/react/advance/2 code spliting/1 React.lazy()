@@ -1,0 +1,24 @@
+
+
+// the lazy component should then be rendered inside a Suspense component
+// athat allows us to show some fallback content (loading inticatro)
+//while we are waiting for the lazy component to load 
+
+import React,{Suspense} from 'react'
+const Other = React.lazy(()=> 
+	import ('./contact'))
+
+function App(){
+    return(
+
+    		<>
+             <Suspense fallback  = {<div> Loading...</div>} >
+             	<Other/>
+             </Suspense>
+
+    		</>
+    	)
+
+}
+
+export default App;

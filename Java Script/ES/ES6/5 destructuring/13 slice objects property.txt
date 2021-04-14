@@ -1,0 +1,24 @@
+<script type="text/javascript">
+
+
+const personOne = {
+	name : "Tohid",
+	age : 24,
+	address : {
+		city : "Gazipur",
+		state : "Dhaka"
+	}
+}
+
+
+// take only two property of object
+function printUser({name, age}){
+	console.log(name);
+	console.log(age);
+}
+
+
+printUser(personOne);
+
+
+</script>

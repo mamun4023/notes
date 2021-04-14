@@ -1,0 +1,26 @@
+
+
+
+<table class="table table-striped">
+  <tr>
+  		<th>Name</th>
+  		<th>Email</th>
+
+  </tr>
+{{#each article}}
+	<tr>
+
+	   <td> {{this.name}} </td>
+	   <td> {{this.email}} </td>
+	   <td> <a class="btn btn-danger" href="">del</a> </td>
+	   <td> <a class="btn btn-primary" href=""> update </a> </td>
+
+
+	</tr>
+
+{{/each}}
+
+</table>
+
+
+

@@ -1,0 +1,13 @@
+
+<script type="text/javascript">
+	var emp = class Employee{
+		constructor(id, name){
+			this.id = id;
+			this.name = name;
+		}
+	};
+
+
+	// 
+	document.write(emp.name);
+</script>

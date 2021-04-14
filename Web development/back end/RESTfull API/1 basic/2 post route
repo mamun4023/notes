@@ -1,0 +1,45 @@
+const express = require('express');
+const app  = express();
+const mongoose = require('mongoose');
+const bodyParser = require("body-parser");
+
+
+app.use(bodyParser.urlencoded({extended : true}));
+mongoose.connect("mongodb://127.0.0.1:27017/myDB", {useUnifiedTopology: true, useNewUrlParser: true }, (err)=> {
+	if(!err)
+		console.log("connected")
+})
+
+
+// make model
+const userSchema =  mongoose.Schema({
+	name : String,
+	email : String
+})
+
+const userModel = mongoose.model("userModel", userSchema);
+
+// insert 
+app.post('/post', (req, res)=> {
+	const {name, email} =  req.body;
+	const data = new userModel({
+		name,
+		email
+	})
+
+	data.save()
+	.then(()=> {
+		res.json({message : "success to insert data"})
+	})
+	.catch(()=> {
+		res.json({message : "Failed to insert data"})
+	})
+})
+
+
+
+
+
+app.listen(3000, ()=> {
+	console.log("server is start");
+})

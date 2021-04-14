@@ -1,0 +1,31 @@
+
+const express = require('express');
+const app = express();
+const fs = require('fs');
+
+
+// detete file 
+fs.unlink('data.txt',(err)=>{
+	if(err) throw err;
+		console.log("file has been deleted ")
+})
+
+
+
+
+// reading data 
+
+app.get('/',(req, res)=>{
+	fs.readFile('data.txt',(err, data)=>{
+		res.write(data);
+		return res.end();
+	});
+})
+
+
+app.listen(2000, ()=>{
+	console.log("server is running...");
+})
+
+
+

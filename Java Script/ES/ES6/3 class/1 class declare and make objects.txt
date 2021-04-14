@@ -1,0 +1,17 @@
+
+class dd{
+	constructor(){
+		console.log("class is called")
+	}
+
+	myFunction(){
+		console.log("from function ")
+	}
+
+
+
+}
+
+
+
+const obj = new dd();

@@ -1,0 +1,22 @@
+<script type="text/javascript">
+	
+	function person(first,last,age,eye){
+		this.firstName = first;
+		this.lastName = last;
+		this.age = age;
+		this.eyeColor = eye;
+	}
+
+	// create and person object
+	var myFather = new person('mychel','john',50,'black');
+
+
+	//display age
+	document.write(myFather.age);
+
+
+     // property is not addable into the constructor
+
+</script>
+
+

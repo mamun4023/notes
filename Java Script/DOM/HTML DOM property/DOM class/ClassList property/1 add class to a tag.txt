@@ -1,0 +1,19 @@
+<div id="get"></div>
+<button onclick="myFunction()">click</button>
+<style type="text/css">
+   .div{
+      height: 100px;
+      width: 100px;
+      background: red;
+   }
+
+</style>
+
+
+
+<script type="text/javascript">
+   function myFunction() {
+  var x= document.getElementById('get');
+   x.classList.toggle('div');
+   }
+</script>

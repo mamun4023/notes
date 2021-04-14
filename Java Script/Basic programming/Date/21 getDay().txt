@@ -1,0 +1,9 @@
+
+<script type="text/javascript">
+  
+   var d = new Date();
+   var time = d.getDay();     // get the weekday as a number(0--6)
+   document.write(time);  
+   
+
+</script>

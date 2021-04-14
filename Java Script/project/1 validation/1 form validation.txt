@@ -1,0 +1,25 @@
+
+<form name="myForm" method="post" onsubmit="return myFunction()">
+    Name: <input type="text" name="name">
+    password: <input type="" name="password">
+    <button> click </button>
+</form>
+
+
+<script type="text/javascript">
+    function myFunction(){
+        var name = document.myForm.name.value;
+        var password = document.myForm.password.value;
+
+
+        if(name == null || name == ""){
+            alert("must be fill")
+            return false;
+        }
+
+        if(password.length<6){
+            alert("more than 6");
+            return false;
+        }
+    }
+</script>

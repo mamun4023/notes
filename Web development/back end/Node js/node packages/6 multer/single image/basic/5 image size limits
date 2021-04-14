@@ -1,0 +1,8 @@
+const upload = multer({
+  storage : store,
+   limits: {
+        fileSize: 1024 * 1024 * 1024
+    }
+
+});
+

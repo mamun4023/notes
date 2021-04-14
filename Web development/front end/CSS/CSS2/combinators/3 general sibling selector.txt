@@ -1,0 +1,21 @@
+<div> 
+   <h3>Hello world</h3>
+   <p>Hello p tag</p>
+   <h3>Hello world</h3>
+   <p> this is second p 
+
+</div>
+<p> this is second p </p>
+<p>out of box</p>
+<p>out of box</p>
+
+
+<style type="text/css">
+  
+  div~p{
+    color:red;
+      /*  Adjacent Sibling selector used space  */
+  }
+
+
+</style>

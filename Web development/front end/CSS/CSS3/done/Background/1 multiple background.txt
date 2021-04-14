@@ -1,0 +1,13 @@
+<div>
+  
+</div>
+
+<style type="text/css">
+  div{
+      height: 100%;
+      width: 100%;
+      background-image: url('ddd.png'),url('ddd.png');
+      background-repeat: no-repeat;
+      background-position: right top, left bottom;
+     
+</style>

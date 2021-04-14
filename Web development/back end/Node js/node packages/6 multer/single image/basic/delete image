@@ -1,0 +1,12 @@
+app.get('/delete', (req, res)=> {
+  imageModel.findOneAndRemove({_id : "603f1f3389001320b3cf8dff"}, (err)=> {
+    if(err)
+      res.send("Failed to removed")
+    else
+      res.send("Removed")
+  })
+})
+
+
+
+

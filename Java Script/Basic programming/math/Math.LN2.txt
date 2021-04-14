@@ -1,0 +1,8 @@
+
+<script type="text/javascript">
+  
+
+ var d = Math.LN2;        // logarithmic of 2
+ document.write(d);
+
+</script>

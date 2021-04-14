@@ -1,0 +1,6 @@
+
+const path = require('path');
+
+
+// show directory name 
+console.log(__dirname);

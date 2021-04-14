@@ -1,0 +1,15 @@
+$primary_3: green;
+
+  // nesting saas 
+.container{
+	h2{
+		color: $primary_3;
+	}
+	// select all the nesting 
+	&:hover {
+		color : red;
+	}
+
+}
+
+

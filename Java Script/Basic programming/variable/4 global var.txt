@@ -1,0 +1,15 @@
+
+
+
+<script type="text/javascript">
+	
+	var d = 10;
+	function func() {
+		document.write(window.d);
+			}
+	func();
+
+	
+
+</script>
+    

@@ -1,0 +1,11 @@
+<div></div>
+
+
+<style type="text/css">
+  div{
+    height: 100px;
+    width: 100px;
+    outline: 1px solid;
+    outline-color: red;
+  }
+</style>

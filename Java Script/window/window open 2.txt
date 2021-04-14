@@ -1,0 +1,7 @@
+<script type="text/javascript">
+	
+	 var newWin = window.open("about:black","hello","width=200","height=50");
+	 newWin.document.write("hello world");
+
+ 
+</script>

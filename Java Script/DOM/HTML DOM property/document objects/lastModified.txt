@@ -1,0 +1,16 @@
+<button onclick="myFunction()">
+	click
+</button>
+
+<p id="demo"></p>
+
+
+<script type="text/javascript">
+	
+	function myFunction() {
+		
+		var x = document.lastModified;
+		document.getElementByid("demo").innerHTML = x;
+	}
+ 
+</script>

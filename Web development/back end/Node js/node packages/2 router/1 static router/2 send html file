@@ -1,0 +1,19 @@
+const express = require('express');
+const app = express();
+const path = require('path');
+
+
+
+// index.html file into view directory 
+app.get('/',(req, res)=> {
+	res.sendFile('index.html', {root : path.join(__dirname, './view')});
+
+});
+
+
+
+
+app.listen(3000,()=>{
+
+	console.log("server is running....");
+})

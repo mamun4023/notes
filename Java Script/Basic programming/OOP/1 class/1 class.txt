@@ -1,0 +1,19 @@
+<script type="text/javascript">
+
+
+ class Phone {
+ 	// don't declare variable outside the function
+
+ 	show(){
+ 		document.write("Hello class");
+ 	}
+ }
+
+ // creating object
+
+ myPhone = new Phone();
+ myPhone.show();
+
+ 
+
+</script>

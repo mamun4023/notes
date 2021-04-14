@@ -1,0 +1,29 @@
+
+<ul id="mylist1">
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+	
+</ul>
+
+<ul id="mylist2">
+	<li>a</li>
+	<li>b</li>
+	<li>c</li>
+	<li>d</li>
+</ul>
+
+<button onclick="myFunction()">copy</button>
+
+
+<script type="text/javascript">
+	function myFunction()
+	{
+		var x = document.getElementById('mylist2').lastChild;
+		var y = x.cloneNode(true);
+		document.getElementById('mylist1').appendChild(y);
+	}
+</script>
+
+<p>copy the last element of mylist2 and add into mylist1</p>

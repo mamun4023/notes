@@ -1,0 +1,13 @@
+
+button onclick=myFunction()Try itbutton
+
+script
+function myFunction() {
+ 
+ var x = navigator.appName;
+ document.getElementById('demo').innerHTML = x;
+
+ }
+
+script
+p id=demop

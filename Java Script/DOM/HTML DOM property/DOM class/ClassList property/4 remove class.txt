@@ -1,0 +1,20 @@
+
+<button onclick="myFunction()">click</button>
+<div class="div1" id="demo">div</div>
+<style type="text/css">
+   .div1{
+      height: 100px;  
+      width: 100px;
+      background: red;
+   }
+
+
+</style>
+
+
+<script type="text/javascript">
+   function myFunction() {
+   var x = document.getElementById('demo');
+   x.classList.remove('div1');
+   }
+</script>

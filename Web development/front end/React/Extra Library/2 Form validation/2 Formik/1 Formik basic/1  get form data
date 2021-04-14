@@ -1,0 +1,49 @@
+
+ 
+import React from 'react';
+import {useFormik} from 'formik';
+
+function Form(){
+    
+    const formik = useFormik({
+    	initialValues : {
+    		name : "",
+    		email : "",
+    		channel : ""
+    	},
+    	onSubmit : values => {
+    		console.log(values);
+    	}
+    })
+
+    
+    console.log(formik.values);
+
+	return(
+
+		<>
+		  <div className = "container">
+		  <form className ="form-group" onSubmit = {formik.handleSubmit}>
+		  	 <label htmlFor = "name"> Name </label>
+		  	 <input className ="form-control" type = "text" id = "name" name = "name" onChange = {formik.handleChange} value = {formik.values.name} />
+
+
+		  	 <label htmlFor = "email"> email </label>
+		  	 <input className ="form-control" type = "email" id = "email" name = "email" onChange ={formik.handleChange} value = {formik.values.email} />
+
+
+		  	 <label htmlFor = "channel"> channel </label>
+		  	 <input className ="form-control" type = "text" id = "channel" name = "channel" onChange = {formik.handleChange} value = {formik.values.chaneel}  />
+		  </form>
+
+		  
+		    <input type = "submit"  className = "form-control"/>
+		  </div>
+		</>
+
+
+		)
+}
+
+
+export default Form;

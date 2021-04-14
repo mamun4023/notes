@@ -1,0 +1,19 @@
+
+
+<button title="" class="dd" onclick="myFunction()" >click</button>
+
+
+<p id="demo"></p>
+<script type="text/javascript">
+	
+	function myFunction(){
+	    var a = document.getElementsByTagName('button')[0];
+	    var x = a.attributes.length;
+	    document.getElementById('demo').innerHTML = x;
+	}
+
+</script>
+
+
+<p>It will return number of property used in button tag</p>
+

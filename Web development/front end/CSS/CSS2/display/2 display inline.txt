@@ -1,0 +1,10 @@
+
+<h3>Displays an element as an inline element (like <span>). Any height and width properties will have no effect</h3>
+
+<style type="text/css">
+	h3{
+		background-color: red;
+		display: inline;
+	}
+
+</style>

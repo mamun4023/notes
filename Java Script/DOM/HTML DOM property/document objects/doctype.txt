@@ -1,0 +1,15 @@
+<button onclick="myFunction()">click</button>
+ 
+<p id="demo"></p>
+<script type="text/javascript">
+	function myFunction()
+	{
+		var x = document.doctype.name;
+		document.getElementById('demo').innerHTML = x;
+	}
+    
+</script>
+
+<p>display the location of the document</p>
+
+

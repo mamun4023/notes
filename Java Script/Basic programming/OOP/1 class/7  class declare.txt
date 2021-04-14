@@ -1,0 +1,18 @@
+<script>  
+
+
+var emp = class{
+	constructor(id, name){
+		this.id = id;
+		this.name = name;
+	}
+};
+
+document.write(emp.name);
+
+
+
+ 
+
+
+</script>  

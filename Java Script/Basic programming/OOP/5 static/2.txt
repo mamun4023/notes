@@ -1,0 +1,19 @@
+<script type="text/javascript">
+	
+	class Test{
+		static display(){
+			document.write( "Static method is invoked ");
+		}
+
+		static show(){
+			document.write("Static 2 is invoked");
+		}
+
+	}
+   
+   // function is called without createing an object
+    Test.display();
+    document.write("<br>");
+    Test.show();
+
+</script>

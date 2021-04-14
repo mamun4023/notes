@@ -1,0 +1,23 @@
+
+// // retrieve all data
+// app.get('/fetch', (req, res, next)=> {
+//      userModel.findOne()
+// 	 .then((data)=> {
+// 		 res.send(data)
+// 		 console.log(data)
+// 	 })
+// 	 .catch((err)=> {
+// 		 res.send("err happend")
+// 	 })
+// })
+
+
+app.get("/fetch", (req, res)=> {
+	userModel.find((err, data)=> {
+		if(err)
+			res.send("Failed to send data")
+		else{
+			res.send(data)
+		}
+	})
+})

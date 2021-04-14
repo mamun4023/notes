@@ -1,0 +1,26 @@
+<h2 class="h2">Hello world</h2>
+<p class="h2">P tag</p>
+
+<button onclick="myFunction()">Click</button>
+<style type="text/css">
+   .h2{
+      background: gray;
+
+   }
+</style>
+
+<script type="text/javascript">
+   
+   function myFunction() {
+      var x = document.getElementsByClassName('h2');
+       var i ;
+       for(i=0; i<x.length; i++)
+       {
+         x[i].style.display= 'none';
+       }
+
+   }
+
+   // It will hide all the content that has same property class name.
+
+</script>

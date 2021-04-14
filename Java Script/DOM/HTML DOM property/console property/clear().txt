@@ -1,0 +1,10 @@
+<button onclick="myFunction()"> Click</button>
+
+
+<script type="text/javascript">
+	console.log("hellow ! press the button to clear the console");
+	function myFunction()
+	{
+		console.clear();
+	}
+</script>

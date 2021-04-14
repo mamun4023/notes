@@ -1,0 +1,13 @@
+
+<button onclick="myFunction()">copy</button>
+
+<h2 id="myp"></h2>
+<p id="demo"></p>
+
+<script type="text/javascript">
+	function myFunction()
+	{
+	   document.getElementById('myp').contentEditable =true;
+	   document.getElementById("demo").innerHTML ="The p element above is now editable. Try to change its text";
+	}
+</script>

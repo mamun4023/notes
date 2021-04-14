@@ -1,0 +1,18 @@
+
+<button onclick="myFunction()" >Click</button>
+
+<p id="demo"></p>
+
+
+<script type="text/javascript">
+    
+    function myFunction()
+    {
+    	location.hash =" parts";
+    	var x = " anchor part is now: " + location.hash;
+    	document.getElementById('demo').innerHTML = x;
+    }
+
+</script>
+
+ 

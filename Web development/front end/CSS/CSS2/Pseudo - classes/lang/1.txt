@@ -1,0 +1,10 @@
+<p lang="it">I live in Italy</p>
+<p>Here is some dangerous situation overcomed about 10 years before</p>
+
+<style type="text/css">
+	
+	p:lang(it){
+		color: red;
+	}
+
+</style>

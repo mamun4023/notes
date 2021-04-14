@@ -1,0 +1,41 @@
+import React from 'react';
+
+class App extends React.Component{
+	constructor(props){
+		super(props);
+
+		this.state = { value : "please write in 5 sentences"};
+
+		this.handleChange = this.handleChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
+	}
+
+	handleChange = (e)=> {
+		this.setState({
+			value : e.target.value
+		})
+	}
+
+	handleSubmit = (e)=>{
+		alert("Submitted value : " + this.state.value);
+		e.preventDefault();
+	}
+
+	render(){
+		return(
+			<>
+
+				<form onSubmit = {this.handleSubmit}>
+					About you : 
+					
+						<textarea value = {this.state.value} onChange = {this.handleChange} />
+				<input type = "submit" />
+				</form>
+			</>
+
+			)
+	}
+}
+
+export default App;
+

@@ -1,0 +1,12 @@
+<div></div>
+
+
+<style type="text/css">
+  
+  div{
+    height: 100px;
+    width: 100px;
+    background: rgba(255,0,0,0.6);
+  }
+
+</style>

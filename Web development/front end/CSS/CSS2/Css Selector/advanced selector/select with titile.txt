@@ -1,0 +1,17 @@
+<p title="top">paragraph 1</p>
+<p title="all-top" >paragraph 1</p>
+<p title="topll" >paragraph 1</p>
+<p title="top all" >paragraph 1</p>
+
+
+
+<style type="text/css">
+	
+   [title~= top]{
+   	background-color: red;
+   }
+
+</style>
+
+
+Select with title contain "top"

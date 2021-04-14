@@ -1,0 +1,22 @@
+
+<script type="text/javascript">
+	function myFunction()
+	{
+		var x = document.activeElement.tagName;
+		document.getElementById('demo').innerHTML = x;
+	}
+
+</script> 
+<div onclick="myFunction()">
+	 <button> a button</button>
+	<input type="text" name="">
+   
+   <p id="demo"></p>
+
+</div>
+
+
+<p>show which element is active now</p>
+
+
+

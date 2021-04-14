@@ -1,0 +1,34 @@
+
+import React,{Component} from 'react'
+
+
+class App extends Component{
+
+		state = {
+			person : [
+			{
+				name: 'tohid',
+				age : 33
+				}
+				]
+			
+		}
+	
+	render(){
+
+		return(
+
+			   <>
+               { this.state.person[0].name}
+
+			   </>
+
+
+			)
+	}
+}
+
+
+
+export default App;
+

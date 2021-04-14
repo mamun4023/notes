@@ -1,0 +1,9 @@
+
+<script type="text/javascript">
+  
+
+  var a1 = ['A','B','C','D'];
+
+  document.write(a1.valueOf());     //convert an array to primitive value
+
+</script>

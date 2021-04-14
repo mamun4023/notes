@@ -1,0 +1,21 @@
+
+import React from 'react';
+
+
+class App extends React.Component{
+	shoot = (a) => {
+		alert(a);
+	}
+// bind the event handler
+
+	render(){
+		return (
+
+			<button onClick = {this.shoot.bind(this, "Goal")} > click </button>
+			)
+	}
+}
+
+
+
+export default App;

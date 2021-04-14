@@ -1,0 +1,23 @@
+import React from 'react';
+
+
+
+const numbers = [1,2,3,4];
+
+class App extends React.Component{
+ 
+
+	render(){
+		return(
+			<>
+			  // displying list
+              {numbers.map((number)=> 
+              		<li> {number} </li>
+              )}				
+			</>
+			)
+	}
+}
+
+export default App;
+

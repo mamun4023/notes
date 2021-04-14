@@ -1,0 +1,29 @@
+
+<body></body>
+<style type="text/css">
+   body{
+       background-image:url('ddd.png');
+       background-repeat: no-repeat;
+       background-position: center;
+       background-attachment: fixed;
+
+
+       /* attachment can be fixed   */
+
+
+
+   }
+
+
+</style>
+
+
+
+
+------------- attachment property -----------
+
+scroll : Image will be scroll with page. Its default.
+fixed : Image will not scroll with the page.
+local : The background image will scroll with the element's contents
+initial : Sets the default value.
+inherit : from its parent 

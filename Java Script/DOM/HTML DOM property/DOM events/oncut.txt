@@ -1,0 +1,17 @@
+
+<textarea oncut="myFunction()"></textarea>
+
+
+
+<script type="text/javascript">
+	function myFunction()
+	{
+		
+		alert("cut..")
+
+
+	}
+</script>
+
+
+

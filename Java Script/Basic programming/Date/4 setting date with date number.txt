@@ -1,0 +1,8 @@
+
+
+<script type="text/javascript">
+  // work with object
+   var d = new Date(1245511);
+   document.write(d);
+
+</script>

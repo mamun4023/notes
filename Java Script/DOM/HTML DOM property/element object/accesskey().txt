@@ -1,0 +1,10 @@
+<script type="text/javascript">
+
+	document.getElementById('w3').accessKey= "e";
+
+</script>
+
+<a id="w3" href="www.w3school.com">Link</a>
+
+
+<p>Access key to use keyboard</p>

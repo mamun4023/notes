@@ -1,0 +1,32 @@
+
+<div class="jumbotron">
+   <a class="btn btn-info " href="/insert">insert new Record</a>
+	<table class="table table-striped table-border">
+		<thead class="bg-secondary" >
+			<tr>
+				<th>Name </th>
+				<th>Email</th>
+				<th>Operations</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			{{#each students}}
+			<tr>
+				
+				<td>{{this.name}}</td>
+				<td>{{this.email}}</td>
+				<td>
+					<a class="btn btn-info" href="/update/{{this.id}}">update</a>
+					<a class="btn btn-danger" href="/delete/{{this.id}}">del</a>
+					
+				</td>
+
+				
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+
+
+</div>

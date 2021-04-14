@@ -1,0 +1,58 @@
+
+import React from 'react'
+import {combineReducers, createStore} from 'redux'
+
+
+const userReducer =(state ={}, action) =>{
+
+ switch(action.type){
+ 	case "CHANGE_NAME":{
+ 	    state = {... state, name: action.payload}
+ 		break;
+ 	}
+ 	case "CHANGE_AGE": {
+ 		state = {... state, age: action.payload}
+ 		break;
+ 	}
+ }
+ return state;
+};
+
+const tweetsReducer = (state = {}, action) => {
+  return state;
+}
+
+
+const reduces  = combineReducers({
+	user: userReducer,
+	tweets : tweetsReducer,
+})
+
+const store = createStore(reduces);
+
+
+store.subscribe(()=>{
+	console.log("store changed", store.getState())
+})
+
+
+store.dispatch({type: "CHANGE_NAME", payload: 'will'})
+store.dispatch({type: "CHANGE_AGE", payload: 23})
+
+
+ function App(){
+
+ 	return(
+
+ 		<>
+
+ 			<h3> Redux structure </h3>
+ 		</>
+
+ 		)
+ }
+
+
+
+export default App;
+

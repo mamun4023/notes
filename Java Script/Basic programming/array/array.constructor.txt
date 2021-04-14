@@ -1,0 +1,9 @@
+
+<script type="text/javascript">
+	
+	var cars =['BMW','TESLA','COROLA'];
+	document.write( cars.constructor);
+
+
+
+</script>

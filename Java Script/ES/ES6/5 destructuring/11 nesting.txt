@@ -1,0 +1,24 @@
+
+const personOne = {
+	name : "Tohid",
+	age : 24,
+	address : {
+		city : "Gazipur",
+		state : "Dhaka"
+	}
+}
+
+
+const personTwo = {
+	name : "Akram",
+	age : 21,
+	address: {
+		city : "Bogra",
+		state : "Rajshahi"
+	}
+}
+
+// nesting 
+const {name : firstName, address : {city}} = personTwo;
+console.log(firstName);
+console.log(city);

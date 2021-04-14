@@ -1,0 +1,9 @@
+<script type="text/javascript">
+	var text;
+	if(confirm("are you sure!"))
+		text="done";
+	else
+		text="cancel";
+
+	 document.write(text);
+</script>

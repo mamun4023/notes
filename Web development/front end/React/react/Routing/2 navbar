@@ -1,0 +1,32 @@
+import React from 'react'
+import Home from './home'
+import Service from './service'
+import {BrowserRouter,Route,Link} from 'react-router-dom'
+
+function App(){
+  return(
+
+      <>
+      
+     
+
+      <BrowserRouter>
+
+       <ul className="navbar navbar-expand-sm">
+        <li className="nav-item"><Link to='/'>Home </Link>  </li>
+        <li clssName="nav-item"> <Link to = '/service'>Service </Link>  </li> 
+      </ul>
+        <Route path='/' exact component={Home}/>
+        <Route path="/service" component={Service}/>
+      </BrowserRouter>
+      </>
+    )
+
+
+}
+
+
+
+export default App;
+
+

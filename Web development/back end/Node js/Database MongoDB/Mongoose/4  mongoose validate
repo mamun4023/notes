@@ -1,0 +1,40 @@
+
+const mongoose = require('mongoose');
+
+
+// make connection to "test" database
+mongoose.connect("mongodb://127.0.0.1:27017/test",{
+	useNewUrlParser : true,
+	// create index of database
+	useCreateIndex : true
+});
+
+
+// create model
+// model name will be the collection name 
+const dd = mongoose.model('dd', {
+	name : {
+		type : String
+	},
+	age : {
+		type : Number,
+		validate(value){
+			if(value < 0)
+				throw Error("Age must be positive number")
+		}
+	}
+})
+
+
+// create instance
+
+const me = new dd({
+	name : 'Shahin Islam',
+	age : -1
+})
+
+me.save().then(()=> {  
+   console.log(me);
+}).catch((err)=> {
+	console.log('err');
+})

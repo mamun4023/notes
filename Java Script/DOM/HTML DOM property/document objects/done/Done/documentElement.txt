@@ -1,0 +1,15 @@
+<button onclick="myFunction()">click</button>
+ 
+<p id="demo"></p>
+<script type="text/javascript">
+  function myFunction()
+  {
+    var x = document.documentElement.nodeName;
+    document.getElementById('demo').innerHTML = x;
+  }
+    
+</script>
+
+<p>display document names</p>
+
+

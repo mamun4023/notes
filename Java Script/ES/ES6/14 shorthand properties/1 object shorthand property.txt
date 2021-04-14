@@ -1,0 +1,30 @@
+
+<script type="text/javascript">
+	
+
+let object = {
+	prop1: 123,
+	prop2: "abc",
+	prop4:  function(){
+		console.log(object);
+		console.log(this);
+	},
+
+	// arrow function
+	prop5:  ()=> {
+		console.log(object);
+		console.log(this);
+	},
+
+	// short hand object property 
+	prop6(){
+		console.log(object);
+		console.log(this);
+	}
+
+}
+
+object.prop6();
+
+
+</script>

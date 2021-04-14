@@ -1,0 +1,8 @@
+
+<script type="text/javascript">
+  
+   var d = new Date("2020");         // only year
+   document.write(d.toDateString());  
+   
+
+</script>

@@ -1,0 +1,53 @@
+<div class="container">
+	<div class="into1"></div>
+	<div class="into2"></div>
+</div>
+
+
+
+<style type="text/css">
+	.container{
+		margin: 100px;
+		position: relative;
+		height: 300px;
+		width: 400px;
+		background: gray;
+		border-top-right-radius: 300px;
+		border-bottom-left-radius: 300px;
+		-webkit-animation-name: example1;
+		-webkit-animation-duration: .01s;
+		-webkit-animation-iteration-count:infinite;
+	}
+	.into1{
+		position: absolute;
+		height: 400px;
+		width: 300px;
+		background: red;
+		border-bottom-right-radius: 300px;
+		border-top-left-radius: 300px;
+		-webkit-transform:rotate(20deg) translate(10px,-60px);
+	}
+	.into2{
+		position: absolute;
+		height: 400px;
+		width: 300px;
+		background: blue;
+		border-bottom-right-radius: 300px;
+		border-top-left-radius: 300px;
+		-webkit-transform:rotate(-30deg) translate(50px,-50px);
+	}
+
+@-webkit-keyframes example1{
+	from{-webkit-transform:rotate(0deg);}
+	to {-webkit-transform:rotate(360deg);}
+}
+
+
+	
+
+
+
+
+
+
+

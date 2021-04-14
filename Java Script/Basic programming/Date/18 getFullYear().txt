@@ -1,0 +1,9 @@
+
+<script type="text/javascript">
+  
+   var d = new Date();
+   var time = d.getFullYear();            // get  four digit year YYYY
+   document.write(time);   
+   
+
+</script>

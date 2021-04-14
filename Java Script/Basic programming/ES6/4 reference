@@ -1,0 +1,32 @@
+
+// normal javascript 
+
+function getBook(title, author){
+	return{
+		title : title,
+		author : author
+	}
+}
+
+
+var book = getBook("Herry potter", 'JK Rouling')
+console.log(book);
+
+
+//ES6
+
+
+function getBooK(title, author){
+	return{
+		title,
+		author
+	}
+}
+
+
+var book = getBook("Herry potter", 'JK Rouling')
+console.log(book);
+
+
+
+

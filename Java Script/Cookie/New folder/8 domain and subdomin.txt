@@ -1,0 +1,3 @@
+domain=javatpoint.com  
+omain=training.javatpoint.com 
+

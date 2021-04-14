@@ -1,0 +1,26 @@
+
+// this is not a string 
+// this syntax is called JSX
+const element = <h1> Welcome to JSX </h1>
+
+
+
+// must have to use close tag 
+const component = <input type="text" />;
+
+
+// big components 
+
+const component = (
+			
+		      <div>
+		      	<h1> heading </h1>
+		      	<input type = "text" />
+		      
+		      </div>	
+			
+			
+			
+		  )
+		  
+		  

@@ -1,0 +1,11 @@
+
+<script type="text/javascript">
+	
+
+	var a1 = ['1','2','3'];
+	var a2 = ['a','b','c'];
+
+	var add = a1.concat(a2);
+	document.write(add);
+
+</script>

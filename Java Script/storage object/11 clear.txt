@@ -1,0 +1,14 @@
+<button onclick="myFunction()">Click</button>
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+   
+  function myFunction() {
+
+     localStorage.clear();
+     sessionStorage.clear();
+
+  }
+
+</script>

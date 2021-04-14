@@ -1,0 +1,70 @@
+
+<button class="accordion">Section 1</button>
+<div class="panel">
+	<p>This is the loren metaphoric indigineous more than equal quality of the most important. Loving is the porsion there are some potential to lost the </p>
+	
+</div>
+
+
+<button class="accordion">Section 2</button>
+<div class="panel">
+	<p>This is the loren metaphoric indigineous more than equal quality of the most important. Loving is the porsion there are some potential to lost the </p>
+	
+</div>
+
+
+<button class="accordion">Section 3</button>
+<div class="panel">
+	<p>This is the loren metaphoric indigineous more than equal quality of the most important. Loving is the porsion there are some potential to lost the </p>
+	
+</div>
+
+<style type="text/css">
+	.accordion{
+		background-color: #eee;
+		color: #444;
+		cursor: pointer;
+		padding: 18px;
+		width: 100%;
+		border: none;
+		text-align: left;
+		outline: none;
+		font-size: 15px;
+		-webkit-transition: 1s;
+	}
+	.active .accordion:hover{
+		background-color: #ccc;
+	}
+	.accordion:after{
+		content: "\2212";
+
+	}
+	.panel{
+		padding: 0 18px;
+		background-color: white;
+		max-height: 0;
+		overflow: hidden;
+		-webkit-transition:1s ease-out;
+	}
+
+</style>
+
+<script type="text/javascript">
+	
+	var acc = document.getElementByClassName('accordion');
+    var i;
+    for(i=0; i<acc.length; i++)
+    {
+    	acc[i].addEventListener("click",function(){
+    		this.classList.toggle("active");
+    		var panel = this.nextElementssibling;
+    		if (panel.style.maxHeight) {
+    			panel.style.maxHeight=null;
+    		}else{
+    			panel.style.maxHeight=panel.scrollHeight + "px";
+    		}
+    	});
+
+    }
+
+</script>

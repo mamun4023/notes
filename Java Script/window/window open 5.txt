@@ -1,0 +1,10 @@
+<script type="text/javascript">
+
+var newwin =window.open("about:blank","hello","width=200","height=200");
+	
+	newwin.document.write(
+		"<script> window.opner.document.body.innerHTML='Test'<\/script>"
+		);
+
+ 
+</script>

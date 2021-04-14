@@ -1,0 +1,16 @@
+gg
+  onSubmitHandler = ()=> {
+    const user = {
+      email : this.state.email,
+      password : this.state.password
+    }
+    axios.post("http://localhost:4000/api/users/login",user)
+      .then(result => {
+        localStorage.setItem('login',  result.data)
+        // localStorage.setItem('login', JSON.stringify( result.data))
+      })
+
+      // check on console 
+      // localStorage 
+
+  }

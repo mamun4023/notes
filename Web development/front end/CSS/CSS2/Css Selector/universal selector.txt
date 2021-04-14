@@ -1,0 +1,13 @@
+<p>paragrap</p>
+<h2>Heading 2</h2>
+<div>div section</div>
+
+
+
+<style type="text/css">
+	
+ *{
+ 	color: red;
+ }
+
+</style>

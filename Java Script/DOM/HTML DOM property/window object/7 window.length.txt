@@ -1,0 +1,14 @@
+
+<iframe src="">All the best</iframe>
+<iframe src="">Welcome to the best common sence</iframe>
+
+
+<script type="text/javascript">
+	function myFunction(){
+		var x = window.length;
+		document.getElementById('demo').innerHTML = x;
+	}
+
+</script>
+<button onclick="myFunction()" >click</button>
+<p id="demo"></p>

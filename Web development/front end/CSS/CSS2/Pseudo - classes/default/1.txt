@@ -1,0 +1,10 @@
+<input type="checkbox" name=""  checked="checked" value="Bike" > Car<br>
+<input type="checkbox" name=""  value="Bike" > Bike
+
+
+<style type="text/css">
+	input:default{
+		height: 50px;
+		width: 50px;
+	}
+</style>

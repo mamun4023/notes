@@ -1,0 +1,9 @@
+
+<h4>Displays an element as an inline-level block container. The element itself is formatted as an inline element, but you can apply height and width values</h4>
+
+<style type="text/css">
+	h4{
+		background-color: red;
+		display: inline-block;
+	}
+</style>

@@ -1,0 +1,14 @@
+<div></div>
+
+
+
+<style type="text/css">
+  div{
+    height: 100px;
+    width: 100px;
+    background: red;
+    position: absolute;
+    bottom: 0px;         /*working at left,right,top bottom */
+
+  }
+</style>

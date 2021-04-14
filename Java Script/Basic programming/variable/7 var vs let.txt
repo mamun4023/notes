@@ -1,0 +1,42 @@
+
+
+var is global that accessible from anywhere in the program
+
+  if(true){
+  	var score = 80;
+  }
+
+  console.log(score);
+
+
+
+ if(true){
+  	var score = 80;
+  }
+ 
+  score = 100;
+  console.log(score);
+
+
+
+
+
+
+let has scope that not accessible outside of scope
+
+
+  if(true){
+  	let score = 80;
+  }
+
+  console.log(score);
+
+
+
+let is update able 
+ if(true){
+  	let score = 80;
+  }
+ 
+  score = 100;
+  console.log(score);

@@ -1,0 +1,6 @@
+npm install -g express-generator
+
+
+
+
+Use the application generator tool, express-generator, to quickly create an application skeleton.

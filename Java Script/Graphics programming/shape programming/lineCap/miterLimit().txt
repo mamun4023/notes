@@ -1,0 +1,28 @@
+<body onload="draw()">
+<canvas id="canvas"  width="400 " height="200" style="border: 1px solid gray;">
+
+
+
+
+
+<script type="text/javascript">
+	   function draw(){
+		
+		var c = document.getElementById('canvas');
+		var d = c.getContext('2d');
+		d.beginPath();
+		d.lineWidth = 10;
+		d.lineJoin = 'miter';
+		d.miterLimit = 30;
+		d.moveTo(20,20);
+		d.lineTo(100,50);
+		d.lineTo(20,100);
+		d.stroke();
+
+
+	   }
+	   
+    
+
+
+</script>

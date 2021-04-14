@@ -1,0 +1,15 @@
+<p class="fist-test">paragraph 1</p>
+<p class="test-all">paragraph 1</p>
+<p class="ad-test-d">paragraph 1</p>
+
+
+<style type="text/css">
+	
+   [class$="test"]{
+   	background-color: red;
+   }
+
+</style>
+
+
+Select only end with "test"

@@ -1,0 +1,26 @@
+<button onclick="myFunction()">Click</button>
+
+
+
+
+<script type="text/javascript">
+	function myFunction()
+	{
+		 var x = document.createElement('article');
+		 x.setAttribute('id','myArticle');
+		 document.body.appendChild(x);
+
+		 var heading = document.createElement('h1');
+		 var txt1 = document.createTextNode('heading in atricle');
+		 heading.appendChild(txt1);
+		 document.getElementById('myArticle').appendChild(heading);
+
+		 var p = document.createElement('p');
+		 var p-text = document.createTextNode('This is an article');
+		 p.appendChild(p);
+		 document.getElementById('myArticle').appendChild(p-text);
+
+	}
+
+
+</script>

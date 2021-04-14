@@ -1,0 +1,11 @@
+<div>
+  
+</div>
+
+<style type="text/css">
+  div{
+      height: 100%;
+      width: 100%;
+      background: url('ddd.png') right top no-repeat,url('ddd.png') left bottom no-repeat;
+     
+</style>

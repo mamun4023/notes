@@ -1,0 +1,12 @@
+<input onclick="myFunction()" id="get" type="checkbox" name="">
+<p id="demo"></p>
+<script type="text/javascript">
+	
+	function myFunction()
+	{
+		var x = document.getElementById('get').checked='true';
+		
+		document.getElementById('demo').innerHTML = x;
+		
+	}
+</script>

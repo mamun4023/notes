@@ -1,0 +1,12 @@
+
+   <button id="get">Click</button>
+
+<script type="text/javascript">
+   var x = document.getElementById('get');
+     x.addEventListener('mouseover',myFunction);
+
+
+     function myFunction(){
+      alert("hello World");
+     }
+</script>

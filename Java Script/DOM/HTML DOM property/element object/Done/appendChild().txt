@@ -1,0 +1,26 @@
+<button onclick="myFunction()">add</button>
+
+<ul id="mylist">
+	<li>Tea</li>
+	<li>coffee</li>
+</ul>
+
+<script type="text/javascript">
+    
+    function myFunction()
+    {
+    	var node = document.createElement("li");
+    	var textnode = document.createTextNode("water");
+    	node.appendChild(textnode);
+    	document.getElementById('mylist').appendChild(node);
+    }
+
+
+</script>
+
+
+<p>Adding new element into list</p>
+
+
+
+

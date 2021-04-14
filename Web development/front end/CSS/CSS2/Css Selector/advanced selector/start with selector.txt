@@ -1,0 +1,15 @@
+<p class="top-secret">paragraph 1</p>
+<p class="lltop top">paragraph 1</p>
+<p class="topdd">paragraph 1</p>
+
+
+<style type="text/css">
+	
+   [class^= "top"]{
+   	background-color: red;
+   }
+
+</style>
+
+
+Select only start with "top"

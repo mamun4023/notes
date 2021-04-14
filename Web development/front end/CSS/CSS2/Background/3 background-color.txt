@@ -1,0 +1,21 @@
+<div></div>
+
+
+<style type="text/css">
+
+  div{
+    height: 100px;
+    width: 100px;
+    background-color: red;
+  }
+
+</style>
+
+
+
+-----------------color property----------
+
+ color name : red
+ hex : #000000
+ RGB: rgb(0,0,0)
+ 

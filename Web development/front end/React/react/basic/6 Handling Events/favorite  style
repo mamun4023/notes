@@ -1,0 +1,17 @@
+
+class App extends React.Component{
+
+    evenHandler = (e) => {
+    	console.log("event is handled");
+    }
+
+	render(){
+		return(
+
+			<>
+				<button onClick = {this.evenHandler}> click </button>
+
+			</>
+			)
+	}
+}

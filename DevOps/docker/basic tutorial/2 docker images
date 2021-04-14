@@ -1,0 +1,29 @@
+
+
+
+----docker images -----
+
+Q. what are images ?
+	Docker images are templates used to create docker containers.
+
+Q. what is container ?
+	Container is a running instance of image.
+
+Q. where are images stored ?
+	Registries(e.g docker hub)
+
+
+
+
+
+-------commands -----
+
+1. download image to local machine 
+	docker pull imageName
+
+2. download specific version of image
+	docker pull ubuntu:version_name
+
+
+3.
+

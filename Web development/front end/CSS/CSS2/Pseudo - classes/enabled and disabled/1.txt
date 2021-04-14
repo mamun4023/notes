@@ -1,0 +1,15 @@
+<input type="text" name="" disabled="disabled"><br>
+<input type="text" name="" >
+
+
+
+<style type="text/css">
+ input[type=text]:enabled
+ {
+ 	background: red;
+ }
+ input[type=text]:disabled
+ {
+ 	background: blue;
+ }
+</style>

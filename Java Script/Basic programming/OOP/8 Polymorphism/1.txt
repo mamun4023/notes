@@ -1,0 +1,20 @@
+
+<script type="text/javascript">
+	
+// A child class object invokes parent  class method
+
+	class A {
+		display()
+		{
+			document.write("A is invoked");
+		}
+	}
+
+	class B extends A{
+
+	}
+
+	var b = new B();
+	b.display();
+
+</script>

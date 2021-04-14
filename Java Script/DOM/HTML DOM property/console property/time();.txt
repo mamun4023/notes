@@ -1,0 +1,11 @@
+<script type="text/javascript">
+	
+	 console.time();
+	 for(i=0; i<100000; i++)
+	 {
+	 	var a;
+
+	 }
+	 console.timeEnd();
+
+</script> 

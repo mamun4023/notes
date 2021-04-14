@@ -1,0 +1,24 @@
+<a href="#">Home</a>
+<a href="#">Service</a>
+<a href="#">Contact</a>
+
+
+<style type="text/css">
+
+ a:link{
+ 	color: red;
+ }
+ a:visited{
+ 	color: re;
+ }
+ a:hover{
+ 	color: black;
+ }
+ a:active{
+ 	color: gray;
+ }
+
+
+   
+</style>
+

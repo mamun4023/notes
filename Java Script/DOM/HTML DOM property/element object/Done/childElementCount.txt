@@ -1,0 +1,20 @@
+<button onclick="myFunction()">Click</button>
+<div id="mydiv">
+	<p>p1</p>
+	<p>p2</p>
+	<p>p3</p>
+</div>
+<p id="demo"></p>
+<script type="text/javascript">
+ 
+  function myFunction()
+  {
+  	
+  	var x = document.getElementById('mydiv').childElementCount;
+  	document.getElementById('demo').innerHTML =x;
+
+  }
+
+</script>
+
+

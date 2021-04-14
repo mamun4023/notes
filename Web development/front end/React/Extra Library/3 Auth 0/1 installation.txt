@@ -1,0 +1,8 @@
+
+install commands
+
+	npm i @auth0/auth0-react
+
+
+sign up and make profile on auth0 
+
