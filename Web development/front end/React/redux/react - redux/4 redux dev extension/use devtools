@@ -1,0 +1,15 @@
+import{createStore, applyMiddleware, compose} from 'redux';
+import Reducer from './cake/reducers';
+import logger from 'redux-logger';
+import {composeWithDevTools} from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
+
+
+const store = createStore(Reducer, 
+        
+    composeWithDevTools(applyMiddleware(thunk, logger))
+    )
+
+
+
+export default store;
