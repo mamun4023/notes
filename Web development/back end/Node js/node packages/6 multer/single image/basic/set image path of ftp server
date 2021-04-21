@@ -1,0 +1,94 @@
+const { response } = require('express');
+const express = require('express');
+const jwt = require('jsonwebtoken');
+const router = express.Router();
+const userModel = require('../models/users');
+const isAuth = require("./isAuth");
+const multer = require('multer')
+const path = require('path');
+
+
+router.get("/", (req, res)=> {
+    res.send("hello reouter")
+})
+
+
+
+
+// image s
+const multerStorage = multer.diskStorage({
+	destination : "./uploads",
+	filename : (req, file, cb)=> {
+      
+        cb(null, file.fieldname + "-" + Date.now() + path.extname(file.originalname))
+	}
+})
+
+
+const upload = multer({storage : multerStorage})
+
+
+
+
+
+
+
+// register router
+
+router.post('/register', upload.single('image'), (req, res)=> {
+    const {name, email, password} = req.body;
+
+    if(!name || !email || !password) 
+        return res.send("fill all filed")
+
+    const filename = req.file.filename;  
+    const imagePath = `${req.protocol}://${req.get('host')}/uploads`  
+    const data = new userModel({
+        name,
+        email,
+        password,
+        image : `${imagePath}${filename}`
+    })
+
+    data.save()
+        .then(user=> {
+            res.send(user)
+        })
+        .catch(err => {
+            res.send("Failed to register", err)
+        })
+
+})
+
+
+
+// login route
+router.post('/login', (req, res)=> {
+    const {email, password} = req.body;
+
+    userModel.findOne({email})
+        .then(user => {
+            if(!user)
+                return res.send("please register")
+            
+            if(user.password != password)
+                return res.send("password is not correct")
+           
+            const token = jwt.sign({_id: user._id}, "secret");
+            res.header('auth-token', token).send(token)
+        })
+})
+
+
+
+
+
+
+router.get('/protected', isAuth, (req, res )=> {
+    res.send("prtected route accessed!")
+})
+
+
+
+
+module.exports = router;
