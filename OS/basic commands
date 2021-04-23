@@ -188,12 +188,13 @@ sudo userdel “username”
 	uname -a 
 	
         
- 
-	
+45.  kill a particular process
+	kill -9 $(lsof -t -i:8080)
 
 
 
 
+https://www.linode.com/docs/guides/use-killall-and-kill-to-stop-processes-on-linux/
 
 
 
