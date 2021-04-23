@@ -1,0 +1,10 @@
+
+// all user
+router.get('/data',(req, res)=> {
+    userModel.find()
+        .then(user=> {
+            res.send(user)
+        })
+})
+
+

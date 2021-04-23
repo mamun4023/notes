@@ -1,0 +1,47 @@
+
+
+import React from 'react';
+import Update from './components/update';
+
+
+class App extends React.Component{
+
+  render(){
+    return(
+      <>
+        
+         <Update name = "tohid" />
+
+      </>
+
+    )
+  }
+}
+
+export default App;
+
+
+
+
+
+
+import React from 'react';
+class Greeting extends React.Component{
+
+    render(){
+        return (
+            <>
+
+                 {this.props.name}
+
+            </>
+
+        )
+    }
+}
+
+export default Greeting;
+
+
+
+

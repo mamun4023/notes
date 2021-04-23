@@ -1,0 +1,16 @@
+// post route
+router.post('/simple', (req, res)=> {
+    const {name} = req.body;
+    const data = new userModel({
+        name
+    })
+     
+    data.save()
+        .then(user=> {
+            res.send(user)
+        })
+        .catch(()=>{
+            res.send("failed")
+        })
+})
+

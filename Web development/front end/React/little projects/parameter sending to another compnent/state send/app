@@ -1,0 +1,39 @@
+
+import React from 'react';
+import axios from 'axios';
+
+import Update from './components/update';
+
+class App extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      posts : []
+    }
+  }
+
+  componentDidMount(){
+     axios.get("http://localhost:3000/users/data")
+      .then(res => {
+        this.setState({posts : res.data})
+      })
+      .catch(()=> {
+        console.log("err happned")
+      })
+  }
+
+
+  render(){
+    return(
+      <>
+
+          <Update posts = {this.state.posts} />
+
+
+      </>
+    )
+  }
+}
+
+
+export default App;

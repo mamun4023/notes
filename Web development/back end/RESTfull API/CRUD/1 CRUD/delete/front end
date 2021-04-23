@@ -1,0 +1,71 @@
+import React from 'react';
+import axios from 'axios';
+import Simple from "./components/simple";
+
+
+class App extends React.Component{
+ constructor(props){
+   super(props);
+   this.state = {
+     posts : []
+   }
+ }
+
+  componentDidMount(){
+    axios.get("http://localhost:3000/users/data")
+      .then(res => {
+        this.setState({
+          posts : res.data
+        })
+      })
+  }
+
+  Delete  = (id,e)=> {
+    axios.delete("http://localhost:3000/users/delete/"+id)
+    .then(res =>{
+      console.log("Deleted")
+      window.location.reload(); 
+    })
+    .catch(()=> {
+      console.log("failed to delete")
+    })
+  }
+  
+
+  render(){
+    return(
+      <>
+
+        <table className = "table table-striped">
+          <tr >
+            <th>name</th>
+            <th>Operation</th>
+          </tr>
+
+            {this.state.posts.map(post =>
+                <tr>
+                   <td>{post.name}</td>
+                   <td><button className = "btn btn-danger" onClick = {()=> this.Delete(post._id)}>del</button></td>
+                  </tr>
+                
+                
+                )
+                }
+          
+        </table>
+         
+
+        <Simple/>
+         
+
+      
+ 
+
+
+      </>
+    )
+  }
+}
+
+
+export default App;

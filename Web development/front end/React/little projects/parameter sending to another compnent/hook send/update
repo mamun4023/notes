@@ -1,0 +1,21 @@
+
+import React from 'react';
+
+
+function Update({posts}){
+
+    return(
+
+        <>
+            {
+                posts.map(post=> <div> {post.name} </div>)
+            }
+
+        </>
+    )
+
+
+}
+
+
+export default Update;
