@@ -1,0 +1,15 @@
+import React from "react";
+import ReactDOM from "react-dom";
+
+function App() {
+  return <Greeting name="Nathan" age={27} occupation="Software Developer" />;
+}
+
+function Greeting(props) {
+  return (
+    <p>
+      Hello! I'm {props.name}, a {props.age} years old {props.occupation}.
+      Pleased to meet you!
+    </p>
+  );
+}
