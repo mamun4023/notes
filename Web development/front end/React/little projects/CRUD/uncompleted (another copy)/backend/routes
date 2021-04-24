@@ -1,0 +1,69 @@
+
+// all user
+router.get('/data',(req, res)=> {
+    userModel.find()
+        .then(user=> {
+            res.send(user)
+        })
+})
+
+//find a specific user with id
+
+router.get('/data/:id', (req, res)=> {
+    userModel.findOne({_id: req.params.id})
+        .then(user=> {
+            res.send(user)
+        })
+        .catch(()=>{
+            res.send("Failed to find")
+        })
+})
+
+
+
+// post route
+router.post('/simple', (req, res)=> {
+    const {name} = req.body;
+    const data = new userModel({
+        name
+    })
+     
+    data.save()
+        .then(user=> {
+            res.send(user)
+        })
+        .catch(()=>{
+            res.send("failed")
+        })
+})
+
+
+
+// delete route
+router.delete('/delete/:id', (req, res)=> {
+	userModel.findOneAndDelete({_id : req.params.id }, (err)=> {
+		if(err)
+			res.send("Failed to delete")
+		else
+			res.send("success to delete")
+
+	})
+})
+
+
+
+
+
+//update route
+router.put("/update/:id", (req, res)=> {
+    const name = req.body.name;
+    const id = req.params.id;
+    userModel.findOneAndUpdate({_id : id}, {name : name }, (err)=> {
+        if(!err)
+            res.send("success")
+        else
+            res.send("Failed")
+    })
+} )
+
+

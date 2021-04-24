@@ -1,0 +1,129 @@
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import Update from './update';
+
+
+function Category(props){
+    const [posts , setPosts] = useState([])
+    const [data, setData] = useState({
+        firstname : "",
+      
+    })
+
+  
+    useEffect(()=> {
+        axios.get("http://localhost:3000/users/data")
+            .then(res => { 
+                setPosts(res.data)
+                
+                
+            })
+    })
+  
+  const  onSubmitHandler = (e)=> {
+        e.preventDefault();
+        const newUser = {
+            name : data.firstname
+        }
+        console.log(newUser)
+        axios.post("http://localhost:3000/users/simple", newUser)
+            .then(res=> {
+                console.log("succces")
+            })
+            .catch((err)=>{
+               console.log(err)
+            })
+
+    }
+
+  const  onChangeHandler = (e) => {
+       setData({...data, firstname : e.target.value})
+  }
+
+
+  // delete function
+
+  const Delete =(id)=> {
+      console.log(id)
+      axios.delete("http://localhost:3000/users/delete/"+id)
+        .then(res=> {
+            console.log("Deleted")
+        })
+        .catch(()=> {
+            console.log("failed")
+        })
+  }
+
+  const Update =(id)=> {
+      props.history.push('/update/'+id)
+  }
+
+    return(
+        <>
+            <div className = "row">
+                <div className= "col-md"></div>
+                <div className= "col-md">
+
+                <form onSubmit = {onSubmitHandler}>
+              <input 
+                 type = "text"
+                 className = "form-control"
+                 value = {data.firstname}
+                 onChange = {e => onChangeHandler(e)}
+
+              />
+                <hr/>
+              <button>submit</button>
+
+            </form>
+
+            
+
+            {/* start display list */}
+                </div>
+                <div className= "col-md">
+                    <h4> list</h4>
+                    
+                    
+                        <table className = "table table-striped ">
+
+                            <tr>
+                                <th>Name</th>
+                                <th> operaton</th>
+                            </tr>
+
+
+                           
+                    
+                    {
+
+                        
+                        posts.map(post=>
+
+                            <tr key = {"name" + post.name}>
+                            <td> {post.name} </td>
+                            
+                            <td>
+                                <button onClick = {()=>Delete(post._id)}>Del</button>
+                                <button onClick = {()=>Update(post._id)}>Update</button>
+                            </td>
+                            
+                            </tr>
+                        )        
+                    }
+                    
+                    </table>
+                </div>
+
+            </div>
+        
+ 
+
+        </>
+    )
+}
+
+
+
+
+export default Category;

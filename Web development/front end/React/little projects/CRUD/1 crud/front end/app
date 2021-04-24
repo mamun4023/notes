@@ -1,0 +1,26 @@
+import React from 'react';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Update from './components/update';
+import Category from './components/category';
+
+function App(){
+
+
+
+    return(
+        <>  
+
+          <Router>
+               
+                <Route exact path = "/" component = {Category}  />
+                <Route exact path = "/update/:id"  component = {Update}/>
+                
+          </Router>
+
+
+        </>
+
+    )
+}
+
+export default App;
