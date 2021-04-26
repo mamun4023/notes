@@ -194,7 +194,12 @@ sudo userdel “username”
 
 
 
+
 https://www.linode.com/docs/guides/use-killall-and-kill-to-stop-processes-on-linux/
+
+
+61. open more  text editor in one command(10 text file open)
+      gedit {1 - 10}
 
 
 
