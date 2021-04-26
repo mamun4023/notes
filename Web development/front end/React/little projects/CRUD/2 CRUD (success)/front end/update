@@ -1,0 +1,76 @@
+import axios from 'axios';
+import React,{useEffect, useState} from 'react';
+
+
+
+function Update(props){
+
+const [data, setName] = useState({
+    name : ""
+})
+
+
+useEffect(()=> {
+    const id = props.match.params.id;
+    console.log(id);
+    axios.get("http://localhost:3000/"+id)
+        .then(res=> {
+            setName(res.data)
+        })
+        .catch(()=> {
+            console.log("Failed")
+        })
+},[])
+
+
+const onChangeHandler = (e)=> {
+    setName({...data, name: e.target.value})
+}
+
+
+const onsubmitHandler = e=> {
+    e.preventDefault();
+    const id = props.match.params.id;
+    const updateName = {
+        name : data.name
+    }
+    console.log(updateName)
+    axios.put(`http://localhost:3000/update/${id}`,updateName)
+        .then(res => {
+            props.history.push('/')
+            console.log("succes")
+        })
+        .catch(()=>{
+            console.log("Failed")
+        })
+}
+
+    return(
+        <>
+            <div className = "row">
+                <div className = "col-md">  </div>
+                <div className  = "col-md"> 
+                <h2 className ="text-center bg-primary text-white py-3" >Update data</h2>
+                    <form onSubmit = {onsubmitHandler}>
+                        <input
+                            type = "text"
+                            name = "name"
+                            value = {data.name}
+                            className = "form-control"
+                            onChange = {onChangeHandler}
+                        />
+                         <hr/>
+                        <button className = "btn btn-primary" >Update</button>
+
+                    </form>
+                
+                 </div>
+                <div className = "col-md"> </div>
+
+            </div>
+
+        </>
+    )
+}
+
+export default Update;

@@ -1,0 +1,80 @@
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { Link, Redirect } from 'react-router-dom';
+import Update from '../update';
+
+
+
+
+function ShowList(props){
+
+    const [posts,setPosts] = useState([]);
+    
+    useEffect(()=> {
+        axios.get("http://localhost:3000/")
+            .then(res => {
+                setPosts(res.data)
+                
+            })
+            .catch((err)=>{
+                console.log(err)
+            })
+    },[])
+
+const Delete =(id) =>{
+
+    axios.delete("http://localhost:3000/delete/" + id)
+        .then(res=> {
+            console.log("Deleted")
+            window.location.reload()
+        })
+        .catch(()=>{
+            console.log("Failed to delete")
+        })
+}
+
+
+    const Update =(id)=> {
+        props.history.push("/update/" +id)
+    }
+
+    return(
+        <>
+        <div className = "row">
+                <div className = "col-md-3">  </div>
+                <div className  = "col-md-6"> 
+                  <Link className = "" to = "/insert" >Insert</Link>
+                    
+                    <table className = "table table-striped bordered">
+                      <tr>
+                        <th>Name</th>
+                        <th>Delete/Update</th>
+                      </tr>
+                    
+                    {
+                        posts.map(post=> 
+                            <tr key ={post._id}>
+                                <td>{post.name}</td>
+                                <td>
+                                    <button className = "btn-danger" onClick ={()=> Delete(post._id)} >Del</button>
+                                    <button className = "btn-primary" onClick = {()=> Update(post._id)} >Update</button>
+                                </td>
+                            </tr>
+                            
+                            
+                            )
+                    }
+                       
+
+                    </table>
+                
+                 </div>
+                <div className = "col-md-3"> </div>
+
+            </div>
+
+        </>
+    )
+}
+
+export default ShowList;

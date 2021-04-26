@@ -1,0 +1,78 @@
+import axios from 'axios';
+import React, { Component } from 'react';
+import Simple from './components/simple';
+
+
+
+class App extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      posts : []
+    }
+  }
+
+  componentDidMount(){
+    axios.get("https://jsonplaceholder.typicode.com/posts")
+      .then(res =>{
+          this.setState({posts : res.data})
+      })
+  }
+
+  render(){
+
+    return(
+      <>
+
+        
+          <Simple  posts = {this.state.posts}/>
+
+           
+
+      </>
+    )
+  }
+}
+
+export default App;
+
+
+
+
+
+
+import React from 'react';
+
+
+function Simple({posts}){
+
+    return(
+        <>
+            <table>
+                <tr>
+                    <th>Id</th>
+                    <th> Title </th>
+                    <th> Body </th>
+                </tr>
+                {
+                    posts.map(post => 
+                        <tr>
+                            <td>{post.id}</td>
+                            <td> {post.title} </td>
+                            <td> {post.body} </td>
+
+                        </tr>
+                        
+                        )
+                }
+            </table>
+        </>
+    )
+}
+
+export default Simple;
+
+
+
+
+

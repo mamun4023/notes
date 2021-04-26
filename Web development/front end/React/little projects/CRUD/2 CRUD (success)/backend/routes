@@ -1,0 +1,116 @@
+
+const express = require('express');
+const app = express();
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const morgan = require('morgan');
+
+
+
+
+// initialize packages
+app.use(express.json());
+app.use(bodyParser.urlencoded({extended : false}))
+app.use(cors());
+app.use(morgan('tiny'));
+
+
+const db_string = "mongodb://127.0.0.1:27017/myDB";
+
+
+mongoose.connect(db_string, { useUnifiedTopology : true, useNewUrlParser : true, useFindAndModify : false}, (err)=> {
+    if(!err)
+        console.log("DB connected")
+})
+
+app.listen(3000, ()=> {
+    console.log("server is running...")
+})
+
+
+// make model 
+const userSchema = mongoose.Schema({
+    name : String
+})
+
+const userModel = mongoose.model('userModel', userSchema);
+
+
+// show all user
+app.get('/', (req, res)=> {
+    userModel.find()
+        .then(user=>{
+            res.send(user)
+
+        })
+        .catch(() => {
+            res.send("Failed to fetch data")
+        })
+})
+
+
+// find data with specific id
+
+app.get('/:id', (req, res)=> {
+    const id = req.params.id;
+    userModel.findById(id)
+        .then(user=>{
+            res.send(user)
+        })
+        .catch(()=>{
+            res.send("failed")
+        })
+})
+
+
+// insert user route
+app.post('/register', (req, res)=> {
+    const {name} = req.body;
+
+    const newUser = new userModel({
+        name
+    })
+
+    newUser.save()
+        .then(user=>{ 
+            res.send(user)
+        })
+        .catch(()=>{
+            res.send("failed to save data")
+        })
+})
+
+
+// delete a particular data
+app.delete("/delete/:id", (req, res)=> {
+    const id = req.params.id; 
+    userModel.findOneAndRemove(id)
+        .then(()=>{
+            res.send("Deleted")
+        })
+        .catch(()=>{
+            res.send("Failed")
+        })
+})
+
+
+//update data
+app.put("/update/:id", (req, res)=> {
+    const id = req.params.id;
+
+    const query = {_id : id}
+    const update = {
+        "$set": {
+          "name": req.body.name,
+        }
+      };
+    userModel.findOneAndUpdate(query, update)
+        .then(user=> {
+            res.send(user)
+        })
+        .catch(()=>{
+            res.send("failed to update")
+        })
+ 
+})

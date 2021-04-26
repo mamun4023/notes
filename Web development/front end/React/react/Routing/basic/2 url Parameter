@@ -1,0 +1,62 @@
+import React, { Component } from 'react';
+import {BrowserRouter, Route, Switch, Link } from 'react-router-dom';
+import Child from './components/routes/home';
+
+
+class App extends Component{
+
+  render(){
+
+    return(
+      <>
+
+          {/* make route */}
+          <BrowserRouter>
+
+              <Switch>
+                    <Route exact path ="/:id"  children = {<Child/>} />
+              
+              </Switch>
+          
+          </BrowserRouter>
+
+
+      </>
+
+    )
+  }
+}
+
+export default App;
+
+
+
+
+
+
+
+
+
+import React from 'react';
+import { useParams } from 'react-router';
+
+
+
+function Child(){
+ let {id} = useParams;
+
+    return(
+        <>
+            
+           <h4> id :  {id} </h4>
+        </>
+    )
+}
+
+export default Child;
+
+
+
+
+
+

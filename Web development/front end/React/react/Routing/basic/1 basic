@@ -1,0 +1,31 @@
+import React, { Component } from 'react';
+import {BrowserRouter, Route, Switch, Link } from 'react-router-dom';
+import Home from './components/routes/home';
+import Update from './components/routes/update';
+
+
+class App extends Component{
+
+  render(){
+
+    return(
+      <>
+
+          {/* make route */}
+          <BrowserRouter>
+              <Switch>
+                    <Route exact path = "/">  <Home/> </Route>
+                    <Route path = "/update" > <Update/> </Route>
+
+              </Switch>
+          
+          </BrowserRouter>
+
+
+      </>
+
+    )
+  }
+}
+
+export default App;

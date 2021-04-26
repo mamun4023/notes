@@ -1,0 +1,65 @@
+import axios from 'axios';
+import React, { useState } from 'react';
+
+
+
+function Insert(props){
+
+const [data, setName] = useState({
+    name : ""
+})
+
+
+ const onChangeHandler = (e)=> {
+     setName({...data, name : e.target.value})
+ }
+
+
+ const onsubmitHandler = (e) =>{
+    e.preventDefault();
+    
+    const newUser = {
+        name : data.name
+    }
+
+    axios.post("http://localhost:3000/register", newUser)
+        .then(res=> {
+            console.log("submitted")
+            props.history.push("/")
+        })
+        .catch(()=>{
+            console.log("Failed to insert")
+        })
+
+  }
+
+    return(
+        <>
+            <div className = "row">
+                <div className = "col-md">  </div>
+                <div className  = "col-md"> 
+                <h2 className ="text-center bg-primary text-white py-3" >Add data</h2>
+                    <form onSubmit = {onsubmitHandler}>
+                        <input
+                            
+                            type = "text"
+                            name = "name"
+                            value = {data.name}
+                            className = "form-control"
+                            onChange = {onChangeHandler}
+
+                        />
+                         <hr/>
+                        <button className = "btn btn-primary" >Insert</button>
+
+                    </form>
+                
+                 </div>
+                <div className = "col-md"> </div>
+
+            </div>
+        </>
+    )
+}
+
+export default Insert;
