@@ -1,0 +1,62 @@
+import React, { useRef, useState } from "react"
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/swiper.min.css";
+import "swiper/components/zoom/zoom.min.css"
+import "swiper/components/navigation/navigation.min.css"
+import "swiper/components/pagination/pagination.min.css"
+import "swiper/components/scrollbar/scrollbar.min.css"
+
+// import customize style
+import "./style.css"
+
+import Image1 from './images/1.jpg'
+import Image2 from './images/2.jpg'
+import Image3 from './images/3.jpeg'
+
+
+
+// import Swiper core and required modules
+import SwiperCore, {
+  Pagination, Navigation, Scrollbar
+} from 'swiper/core';
+
+// install Swiper modules
+SwiperCore.use([Navigation,Scrollbar,Pagination]);
+
+
+export default function App() {
+  
+
+  
+  return (
+    <>
+
+     <div className = "swip-container">
+    <Swiper
+    slidesPerView = {3}
+     spaceBetween = {10}
+    
+    navigation = {true}
+     scrollbar={{
+      "hide": true
+    }}
+   
+     pagination = {{'clickable' : true}}
+  
+     className="mySwiper"
+  
+     
+     >
+       
+       <SwiperSlide className="swiper-zoom-container" > <img src = {Image1} /> </SwiperSlide>
+       <SwiperSlide className="swiper-zoom-container" >  <img src = {Image2} /></SwiperSlide>
+       <SwiperSlide className="swiper-zoom-container" >  <img src = {Image3} /></SwiperSlide>
+       <SwiperSlide className="swiper-zoom-container" >  <img src = {Image3} /></SwiperSlide>
+  </Swiper>
+   </div>
+    </>
+  )
+}
