@@ -1,0 +1,56 @@
+
+import {BUY_CAKE, BUY_ICECREAM} from './types';
+import { combineReducers} from 'redux';
+
+
+const initialCakeState = {
+    numOfcakes : 10
+}
+
+
+
+const initialIceCreamState = {
+    numOfIceCream : 20
+}
+
+
+
+ const CakeReducer = (state = initialCakeState, action) => {
+    switch(action.type){
+       case BUY_CAKE : 
+            return{
+                ...state,
+                numOfcakes : state.numOfcakes - 1
+            }
+        
+        default:
+            return state
+    }
+}
+
+
+ const IceCreamReducer = (state = initialIceCreamState, action) => {
+    switch(action.type){
+        case BUY_ICECREAM:
+            return{
+                ...state,
+                numOfIceCream : state.numOfIceCream - 1
+            }
+
+        default:
+            return state
+    }
+}
+
+
+
+// root reducer
+const RootReducer = combineReducers({
+    cake : CakeReducer,
+    ice : IceCreamReducer
+
+})
+
+
+
+export default RootReducer;

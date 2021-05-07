@@ -1,0 +1,31 @@
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import {buyCake, buyIceCream} from './redux/cake/actions';
+
+
+
+function Container(){
+ const numOfcakes = useSelector(state => state.cake.numOfcakes);
+ const numOfIceCream = useSelector(state => state.ice.numOfIceCream);
+
+ const dispatch = useDispatch();
+
+    return(
+        <>
+
+            <h3> numOfcakes {numOfcakes}  </h3>
+            <h4> numOfIceCream {numOfIceCream} </h4>
+            <button onClick = {()=> dispatch(buyCake())}> buycake </button>
+            <button onClick = {()=> dispatch(buyIceCream())}> buyIceCream</button>
+            
+        
+            
+
+        </>
+    )
+}
+
+
+
+export default Container;
