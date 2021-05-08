@@ -1,0 +1,32 @@
+import React, { useEffect } from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+// load action
+import {fetchUser} from './redux/cake/actions';
+
+
+function Container(){
+
+    useEffect(()=> {
+        dispatch( fetchUser())
+    }, [])
+    
+    const userData = useSelector(state => state.users)
+    const dispatch = useDispatch();
+
+    return (
+        <div>
+            <h3> user List </h3>
+            <div>
+                {
+                    userData.map(user => <div> {user.name} </div>)
+                }
+            </div>
+        </div>
+    )
+
+
+}
+
+
+
+export default Container;

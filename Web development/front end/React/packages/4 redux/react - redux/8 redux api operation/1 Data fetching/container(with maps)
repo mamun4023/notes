@@ -1,0 +1,45 @@
+import React, { useEffect, useState } from 'react';
+import {connect} from 'react-redux';
+
+// load action
+import {fetchUser} from './redux/cake/actions';
+
+
+function Container({userData, fetchUser}){
+
+    useEffect(()=> {
+        fetchUser()
+    }, [])
+
+    return userData.loading?(
+        <h3>Loading</h3>
+    ) : userData.error ? (
+        <h3> {userData.error} </h3>
+    ): (
+        <div>
+            <h3> user List </h3>
+            <div>
+                {
+                  userData.map(user => <div> {user.name} </div>)
+                }
+            </div>
+        </div>
+    )
+
+
+}
+
+
+const mapStateToProps = state => {
+    return{
+        userData: state.users
+    }
+}
+
+const mapDispatchToProps = dispach => {
+    return{
+        fetchUser : ()=> dispach(fetchUser())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps) (Container);

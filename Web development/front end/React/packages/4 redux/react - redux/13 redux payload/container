@@ -1,0 +1,41 @@
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+
+// load action
+import {buyCake} from './redux/cake/actions';
+
+
+function Container(){
+
+    const [number, setNumber] = useState(1)
+
+
+ const numOfcakes = useSelector(state => state.numOfcakes);
+
+ const dispatch = useDispatch();
+
+    return(
+        <>
+
+            <h3> numOfcakes {numOfcakes}  </h3>
+            
+            
+            <input 
+                type = "text"
+                value = {number}
+                onChange = {e => setNumber(e.target.value)}
+                
+            />
+            <button onClick = {()=> dispatch(buyCake(number))}> buycake </button>
+            
+        
+            
+
+        </>
+    )
+}
+
+
+
+export default Container;
