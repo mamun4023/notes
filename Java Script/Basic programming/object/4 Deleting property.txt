@@ -5,10 +5,13 @@
    	lastName  : 'Jhon',
    	Company   : 'Alto',
   
-   }
-    delete person.firstName;   // deleting property 
+   };
+   
+  
+  delete person.firstName;   // deleting property 
+  
   for(i in person){
-    document.write(person[i],"<br>");
+    console.log(person[i]);
   }
 
 
