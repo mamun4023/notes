@@ -4,9 +4,9 @@
 		type: 'Fiat',
 		model: '300m',
 		color: 'black'
-	};
+	    };
 
 
-	document.write(cars.type);
+	console.log(cars.type);
 
 </script>
