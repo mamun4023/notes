@@ -4,14 +4,14 @@
    	firstName : 'Mychel',
    	lastName  : 'Jhon',
    	Company   : 'Alto',
-   }
+   };
 
    var arr = Object.values(person);
     
     for(i in arr)
     {
-      document.write(arr[i],"<br>");
-     }
+      console.log(arr[i],"<br>");
+    }
 
 
 
