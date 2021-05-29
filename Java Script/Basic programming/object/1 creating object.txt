@@ -9,7 +9,7 @@
 
    for(i in person)
    {
-   	document.write(person[i],"<br>");
+   	console.log(person[i]);
    }
 
 </script>
