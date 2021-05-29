@@ -6,13 +6,12 @@
    	Company   : 'Alto',
    };
 
+   
+   // conveting object to array 
    var arr = Object.values(person);
     
-    for(i in arr)
-    {
-      console.log(arr[i]);
-    }
-
+  
+     console.log(arr);
 
 
 
