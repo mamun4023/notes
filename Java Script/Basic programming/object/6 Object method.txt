@@ -9,9 +9,9 @@
    		return this.firstName +" " +this.lastName;
 
    	}
-   }
+   };
 
-   document.write(person.fullName());
+   console.log(person.fullName());
 
 
 </script>
