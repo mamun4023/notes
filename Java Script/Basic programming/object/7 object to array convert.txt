@@ -10,7 +10,7 @@
     
     for(i in arr)
     {
-      console.log(arr[i],"<br>");
+      console.log(arr[i]);
     }
 
 
