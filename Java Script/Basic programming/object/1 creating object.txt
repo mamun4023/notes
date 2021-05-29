@@ -5,7 +5,7 @@
    	lastName  : 'Jhon',
    	Company   : 'Alto',
    	Date : new Date()
-   }
+   };
 
    for(i in person)
    {
