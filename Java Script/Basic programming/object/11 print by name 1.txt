@@ -1,13 +1,13 @@
 <script type="text/javascript">
 	
-   person = {
+ var person = {
    	firstName : 'Mychel',
    	lastName  : 'Jhon',
    	Company   : 'Alto',
   
-   }
+    };
 
-   document.write(person["firstName"]);
+   console.log(person["firstName"]);
 
 
 
