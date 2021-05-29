@@ -5,10 +5,11 @@
    	lastName  : 'Jhon',
    	Company   : 'Alto',
   
-   }
-  var d;
+   };
+   
+  
   for(i in person){
-    document.write(person[i],"<br>");
+    console.log(person[i]);
   }
 
 
