@@ -4,13 +4,19 @@
    	firstName : 'Mychel',
    	lastName  : 'Jhon',
    	Company   : 'Alto',
-   	language  : 'English',
-     get lang(){
-     	return this.language;
-     }
-   }
+   	get fullName(){
+   		       return this.firstName +" "+ this.lastName
+   	}
+   };
 
-   	document.write(person.lang);
+   
+
+    // not able modify using getter
+    // only dispay the data
+    person.fullName = "ddddd"
+  
+     console.log(person.fullName);
+
 
 
 </script>
