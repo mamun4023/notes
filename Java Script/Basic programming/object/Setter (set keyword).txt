@@ -3,17 +3,19 @@
    person = {
    	firstName : 'Mychel',
    	lastName  : 'Jhon',
-   	Company   : 'Alto',
-   	language  : ' ',
-     set lang(lang){
-     	return this.language=lang;
-     }
+   	language  : '',
+   	set lang(lang){
+   		this.language = lang 
+   	}
    };
 
-   // set and object property
-   person.lang = 'English';
+   
 
-   	document.write(person.language);
+   // setter is able to modify / update object data
+    person.lang = "ddddd"
+  
+     console.log(person.language);
+
 
 
 </script>
