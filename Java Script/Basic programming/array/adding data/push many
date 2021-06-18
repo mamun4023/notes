@@ -1,0 +1,5 @@
+const arr = ['a', 'b', 'c'];
+console.log(arr);
+// arr[arr.length] = 'ddd';
+arr.push("aaa", 'bbb', "cccc")
+console.log(arr);
