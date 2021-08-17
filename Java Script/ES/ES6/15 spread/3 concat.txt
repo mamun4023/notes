@@ -3,3 +3,33 @@
    var a = [1,2,3]
 	var b = [...a,'food'];
 	console.log(b);
+
+
+//copy 
+const arr1 = [1,2,3];
+const arr2 = [...arr1]
+console.log(arr2)
+
+
+
+// merge 
+let a = [12,10,20];
+let b = [30,40,50];
+let c = [...a, ...b];
+console.log(c);
+
+// remove duplicate
+const data = [1,1,2,4];
+const uniq = [...new Set(data)];
+console.log(uniq);
+
+
+//passing an argument
+const arr =  [1,2,3,4];
+const min = Math.min(...arr);
+console.log(min)
+
+// convert string
+const name = "Tohid";
+const split = [...name];
+console.log(split);
