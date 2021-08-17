@@ -1,0 +1,32 @@
+
+
+
+
+const shoppingList = [
+  {name : "pizza", price : 10},
+  {name : "Burger", price : 20},
+  {name : "Cake", price : 30}
+];
+
+
+// some();
+const someitem = shoppingList.some(item=> item.price > 10 );
+console.log(someitem)  // true
+
+
+// find();
+const foundItem = shoppingList.some(item => item.name === 'Cake')
+console.log(foundItem) // true
+
+
+
+// filter
+const filterItem = shoppingList.filter(item => item.price > 10);
+console.log(filterItem)
+
+
+
+//every()
+const everyItem = shoppingList.every(item => item.price >20) 
+
+console.log(everyItem)
