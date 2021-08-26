@@ -1,0 +1,67 @@
+import React from 'react'
+import Home from './home';
+import Service from "./service";
+import {Context} from './context';
+function App(){
+    return(
+        <>  
+           <Context.Provider  value = "context">
+              <Home/>
+              <br/>
+              <Service/>
+           </Context.Provider>
+
+        </>
+      )
+  }
+
+export default App;
+
+
+
+
+// context page
+
+import React,{createContext} from 'react';
+export const Context = createContext();
+
+
+
+// home page
+import{Context} from './context';
+function Home(){
+
+	return(
+		<>
+			<Context.Consumer>
+				{
+					(user)=> {
+						return(
+							<>
+								Home {user}
+							</>
+							)
+					}
+				}
+			</Context.Consumer>
+		</>
+		)
+}
+export default Home;
+
+
+// service page
+import React, {useContext} from 'react';
+import {Context} from './context';
+
+function Service(){
+	const data = useContext(Context)
+	return(
+		<>
+			 Servie {data}
+
+		</>
+		)
+}
+export default Service;
+
