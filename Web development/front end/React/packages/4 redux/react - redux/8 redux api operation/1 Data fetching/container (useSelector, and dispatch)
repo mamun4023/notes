@@ -12,7 +12,11 @@ function Container(){
     
     const userData = useSelector(state => state.users)
     const dispatch = useDispatch();
-
+    const loading =  useSelector(state => state.loading);
+    
+    if(loading){
+    	return <h1> loading... </h1>
+    }
     return (
         <div>
             <h3> user List </h3>
