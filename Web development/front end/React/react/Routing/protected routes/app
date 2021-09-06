@@ -1,0 +1,19 @@
+import React from 'react';
+import Sigin from './signin';
+import {BrowserRouter, Route} from 'react-router-dom';
+import Dashboard from './dashboard';
+import Protected from './protected';
+
+function App(){
+	return(
+		<>
+		   <BrowserRouter>
+		   		<Route exact path = "/" component = {Sigin}/>
+		   		<Protected path = "/dashboard" component = {Dashboard} />
+		   </BrowserRouter>
+
+		</>
+		)
+}
+
+export default App;
