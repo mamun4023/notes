@@ -1,0 +1,21 @@
+import PropTypes from 'prop-types';
+
+
+Button.defaultProps = {
+	name : "click"
+}
+
+function Button({name}){
+	return(
+
+			<div> {name} </div>
+
+		)
+}
+
+export default Button;
+
+
+
+// rendering 
+<Button />
