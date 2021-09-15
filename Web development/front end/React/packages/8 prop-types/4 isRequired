@@ -1,0 +1,17 @@
+import PropTypes from 'prop-types';
+
+
+Button.propTypes = {
+	name : PropTypes.string.isRequired
+}
+
+
+function Button({ name}){
+
+	return(
+		<>
+			hello {name} 
+		</>
+		)
+}
+export default Button;
