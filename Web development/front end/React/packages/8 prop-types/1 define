@@ -1,0 +1,19 @@
+import PropTypes from 'prop-types';
+
+Button.propTypes = {
+	name : PropTypes.string
+}
+
+function Button({name}){
+	return(
+
+			<div> hello   {name} </div>
+
+		)
+}
+
+export default Button;
+
+
+// component
+<Button name = {'fdf'} />
