@@ -9,6 +9,8 @@
 
 		// prepare the connection
 		xhr.open('GET', "https://jsonplaceholder.typicode.com/todos/1");
+		// convert json to js object
+		xhr.responseType = 'json';
 		xhr.send();
 
 		xhr.onload = function(){
