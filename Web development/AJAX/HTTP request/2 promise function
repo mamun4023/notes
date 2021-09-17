@@ -1,0 +1,33 @@
+<button onclick="getData()">Get Data</button>
+<button>Send data</button>
+
+
+<script type="text/javascript">
+
+// 	
+const sendRequest = function(method, url){
+	
+	const promise = new Promise((resolve, reject)=> {
+
+		const xhr = new XMLHttpRequest();
+		xhr.open(method, url);
+		xhr.send();
+		xhr.onload = function(){
+			resolve(xhr.response)
+		}
+	})
+	return promise;
+}
+
+const getData = function(){
+	sendRequest('GET', "https://jsonplaceholder.typicode.com/todos/1")
+	.then(res => {
+		console.log(res)
+	})
+}
+
+
+
+
+
+</script>
