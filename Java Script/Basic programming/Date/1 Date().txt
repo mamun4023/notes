@@ -1,7 +1,5 @@
 
-<script type="text/javascript">
-  
+  // print current system time and GMT
    var d = Date();
    document.write(d);
 
-</script>
