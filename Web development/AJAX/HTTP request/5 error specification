@@ -1,0 +1,52 @@
+<button onclick="getData()">Get Data</button>
+<button onclick="sendData()" >Send data</button>
+
+
+<script type="text/javascript">
+
+const sendRequest = function(method, url, data){	
+	const promise = new Promise((resolve, reject)=> {
+		const xhr = new XMLHttpRequest();
+		xhr.open(method, url);
+		xhr.responseType = "json";
+		xhr.setRequestHeader('content-type', 'application/json');
+		xhr.send(data);
+		xhr.onload = function(){
+			if(xhr.status >= 400){
+				reject(xhr.response)
+			}else{
+				resolve(xhr.response)
+			}
+		};
+
+		// error handle
+		xhr.onerror = function(){
+			reject("Something was wrong!")
+		}
+	})
+	return promise;
+}
+
+const getData = function(){
+	sendRequest('GET', "https://jsonplaceholder.typicode.com/todos/1")
+	.then(res => {
+		console.log(res)
+	}).catch(err => {
+		console.log(err)
+	})
+}
+
+
+const sendData = function(){
+	sendRequest("POST", "https://jsonplaceholder.typicode.com/posts",JSON.stringify({
+		title : "foo",
+		body : "bar",
+		userID : 1
+	})).then((res)=> {
+		console.log(res)
+	}).catch(err=> {
+		console.log(err)
+	})
+}
+
+</script>
