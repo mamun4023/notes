@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>This example uses the addEventListener() method to attach a "beforeunload" event to the window object.</p>
+
+<p>Close this window, press F5 or click on the link below to invoke the beforeunload event.</p>
+
+<a href="https://www.w3schools.com">Click here to go to w3schools.com</a>
+
+<script>
+window.addEventListener("beforeunload", function(event) {
+  event.returnValue = "Write something clever here..";
+});
+</script>
+
+</body>
+</html>
