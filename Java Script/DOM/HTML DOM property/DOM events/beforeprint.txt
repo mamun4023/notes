@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body onbeforeprint="myFunction()">
+
+<h1>Try to print this document</h1>
+<p><b>Tip:</b> Keyboard shortcuts, such as Ctrl+P sets the page to print.</p>
+<p><b>Note:</b> The onbeforeprint event is not supported in Safari and Opera. </p>
+
+<script>
+function myFunction() {
+  alert("You are about to print this document!");
+}
+</script>
+
+</body>
+</html>
