@@ -1,0 +1,9 @@
+<input type="file" onchange="myFunction()" name="">
+
+<img id="demo" height="100" width="100">
+
+<script type="text/javascript">
+		function myFunction(){
+		    demo.src = URL.createObjectURL(event.target.files[0]);
+		}
+</script>
