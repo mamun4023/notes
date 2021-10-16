@@ -49,9 +49,7 @@
 		let blueValue = blue.value;
 		let huerotateValue = huerotate.value;
 
-		showImage.style.filter = `grayscale(${gsvalue}%)`;
-		showImage.style.filter = `blur(${blueValue}px)`;
-		showImage.style.filter = `hue-rotate(${huerotateValue}deg)`;
+		showImage.style.filter = `grayscale(${gsvalue}%) blur(${blueValue}px) hue-rotate(${huerotateValue}deg)`;
 
 
 	}
