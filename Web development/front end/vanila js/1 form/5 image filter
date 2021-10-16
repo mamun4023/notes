@@ -1,0 +1,59 @@
+<form id="myForm">
+	<input id="imageUrl" type="text" name="">
+	<button>submit</button>
+</form>
+
+
+
+
+<img id="showImage">
+
+<style type="text/css">
+	img{
+		min-height: 300px;
+	}
+</style>
+
+<label>Grascale</label>
+<input type="range" value="0" class="slider" id="gs" name="">
+<label>Blur</label>
+<input type="range" value="0" class="slider" id="blue" name="">
+<input type="range" value="0" class="slider" id="huerotate" name="">
+
+
+
+<script type="text/javascript">
+	let myForm = document.getElementById('myForm');
+	let showImage = document.getElementById('showImage');
+	myForm.addEventListener('submit', function(e){
+		e.preventDefault();
+		let imageUrl = document.getElementById('imageUrl');
+		let urlValue = imageUrl.value;
+
+		showImage.setAttribute('src',urlValue);
+
+	})
+
+	let inputRange = document.querySelectorAll('.slider');
+	for(let i = 0; i < inputRange.length; i++ ){
+		inputRange[i].addEventListener('input', editImage);
+	}
+
+
+	function editImage(){
+		let gs = document.getElementById('gs');
+		let blue = document.getElementById('blue');
+		let huerotate = document.getElementById('huerotate');
+
+		let gsvalue = gs.value;
+		let blueValue = blue.value;
+		let huerotateValue = huerotate.value;
+
+		showImage.style.filter = `grayscale(${gsvalue}%)`;
+		showImage.style.filter = `blur(${blueValue}px)`;
+		showImage.style.filter = `hue-rotate(${huerotateValue}deg)`;
+
+
+	}
+
+</script>
