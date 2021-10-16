@@ -1,0 +1,22 @@
+<form id="myForm">
+	<input id="imageUrl" type="text" name="">
+	<button>submit</button>
+</form>
+
+
+<img id="showImage">
+
+
+<script type="text/javascript">
+	let myForm = document.getElementById('myForm');
+	let showImage = document.getElementById('showImage');
+	myForm.addEventListener('submit', function(e){
+		e.preventDefault();
+		let imageUrl = document.getElementById('imageUrl');
+		let urlValue = imageUrl.value;
+
+		showImage.setAttribute('src',urlValue);
+
+	})
+
+</script>
