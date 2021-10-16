@@ -1,0 +1,28 @@
+
+
+<img name="slide" height="200" width="200">
+
+<script type="text/javascript">
+	var i = 0;
+	var images = [];
+	var time = 1000;
+
+	//image list
+	images[0] = '1.jpg';
+	images[1] = '2.jpg';
+
+
+	// change image
+	function changeImg(){
+		document.slide.src = images[i];
+		if(i < images.length-1){
+			i++;
+		}else{
+			i =0;
+		}
+
+		setTimeout('changeImg()',time);
+	}
+
+	window.unload = changeImg();
+</script>
