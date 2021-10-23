@@ -1,0 +1,22 @@
+import React from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {actionCreator} from './components/redux/index';
+
+function App(){
+
+	const account = useSelector(state => state.account)
+	const dispatch = useDispatch();
+	const {depositMoney, withdrawMondy}  = bindActionCreators(actionCreator, dispatch)
+	
+	return(
+		<>
+			Account Balance : {account}
+			<button onClick = {()=> depositMoney(1000)} > deposit </button>
+		</>
+
+
+		)
+}
+
+export default App;
