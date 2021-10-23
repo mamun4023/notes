@@ -1,0 +1,11 @@
+import {combineReducers} from 'redux';
+import accountReducer from './reducer1';
+
+
+const Reducers = combineReducers({
+	account : accountReducer
+
+})
+
+
+export default Reducers;
