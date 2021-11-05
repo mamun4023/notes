@@ -1,0 +1,42 @@
+import { useState } from "react";
+import Input from "./input";
+
+function App() {
+  const [name, setName] = useState("");
+  
+
+
+  const handler = (e)=>{
+       setName(e.target.value)
+  }
+  
+  return (
+    <div>
+
+        <h3> {name} </h3>
+        <Input 
+          changed = {handler}
+          name = {name}
+        />
+
+    </div>
+  );
+}
+
+export default App;
+
+
+
+
+
+function Input(props){
+    return(
+        <>
+            
+            <input type = "text" onChange = {props.changed} value = {props.name} />
+
+        </>
+    )
+}
+
+export default Input;
