@@ -1,0 +1,33 @@
+
+import React, { useState } from "react";
+
+function App(){
+  const [person, setPerson] = useState(false);
+  
+  
+  const Handle = ()=>{
+    let personData = person;
+    setPerson(!personData)
+  }
+  
+  return(
+    <>
+
+          <button onClick = {Handle}>
+            toggle
+          </button>
+
+          {
+            (person)?
+              <div>
+                  hello toggle
+
+              </div> : null
+          }
+
+
+    </>
+  )
+}
+
+export default App;
