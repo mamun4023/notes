@@ -1,0 +1,41 @@
+
+
+import { useState } from 'react';
+import './index.css';
+
+const Data = [
+  {
+    id : 1,
+    name : "tohid"
+  },
+  {
+    id : 2,
+    name : "Aktar"
+  },
+
+]
+
+
+function App(){
+
+  const [data] = useState(Data)
+  let classes = [];
+
+  if(data.length <= 2){
+    classes.push('red')
+  }else{
+    classes.push('green')
+  }
+
+  return(
+    <>
+
+      <h3 className = {classes.join(" ")}>
+        Hello styling dd
+      </h3>
+
+    </>
+  )
+}
+
+export default App;
