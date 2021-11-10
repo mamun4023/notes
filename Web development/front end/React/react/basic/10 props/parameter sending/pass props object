@@ -1,0 +1,69 @@
+
+import Home from './home';
+
+const data = [
+  {
+    id : 1, 
+    name : "tohid",
+    education : "india"
+  },
+  {
+    id : 2,
+    name : "akram",
+    education : "USA"
+  }
+]
+
+
+function App() {
+  return (
+    <div className="App">
+        <Home  data = {data} />
+    </div>
+  );
+}
+
+export default App;
+
+
+
+
+import React from 'react'
+
+function Home({data}){
+
+
+    return(
+        <>
+
+            <table>
+              <tr>
+                    <th> Id </th>
+                    <th> Name</th>
+                    <th> Education </th>  
+
+            </tr>
+             {
+
+             Object.keys(data).map((key) => (
+                
+              <tr key ={key}>
+                   <td> {data[key].id} </td>
+                   <td> {data[key].name} </td>
+                   <td> {data[key].education} </td>
+              </tr>
+
+
+              ))
+               
+            }
+
+            
+            </table>
+
+        </>
+    )
+}
+
+
+export default Home;
