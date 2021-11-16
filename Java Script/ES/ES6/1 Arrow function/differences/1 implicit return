@@ -1,0 +1,46 @@
+
+<script type="text/javascript">
+  
+
+
+
+// normal function
+
+var data = 10;
+function myFunction(data){
+  data = 20;
+}
+
+
+const dd = myFunction(30);
+console.log(dd); // undefined
+
+
+function myFunction2(data){
+  return data
+}
+
+const data2 = myFunction2(30);
+console.log(data2);   //30
+
+
+
+// arrow function
+
+/*If the arrow function contains one expression, and you omit the function's curly braces, then the expression is implicitly returned. These are the inline arrows function.
+
+*/
+
+const arrow1 = data => data + 1;
+console.log(arrow1(20))  // 20
+
+
+const arrow2 = data => {data + 1};
+console.log(arrow2(20))  // undefined
+
+
+
+
+
+
+</script>

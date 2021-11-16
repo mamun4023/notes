@@ -1,0 +1,61 @@
+
+<script type="text/javascript">
+  
+
+// able to access anywhere (global object)
+console.log(this);
+
+
+// called the global object(window object)
+function myFunction() {
+  console.log(this);
+}
+
+
+myFunction(); // logs global object (window)
+
+
+
+function MyFunction() {
+  console.log(this);
+}
+new MyFunction(); // logs an instance of MyFunction
+
+
+
+// // access into the global window object
+// function myFunction1(){
+//   console.log(this.alert("hello"))
+// }
+
+
+// myFunction1()
+
+
+
+
+// // only called myObject
+
+// const myObject = {
+//   method() {
+//     console.log(this);
+//   }
+// };
+
+// // Method invocation
+// myObject.method(); // logs myObject
+
+
+
+// function myFunction() {
+//   console.log(this);
+// }
+// const myContext = { value: 'A' };
+// myFunction.call(myContext);  // logs { value: 'A' }
+// myFunction.apply(myContext); // logs { value: 'A' }
+
+
+
+
+
+</script>

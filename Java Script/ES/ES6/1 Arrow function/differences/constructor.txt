@@ -1,0 +1,20 @@
+function Car(color){
+  this.color = color;
+}
+
+
+const redCar = new Car('red');
+console.log(redCar instanceof Car);
+
+
+
+
+
+// arrow function can not be a constructor function
+const animal  = (color)=>{
+  this.color = color;
+}
+
+
+const redAnimal = new animal('red')
+console.log( redAnimal instanceof animal);
