@@ -1,68 +1,72 @@
-Top 17 commands for Ubuntu Beginners
+
 Basics GNU/Linux Commands
-#1. ls : list directory contents
-ls
- ls -l
-If you want to see hidden files/directories (beginning with dot.), the use -a flag.
-ls -a
-see file in directory
+1. ls : list directory contents
+	ls
+ 	ls -l
+	
+	If you want to see hidden files/directories (beginning with dot.), the use -a flag.
+	
+	ls -a
+	
+	see file in directory
 	ls directoryName
 	ls ddd
 
 Check the manual for more detail (man ls).
-#2. cd : Change Directory
-cd ../
-cd /home/Desktop
-Remember,
-. represents the current directory
-.. represents the parent directory
-~ represents the home directory (of the user)
+
+2. cd : Change Directory
+	cd ../
+	cd /home/Desktop
+	Remember,
+	. represents the current directory
+	.. represents the parent directory
+	~ represents the home directory (of the user)
  
-#3. pwd : print the current/working directory
-pwd
-/home/Desktop/scripts
-#4. mkdir : make/create directory.
-mkdir clearfunny_stuffs
+3. pwd : print the current/working directory
+	pwd
+	
+4. mkdir : make/create directory.
+	mkdir dirName
 
-#5. rm : remove/delete file/directory
-rm useless.sh
-rm data.txt
+5. rm : remove/delete file/directory
+	rm useless.sh
+	rm data.txt
 
-remove empty directory 
- rmdir ddd
-to remove directory use 
-rm DDD -rf
+7. remove empty directory 
+ 	rmdir ddd
+	to remove directory use 
+	rm DDD -rf
 
-NOTE : it removes directories only if it’s empty, unless you specify -f flag for force deletion. But you must be careful with the arguments such as -r, -f. (-rf is very dangerous).
+	NOTE : it removes directories only if it’s empty, unless you specify -f flag for force deletion. But you must be careful with the arguments such as -r, -f. (-rf is very dangerous).
 
-#6. sudo : superuser do, to gain root privilege
-e.g
-sudo apt-get install gnome-shell
-Then enter your user account password, and you would be able to do administrative tasks like root. So if you’re getting any permission error using a command, then adding sudo as a prefix, might help.
+8. sudo : superuser do, to gain root privilege
+	sudo apt update
 
-#7. mv : rename or move a file/directory
-mv file1 ~/Downloads/Archive/
-the above command will move the file from the current directory to target directory.
-mv logo_2.jpg new_logo.jpg
-it will rename the file to new_logo.jpg.
-#8. cat : View File contents
-cat install.log
+9. mv : rename or move a file/directory
+	mv file1 ~/Downloads/Archive/
+	the above command will move the file from the current directory to target directory.
+	mv logo_2.jpg new_logo.jpg
+	it will rename the file to new_logo.jpg.
+	
+10. cat : View File contents
+	cat install.log
+	cat data.txt
 
-#9. man : A Reference manual for utils/commands/programs
-e.g if you want to know more about rm command, then type –
-man rm
+11. man : A Reference manual for utils/commands/programs
+	e.g if you want to know more about rm command, then type –
+	man rm
 
-#10. cp : Copy Files/Directories
-cp movie_name.mp4 ~/Downloads/movies/
+12. cp : Copy Files/Directories
+	cp movie_name.mp4 ~/Downloads/movies/
 
-cp  sourceFile destinationFile
+	cp  sourceFile destinationFile
 	cp data.txt data2.txt
 
-copy folder 
-  cp -r folder folder2
-The above command will copy the movie_name.mp4 to the specified directory.
+	copy folder 
+	cp -r folder folder2
+	The above command will copy the movie_name.mp4 to the specified directory.
 
-#11. wget : Download files from server
+13. wget : Download files from server
 GNU Wget or wget is very handy in downloading stuffs from internet, over the command line.
 wget url_of_the_content
 
