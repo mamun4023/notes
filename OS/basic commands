@@ -67,143 +67,150 @@ Check the manual for more detail (man ls).
 	The above command will copy the movie_name.mp4 to the specified directory.
 
 13. wget : Download files from server
-GNU Wget or wget is very handy in downloading stuffs from internet, over the command line.
-wget url_of_the_content
+	GNU Wget or wget is very handy in downloading stuffs from internet, over the command line.
+	wget url_of_the_content
 
-#12. gksudo : Run GUI Application with Root privilege
-gksudo nautilus
-The above command will open nautilus with root privilege. It’s just like sudo, but in GUI mode.
+14. gksudo : Run GUI Application with Root privilege
+	gksudo nautilus
+	The above command will open nautilus with root privilege. It’s just like sudo, but in GUI mode.
 
-#13. shutdown : To shutdown the computer from terminal
-shutdown -h 
-where time can be 0 if you want to shutdown now or specify the exact time such as 10:30.
+15. shutdown : To shutdown the computer from terminal
+	shutdown -h 
+	where time can be 0 if you want to shutdown now or specify the exact time such as 10:30.
 
-#14. restart : Restart the computer
-restart
-Package Management
-These are Ubuntu Specific commands. It Requires root privilege, so just add the sudo prefix before each command (it will ask for the user password and you’re done!).
+16. restart : Restart the computer
+	restart
+	Package Management
+	These are Ubuntu Specific commands. It Requires root privilege, so just add the sudo prefix before each command (it will ask for the user password and you’re done!).
 
-#15. apt-get : Command Line Tool for handling packages
-There are various options such as
-install – To install package.
-e.g Install the program PyRoom (A distraction Free Text Editor)
-sudo apt-get install pyroom
-remove – To remove package
-sudo apt-get remove kate
-update – To update the package cache
-sudo apt-get update
+17. apt-get : Command Line Tool for handling packages
+	There are various options such as
+	install – To install package.
+	e.g Install the program PyRoom (A distraction Free Text Editor)
+	sudo apt-get install pyroom
+	remove – To remove package
+	sudo apt-get remove kate
+	update – To update the package cache
+	sudo apt-get update
 
-#16. add-apt-repository – To add a PPA (for your favorite Application)
-e.g add the PPA for the App Eidete (Screencasting program)
-sudo add-apt-repository ppa:shnatsel/eidete-daily
-After, adding the PPA, apt-get update command is required.
 
-#17. apt-cache : To access the Package details from cache
-search : search for the related packages in the apt-cache
-e.g
-apt-cache search image editor
+18. add-apt-repository – To add a PPA (for your favorite Application)
+	e.g add the PPA for the App Eidete (Screencasting program)
+	sudo add-apt-repository ppa:shnatsel/eidete-daily
+	After, adding the PPA, apt-get update command is required.
 
-18. show root under working
+19. apt-cache : To access the Package details from cache
+	search : search for the related packages in the apt-cache
+	e.g
+	apt-cache search image editor
+
+20. show root under working
       whoami
-19.  change root password
+21.  change root password
         passwd
 
-20.  add user
+22.  add user
 	sudo useradd username
 
-
-delete use 
-sudo userdel “username”
-21. You can check the user groups
+23. delete use 
+	sudo userdel “username”
+24. You can check the user groups
        id usename
 
-22.  show disk space usage
+25.  show disk space usage
 	df 
 
-23. show date
+26. show date
 	date
-24. show calendar
+27. show calendar
 	cal
 
 25.  display the contents of a text file screen at a time
       less "file name"
 
-26. To print a string
+28. To print a string
       echo "hello"  
 
-27. contents are display sequentially with no break.
+29. contents are display sequentially with no break.
 	Cat “fileName”
 
-28.  nano text editor
+30.  nano text editor
 	nano 
          nano data.txt
 
-29. GUI text editor
+31. GUI text editor
 	gedit   “name”
 
-30.  vi editor
+32.  vi editor
 	learn vi editor perfectly 
 
-31. show system time
+33. show system time
 	uptime
-32. to know about RAM status
+34. to know about RAM status
 	free
 	free -t
-33. install software
+35. install software
 	sudo apt-get install "software name"
-34. remove installed software
+36. remove installed software
 	sudo apt-get install “software name”
 
-35. print text into file / save text in file / save terminal text in file
+36. print text into file / save text in file / save terminal text in file
 	 echo "string" > data.txt
-           echo "string" >>data.txt
+         echo "string" >>data.txt
 
-36 . run command and save terminal data in file 
+37. run command and save terminal data in file 
        cal > data.txt
        cal >> data.txt
 
-37. The uname command reports basic information about a computer’s software and hardware
+38. The uname command reports basic information about a computer’s software and hardware
 	uname
 	user uname –help to learn 
 
-38. to know interace status and ip address
+39. to know interace status and ip address
       ifconfig
 
-39. place standard input into file
+40. place standard input into file
 	cat > fileName
 	cat > data.txt
-40. output the contents of file
+41. output the contents of file
 	more “fileName”
 	more data.txt
 
-41. output the first 10 lines of file
+42. output the first 10 lines of file
 	head “fileName”
 	head data.txt
 
-42. output the last 10 lines of file
+43. output the last 10 lines of file
 	tail “fileName”
 	tail data.txt
 
-43. output the contents of file as it grows, starting with the last 10 lines
+44. output the contents of file as it grows, starting with the last 10 lines
 	tail -f file
 
-44.  returns the system information about the Linux system
+45. returns the system information about the Linux system
 	uname
-	uname -a 
-	
+	uname -a 	
         
-45.  kill a particular process
+46.  kill a particular process
 	kill -9 $(lsof -t -i:8080)
-
-
-
 
 
 https://www.linode.com/docs/guides/use-killall-and-kill-to-stop-processes-on-linux/
 
+47. open more  text editor in one command(10 text file open)
+      gedit name{1..10}
 
-61. open more  text editor in one command(10 text file open)
-      gedit {1 - 10}
+48. make 1 to 10 text files using touch command
+	touch name{1..10}
+	touch data{1..10}.bat      // put extension for specific file
+
+49. make 1 to 10 directory 
+	mkdir name{1..10}
+	
+
+40. make directory into directory
+	mkdir -p sa{1..50}/sax{1..50}     // p means parent directory
+	
 
 
 
