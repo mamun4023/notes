@@ -1,0 +1,34 @@
+var myFunction = function (){
+  console.log(`${this.name} is ${v1}, ${v2}, ${v3} `)
+}
+
+
+
+
+
+const sakib = {
+  name : "sakib",
+  age : 23
+};
+
+var v1 = "handsome";
+var v2 = 'All-rounder';
+var v3 = "best player";
+
+
+// call take one by one argument
+
+myFunction.call(sakib, v1, v2, v3)
+
+let arr = [v1,v2,v3]
+
+// apply takes array as an argument
+myFunction.apply(sakib, arr);
+
+
+// bind make the instance 
+
+let func = myFunction.bind(sakib, v1, v2, v3);
+
+func();
+

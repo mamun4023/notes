@@ -1,0 +1,13 @@
+
+
+function Person(name, age){
+  this.name = name;
+  this.age = age;
+  console.log(this.name + " "+this.age);
+}
+
+
+
+var sakib = new Person('shakib',33);
+
+

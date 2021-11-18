@@ -1,0 +1,47 @@
+// this refer to object that may be local or global object
+
+
+
+var sakib = {
+  name : 'sakib',
+  age : 23,
+  display : function(){
+    console.log(this.name)
+  }
+}
+
+// this refer sakib object
+sakib.display();
+
+
+
+
+
+
+
+var Person = function(name, age){
+  return{
+    name : name,
+    age : age,
+    display : function(){
+      console.log(this.name)
+    },
+
+    father : {
+      name : "Mr xxx",
+      display: function(){
+        console.log(this.name)
+      }
+
+    }
+
+  }
+}
+
+
+
+var Tamim = Person('Tamim', 30);
+Tamim.display();
+
+Tamim.father.display();
+
