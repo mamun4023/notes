@@ -210,7 +210,11 @@ https://www.linode.com/docs/guides/use-killall-and-kill-to-stop-processes-on-lin
 
 40. make directory into directory
 	mkdir -p sa{1..50}/sax{1..50}     // p means parent directory
-	
+
+50. use root user
+	sudo -i
+
+
 
 
 
