@@ -1,0 +1,12 @@
+
+ <script type="text/javascript">
+	
+	let error  = new Error("message");
+	//or
+	let error = new SyntaxError("message");
+	let error = new ReferenceError("message")
+	let error = new EvalError("message");
+	let error = new RangeError("message");
+	let error = new TypeError("message");
+	let error = new URIError("message");
+</script>

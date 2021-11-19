@@ -1,0 +1,11 @@
+<script type="text/javascript">
+    function myFunction(n){
+        if(n >10){
+            return 0;
+        }
+         console.log(n);
+        return myFunction(n+1);
+    }
+
+myFunction(2);
+</script>

@@ -1,0 +1,23 @@
+function Person(first, last, age, eyecolor){
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyecolor = eyecolor;
+}
+
+
+// adding new object property
+
+Person.language = "English";
+
+
+// add is work
+Person.prototype.bodyColor = "gray";
+
+
+const myFather = new Person('john', 'doe', 10,'blue')
+console.log(myFather.firstName);
+console.log(myFather.language)
+console.log(myFather.bodyColor)
+
+

@@ -1,0 +1,11 @@
+
+<script type="text/javascript">
+	
+	try{
+		lalala;
+	}catch(err){
+		alert(err.name);
+		alert(err.message);
+		alert(err.stack);
+	}
+</script>

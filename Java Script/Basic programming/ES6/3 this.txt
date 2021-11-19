@@ -1,4 +1,0 @@
- const myFunction = a=> {
- 	console.log(this)
- }
-  

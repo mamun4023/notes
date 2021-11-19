@@ -1,0 +1,48 @@
+To add a new property to a constructor, you must add it into the constructor function:
+
+
+
+function Person(first, last, age, eyecolor) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eyecolor;      
+}
+
+
+// add nationality property
+
+function Person(first, last, age, eyecolor) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eyecolor;
+  this.nationality = "English";
+}
+
+Sometimes if we want to add new properties (or methods) to an object constructor from outside of constructor function then we need prototype
+
+
+
+
+
+function Person(first, last, age, eyecolor) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eyecolor;
+}
+
+// it will not work
+ this.nationality = "English";
+ 
+ 
+ 
+ 
+ // Only modify your own prototypes. Never modify the prototypes of standard JavaScript objects.
+
+
+ 
+
+
+

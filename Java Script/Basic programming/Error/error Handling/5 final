@@ -1,0 +1,22 @@
+
+<script type="text/javascript">
+	
+// input value
+var x = 1;
+ 
+ try{
+ 	if(x == "") throw "empty";
+ 	if(isNaN(x)) throw "not a number";
+ 	if(x < 5)  throw "Too small";
+ 	if(x > 10) throw "Too big";
+ }
+
+ catch(err){
+ 	console.log(err);
+ }
+
+ finally {
+ 	//The finally statement lets you execute code, after try and catch, regardless of the result
+     console.log("finished.....");
+  }
+</script>

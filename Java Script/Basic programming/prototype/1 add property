@@ -1,0 +1,15 @@
+
+function Person(first, last, age, eyecolor) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eyecolor;
+}
+
+// add property 
+Person.prototype.nationality = "English";
+
+
+var crickerter = new Person('shakib', 'hasan', 33, 'black');
+
+console.log(crickerter);
