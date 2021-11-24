@@ -1,0 +1,9 @@
+
+var symbol1 = Symbol();
+var symbol2 = Symbol();
+
+
+console.log(symbol1 == symbol2);   // not equal
+console.log(symbol1 === symbol2);
+
+
