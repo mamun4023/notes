@@ -1,0 +1,35 @@
+
+import React,{Component} from "react";
+import Home from "./home";
+
+class App extends Component{
+
+  render(){
+    return(
+      <>
+          <Home name = {20}  age = {20} />
+      </>
+
+    )
+  }
+}
+
+export default App;
+
+
+
+
+import React, {Component} from 'react';
+
+class Home extends Component{
+    render(){
+        return(
+            <>
+                     <div> Hello{this.props.name} {this.props.age} </div>
+
+            </>
+        )
+    }
+}
+
+export default Home;

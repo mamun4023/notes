@@ -179,10 +179,12 @@ Check the manual for more detail (man ls).
 42. output the first 10 lines of file
 	head “fileName”
 	head data.txt
+	head -2 data.txt   // read first 2 line of data.txt file 
 
 43. output the last 10 lines of file
 	tail “fileName”
 	tail data.txt
+	tail -2 data.txt   // read last 2 line of data.txt file 
 
 44. output the contents of file as it grows, starting with the last 10 lines
 	tail -f file
@@ -210,7 +212,11 @@ https://www.linode.com/docs/guides/use-killall-and-kill-to-stop-processes-on-lin
 
 40. make directory into directory
 	mkdir -p sa{1..50}/sax{1..50}     // p means parent directory
-	
+
+50. use root user
+	sudo -i
+
+
 
 
 
