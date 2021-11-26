@@ -1,0 +1,22 @@
+
+Redux thunk
+-- it is a middleware 
+-- define async action creator
+
+
+
+important : 
+	its return function instead of object
+	
+
+  const fetchUser = ()=>{
+  	return function(dispatch){
+  		axios.get(.....)
+  		.then(){
+  		   //data 
+  		}
+  		.catch(){
+  		   // back to error
+  		}
+  	}
+  }
