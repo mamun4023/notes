@@ -206,6 +206,9 @@ https://www.linode.com/docs/guides/use-killall-and-kill-to-stop-processes-on-lin
 	touch name{1..10}
 	touch data{1..10}.bat      // put extension for specific file
 
+48. remove 1 to 10 file 
+	rm data{1..10}
+
 49. make 1 to 10 directory 
 	mkdir name{1..10}
 	

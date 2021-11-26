@@ -1,0 +1,18 @@
+
+function* generator(){
+  yield 1
+  yield 2;
+  return "stop the yield";
+  yield 3;
+  yield 4;
+}
+
+let iterator = generator();
+
+
+
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());

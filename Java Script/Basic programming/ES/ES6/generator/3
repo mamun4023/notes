@@ -1,0 +1,12 @@
+"use strict"   
+function* vowels() {   
+   // here the asterisk marks this as a generator   
+   yield 'A';   
+   yield 'E';   
+   yield 'I';   
+   yield 'O';   
+   yield 'U';   
+}   
+for(let alpha of vowels()) {   
+   console.log(alpha);   
+}  

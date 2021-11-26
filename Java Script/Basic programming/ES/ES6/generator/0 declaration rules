@@ -1,0 +1,26 @@
+function *myGenerator(){}
+
+//or
+function* myGeneretor(){}
+
+//or
+function * myGeneretor() {}
+
+
+// arrow function can't be generator
+let generator = *()=>  { }
+
+
+
+// inside the class
+class myClass{
+
+  *myGenerator() {}
+}
+
+
+// inside the object
+const myObject = {
+  *myGenerator() {}
+}
+

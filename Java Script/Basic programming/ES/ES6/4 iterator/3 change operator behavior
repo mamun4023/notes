@@ -1,0 +1,20 @@
+// change the spread operator behavior 
+// change the global operator behavior
+
+String.prototype[Symbol.iterator] = function(){
+  let count = this.length;
+  return{
+    next(){
+      if(count > 0){
+        count--;
+        return {done : false, value : "js"}
+      }
+      return {done : true}
+    },
+  };
+};
+
+console.log([...'Bangladesh'])
+
+
+
