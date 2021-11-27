@@ -220,7 +220,48 @@ https://www.linode.com/docs/guides/use-killall-and-kill-to-stop-processes-on-lin
 	sudo -i
 
 
+---------- file permission operation -------------
 
+    show the file all file mode
+ 	ls -l   
+
+51. make file read mode
+	chmod +r data.txt    // data.txt is created file
+
+52. make file unread mode 
+	chmod -r data.txt
+
+53. make file write mode
+	chmod +w data.txt
+
+54. make file unwrite mode
+	chmod -w data.txt
+
+55. make file executable mode
+	chmod +x data.txt
+56. make file unexecutable mode
+	chmod -x data.txt
+
+57. enable read and write mode same time
+	chmod +rw data.txt
+58. disable read and write mode same time
+	chmod -rw data.ext
+59. enable read, write and execute mode
+	chmod +rwx data.txt
+60. disable read, write and execute mode
+	chmod -rwx data.txt
+	
+
+
+
+-------- bash script---------
+
+61. make a bash script file 
+	-- first create a file and put linux command into (cal)
+	-- make permission into executable mode
+	-- run the script file (./filename)
+
+	
 
 
 
