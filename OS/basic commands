@@ -155,8 +155,8 @@ Check the manual for more detail (man ls).
 	sudo apt-get install “software name”
 
 36. print text into file / save text in file / save terminal text in file
-	 echo "string" > data.txt
-         echo "string" >>data.txt
+	 echo "string" > data.txt            // remove file content and write new 
+         echo "string" >>data.txt	     // append the content 
 
 37. run command and save terminal data in file 
        cal > data.txt
