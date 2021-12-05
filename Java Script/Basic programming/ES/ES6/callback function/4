@@ -1,0 +1,16 @@
+  
+function orderPizza(type, name, callback){
+  console.log("pizza ordered...");
+  console.log("pizza is preparing.");
+  setTimeout(function(){
+    let msg = `your  ${type} ${name} pizza is ready`;
+    callback(msg);
+  }, 3000)
+}
+
+
+orderPizza('veg', 'cheese barger', function(message){
+  console.log(message)
+})
+
+

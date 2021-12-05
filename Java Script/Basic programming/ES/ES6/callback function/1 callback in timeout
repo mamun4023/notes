@@ -1,0 +1,10 @@
+
+function myFunction(){
+  console.log("callback is called")
+}
+
+// called inside the function
+setTimeout(myFunction, 3000);
+
+
+
