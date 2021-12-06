@@ -6,7 +6,7 @@
    	Company   : 'Alto',
   
    }
-  person.firstName = 'korim';    // adding property 
+  person.nationality = 'Bangladesh';     // adding property 
   for(i in person){
     document.write(person[i],"<br>");
   }
