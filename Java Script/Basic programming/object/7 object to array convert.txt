@@ -8,6 +8,7 @@
 
    
    // conveting object to array 
+   // values and keys are getable into array
    var arr = Object.values(person);
     
   
