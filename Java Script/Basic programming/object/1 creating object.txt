@@ -6,6 +6,9 @@
    	Company   : 'Alto',
    	Date : new Date()
    };
+   
+   console.log(firstName);
+   console.log(person['firstName'])
 
    for(i in person)
    {
