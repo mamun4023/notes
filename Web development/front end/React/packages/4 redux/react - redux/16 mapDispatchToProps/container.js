@@ -4,17 +4,21 @@ import {connect} from 'react-redux';
 import {increment, decrement} from './actions';
 
 function Container(props){
-     const [count, setCount] = useState(2);
+     const [count] = useState(2);
 
-     const handler = ()=>{
+     const incrementHandler = ()=>{
          props.increment(count)
+     }
+
+     const decrementHandler = ()=>{
+         props.decrement(count)
      }
     return(
         <>
 
                  {props.amount}
-                 <button onClick = {handler} > increment </button>
-                
+                 <button onClick = {incrementHandler} > increment </button>
+                 <button onClick = {decrementHandler} > decrement </button>
         </>
     )
 }
@@ -27,7 +31,8 @@ const mapStateToProps = state =>{
 
 const mapDispatchToProps = dispatch =>{
     return{
-        increment :(count)=> dispatch(increment(count)),
+        increment :(amount)=> dispatch(increment(amount)),
+        decrement :(amount)=> dispatch(decrement(amount)),
     
     }
 }
