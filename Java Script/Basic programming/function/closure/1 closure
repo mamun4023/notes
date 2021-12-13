@@ -1,0 +1,10 @@
+
+function closure(){
+  let name = "ddd";
+  function display(){
+    console.log(name);
+  }
+  display();
+}
+
+closure();

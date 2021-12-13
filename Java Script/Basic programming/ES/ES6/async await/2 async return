@@ -1,0 +1,11 @@
+function myFunction(){
+  return Promise.resolve("Hello")
+}
+
+
+myFunction().then(
+    function(value) {console.log(value)},
+    function(err){console.log(err)}
+  );
+  
+  

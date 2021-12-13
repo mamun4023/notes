@@ -1,0 +1,13 @@
+async function myFunction(){
+  let promise = new Promise(function(resolve){
+    setTimeout(function(){resolve("Love coding")}, 3000);
+  })
+
+  console.log(await promise);
+}
+
+
+myFunction();
+
+
+

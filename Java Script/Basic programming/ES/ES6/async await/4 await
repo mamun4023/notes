@@ -1,0 +1,12 @@
+async function myFunction(){
+  let promise = new Promise(function(resolve, reject){
+    resolve("i love promise function");
+  });
+
+  console.log(await promise);
+}
+
+
+
+myFunction();
+

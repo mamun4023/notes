@@ -1,0 +1,18 @@
+function display(some){
+  console.log(some);
+}
+
+
+
+function myFunction(a, b, callback){
+  let sum = a + b;
+  callback(sum);
+}
+
+
+// take function as argument 
+myFunction(2,3, display);
+
+
+
+

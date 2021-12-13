@@ -1,0 +1,6 @@
+function volume(length, width, height) {
+      return length * width * height;
+   }
+   document.write((volume(11,2,3)));
+   
+   
