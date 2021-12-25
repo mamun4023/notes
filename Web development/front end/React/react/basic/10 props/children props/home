@@ -1,0 +1,15 @@
+
+
+function Home(props){
+  return(
+    <>
+      <div>
+          home component
+          {props.children}
+      </div>
+    
+    </>
+  )
+}
+
+export default Home;
