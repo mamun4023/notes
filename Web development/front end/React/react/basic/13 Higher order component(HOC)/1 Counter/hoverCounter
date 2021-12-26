@@ -1,0 +1,14 @@
+import withCounter from "./withCounter";
+
+function HoverCounter(props){
+    const {count, incrementCount } = props;
+    return(
+        <>
+
+            <h4 onMouseOver={incrementCount} > Hover {count} times </h4>
+        
+        </>
+    )
+}
+
+export default withCounter(HoverCounter);

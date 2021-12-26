@@ -1,0 +1,11 @@
+
+ Definition : A higher-order component is a function that takes a component as parameter and 	       returns a new component.
+ 
+ example : 
+ 	const NewComponent = higherOrderComponent(OriginalComponent);
+	
+ real life example :
+ 	const SpiderMan = withCostume(PeterParker); // perterParker is man name
+
+ 	
+ Note :  file and component name start with 'with'

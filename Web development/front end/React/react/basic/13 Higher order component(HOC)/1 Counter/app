@@ -1,0 +1,14 @@
+import ClickComponent from './HOC/clickCounter';
+import HoverCounter from './HOC/hoverCounter';
+
+function App(){
+    return(
+        <>
+
+          <ClickComponent/>
+          <HoverCounter />
+        </>
+    )
+}
+
+export default App;

@@ -1,0 +1,16 @@
+
+import withCounter from "./withCounter";
+
+const ClickCounter = (props) =>{
+    const {count, incrementCount} = props;
+    return(
+        <>
+            <button onClick={incrementCount} > Hover on {count} times </button>
+    
+        </>
+    )
+}
+
+export default withCounter(ClickCounter);
+
+
