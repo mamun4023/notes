@@ -1,0 +1,14 @@
+
+
+function Home(props){
+  return(
+    <>
+      <div>
+          Lazy loader component
+      </div>
+    
+    </>
+  )
+}
+
+export default Home;

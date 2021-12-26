@@ -1,0 +1,21 @@
+
+import MyComponent2 from './home2';
+import { lazy, Suspense } from 'react';
+
+const MyComponent = lazy(()=> import('./Home'));
+
+
+
+function App(){
+    return(
+        <>
+
+          <MyComponent2/>
+          <Suspense fallback = {<h1> Loading.. </h1>} >
+            <MyComponent/>
+            </Suspense>  
+        </>
+    )
+}
+
+export default App;

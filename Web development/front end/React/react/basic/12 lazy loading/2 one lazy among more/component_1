@@ -1,0 +1,14 @@
+
+
+function Home(){
+  return(
+    <>
+      <div>
+          Lazy load component
+      </div>
+    
+    </>
+  )
+}
+
+export default Home;

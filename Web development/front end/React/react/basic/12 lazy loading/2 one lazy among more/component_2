@@ -1,0 +1,14 @@
+
+
+function WithoutLazyLoad(){
+    return(
+        <>
+            No lazy load component
+        
+        </>
+    )
+}
+
+export default WithoutLazyLoad;
+
+
