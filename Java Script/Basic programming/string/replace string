@@ -1,0 +1,4 @@
+// remove first l
+let string = "helglo";
+console.log(string.replace('l', ""))
+
