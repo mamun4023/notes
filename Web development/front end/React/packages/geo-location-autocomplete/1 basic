@@ -1,5 +1,10 @@
 
 https://www.npmjs.com/package/react-places-autocomplete
 
-
-
+include the url in html page
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANrVmNojmo95WX3DAi5O_p_yrqIWTDpYE&libraries=places"> </script>
+ 
+ 
+ api key : AIzaSyANrVmNojmo95WX3DAi5O_p_yrqIWTDpYE
+ 
+ 
