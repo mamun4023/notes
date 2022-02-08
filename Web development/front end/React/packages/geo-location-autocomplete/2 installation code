@@ -1,0 +1,41 @@
+import React, { useState } from "react";
+import PlacesAutocomplete, {geocodeByAddress, getLatLng} from "react-places-autocomplete";
+
+function App(){
+  const[address, setAddress] = useState();
+
+const handleSelect = async values => {};
+
+  return(
+    <>
+        <PlacesAutocomplete
+          value= {address}
+          onChange = {setAddress}
+          onSelect = {handleSelect}
+        >
+        
+        {({ getInputProps, suggestions, getSuggestionItemProps, loading})=> 
+          <div>
+              <input 
+                {...getInputProps({placeholder : "type Address"})}
+              /> 
+              <div>
+                {loading?<div> {loading}</div>:null}
+                {suggestions.map((suggestion)=>{
+                  const style = {
+                    backgroundColor : suggestion.active ? '#eee' : "gray"
+                  };
+                  return(
+                      <div {...getSuggestionItemProps(suggestion, {style})} > 
+                          {suggestion.description} 
+                      </div>
+                    )
+                })}
+              </div>
+           </div>}
+        </PlacesAutocomplete>
+    </>
+  )
+}
+
+export default App;
