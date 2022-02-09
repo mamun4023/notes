@@ -1,0 +1,68 @@
+import React, {useState} from 'react'
+
+import PlacesAutocomplete, {geocodeByAddress, getLatLng} from "react-places-autocomplete";
+
+
+function App(){
+
+  const[latllogAddress, setLatllogAddress] = useState();
+  const[location , setLocation] = useState();
+  const[lat, setLat] = useState();
+  const[lng, setLng] = useState();
+
+  const handleSelect = async values => {
+    const result = await geocodeByAddress(values)
+    setLocation(result[0].formatted_address)
+    // console.log("address",result[0].formatted_address)
+    const latlogResult = await getLatLng(result[0])
+    // console.log(latlogResult)
+    setLat(latlogResult.lat);
+    setLng(latlogResult.lng);
+    setLatllogAddress(values)
+    
+ };
+
+  console.log(lat+","+lng)
+
+
+
+  return(
+    <>
+
+        <PlacesAutocomplete
+            value= {latllogAddress}
+            onChange = {setLatllogAddress}
+            onSelect = {handleSelect}
+            highlightFirstSuggestion = {true}
+          >
+        
+            {({ getInputProps, suggestions, getSuggestionItemProps, loading})=> 
+              <div>
+                  <input 
+                    {...getInputProps({placeholder : "Shop Location"})}
+      
+                  /> 
+                  <div>
+                      {loading?<div> {loading}</div>:null}
+                      {suggestions.map((suggestion)=>{
+                        const style = {
+                          backgroundColor : suggestion.active ? 'white' : "#eee"
+                        };
+                        return(
+                            <div className='p-5' {...getSuggestionItemProps(suggestion, {style})} > 
+                              <span style={{position : "relative"}}> {suggestion.description} </span>
+                            </div>
+                          )
+                        })}
+                  </div>
+              </div>}
+        </PlacesAutocomplete>
+
+
+
+    </>
+    )
+}
+
+
+export default App;
