@@ -1,0 +1,47 @@
+
+import React, { useState } from "react";
+
+import "react-datepicker/dist/react-datepicker.css";
+import DatePicker from "react-datepicker";
+
+
+function TimeFormat(hours){
+  if (hours < 10){   
+    hours = '0'+hours;
+  }
+  return hours;
+}
+
+
+function App(){
+   const [startDate, setStartDate] = useState(new Date());
+    
+
+
+
+    console.log(TimeFormat(startDate.getHours()))
+
+    // console.log(startDate.getHours()+ ""+startDate.getMinutes())
+    // console.log(startDate.getMinutes());
+
+    // console.log(startDate.getDay())
+  return(
+    <>
+
+         <DatePicker
+             selected={startDate}
+      onChange={(date) => setStartDate(date)}
+      showTimeSelect
+      showTimeSelectOnly
+      timeIntervals={15}
+      timeCaption="Time"
+      dateFormat="h:mm aa"
+    />
+
+
+
+    </>
+    )
+}
+
+export default App;
