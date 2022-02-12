@@ -1,6 +1,7 @@
 
 <script type="text/javascript">
    
+   // remove data but left the "empty"  
    var cars = ['BMW','Tesla','Pageroo'];
         
     delete cars[0];          // delete and item
