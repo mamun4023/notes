@@ -1,7 +1,7 @@
 
 <script type="text/javascript">
 
-
+// always insert at last
 var d = ['a','b','c'];
 
 d.push("ddd");
