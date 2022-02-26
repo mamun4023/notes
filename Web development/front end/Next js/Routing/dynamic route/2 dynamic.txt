@@ -1,0 +1,27 @@
+create file with [id].js and browes a file with folder name
+
+
+get id 
+
+-- use userRouter from 'next/router'
+-- initilize in component 
+-- get route id by accessing query 
+
+
+
+import {useRouter} from 'next/router';
+
+
+function Blog(){
+    const router = useRouter();
+
+    const id = router.query.id;
+    return(
+        <>
+            from blog {id}
+        
+        </>
+    )
+}
+
+export default Blog;
