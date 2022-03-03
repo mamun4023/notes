@@ -1,0 +1,2 @@
+npm i sequelize
+npm i mysql2

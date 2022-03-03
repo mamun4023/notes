@@ -1,0 +1,40 @@
+import  React, {useState} from 'react';
+import { Autocomplete, TextField } from '@mui/material';
+import axios from 'axios';
+
+const Data = [
+    {
+        "city" : "Dkaka",
+        "country" : "Bangladesh"
+    },
+    {
+        "city" : "Tokyo",
+        "country" : "Japan"
+    },
+    {
+        "city" : "kolkata",
+        "country" : "India"
+    }
+]
+
+function App(){
+    const[selectedValue, setSelectedValue] = useState();
+
+    console.log(selectedValue)
+    return(
+
+        <>
+             <Autocomplete
+                options={Data}
+                renderInput =  {(params)=> <TextField {...params} label = "Select Name" />}
+                getOptionLabel = {(option) => option.city}
+                onChange = {(event, value)=> setSelectedValue(value.city)}
+                
+            />
+
+        </> 
+
+    )
+}
+
+export default App;

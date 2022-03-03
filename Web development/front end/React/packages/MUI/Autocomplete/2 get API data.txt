@@ -1,0 +1,40 @@
+import  React, {useState, useEffect} from 'react';
+import { Autocomplete, TextField } from '@mui/material';
+import axios from 'axios';
+
+
+function App(){
+    const[selectedValue, setSelectedValue] = useState();
+    const[Data, setData] = useState([])
+    
+
+    const Fetch = ()=>{
+        axios.get("https://jsonplaceholder.typicode.com/users")
+            .then(res =>{
+                setData(res.data);
+            })
+    }
+
+
+    useEffect(()=>{
+        Fetch();
+    },[])
+  
+    console.log(selectedValue)
+    return(
+
+        <>
+             <Autocomplete
+                options={Data}
+                renderInput =  {(params)=> <TextField {...params} label = "Select Name" />}
+                getOptionLabel = {(option) => option.name}
+                onChange = {(event, value)=> setSelectedValue(value.name)}
+                
+            />
+
+        </> 
+
+    )
+}
+
+export default App;
