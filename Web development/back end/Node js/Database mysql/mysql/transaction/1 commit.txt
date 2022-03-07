@@ -1,0 +1,5 @@
+start transaction;
+
+insert into students values(4, "Kram", "akram@gmail.com", "Bangladesh");
+
+commit;		// pemanent save

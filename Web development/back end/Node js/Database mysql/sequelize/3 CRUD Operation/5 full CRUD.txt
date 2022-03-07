@@ -1,0 +1,97 @@
+const express = require('express');
+const server = express();
+const bodyParser = require('body-parser');
+const sequelize = require('sequelize');
+
+
+server.use(bodyParser.urlencoded({extended : false})); // scrap the form data
+server.use(bodyParser.json());        // scrap the json data
+
+// setting path
+const dbConnection = new sequelize('db', 'root', '123456',{
+    dialect : 'mysql'
+})
+
+ 
+const User = dbConnection.define("user",{
+    id : {
+        type : sequelize.INTEGER,
+        primaryKey : true,
+        // autoIncrement : true
+    },
+    name :{
+        type : sequelize.STRING
+    }
+})
+
+// establish db connection
+dbConnection.sync().then(()=>{
+    console.log("DB connected")
+})
+
+
+server.listen(3000, ()=>{
+    console.log("server is running...")
+})
+
+
+// insert route
+server.post('/add', (req, res)=>{
+    User.create({
+        id : req.body.id,
+        name : req.body.name
+    }).then(()=>{
+        res.send("user Added")
+    }).catch(()=>{
+        console.log("Failed to add user")
+    })  
+})
+
+// display all user
+server.get('/', (req, res)=>{    
+    User.findAll()
+        .then(result =>{
+            res.status(200).json({success : true, data : result})
+        })
+        .catch((err)=>{
+            console.log("err")
+        })
+})
+
+
+// Delete query
+server.delete('/remove', (req, res)=>{
+    User.destroy({
+        where: {
+            id: req.body.id
+          }
+    }).then(()=>{
+        res.send("Deleted")
+    }).catch(()=>{
+        res.send("failed to delete")
+    })
+})
+
+
+server.put('/update', (req, res)=>{
+    User.update(
+        //updated data
+        {
+            name : req.body.name
+        }, 
+        // select query
+        {
+        where : {
+            id : req.body.id
+        }
+    }).then(()=>{
+        res.send("updated")
+    }).catch(()=>{
+        res.send("failed to update")
+    })
+})
+
+server.post('/get', (req, res)=>{
+    const name = req.body.name;
+    res.send(name)
+})

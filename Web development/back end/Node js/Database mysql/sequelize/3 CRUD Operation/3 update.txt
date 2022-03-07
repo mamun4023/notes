@@ -1,0 +1,83 @@
+const { application } = require('express');
+const express = require('express');
+const server = express();
+const sequelize = require('sequelize');
+
+// setting path
+const dbConnection = new sequelize('db', 'root', '123456',{
+    dialect : 'mysql'
+})
+
+
+const User = dbConnection.define("user",{
+    id : {
+        type : sequelize.INTEGER,
+        primaryKey : true
+    },
+    name :{
+        type : sequelize.INTEGER
+    }
+})
+
+
+// establish db connection
+dbConnection.sync().then(()=>{
+    console.log("DB connected")
+})
+
+
+server.listen(3000, ()=>{
+    console.log("server is running...")
+})
+
+
+// // insert route
+// server.get('/', (req, res)=>{
+//     res.send("working")
+
+//     User.create({
+//         id : 3,
+//         name : "Tohid",
+//     }).then(()=>{
+//         console.log("Saved")
+//     }).catch(()=>{
+//         console.log("Error happend")
+//     })  
+// })
+
+// server.get('/', (req, res)=>{    
+//     User.findAll()
+//         .then(result =>{
+//             res.status(200).json({success : true, data : result})
+//         })
+//         .catch((err)=>{
+//             console.log("err")
+//         })
+// })
+
+
+// // Delete query
+// server.delete('/remove', (req, res)=>{
+//     User.destroy({
+//         where: {
+//             id: "3"
+//           }
+//     }).then(()=>{
+//         res.send("Deleted")
+//     }).catch(()=>{
+//         res.send("failed to delete")
+//     })
+// })
+
+
+server.put('/update', (req, res)=>{
+    User.update({"name" : "kkkkkk"}, {
+        where : {
+            id : 23232
+        }
+    }).then(()=>{
+        res.send("updated")
+    }).catch(()=>{
+        res.send("failed to update")
+    })
+})

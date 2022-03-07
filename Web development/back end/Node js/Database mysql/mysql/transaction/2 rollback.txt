@@ -1,0 +1,7 @@
+start transaction;
+
+insert into students values(4, "Kram", "akram@gmail.com", "Bangladesh");
+
+// you can do here many changes
+
+rollback;	// discard the changes

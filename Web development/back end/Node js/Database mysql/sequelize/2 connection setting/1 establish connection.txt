@@ -1,0 +1,21 @@
+const express = require('express');
+const server = express();
+const sequelize = require('sequelize');
+
+// setting path
+const dbConnection = new sequelize('db', 'root', '123456',{
+    dialect : 'mysql'
+})
+
+
+
+// establish db connection
+dbConnection.sync().then(()=>{
+    console.log("DB connected")
+})
+
+
+
+server.listen(3000, ()=>{
+    console.log("server is running...")
+})
