@@ -1,0 +1,65 @@
+const express = require('express');
+const app = express();
+const GraphQLHTTP = require('express-graphql').graphqlHTTP;
+const {GraphQLObjectType, GraphQLString, GraphQLSchema} = require('graphql');
+const _ = require('lodash');
+
+// dummy data 
+var books = [
+    {
+        id : "1",
+        name : "Name of the Wind",
+        genre : "Fantasy"
+    }, 
+    {
+        id : "2",
+        name : "Name of the Wind",
+        genre : "Fantasy"
+    }, 
+    {
+        id : "3",
+        name : "Name of the Wind",
+        genre : "Fantasy"
+    }, 
+]
+
+const BookType = new GraphQLObjectType({
+    name : "Book",
+    fields : ()=> ({ 
+        id : { type : GraphQLString },
+        name : {type : GraphQLString},
+        genre : {type : GraphQLString}
+    })
+})
+
+
+const RootQuery = new GraphQLObjectType({
+    name : "RootQueryType",
+    fields : {
+        book : {
+            type : BookType,
+            args : {id : {type : GraphQLString} },
+            resolve(parent, args){
+                // code to get data from db
+               return _.find(books, {id : args.id})
+            }
+        }
+    }
+})
+
+
+const schema = new GraphQLSchema({
+    query :  RootQuery,
+ 
+})
+
+
+app.use('/', GraphQLHTTP({
+    schema,
+    graphiql : true
+}))
+
+
+app.listen(3000,()=>{
+    console.log("server running at 3000")
+})
