@@ -1,0 +1,9 @@
+return ( 
+<Formik 
+enableReinitialize={true} 
+initialValues={{
+ name: user.name ? user.name : "",
+ age: user.age ? user.age : ""
+ }} 
+> ... 
+</Formik>
