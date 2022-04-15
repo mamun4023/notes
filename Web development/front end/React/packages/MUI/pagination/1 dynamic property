@@ -1,0 +1,28 @@
+<TablePagination
+            rowsPerPageOptions={[5, 10, 25]}
+            component="div"
+            count={-1}
+            rowsPerPage={rowsPerPage}
+            page={page}
+            onPageChange={handleChangePage}
+            onRowsPerPageChange={handleChangeRowsPerPage}
+            // labelRowsPerPage={<span>Rows:</span>}
+
+            labelDisplayedRows={({ page }) => {
+              return `Page: ${page}`;
+            }}
+            // backIconButtonProps={{
+            //   color: "secondary"
+            // }}
+            // SelectProps={{
+            //   disabled: disabled
+            // }}
+            backIconButtonProps={
+              page == 1 ? {disabled: true} : undefined
+            }
+            nextIconButtonProps={
+              filteredUsers.length === 0? {disabled: true} : undefined
+            }
+            // nextIconButtonProps={{ style: { display: "none" } }}
+            // backIconButtonProps={{ style: { display: "none" } }}
+          />
