@@ -1,0 +1,74 @@
+import { useState } from 'react';
+import {TextField, Button, Stack, IconButton } from'@mui/material'
+import DeleteIcon from  '@material-ui/icons/Delete'
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+
+function App() {
+  const [inputFields, setInputFields] = useState([
+    { name: 'tohid', age: '20' },
+  ])
+
+  const handleFormChange = (index, event) => {
+    let data = [...inputFields];
+    data[index][event.target.name] = event.target.value;
+    setInputFields(data);
+ }
+
+  console.log(inputFields)
+  const addFields = (e) => {
+    e.preventDefault();
+    let newfield = { name: '', age: '' }
+    setInputFields([...inputFields, newfield])
+}
+
+const removeFields = (index) => {
+  index.preventDefault();
+  let data = [...inputFields];
+  data.splice(index, 1)
+  setInputFields(data)
+}
+
+  return (
+    <div className="App">
+      <form>
+        {inputFields.map((input, index) => {
+          return (
+            <div key={index}>
+              <TextField
+                fullWidth
+                name='name'
+                placeholder='Name'
+                value={input.name}
+                onChange={event => handleFormChange(index, event)}
+              />
+              <TextField
+              fullWidth
+                name='age'
+                placeholder='Age'
+                value={input.age}
+                onChange={event => handleFormChange(index, event)}
+              />
+            </div>
+          )
+        })}
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+        alignItems="flex-start"
+        spacing={2}
+      >
+      {/* <Button >Add More..</Button>  */}
+      <IconButton onClick={addFields} aria-label="delete" size="large">
+        <AddCircleIcon/>
+      </IconButton>
+      {/* <Button onClick={(index) => removeFields(index)}>Remove</Button> */}
+      <IconButton onClick={(index) => removeFields(index)} aria-label="delete" size="large">
+        <DeleteIcon />
+      </IconButton>
+      </Stack>
+      </form>
+    </div>
+  );
+}
+
+export default App;
