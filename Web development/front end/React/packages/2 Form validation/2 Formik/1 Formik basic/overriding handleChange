@@ -1,0 +1,7 @@
+ <TextField
+     fullWidth
+     type="file"
+     onChange={ev=>{ formik.setFieldValue("image",ev.target.files[0]) }} 
+     error={Boolean(touched.image && errors.image)}
+     helperText={touched.image && errors.image}
+ />
