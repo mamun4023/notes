@@ -1,0 +1,55 @@
+import  React,{useEffect, useState} from 'react';
+import Autocomplete from '@mui/material/Autocomplete';
+import TextField from '@mui/material/TextField';
+import axios from 'axios';
+
+export default function LimitTags() {
+  const[data, setData]= React.useState([])
+  const[Data] = useState(DDD)
+  
+  const Fetch =  ()=>{
+   axios.get("https://jsonplaceholder.typicode.com/posts")
+    .then(res =>{
+       if(res){
+         setData(res.data)
+       }
+      
+    })
+  }
+
+  useEffect(()=>{
+    Fetch();
+  }, [])
+  
+console.log(data);
+
+  return (
+    <>     {
+      data.length > 0 ? 
+
+      <Autocomplete
+      multiple
+      limitTags={2}
+      id="multiple-limit-tags"
+      options={data}
+      limitTags  ={-1}
+      getOptionLabel={(option) => option.title}
+      defaultValue={Data.map(d=> d)}
+      renderInput={(params) => (
+        <TextField {...params} label="limitTags" placeholder="Favorites" />
+      )}
+      sx={{ width: '500px' }}
+    />
+      : undefined
+    }
+
+  </>
+  );
+}
+
+// must have same title as have fetched data
+const DDD = [
+  { title: 'title 1' },
+  { title: 'title 2' },
+  { title: 'title 3' },
+];
