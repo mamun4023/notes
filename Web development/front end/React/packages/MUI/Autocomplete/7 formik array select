@@ -1,0 +1,24 @@
+    
+    //sckema
+    days : Yup.array().required("Days is required").nullable()
+    
+    // initialization
+    dyas : null
+    
+    <Autocomplete
+                            multiple
+                            fullWidth
+                            id="combo-box-demo"
+                            options={Days}
+                            disableCloseOnSelect
+                            // limitTags = {1}
+                            onChange = {(event, value)=>  formik.setFieldValue("days", value) }        
+                            renderInput={(params) => 
+                              <TextField 
+                                {...params} 
+                                label="Days"
+                                error={Boolean(touched.days && errors.days)}
+                                helperText={touched.days && errors.days} 
+                              
+                              />}
+                        /> 
