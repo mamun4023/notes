@@ -1,0 +1,35 @@
+import React, { useState } from "react";
+
+
+function App(){
+
+    const [data, setData] = useState([
+        {
+            id : 1,
+            name : "tohid"
+        }
+    ]);
+
+    const ddd =  {id : 2, name : "Akram"}
+    
+    
+
+    const Handler = ()=>{
+        setData([...data, ddd])
+    }
+
+    return(
+        <>
+            <button onClick={Handler} > Click </button>
+            {data.map(d => <>
+                <div> Data {d.name}</div> 
+            
+            </>)}
+
+
+        
+        </>
+    )
+}
+
+export default App;
