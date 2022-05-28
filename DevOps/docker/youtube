@@ -4,8 +4,11 @@
 2. list of running containers
 	sudo docker ps 
 
-3. stop a container from running
-	sudo docker run "container_name"
+3. start running a container  
+	sudo docker run "container name"
+	
+3. stop running a container  
+	sudo docker stop "container id"
 
 4. list of stop containers 
 	sudo docker ps -a
