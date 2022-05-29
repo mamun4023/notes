@@ -1,0 +1,26 @@
+import React from "react";
+import moment from 'moment';
+
+
+export default function App(){
+
+  var now  = "15:00:00";
+  var then = "14:00:00";
+  
+  var ddd = moment.utc(moment(now,"HH:mm:ss").diff(moment(then,"HH:mm:ss"))).format("HH")
+
+// outputs: "00:39:30"
+
+  return(<>
+  
+      {ddd}
+  
+  </>)
+}
+
+var now  = "04/09/2013 15:00:00";
+var then = "04/09/2013 14:20:30";
+
+moment.utc(moment(now,"DD/MM/YYYY HH:mm:ss").diff(moment(then,"DD/MM/YYYY HH:mm:ss"))).format("HH:mm:ss")
+
+// outputs: "00:39:30"
