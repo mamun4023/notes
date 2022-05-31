@@ -1,0 +1,1 @@
+src= { image?(URL.createObjectURL(image)):SingleBank?.image}             // image is a file[0]
