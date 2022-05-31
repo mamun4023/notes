@@ -1,0 +1,19 @@
+ const form = new FormData();
+    form.append("name", values.name);
+    form.append("description", values.description);
+    form.append("price", values.price);
+    form.append("food_type_id", String(values.food_types.id));
+    form.append("cuisine_id", String(values.cuisine_types.id));
+    form.append("category_id", String(values.categories.id));
+    form.append("food_item_type", values.food_item_type)
+    form.append("image", values.image);
+    form.append("food_variations[full]", values.variationFull);
+    form.append("food_variations[half]", values.variationHalf);
+    form.append("food_item_estimate_days", values.food_item_estimate_days);
+    form.append("restaurant_id", id);
+    if (inputFields?.length) {
+      inputFields.forEach((item, index) => {
+        form.append(`food_addons[${index}][name]`, item?.name);
+        form.append(`food_addons[${index}][price]`, item?.price);
+      });
+    }
