@@ -1,29 +1,22 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import {ThemeProvider, createTheme} from '@mui/material/styles';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import { createTheme, ThemeProvider } from '@material-ui/core';
+import App from './App';
 
 const theme = createTheme({
   palette : {
-   primary : {
-     main : "#8e44ad"
-   }
+    primary : {
+      main : "#FF0000"
+    }
   }
-})
+});
 
-export default function DraggableDialog() {
+ReactDOM.render(
 
+  <ThemeProvider theme={theme}>
+    <App />
+  </ThemeProvider>, 
+  document.getElementById('root')
+);
 
-  return (
-    <ThemeProvider theme={theme}>
-    
-      <Button 
-        color='primary'
-        variant='contained'
-        disableElevation
-      > 
-        hello
-      </Button>
-
-      </ThemeProvider>
-  );
-}
