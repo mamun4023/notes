@@ -1,0 +1,7 @@
+let person = {
+   firstName: 'John',
+   lastName: 'Doe'
+};
+
+// check with undefined that return true or false
+console.log(person.age != undefined);
