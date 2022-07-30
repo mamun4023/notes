@@ -1,0 +1,9 @@
+
+
+let obj = {
+  a : 10,
+  b : 20,
+  c : 2
+}
+
+let min = Math.min(...Object.values(obj));
