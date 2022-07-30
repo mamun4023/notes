@@ -1,0 +1,7 @@
+let obj = {
+	'a' : 2,
+	'b' : 3
+};
+
+// return true or false
+console.log( 'b' in obj)
