@@ -1,0 +1,15 @@
+ function Matcching(data){
+ 	// if(data.length < 3){
+ 	// 	return false;
+ 	// }
+
+	let ptr = /[a-z]/g;
+	let result = password.match(ptr);
+	if(result == null){
+		return false;
+	}
+	return true;
+ }
+
+let password = "aaaa1";
+console.log(Matcching(password))
