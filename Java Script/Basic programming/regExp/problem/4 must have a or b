@@ -1,0 +1,12 @@
+ function Matcching(data){
+
+	let ptr = /(a|b)/g;
+	let result = password.match(ptr);
+	if(result == null){
+		return false;
+	}
+	return true;
+ }
+
+let password = "rrra";
+console.log(Matcching(password))
