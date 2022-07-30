@@ -1,0 +1,12 @@
+ function Matcching(data){
+
+	let ptr = /[#$@<>]/g;   // can be added more special character into []
+	let result = password.match(ptr);
+	if(result == null){
+		return false;
+	}
+	return true;
+ }
+
+let password = "<dfd";
+console.log(Matcching(password))
