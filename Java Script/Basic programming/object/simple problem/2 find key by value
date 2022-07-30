@@ -1,0 +1,6 @@
+let obj = {
+	a : 10,
+	b : 20
+}
+
+let key = Object.keys(obj).find(k=>obj[k]===10);   // 10 is value
