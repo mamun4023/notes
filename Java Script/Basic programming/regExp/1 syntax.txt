@@ -1,3 +1,13 @@
 
 ///pattern/modifiers;
 var patt = /w3schools/i;
+
+
+regular expression function
+
+
+search() // return index
+match()  // return array
+test()  // return true or false
+exec()  // return object with first found index
+
