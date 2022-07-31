@@ -1,0 +1,4 @@
+// get the ASCII velue of index 0 
+let text = "AELLO WORLD";
+let code = text.fontsize(10);
+document.write(code);
