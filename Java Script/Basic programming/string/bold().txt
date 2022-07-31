@@ -1,0 +1,4 @@
+var totn_string = 'TechOnTheNet';
+document.write(totn_string.bold());
+
+
