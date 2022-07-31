@@ -1,0 +1,5 @@
+// check whether string end with "world" or not 
+let text = "Hello world";
+let result = text.endsWith("world");
+
+console.log(result);
