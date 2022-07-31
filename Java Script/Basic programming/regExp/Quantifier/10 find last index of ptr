@@ -1,0 +1,7 @@
+let text = "The rain in Spain stays mainly in the plain";
+let pattern = /ain/g;
+let result = text.match(pattern);
+
+while(pattern.test(text)== true){
+	console.log(pattern.lastIndex)
+}
