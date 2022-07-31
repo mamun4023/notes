@@ -1,0 +1,12 @@
+// must have 
+// 1 Uppercase
+// 1 lower Case
+// 1 digit 
+
+var strongPasswordCheckerII = function(password) {
+  	let pattern = /[a-z][A-Z][0-9]/g;
+  	return pattern.test(password)  
+};
+
+let str = "aA3"
+console.log(strongPasswordCheckerII(str))
