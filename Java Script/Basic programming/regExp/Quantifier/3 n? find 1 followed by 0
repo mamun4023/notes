@@ -1,0 +1,8 @@
+
+
+//A global search for a "1", followed by zero or one "0" characters:
+
+let text = "1, 100 or 1000?";
+let pattern = /10?/g;
+let result = text.match(pattern);
+console.log(result);
