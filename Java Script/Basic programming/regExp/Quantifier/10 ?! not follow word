@@ -1,0 +1,7 @@
+//A global, case insensitive search for "is" not followed by " there"
+
+let text = "Is this there is there Is is";
+let pattern = /is(?! there)/gi;
+let result = text.match(pattern);
+
+console.log(result);
