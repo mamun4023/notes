@@ -1,0 +1,6 @@
+//A global search for sequence of four digits
+
+let text = "100, 1000 or 10000?";
+let pattern = /\d{4}/g;
+let result = text.match(pattern);
+console.log(result);
