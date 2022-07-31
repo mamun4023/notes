@@ -1,0 +1,8 @@
+//A search for "is" followed by " there"
+// after is must have " there" 
+
+let text = " this there  iS there Is";
+let pattern = /is(?= there)/g;
+let result = text.match(pattern);
+
+console.log(result);
