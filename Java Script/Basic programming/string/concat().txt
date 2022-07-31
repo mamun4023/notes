@@ -1,0 +1,3 @@
+var totn_string = 'TechOnTheNet';
+document.write(totn_string.concat("DDDD", "DDD"));
+
