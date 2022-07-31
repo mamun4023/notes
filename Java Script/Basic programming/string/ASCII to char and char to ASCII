@@ -1,0 +1,4 @@
+let data  = '#';
+let code = data.charCodeAt()
+console.log("ASCII", code);
+console.log(String.fromCharCode(code));
