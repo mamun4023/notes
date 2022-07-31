@@ -1,0 +1,6 @@
+// convert object into string
+
+let text = new String("dfdfd");
+console.log(typeof text)
+let result = text.toString();
+console.log(typeof result);
