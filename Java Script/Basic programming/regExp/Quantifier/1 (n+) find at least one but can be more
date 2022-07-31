@@ -1,0 +1,5 @@
+let text = "Hellooo World! Hello W3Schools!";
+let pattern = /oo+/g;    // at least 2  
+						 // ooo+ at least 3 
+let result = text.match(pattern);
+console.log(result);
