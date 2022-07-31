@@ -1,0 +1,7 @@
+
+// A search for "is" at the begin with Is
+
+let text = "Is this his";
+let pattern = /^Is/g;
+let result = text.match(pattern);
+console.log(result);
