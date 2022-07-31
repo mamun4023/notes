@@ -1,0 +1,7 @@
+
+// A search for "is" at the end of a string 
+
+let text = "Is this his";
+let pattern = /is$/g;
+let result = text.match(pattern);
+console.log(result);
