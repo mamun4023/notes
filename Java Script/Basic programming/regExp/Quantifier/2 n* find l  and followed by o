@@ -1,0 +1,8 @@
+
+//A global search for an "l", followed by o or more "o" characters
+
+let text = "Helloood World! Hello W3Schools!"; 
+let pattern = /lo*/g;
+let result = text.match(pattern);
+
+console.log(result);
