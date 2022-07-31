@@ -1,0 +1,3 @@
+let pattern = new RegExp("Hello World", "g");
+let text = pattern.toString();
+console.log(text);
