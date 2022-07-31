@@ -1,0 +1,7 @@
+
+// A global search for a sequence of at least three digits but can be more than 3 
+
+let text = "100, 1000 or 10000?";
+let pattern = /\d{3,}/g;
+let result = text.match(pattern);
+console.log(result);
