@@ -1,0 +1,4 @@
+let text = "Hello world!";
+let result = text.substr(3, 4); // substr(3) start from 3
+console.log(result);
+
