@@ -1,0 +1,3 @@
+var totn_string = 'TechOnTheNet';
+console.log(totn_string.anchor('website'));
+
