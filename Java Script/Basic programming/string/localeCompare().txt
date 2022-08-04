@@ -1,0 +1,12 @@
+//returns one of 3 numbers indicating the sort order.
+//-1 if sorted before
+//1 if sorted after
+//0 if equal
+
+// sorted before "ab" "abaa"
+// sorted after "ab" "aaaab"
+
+let text1 = "ab";
+let text2 = "aab";
+let result = text1.localeCompare(text2);
+console.log(result)
