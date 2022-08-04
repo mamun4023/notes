@@ -10,4 +10,5 @@ search() // return index
 match()  // return array
 test()  // return true or false
 exec()  // return object with first found index
+replace() // replace with another data
 
