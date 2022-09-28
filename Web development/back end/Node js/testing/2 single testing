@@ -1,0 +1,19 @@
+
+// module file
+function Sum(a, b){
+    return a+b;
+}
+
+module.exports  = Sum;
+
+
+
+// test file 
+const Sum = require('./sum');
+
+describe('sum module', ()=>{
+    test('add 1 + 1 = 2', ()=>{
+        expect(Sum(1,1)).toBe(2)
+    })
+})
+
