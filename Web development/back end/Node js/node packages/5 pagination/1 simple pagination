@@ -1,0 +1,109 @@
+const express = require('express');
+const app = express();
+
+
+
+
+
+
+
+
+
+const data = [
+    {
+        "id" : "1",
+        "name" : "AAAA"
+    },
+    {
+        "id" : "2",
+        "name" : "BBB"
+    },
+    {
+        "id" : "3",
+        "name" : "CCC"
+    },
+    {
+        "id" : "4",
+        "name" : "DDDD"
+    },
+    {
+        "id" : "5",
+        "name" : "EEEE"
+    },
+    {
+        "id" : "6",
+        "name" : "FFFF"
+    },
+    {
+        "id" : "7",
+        "name" : "AAAA"
+    },
+    {
+        "id" : "8",
+        "name" : "BBB"
+    },
+    {
+        "id" : "9",
+        "name" : "CCC"
+    },
+    {
+        "id" : "10",
+        "name" : "DDDD"
+    },
+    {
+        "id" : "11",
+        "name" : "EEEE"
+    },
+    {
+        "id" : "12",
+        "name" : "FFFF"
+    },
+    {
+        "id" : "13",
+        "name" : "AAAA"
+    },
+    {
+        "id" : "14",
+        "name" : "BBB"
+    },
+    {
+        "id" : "15",
+        "name" : "CCC"
+    },
+    {
+        "id" : "16",
+        "name" : "DDDD"
+    },
+    {
+        "id" : "17",
+        "name" : "EEEE"
+    },
+    {
+        "id" : "18",
+        "name" : "FFFF"
+    }
+]
+
+
+
+app.get('/', (req, res)=>{
+    let page = req.query.page;
+    let limit = req.query.limit;
+
+    let startIndex = (page-1) * limit;
+    let endIndex = page * limit;
+
+    let user = data.slice(startIndex, endIndex)
+    res.json({
+        user
+    })
+})
+
+
+
+
+
+
+app.listen(3000, ()=>{
+    console.log("Server is running")
+})
