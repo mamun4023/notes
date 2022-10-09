@@ -1,0 +1,26 @@
+const express = require('express');
+const app = express();
+const multer = require('multer');
+
+const multerConfigure = multer.diskStorage({
+    destination : './uploads',
+    filename : (res, file, cb)=>{
+        let fileName = Date.now()+"-"+file.originalname
+        cb(null, fileName)
+    }
+})
+
+const upload = multer({storage : multerConfigure})
+
+app.use(express.json());
+
+app.post('/post', upload.single('avatar'), (req, res, next)=>{
+    let name = req.body.name;
+    res.send(name)
+    console.log(req.file.filename)
+})
+
+
+app.listen(3000, ()=>{
+    console.log("server is running...")
+})
