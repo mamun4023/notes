@@ -1,0 +1,33 @@
+const express = require('express');
+const app = express();
+const multer = require('multer');
+const cors = require('cors');
+
+const multerConfigure = multer.diskStorage({
+    destination : './uploads',
+    filename : (req, file, cb)=>{
+        let fileName = Date.now()+"-"+file.originalname
+        cb(null, fileName)
+    }
+})
+
+const upload = multer({storage : multerConfigure})
+
+// load image file to frontend 
+// exmaple  http//:localhost:3000/images/fdfd34343.png
+app.use('/images',express.static('uploads'))
+
+app.use(express.json());
+app.use(cors())
+
+app.post('/post', upload.single('avatar'), (req, res, next)=>{
+    let name = req.body.name;
+    res.send(name)
+    console.log(req.file.path)
+})
+
+
+
+app.listen(3000, ()=>{
+    console.log("server is running...")
+})
