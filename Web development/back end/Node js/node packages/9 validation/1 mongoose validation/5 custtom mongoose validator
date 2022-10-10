@@ -1,0 +1,67 @@
+const express = require('express');
+const app = express();
+const mongoose = require('mongoose');
+const validator = require('validator')
+
+
+
+
+
+app.use(express.json())
+
+let dbString = 'mongodb://localhost:27017/dd'
+mongoose.connect(dbString, (err)=>{
+    if(!err){
+        console.log("DB Connected")
+    }
+})
+
+let UserSchema = new mongoose.Schema({
+    name : {
+        type : String,
+        required : [true, 'Name is required'],
+    },
+    email : {
+        type : String,
+        required : [true, "Email is required"],
+        validate : {
+            validator : (v)=>{
+                return validator.isEmail(v)
+            },
+            message : "email not valid"
+        }
+    }
+})
+
+
+const UserModel = mongoose.model('user', UserSchema);
+
+
+app.post('/post', (req, res)=>{
+    let{ name, email} = req.body;
+    let user = new UserModel({
+        name,
+        email
+    })
+
+    user.save()
+        .then(()=>{
+            return res.send("Saved")
+        })
+        .catch(err=>{
+            res.status(400).json({
+                name : err.errors['name']?.message,
+                email : err.errors['email']?.message
+            })
+
+
+        })
+
+})
+
+
+
+
+app.listen(3000, ()=>{
+    console.log("Sever is running...")
+})
