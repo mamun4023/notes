@@ -1,0 +1,62 @@
+const express = require('express');
+const app = express();
+const mongoose = require('mongoose');
+
+
+
+
+
+app.use(express.json())
+
+let dbString = 'mongodb://localhost:27017/dd'
+mongoose.connect(dbString, (err)=>{
+    if(!err){
+        console.log("DB Connected")
+    }
+})
+
+let UserSchema = new mongoose.Schema({
+    name : {
+        type : String,
+        required : [true, 'Name is required'],
+    },
+    email : {
+        type : String,
+        required : [true, "Email is required"],
+    }
+})
+
+
+const UserModel = mongoose.model('user', UserSchema);
+
+
+app.post('/post', (req, res)=>{
+    let{ name, email} = req.body;
+    let user = new UserModel({
+        name,
+        email
+    })
+
+    user.save()
+        .then(()=>{
+            return res.send("Saved")
+        })
+        .catch(err=>{
+           return res.status(400).json({
+             errors : {
+                name : err.errors['name']?.message,
+                email : err.errors['email']?.message,
+             }
+           })
+
+
+        })
+
+})
+
+
+
+
+app.listen(3000, ()=>{
+    console.log("Sever is running...")
+})
