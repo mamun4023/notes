@@ -1,0 +1,21 @@
+const express = require('express');
+const app = express();
+const {Client, Pool} = require('pg');
+
+const client = new Client({
+    host : 'localhost',
+    user : 'postgres',
+    port : 5432,
+    password : '123456',
+    database : 'students'
+})
+
+client.connect()
+  .then(()=>{
+    console.log("DB connected")
+  })
+
+
+app.listen(3000, ()=>{
+    console.log("server is runnig...")
+})
