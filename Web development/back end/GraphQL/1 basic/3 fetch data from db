@@ -1,0 +1,96 @@
+// const express = require('express');
+// const app = express();
+// const {graphqlHTTP} = require('express-graphql');
+
+// const Schema = require('./schema');
+
+
+// app.use('/', graphqlHTTP({
+//   schema : Schema,
+//   graphiql : true,
+// }))
+
+
+
+// app.listen(3000, ()=>{
+//   console.log("server is running...")
+// })
+
+
+
+const express = require('express');
+const app = express();
+const mongoose = require('mongoose');
+const GraphQLHTTP = require('express-graphql').graphqlHTTP;
+const {GraphQLObjectType, GraphQLString, GraphQLSchema, GraphQLList, GraphQLID} = require('graphql');
+
+
+
+
+// db connection
+let db_string = 'mongodb://localhost:27017/test';
+mongoose.connect(db_string, (err)=>{
+    if(!err){
+        console.log("DB Connected")
+    }
+})
+
+
+// db model
+const UserSchema = new mongoose.Schema({
+    name : {
+        type : String,
+        required : true
+    },
+    email : {
+        type : String,
+        required : true
+    }
+})
+
+
+const UserModel = mongoose.model('user', UserSchema)
+
+
+const BookType = new GraphQLObjectType({
+    name : "Book",
+    fields : ()=> ({ 
+        id : { type : GraphQLString },
+        name : {type : GraphQLString},
+        genre : {type : GraphQLString}
+    })
+})
+
+const RootQuery = new GraphQLObjectType({
+    name : "RootQueryType",
+    fields : {
+        users : {
+            type :  new GraphQLList(BookType),
+            resolve(parent, args){
+               return UserModel.find()
+            }
+        },
+        user : {
+          type : BookType,
+          args : {id : {type : GraphQLID}},
+          resolve(parent, args){
+            return UserModel.findById(args.id)
+          }
+        }
+    }
+})
+
+const schema = new GraphQLSchema({
+    query :  RootQuery,
+})
+
+
+app.use('/', GraphQLHTTP({
+    schema,
+    graphiql : true
+}))
+
+
+app.listen(3000,()=>{
+    console.log("server running at 3000")
+})
