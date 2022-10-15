@@ -1,8 +1,8 @@
+
 const express = require('express');
 const app = express();
 const GraphQLHTTP = require('express-graphql').graphqlHTTP;
-const {GraphQLObjectType, GraphQLString, GraphQLSchema} = require('graphql');
-const _ = require('lodash');
+const {GraphQLObjectType, GraphQLString, GraphQLSchema, GraphQLList} = require('graphql');
 
 // dummy data 
 var books = [
@@ -37,11 +37,10 @@ const RootQuery = new GraphQLObjectType({
     name : "RootQueryType",
     fields : {
         book : {
-            type : BookType,
-            args : {id : {type : GraphQLString} },
+            type :  new GraphQLList(BookType),
             resolve(parent, args){
                 // code to get data from db
-               return _.find(books, {id : args.id})
+               return books
             }
         }
     }
