@@ -1,0 +1,10 @@
+
+// need to define all declared types into object 
+let obj: {id : number, name : string} = {
+    id  : 1,
+}
+
+
+obj.name = "Tohid"
+
+console.log(obj);
