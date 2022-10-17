@@ -1,0 +1,21 @@
+type ID  = number
+type AUTHOR = string
+type PUBLISHER = string
+
+
+type publication = {
+    id : ID,
+    author : AUTHOR,
+    publisher : PUBLISHER
+}
+
+
+let Book : publication = {
+    id : 1,
+    author : "Mr X",
+    publisher : "ABC"
+}
+
+
+console.log(Book)
+
