@@ -1,0 +1,17 @@
+interface Publication {
+    author: string,
+    publisher: string
+  }
+  
+  interface Book extends Publication {
+    id : number
+  }
+  
+  const Book1: Book = {
+    id : 1,
+    author : "Mr X",
+    publisher : "ABC"
+  };
+
+
+  console.log(Book1)
