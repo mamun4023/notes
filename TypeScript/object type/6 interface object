@@ -1,0 +1,12 @@
+interface Publication{
+    author : string,
+    publisher : string
+}
+
+const Book : Publication = {
+    author : "Mr X",
+    publisher : "ABC"
+}
+
+
+console.log(Book)
