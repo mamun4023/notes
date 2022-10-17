@@ -6,3 +6,22 @@ const last = (arr : Array<number>)=>{
 const l = last([1,2,3, 5]);
 // doesn't work casue of number declare
 const l2 = last(['a', 'b', 'c'])
+
+
+
+
+
+
+
+
+
+const last = (arr : Array<any>)=>{
+    return arr[arr.length -1]
+}
+
+// working 
+const l = last([1,2,3, 5]);
+// wokring
+const l2 = last(['a', 'b', 'c'])
+console.log(l);
+console.log(l2);
