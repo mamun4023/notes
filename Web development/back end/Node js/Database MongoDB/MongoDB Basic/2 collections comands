@@ -1,0 +1,11 @@
+1. Create Collection
+    db.createCollection("collection_name")
+
+2. Show Collections
+    show collections
+
+3. Drop Collection
+    db."collection_name".drop()
+
+4. Insert Data into Collection
+    db.mycollection.insert({name : "Tohid"})
