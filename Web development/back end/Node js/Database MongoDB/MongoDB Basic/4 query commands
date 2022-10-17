@@ -1,0 +1,15 @@
+Assume "students" is a collection name
+
+1. Find all the Collections
+    db.students.find()
+    
+2. Show all collection in json format
+    db.students.find().pretty()
+
+3. Find First data from the collections
+    db.students.findOne()
+
+4. Find collection using id
+    db.students.find({"id" : "2"})
+
+5. 
