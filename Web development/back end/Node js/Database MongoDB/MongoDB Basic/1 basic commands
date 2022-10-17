@@ -1,0 +1,16 @@
+1. show databse 
+    show dbs
+    
+2. show current working db
+    db
+    
+3. create Databse 
+    use "Databse_name"
+    
+4. Clear Screen
+    cls
+ 
+5. Drop Database
+    db.dropDatabase()
+
+6
