@@ -1,4 +1,6 @@
  // promise is an object that takes a function as parameter with two function parameters execute some code and return solve or reject.
+ // A Promise is an object representing the eventual completion or failure of an asynchronous operation. it handles asynchronous operation
+ 
 
 let promise = new Promise(function(solve, reject){
   let x = 10;
