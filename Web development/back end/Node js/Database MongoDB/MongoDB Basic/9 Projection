@@ -1,3 +1,12 @@
 Assume "students" is a collection
+Projection is about selecting neccessary data rather than whole data
+
+1. find only name from collections (assume here name and id fileds)
+    db.students.find({}, {_id: 0, name : 1})
+    
+    here 0 = not show
+    and  1 = show 
+
+2. 
 
 
