@@ -1,0 +1,7 @@
+
+// no error with optional property
+let obj: {id : number, name? : string} = {
+    id  : 1,
+}
+
+console.log(obj);
