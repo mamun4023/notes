@@ -1,0 +1,20 @@
+let promise = new Promise((resolve, reject)=> {
+  	setTimeout(()=>{
+  		resolve(10)
+  	},1000)
+});
+
+promise.then((result)=> {
+  console.log(result); // 10
+  return result * 2;
+});
+
+promise.then((result)=> {
+  console.log(result); // 10
+  return result * 2;
+});
+
+promise.then((result)=> {
+  console.log(result); // 10
+  return result * 2;
+});
