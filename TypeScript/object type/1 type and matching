@@ -1,0 +1,8 @@
+let obj: {id : number, name : string} = {
+    id  : 1,
+    name : "tohid"
+    // name : 23  error for mismatching type 
+}
+
+
+console.log(obj);
