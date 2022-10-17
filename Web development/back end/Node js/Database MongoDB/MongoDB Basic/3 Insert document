@@ -1,0 +1,16 @@
+Assume that "students" is a current collection name 
+
+
+1. Insert single document
+    db.students.insert({"name" : "Tohid", age : "20"})
+    
+2. Insert multiple documents
+    db.students.insert(
+      [
+        { "name" : "Tohid"},
+        { "name" : "Akram"},
+        { "name" : "Iftikar"}
+      ]
+   )
+   
+3.
