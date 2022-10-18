@@ -1,0 +1,9 @@
+const tuple : [string, boolean, number] = ['data', true, 10]; 
+
+
+// type alias
+type Drink = [string, boolean, number];
+
+const pepsi : Drink = ['brown', true, 10];
+const sprite : Drink = ['clear', true, 20];
+const tea : Drink =  ['brown', false, 0];
