@@ -1,3 +1,32 @@
-Assume "students" is a collection
+Create a "temp" database  and insert million of documents in collections in mongo shell
+
+1. create temp database
+    use temp
+
+2. insert million of document into collections
+    for(i = 0; i<1000000; i++){
+      db.posts.insert({id : i, name : "tohid"})
+    }
+    
+3. search the data with id = 1000000 (it will take longer time to read data)
+    db.posts.find({id : 1000000})
+    
+
+Note : This query take longer time to read data. To solve this problem indexing come in the picture of developer. To do indexing be more careful 
+about that you have to indexing only unique value of documents.
 
 
+4. Indexing the collections (indexing with id)
+    db.posts.ensureindex({id : 1})
+    
+
+5. Remove index
+    db.posts.dropIndex({id : 1})
+
+
+
+
+An index is a schema object that contains keys from various columns of our data table. B-Trees are used to store the index keys. 
+It helps us find the rows or the values to be searched faster. They have various advantages like increased performance in searching 
+for records, sorting records, grouping records, or maintaining a unique column. Some of the disadvantages include increased disk space, 
+slower data modification, and updating records in the clustered index.
