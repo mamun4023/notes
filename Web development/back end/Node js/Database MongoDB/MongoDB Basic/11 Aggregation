@@ -4,4 +4,13 @@ Assume "students" is a collection
 1. Count all the documents in the collection
     db.students.count()
 
-2. 
+2. Find Disctinct data from the collection (return an array)
+    db.students.distinct("name")
+
+3. Find Limited documents from collection
+    db.students.find().limit(5)
+
+4. Skip first 10 documents from collection
+    db.students.find().skip(10)
+    
+5. 
