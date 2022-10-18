@@ -1,0 +1,13 @@
+<html>
+
+    <head>
+        <title> </title>
+        <script src="/socket.io/socket.io.js"></script>
+    </head>
+    <body>
+        Socket page
+        <script>
+            var socket = io();
+        </script>
+    </body>
+</html>
