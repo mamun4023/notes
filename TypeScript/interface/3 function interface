@@ -1,0 +1,20 @@
+interface Vehicle {
+    name : string,
+    year : string,
+    condition : string
+}
+
+function printVehicle(vehicle : Vehicle){
+    console.log(vehicle.name);
+    console.log(vehicle.year);
+    console.log(vehicle.condition);
+}
+
+
+let car = {
+    name : "Civi",
+    year : "2000",
+    condition : "new"
+}
+
+printVehicle(car)
