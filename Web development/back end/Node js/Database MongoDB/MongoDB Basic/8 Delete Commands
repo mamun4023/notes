@@ -1,3 +1,22 @@
 Assume "students" is a collection
 
 
+1. Remove all the documents from collection
+    db.students.remove()
+    
+2. Remove single document from collection
+    db.students.remove({id : 10},1)    // 1 refer single document
+
+3. Delete one document from collection
+    db.orders.deleteOne( { "client" : "Crude Traders Inc." })
+    
+    
+4. Delete many docuemnts from collection
+    db.orders.deleteMany( { "client" : "Crude Traders Inc." })
+
+5. Find one document and delete from collection
+    db.scores.findOneAndDelete(
+      { "name" : "M. Tagnum" }
+    )
+    
+6. 
