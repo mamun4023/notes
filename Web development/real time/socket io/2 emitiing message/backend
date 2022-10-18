@@ -1,0 +1,44 @@
+const express = require('express');
+const app = express();
+const http = require('http');
+const server = http.createServer(app);
+const {Server} = require('socket.io');
+const cors = require('cors');
+
+const io = new Server(server);
+
+
+app.use(cors())
+
+app.get('/', (req, res)=>{
+    res.sendFile(__dirname + "/public/index.html")
+})
+
+
+io.on('connection', (socket)=>{
+    console.log("A user is connected")
+
+    // emiting welcome message to front end
+     socket.emit('welcome', 'welcome to the socket io')
+
+    // catching client emit message  
+    socket.on('message', (msg)=>{
+        console.log(msg)
+    })
+
+
+    socket.on('disconnect', ()=>{
+        console.log('Disconnected')
+    })
+})
+
+
+
+
+
+
+
+
+server.listen(3000, ()=>{
+    console.log("server is running...")
+})
