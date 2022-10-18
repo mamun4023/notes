@@ -1,0 +1,8 @@
+// T is return type 
+const last = <T>(arr : T[]): T=>{
+    return arr[arr.length-1];
+}
+
+// explicitly say the type 
+const l =  last<number>([1,2,3])
+const l2 = last<string>(['aa', 'bb'])
