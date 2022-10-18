@@ -1,0 +1,8 @@
+type arr = Array<string>
+type arr1 = Array<number>;
+type arr2 = Array<boolean>
+
+// not allow other type 
+let data : arr = ['d', 'd', ',d']
+let data1 : arr1 = [1,2,3,4];
+let data2 : arr2 = [true, false]
