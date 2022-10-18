@@ -1,0 +1,9 @@
+
+const makeArr = <X, Y>(x : X, y : Y) : [X, Y]=>{
+    return [x, y];
+}
+
+const v1 = makeArr(5,6);
+const v2 = makeArr('1', 4);
+const v3 = makeArr('33', true);
+const v4 = makeArr(false, '444');
