@@ -1,0 +1,24 @@
+<html>
+
+    <head>
+        <title> </title>
+        <script src="/socket.io/socket.io.js"></script>
+    </head>
+    <body>
+        Socket page
+        <script>
+            // const socket = io('http://localhost:3000')
+            var socket = io();
+            socket.on('connect', (data)=>{
+     
+               // catching backend emit welcome message 
+                socket.on('welcome', (message)=>{
+                    console.log(message);
+                })
+
+                // sending emit messgae to backend
+                socket.emit('message', {data : "I am emitting a message"})
+            })
+        </script>
+    </body>
+</html>
