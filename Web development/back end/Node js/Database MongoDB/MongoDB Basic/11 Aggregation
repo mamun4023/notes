@@ -1,3 +1,7 @@
 Assume "students" is a collection
 
 
+1. Count all the documents in the collection
+    db.students.count()
+
+2. 
