@@ -1,3 +1,10 @@
 Assume "students" is a collection
 
 
+1. Update single document of collection
+    db.students.update(
+        { id : 10},
+        { $set : { "name" : "Tohid Ahmed"}}
+    )
+
+2. 
