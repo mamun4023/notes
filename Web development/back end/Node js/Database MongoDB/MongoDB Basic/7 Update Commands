@@ -7,4 +7,11 @@ Assume "students" is a collection
         { $set : { "name" : "Tohid Ahmed"}}
     )
 
-2. 
+2. Update multiple document of a collection
+    db.students.update(
+        { "age" : 16 },
+        { $set : { status : "Big Child" }},
+        {multi : true }
+    )
+
+        
