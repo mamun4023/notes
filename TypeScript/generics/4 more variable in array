@@ -1,0 +1,9 @@
+
+const last = <T>(arr : T[])=>{
+    return arr[arr.length-1];
+}
+
+// if we use any time then exact type will not be declare
+// we can fix the problem using generics
+const l =  last([1,2,3, "generics"])
+const l2 = last(['aa', 'bb', 'cc', 1, true])
