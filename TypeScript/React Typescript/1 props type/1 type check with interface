@@ -30,3 +30,12 @@ export default function Chlid({color}: ChildProps){
         </>
     )
 }
+
+
+
+// another way to define React component
+// FC means functional component
+
+export const ChildAsFC : React.FC<ChildProps> = ({color})=>{
+    return (<div> {color} </div>)
+}
