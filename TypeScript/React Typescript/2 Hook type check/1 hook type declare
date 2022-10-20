@@ -1,0 +1,35 @@
+import { useState } from "react";
+
+const Guests : React.FC = ()=>{
+    const [name, setName] = useState('');
+    const [guests, setGuests] = useState<string[]> ([]);
+
+
+    const addGuest = ()=>{
+        setName('')
+        setGuests([...guests, name])
+    }
+    
+    return (
+        <>
+            <input 
+                type="text"
+                value={name}
+                onChange = {(e)=>setName(e.target.value)}
+            />
+
+            <button onClick={addGuest} > Add Guest </button>
+
+            {
+                guests.map(data =>
+                    <>
+                        <div> {data} </div>
+                    </>
+                    )
+            }
+        
+        </>
+    )
+}
+
+export default Guests;
