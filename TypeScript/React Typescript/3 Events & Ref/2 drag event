@@ -1,0 +1,24 @@
+import React from "react";
+
+const EventComponent : React.FC = ()=>{
+    
+    const OnChange = (event : React.ChangeEvent<HTMLInputElement>)=>{
+        console.log(event);
+    }
+
+
+    const onDragStart = (event : React.DragEvent<HTMLDivElement>)=>{
+        console.log(event)
+    }
+
+    // there are many events like this . try to drive into this
+
+    return(
+        <>
+            <input onChange={OnChange} /> 
+            <div draggable onDragStart={onDragStart}> Grag me </div>
+        </>
+    )
+}
+
+export default EventComponent;
