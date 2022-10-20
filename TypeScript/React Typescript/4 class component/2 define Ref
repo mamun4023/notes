@@ -1,0 +1,26 @@
+import { useEffect, useRef } from "react"
+
+
+const Componet : React.FC = ()=>{
+    const inputRef = useRef<HTMLInputElement | null>(null);
+
+    useEffect(()=>{
+        if(!inputRef.current){
+            return
+        }
+        inputRef.current.focus();
+    },[])
+
+    return(
+        <>
+            <input
+                ref={inputRef}
+            
+            />
+
+        
+        </>
+    )
+}
+
+export default Componet
