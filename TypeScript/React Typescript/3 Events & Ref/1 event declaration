@@ -1,0 +1,16 @@
+import React from "react";
+
+const EventComponent : React.FC = ()=>{
+    
+    const OnChange = (event : React.ChangeEvent<HTMLInputElement>)=>{
+        console.log(event);
+    }
+
+    return(
+        <>
+            <input onChange={OnChange} /> 
+        </>
+    )
+}
+
+export default EventComponent;
