@@ -1,0 +1,32 @@
+
+// parent component 
+
+import Child from './child';
+export default function Parent(){
+    return(
+        <>
+        
+            <Child color = "red" />
+        
+        </>
+
+    )
+}
+
+
+
+// chlid compoent
+
+
+interface ChildProps{
+    color : string;
+}
+
+export default function Chlid({color}: ChildProps){
+    return(
+        <>
+            <div> {color}</div>
+        
+        </>
+    )
+}
