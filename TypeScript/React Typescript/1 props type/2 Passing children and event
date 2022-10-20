@@ -1,0 +1,49 @@
+
+// parent components
+
+import {ChildAsFC} from './child';
+export default function Parent(){
+    return(
+        <>
+        
+            <ChildAsFC 
+                color = "red" 
+                onClick={()=>alert("onClick event working")}
+            >
+                children props
+            </ChildAsFC>
+        
+        </>
+
+    )
+}
+
+
+
+
+interface ChildProps{
+    color : string;
+    onClick : ()=> void,
+    children : string,
+}
+
+// export default function Chlid({color, onClick}: ChildProps){
+//     return(
+//         <>
+//             <div> 
+//                 {color}
+//                 <button onClick={onClick} > click </button>    
+//             </div>
+        
+//         </>
+//     ) 
+// } 
+
+export const ChildAsFC : React.FC<ChildProps> = ({color, onClick, children})=>{
+    return (<div> 
+        {color} 
+      
+        <button onClick={onClick} > click </button>
+        {children}
+        </div>)
+}
