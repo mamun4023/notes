@@ -1,0 +1,54 @@
+interface RequestAction{
+    type : "REQUEST";
+}
+
+interface SuccessAction{
+    type : "SUCCESS";
+    payload : string[]
+}
+
+interface FailureAction{
+    type : "FAILURE",
+    payload : string[]
+}
+
+
+interface ReducerType {
+    loading : boolean,
+    error : string | null,
+    data : string[]
+}
+
+type Actions = RequestAction | SuccessAction | FailureAction
+
+enum ActionTypes {
+    Request = "REQUEST",
+    Success = "SUCCESS",
+    Failed = "FAILURE"
+}
+
+const initialState : ReducerType = {
+    loading : false,
+    error : null,
+    data : []
+}
+
+const Reducer = (state = initialState, action : Actions) : ReducerType  =>{
+    
+    switch(action.type){
+        case ActionTypes.Request:
+            // 100% certainty that action has been checked with typescript
+            return {loading : true, error : null, data : []}
+        
+        case ActionTypes.Success:
+            return { loading : false, error: null, data : action.payload}
+        
+        case ActionTypes.Failed:
+            return {loading : false, error : null, data : action.payload}
+        default:
+            return state
+    }
+}
+
+
+export default Reducer;
