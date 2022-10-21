@@ -1,0 +1,35 @@
+interface ReducerType {
+    loading : boolean,
+    error : string | null,
+    data : string[]
+}
+
+interface ActionType{
+    type : string,
+    payload ? : any
+}
+
+const initialState : ReducerType = {
+    loading : false,
+    error : null,
+    data : []
+}
+
+const Reducer = (state = initialState, action : ActionType) : ReducerType  =>{
+    switch(action.type){
+        case 'Request':
+            return {loading : true, error : null, data : []}
+        
+        case 'Success' :
+            return { loading : false, error: null, data : action.payload}
+        
+        case 'Failed':
+            return {loading : false, error : null, data : action.payload}
+        
+        default:
+            return state
+    }
+}
+
+
+export default Reducer;
