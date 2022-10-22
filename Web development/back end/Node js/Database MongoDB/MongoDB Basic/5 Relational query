@@ -1,3 +1,20 @@
 Assume "students" is a collection
 
 
+1. Filter data with greater than (>)  relationla operator
+    db.students.find({id : {$gt : 1}})
+
+
+2. Filter data with greater than or equal to (>=) logical operation
+   db.students.find({id : {$gte : 5}})
+   
+3. Filter data with Less than (<)  relationla operator
+    db.students.find({id : {$lt : 5}})
+    
+4. Filter data with less than or equal to (<=) logical operation
+   db.students.find({id : {$lte : 5}})
+
+5. Filter data with Not equal (!) logical operation
+    db.posts.find({id : {$ne : 4}})
+
+  
