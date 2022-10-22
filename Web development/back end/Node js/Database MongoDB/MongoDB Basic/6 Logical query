@@ -1,3 +1,6 @@
 Assume "students" is a collection
 
 
+1. Find data with two specific field (id, name) logical AND operation
+    db.students.find({id : 1, name : "Tohid"})
+
