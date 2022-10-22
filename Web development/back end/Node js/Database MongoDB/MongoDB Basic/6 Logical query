@@ -10,4 +10,5 @@ Assume "students" is a collection
 3. Find data with three specific fileds (id, name, age) logical And and OR operation
     db.students.find({id : 1}, {$or: [{name : "Tohid"}, {age : 10}]})
 
-4. 
+4. Find Data with logical NOT operation
+   
