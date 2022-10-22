@@ -4,3 +4,10 @@ Assume "students" is a collection
 1. Find data with two specific field (id, name) logical AND operation
     db.students.find({id : 1, name : "Tohid"})
 
+2. Find data with two specific fileds (id, name) logical OR operation
+    db.students.find({$or : [{id : 1}, {name : "Tohid"}]})
+    
+3. Find data with three specific fileds (id, name, age) logical And and OR operation
+    db.students.find({id : 1}, {$or: [{name : "Tohid"}, {age : 10}]})
+
+4. 
