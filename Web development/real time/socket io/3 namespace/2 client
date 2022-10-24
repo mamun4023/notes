@@ -1,0 +1,20 @@
+<html>
+
+    <head>
+        <title> </title>
+        <script src="/socket.io/socket.io.js"></script>
+    </head>
+    <body>
+        Socket page
+        <script>
+            var socket = io('/admin');
+            socket.on('connect', ()=>{
+                socket.on('data', (arg)=>{
+                    console.log(arg)
+                })
+
+                socket.emit('dd',  "hello client")
+            })
+        </script>
+    </body>
+</html>
