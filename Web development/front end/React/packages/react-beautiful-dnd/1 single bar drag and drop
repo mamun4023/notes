@@ -1,0 +1,61 @@
+import React, { Component, useState } from "react";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+
+
+const Data = [
+  {
+    "id" : "1",
+    "name" : "Item 1"
+  }, 
+  {
+    "id" : "2",
+    "name" : "Item 2"
+  }
+]
+
+ function  App() {
+    const [listItems , setListItems] = useState(Data);
+
+    function HandleOnDrag(result){
+      console.log(result)
+
+
+      const item = Array.from(listItems);
+      const [reorderItem] = item.splice(result.source.index, 1);
+      item.splice(result.destination.index, 0, reorderItem);
+      setListItems(item)
+    }
+
+    return (
+      <DragDropContext onDragEnd={HandleOnDrag} >
+        <Droppable droppableId="listItems" >
+          {(provided) => (
+            <div
+              {...provided.droppableProps}
+              ref={provided.innerRef}
+             
+            >
+              {listItems.map((item, index) => (
+                <Draggable key={item.id} draggableId={item.id} index={index}>
+                  {(provided) => (
+                    <div
+                      ref={provided.innerRef}
+                      {...provided.draggableProps}
+                      {...provided.dragHandleProps}
+                 
+                    >
+                      {item.name}
+                    </div>
+                  )}
+                </Draggable>
+              ))}
+              {provided.placeholder}
+            </div>
+          )}
+        </Droppable>
+      </DragDropContext>
+    );
+  }
+
+
+export default App;
