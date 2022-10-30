@@ -15,14 +15,14 @@ console.log(someitem)  // true
 
 
 // find();
-const foundItem = shoppingList.some(item => item.name === 'Cake')
-console.log(foundItem) // true
+const foundItem = shoppingList.find(item => item.name === 'Cake')
+console.log(foundItem) // return first matched object
 
 
 
 // filter
 const filterItem = shoppingList.filter(item => item.price > 10);
-console.log(filterItem)
+console.log(filterItem)   // return an array 
 
 
 
