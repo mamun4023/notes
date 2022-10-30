@@ -1,8 +1,6 @@
+var a = "10.20";
 
-<script type="text/javascript">
-	
-	var a = "10.20";
+console.log(parseFloat(a));
+console.log( typeof parseFloat(a));
 
-	document.write(Number.parseFloat(a));
 
-</script>
