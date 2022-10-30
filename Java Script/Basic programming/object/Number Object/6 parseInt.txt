@@ -1,8 +1,5 @@
+var a = "10.20";
 
-<script type="text/javascript">
-	
-	var a = "10.20";
+console.log( typeof parseInt(a));
 
-	document.write(Number.parseInt(a));
 
-</script>
