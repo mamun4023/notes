@@ -5,14 +5,14 @@
    	lastName  : 'Jhon',
    	language  : '',
    	set lang(lang){
-   		this.language = lang 
+   		this.language = lang.toUpperCase();
    	}
    };
 
    
 
    // setter is able to modify / update object data
-    person.lang = "ddddd"
+    person.language = "english"
   
      console.log(person.language);
 
