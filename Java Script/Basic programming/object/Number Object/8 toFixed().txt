@@ -1,7 +1,3 @@
 
-<script type="text/javascript">
-	
-
    var a = 343.343;
-   document.write(a.toFixed());
-</script>
+   console.log(a.toFixed());  // return floor number
