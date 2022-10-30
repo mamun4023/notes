@@ -1,8 +1,3 @@
-
-<script type="text/javascript">
 	
-	var a = 121212121;
-
-	document.write(a.toExponential());
-
-</script>
+var a = 121212121;
+console.log(a.toExponential());
