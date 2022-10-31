@@ -1,0 +1,40 @@
+<ul>
+	<li> Home </li>
+	<li> Servic </li>
+</ul>
+
+
+
+
+<style type="text/css">
+	ul{
+		list-style-type: none;
+	}
+
+	li{
+		display: inline-block;
+		padding: 10px;
+		position: relative;
+		transition: 1s;
+	}
+
+	li:hover{
+		background: gray;
+	}
+
+	/*li:after{
+		content: "";
+		position: absolute;
+		bottom: -10px;
+		left: 0;
+		height: 5px;
+		width: 0%;
+		background: red;
+		transition: 1s;
+	}
+
+	li:hover:after{
+		width: 100%;
+	}
+*/
+</style>
