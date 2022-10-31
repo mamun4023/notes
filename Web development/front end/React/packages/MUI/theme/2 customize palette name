@@ -1,0 +1,13 @@
+const theme = createTheme({
+  palette : {
+    primary : {
+      light : "#d35400",
+      main : "#e74c3c",
+      dark : "#c0392b"
+    },
+    dd : {          // customized name and color
+      main : "#2c3e50"
+    }
+
+  }
+});
