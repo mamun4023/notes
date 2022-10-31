@@ -1,22 +1,47 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import { createTheme, ThemeProvider } from '@material-ui/core';
 import App from './App';
+import {BrowserRouter} from 'react-router-dom';
+import {createTheme, ThemeProvider} from '@mui/material';
+import { green, orange } from '@mui/material/colors'
 
 const theme = createTheme({
   palette : {
     primary : {
-      main : "#FF0000"
+      main : "#e74c3c"
+    },
+    secondary : {
+      main : ""
     }
   }
 });
 
-ReactDOM.render(
 
+ReactDOM.render(
   <ThemeProvider theme={theme}>
-    <App />
-  </ThemeProvider>, 
-  document.getElementById('root')
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+  </ThemeProvider>  
+  ,
+    document.getElementById('root')
 );
+
+
+
+
+
+
+import {Button} from '@mui/material'
+
+function App(){
+  return(
+    <>
+        <Button variant='contained' color='primary'> dddd</Button>
+    </>
+  )
+}
+
+export default App;
+
 
