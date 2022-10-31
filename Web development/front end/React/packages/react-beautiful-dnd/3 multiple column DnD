@@ -1,0 +1,156 @@
+import React, { Component, useState } from "react";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import {Container, ListGroup, ListGroupItem, Stack} from 'react-bootstrap'
+
+
+const Data1 = [
+  {
+    "id" : "1",
+    "name" : "Item 1"
+  }, 
+  {
+    "id" : "2",
+    "name" : "Item 2"
+  }
+]
+
+
+const Data2 = [
+  {
+    "id" : "3",
+    "name" : "Item 3"
+  },
+  {
+    "id" : "4",
+    "name" : "Item 4"
+  }
+]
+
+ function  App() {
+    const [listItems , setListItems] = useState(Data1);
+    const [listItem2, setListItem2] = useState(Data2);
+
+    function HandleOnDrag(result){
+
+      console.log(result)
+
+      const {source, destination} = result;
+
+      // if destination is not right
+      if(destination == null){
+        return;
+      }
+
+      // if source not defined
+      if(source == null){
+        return;
+      }
+
+      // if destination is list1
+      // DnD into the list1
+      if(source.droppableId === 'list1'){
+        const item = Array.from(listItems);
+        const [reorderItem] = item.splice(result.source.index, 1);
+        item.splice(result.destination.index, 0, reorderItem);
+        setListItems(item)
+      }
+
+      // if destination is list2
+      // DnD into the list2
+      if(source.droppableId === 'list2'){
+        const item = Array.from(listItem2);
+        const [reorderItem] = item.splice(result.source.index, 1);
+        item.splice(result.destination.index, 0, reorderItem);
+        setListItem2(item)
+      }
+
+
+      // if source is list1 and and destination is list2
+      // DnD from one list to another list
+
+      if(source.droppableId === 'list1' && destination.droppableId == 'list2'){     
+        const item = Array.from(listItems);
+        const item2 = Array.from(listItem2)
+        const [reorderItem] = item.splice(result.source.index, 1);
+        item2.splice(result.destination.index, 0, reorderItem);
+        setListItems(item)
+        setListItem2(item2)
+      }
+
+      // if source is list2 and and destination is list1
+      // DnD from one list to another list
+      if(source.droppableId === 'list2' && destination.droppableId == 'list1'){     
+        const item2 = Array.from(listItems);
+        const item = Array.from(listItem2)
+        const [reorderItem] = item.splice(result.source.index, 1);
+        item2.splice(result.destination.index, 0, reorderItem);
+        setListItems(item2)
+        setListItem2(item)
+      }
+
+    }
+
+    return (
+      <DragDropContext onDragEnd={HandleOnDrag}>
+        <Stack direction="horizontal"  > 
+        {/* list1 */}
+            <Container style={{maxWidth : "300px"}}>
+              <Droppable droppableId="list1" >
+                {(provided) => (
+                  <ListGroup
+                    {...provided.droppableProps}
+                    ref={provided.innerRef}
+                  >
+                    {listItems.map((item, index) => (
+                      <Draggable key={item.id} draggableId={item.id} index={index}>
+                        {(provided) => (
+                          <ListGroupItem
+                            ref={provided.innerRef}
+                            {...provided.draggableProps}
+                            {...provided.dragHandleProps}
+                      
+                          >
+                            {item.name}
+                          </ListGroupItem>
+                        )}
+                      </Draggable>
+                    ))}
+                    {provided.placeholder}
+                  </ListGroup>
+                )}
+              </Droppable>
+            </Container>
+
+            {/* list 2 */}
+            <Container style={{maxWidth : "300px"}}>
+              <Droppable droppableId="list2" >
+                {(provided) => (
+                  <ListGroup
+                    {...provided.droppableProps}
+                    ref={provided.innerRef}
+                  >
+                    {listItem2.map((item, index) => (
+                      <Draggable key={item.id} draggableId={item.id} index={index}>
+                        {(provided) => (
+                          <ListGroupItem
+                            ref={provided.innerRef}
+                            {...provided.draggableProps}
+                            {...provided.dragHandleProps}
+                          >
+                            {item.name}
+                          </ListGroupItem>
+                        )}
+                      </Draggable>
+                    ))}
+                    {provided.placeholder}
+                  </ListGroup>
+                )}
+              </Droppable>
+            </Container>
+        </Stack>
+      </DragDropContext>
+    );
+  }
+
+
+export default App;
