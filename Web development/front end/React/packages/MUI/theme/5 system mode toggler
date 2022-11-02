@@ -1,0 +1,46 @@
+import React, { useState } from "react";
+import {createTheme, ThemeProvider, CssBaseline, Switch, useMediaQuery} from '@mui/material';
+
+
+function App(){
+  const [themeMode, setThemeMode] = useState(false);
+
+  // system theme mode
+  // return true if the system color mode is dark
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const [systemMode, setSystemMode] = useState(prefersDarkMode);
+ 
+  console.log(systemMode)
+
+
+  const Theme = createTheme({
+
+    palette : {
+      mode :  themeMode || systemMode? "dark" : 'light',
+      primary : {
+        light : "#d35400",
+        main : "#e74c3c",
+        dark : "#c0392b"
+      },
+      dd : {          // customized name and color
+        main : "#2c3e50"
+      }
+    }
+  });
+
+
+
+  return(
+    <>
+        <ThemeProvider theme={Theme}>
+          <CssBaseline/>
+            <span> Dark mode</span>
+            <Switch checked={themeMode} onChange = {()=> setThemeMode(!themeMode)} > </Switch>
+            <span> system mode</span>
+            <Switch checked={systemMode} onChange = {()=>setSystemMode(!systemMode)} > </Switch>
+        </ThemeProvider>
+    </>
+  )
+}
+
+export default App;
