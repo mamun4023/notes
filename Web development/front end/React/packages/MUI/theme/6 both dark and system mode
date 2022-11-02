@@ -1,0 +1,67 @@
+import React, { useState, useEffect } from "react";
+import {createTheme, ThemeProvider, CssBaseline, Switch, useMediaQuery, useForkRef} from '@mui/material';
+
+
+function App(){
+  const [themeMode, setThemeMode] = useState(false);
+
+  // system theme mode
+  // return true if the system color mode is dark
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const [systemMode, setSystemMode] = useState(prefersDarkMode);
+
+ 
+ 
+
+
+  const Theme = createTheme({
+
+    palette : {
+      mode :   themeMode || systemMode? "dark" : 'light',
+      primary : {
+        light : "#d35400",
+        main : "#e74c3c",
+        dark : "#c0392b"
+      },
+      dd : {          // customized name and color
+        main : "#2c3e50"
+      }
+    }
+  });
+
+
+
+  const ThemeModeHandler = ()=>{
+    setThemeMode(!themeMode)
+    localStorage.setItem('themeMode', Theme.palette.mode)
+  }
+
+
+  const SystemModeHandler = ()=>{
+    setSystemMode(!systemMode)
+    localStorage.setItem('themeMode', Theme.palette.mode)
+  }
+
+  console.log(Theme.palette.mode)
+
+  useEffect(()=>{
+    let mode = localStorage.getItem('themeMode');
+    console.log(mode)
+    // setThemeMode(mode == 'dark'?true : false)
+  })
+
+
+  return(
+    <>
+        <ThemeProvider theme={Theme}>
+          <CssBaseline/>
+            <span> Dark mode</span>
+            <Switch checked={themeMode} onChange = {ThemeModeHandler} > </Switch>
+            <span> system mode</span>
+            <Switch checked={systemMode} onChange = {SystemModeHandler} > </Switch>
+        </ThemeProvider>
+    </>
+  )
+}
+
+export default App;
