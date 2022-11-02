@@ -1,0 +1,37 @@
+import React, { useState } from "react";
+import {createTheme, ThemeProvider, CssBaseline, Switch} from '@mui/material';
+
+
+function App(){
+  const [themeMode, setThemeMode] = useState(false);
+
+  const Theme = createTheme({
+    palette : {
+      mode :  themeMode? "dark" : 'light',
+      primary : {
+        light : "#d35400",
+        main : "#e74c3c",
+        dark : "#c0392b"
+      },
+      dd : {          // customized name and color
+        main : "#2c3e50"
+      }
+    }
+  });
+
+  const Handler = ()=>{
+    setThemeMode(themeMode?false: true)
+  }
+
+
+  return(
+    <>
+        <ThemeProvider theme={Theme}>
+          <CssBaseline/>
+            <Switch checked={themeMode} onChange = {()=> setThemeMode(!themeMode)} > toogler</Switch>
+        </ThemeProvider>
+    </>
+  )
+}
+
+export default App;
