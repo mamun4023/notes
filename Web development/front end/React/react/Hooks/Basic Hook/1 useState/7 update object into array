@@ -1,0 +1,33 @@
+
+import { useState } from "react";
+
+
+
+function App(){
+  const[car, setCar] = useState({
+    brand : 'Ford',
+    model : "Mustang",
+    year : 2030,
+    color : 'red'
+  })
+
+
+  // update value of object into array
+const update =()=>{
+  setCar(prev=>{
+    return {...prev, color : 'gray'}
+  })
+  
+}
+  return(
+    <>
+
+          <span> {car.color} </span>    
+
+          <button onClick={update}> update</button>
+    
+    </>
+  )
+}
+
+export default App;
