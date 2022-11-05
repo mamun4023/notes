@@ -1,0 +1,38 @@
+import React, { useState, useCallback } from "react";
+import debounce from "lodash.debounce";
+
+
+const name = ['Tohid', 'Akram']
+
+
+export default function FilterList() {
+  const [query, setQuery] = useState("");
+
+  let filteredNames = name;
+
+  if (query !== "") {
+    filteredNames = name.filter((name) => {
+      return name.toLowerCase().includes(query.toLowerCase());
+    });
+  }
+
+  const changeHandler = (event) => {
+    setQuery(event.target.value);
+  };
+
+  const debouncedChangeHandler = useCallback(debounce(changeHandler, 2000), []);
+
+  return (
+    <div>
+      <input
+        onChange={debouncedChangeHandler}
+        type="text"
+        placeholder="Type a query..."
+      />
+      {filteredNames.map((name) => (
+        <div key={name}>{name}</div>
+      ))}
+      <div>{filteredNames.length === 0 && query !== "" && "No matches..."}</div>
+    </div>
+  );
+}
