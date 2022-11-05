@@ -1,0 +1,76 @@
+
+import { useState } from "react";
+import Data from './data';
+
+function App(){
+  const[person, setPerson] = useState([
+    {
+      id: 1,
+      name : "Tohid",
+    },
+    {
+      id : 2,
+      name : "AKram",
+    }
+])
+
+  return(
+    <>
+
+      <Data Person = {person} />
+      
+    </>
+  )
+}
+
+export default App;
+
+
+
+import { Button, Card, ListGroup, ListGroupItem } from "react-bootstrap";
+import { useState } from "react";
+import {v4 as uuid} from 'uuid'
+
+export default function Data(props){
+    const [data, setData] =  useState(props.Person);
+
+    const RemoveHandler = (id)=>{
+        const updateData = data.filter(data => data.id != id)
+        setData(updateData)
+    }
+
+    const UpdatePerson = (id)=>{
+        let items  = Array.from(data)
+        let singleItem = items.find(d => d.id === id)
+        singleItem.name = prompt('Name')
+        let afterRemoved = items.filter(d => d.id !== id);
+        afterRemoved.push(singleItem)
+        setData(afterRemoved)
+    }
+
+    const AddHandler = (id)=>{
+        let newData = {id : uuid, name : prompt("Name")};
+        setData(prev =>{
+            return [...prev, newData]
+        })
+    }
+
+    return(
+        <>
+            {data.map(d =>
+                    <div key={d.id}>
+                        <Card> 
+                            <ListGroup> 
+                                <ListGroupItem> 
+                                    <span> {d.name}</span> 
+                                    <Button onClick={()=>RemoveHandler(d.id)}>remove</Button>
+                                    <Button onClick={()=>UpdatePerson(d.id)} >Update</Button>
+                                </ListGroupItem>
+                            </ListGroup>
+                        </Card>
+                    </div>  
+            )}
+             <Button onClick={AddHandler} > Add </Button>
+        </>
+    )
+}
