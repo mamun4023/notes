@@ -1,0 +1,47 @@
+import React, { useEffect, useState } from "react";
+import axios from 'axios';
+
+
+function App(){
+  const [data, setData] = useState([])
+  const [searchValue, setSearchValue] = useState("");
+
+
+  
+
+  useEffect(()=>{
+     
+    const getData = setTimeout(()=>{
+      axios.get(`https://dummyjson.com/products/search?q=${searchValue}`)
+      .then(res =>{
+        setData(res.data.products)
+      })     
+
+
+    }, 2000)
+     
+    return ()=> clearTimeout(getData);
+  }, [searchValue])
+
+
+  
+ console.log(data)
+
+  return (
+    <>
+        <input 
+          type="text"
+          onChange={(e)=>setSearchValue(e.target.value)}
+        />
+    
+    
+        <div>
+           {data.map(d =>(
+              <div key={d.id}> {d.category} </div>
+           ))}
+        </div>
+    </>
+  )
+}
+
+export default App;
