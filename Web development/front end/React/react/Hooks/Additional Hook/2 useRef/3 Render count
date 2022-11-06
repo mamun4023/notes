@@ -1,0 +1,17 @@
+import React,{useRef, useState} from "react";
+
+
+export default function App(){
+  const [count, setCount] = useState(0)
+  const ref = useRef({
+      renderCount: 0
+  });
+
+  // Increase the render count on every re-render
+  ref.current.renderCount += 1;
+
+  return (
+          <> Re-Render count : {ref.current.renderCount}  <button onClick={()=>setCount(count+1)}> count : {count}</button></>
+
+        )
+  }
