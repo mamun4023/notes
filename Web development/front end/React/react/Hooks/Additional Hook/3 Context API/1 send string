@@ -1,0 +1,40 @@
+
+import {useState, createContext} from 'react';
+import ChildComponent from './data'
+
+export const UserContext = createContext();
+
+function App(){
+  const [user, setUser] =  useState("Hello context");
+  return(
+    <>
+        <UserContext.Provider value={user}>
+            <ChildComponent />
+        </UserContext.Provider>  
+    
+    </>
+  )
+}
+
+export default App;
+
+
+
+// child component
+
+import React, {useContext} from 'react';
+import {UserContext} from './App';
+
+
+function Data(){
+
+    const user = useContext(UserContext)
+   
+    return(
+        <>
+                from Data component {user}
+        </>
+    )
+}
+
+export default Data;
