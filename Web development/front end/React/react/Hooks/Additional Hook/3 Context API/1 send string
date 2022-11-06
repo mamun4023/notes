@@ -8,6 +8,7 @@ function App(){
   const [user, setUser] =  useState("Hello context");
   return(
     <>
+        // we can send object, array or any type of js data
         <UserContext.Provider value={user}>
             <ChildComponent />
         </UserContext.Provider>  
