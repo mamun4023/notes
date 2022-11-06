@@ -1,0 +1,52 @@
+
+import {useState, createContext} from 'react';
+import ChildComponent from './data'
+
+export const UserContext = createContext();
+
+function App(){
+  const [user, setUser] =  useState([
+    {id : 1, name : "Tohid"},
+    {id : 2, name : "Akram"},
+    {id : 3, name : "Alom"}
+    
+  ]);
+  return(
+    <>
+        <UserContext.Provider value={user}>
+            <ChildComponent />
+        </UserContext.Provider>  
+    
+    </>
+  )
+}
+
+export default App;
+
+
+
+
+
+
+import React, {useContext} from 'react';
+import {UserContext} from './App';
+
+function Data(){
+
+    const user = useContext(UserContext)
+   
+    return(
+        <>
+                Context API Data
+                {
+                    user.map(data =>
+                        <>
+                            <div> <span> {data.id}</span> {data.name} </div>
+                        </>
+                        )
+                }
+        </>
+    )
+}
+
+export default Data;
