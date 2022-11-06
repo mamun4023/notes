@@ -1,0 +1,24 @@
+
+import { useRef } from "react";
+
+function App(){
+  const ref1 = useRef(null);
+
+  console.log(ref1)
+  
+  return(
+    <div>
+   
+         <div ref={ref1}> Hello world </div>
+        
+    </div>
+  )
+}
+
+export default App;
+
+
+
+
+
+https://www.emgoto.com/storing-values-with-useref/
