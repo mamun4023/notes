@@ -1,0 +1,42 @@
+import { useEffect } from "react";
+import { useRef } from "react";
+import { useState } from "react";
+
+
+
+function App(){
+  const [count, setCount] = useState(0);
+  const ref1 = useRef();
+  const ref2 = useRef();
+
+
+  const funcB = ()=>{
+    if(count>10){
+      ref1.current.style.display = "none"
+    }else
+      ref1.current.style.display="inline"
+
+    if(count <1){
+      ref2.current.style.display = "none"
+    }else
+    ref2.current.style.display="inline"
+  
+  }
+
+  useEffect(()=>{
+      funcB()
+  },[count])
+
+
+  return(
+    <div>
+        <button ref={ref1} onClick={()=>setCount(count+1)}> +</button>
+          {count}
+        <button ref={ref2} onClick={()=>setCount(count-1)}>-</button>
+
+    </div>
+  )
+}
+
+export default App;
+
