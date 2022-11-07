@@ -1,0 +1,30 @@
+import React, { useState, useMemo, useEffect} from "react";
+  
+export default function App(){
+  const [width, setWidth] = useState(0);
+
+
+  const Handler = (e)=>{
+    setWidth(window.innerWidth)
+  }
+
+  
+  useEffect(()=>{
+    window.addEventListener('resize', Handler)
+
+    // Clean Up useEffect
+    return ()=>{
+      window.removeEventListener('resize', Handler)
+    }
+  }, [width])
+
+  
+
+  return(
+      <>
+         
+            <div>  {width}</div>
+      </> 
+    )
+}
+
