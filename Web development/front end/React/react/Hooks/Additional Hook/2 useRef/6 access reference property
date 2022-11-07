@@ -1,0 +1,19 @@
+import React, {useEffect, useRef, useState} from "react";
+
+function App(){
+
+  const [value, setValue] = useState('')
+
+  const ref = useRef();
+
+  ref.current.value = "Ref value"
+
+  return(
+      <>
+        <div> Accesing Referece property</div>
+        <input ref={ref} onChange={e => setValue(e.target.value)} />
+      </>
+    )
+}
+
+export default App;
