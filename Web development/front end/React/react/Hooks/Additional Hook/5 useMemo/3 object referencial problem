@@ -1,0 +1,28 @@
+import React, { useState, useMemo, useEffect} from "react";
+  
+export default function App(){
+  const [number, setNumber] = useState(0);
+  const [dark, setDark] = useState(false);
+
+  const themeStyle = {
+    backgroundColor : dark? "black" : 'white',
+    color : dark ? 'white' : 'black'
+  }
+
+  // its object referencial 
+  // when we change increase/decrease number useEffect is calling 
+  // this is performance issuse 
+  
+  useEffect(()=>{
+    console.log("theme changed")
+  }, [themeStyle])
+
+
+  return(
+      <>
+          <input type = "number"  value={number} onChange = {e =>setNumber(e.target.value)}/>
+          <button onClick={()=> setDark(prevDark => !prevDark)}> Change Theme </button>
+      </>
+    )
+}
+
