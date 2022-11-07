@@ -1,0 +1,34 @@
+import React, { useState, useMemo, useEffect} from "react";
+  
+export default function App(){
+  const [post, setPost] = useState('');
+
+
+
+  // if resouce exist then first unmount then mount another
+  // if resouce does't exist then mouting only
+  useEffect(()=>{
+    console.log("mounted")
+
+    return ()=>{
+      console.log("Unmounted")
+    }
+  },[post])
+  
+  
+
+
+  
+
+  return(
+      <>
+            <button onClick={()=>setPost('posts')}>Posts</button>
+            <button onClick={()=>setPost('users')} >Users</button>
+            <button onClick={()=>setPost('comments')}>comments</button>
+
+
+            <div> Selected post : {post}  </div>
+      </> 
+    )
+}
+
