@@ -13,6 +13,7 @@ export default function App(){
 
   // when we change increase/decrease number useEffect will not calling every time
   // this is a performance issue solution
+  // useEffect will not call if the dark value not change  
 
   useEffect(()=>{
     console.log("theme changed")
