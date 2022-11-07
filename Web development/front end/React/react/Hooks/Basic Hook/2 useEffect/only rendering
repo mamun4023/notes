@@ -1,0 +1,27 @@
+import React, { useState, useMemo, useEffect} from "react";
+  
+export default function App(){
+  const [post, setPost] = useState('');
+
+
+
+  console.log("render is called")
+  
+  useEffect(()=>{
+    console.log("useEffect called")
+  }, [])
+
+  
+
+  return(
+      <>
+            <button onClick={()=>setPost('posts')}>Posts</button>
+            <button onClick={()=>setPost('users')} >Users</button>
+            <button onClick={()=>setPost('comments')}>comments</button>
+
+
+            <div> Selected state  is: {post}</div>
+      </> 
+    )
+}
+
