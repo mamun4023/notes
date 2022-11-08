@@ -1,0 +1,88 @@
+import { useCallback, useState } from "react";
+
+import Title from './title';
+import Count from './count';
+import Button from './button'
+
+function ParrentComponent(){
+    const[age, setAge] = useState(25);
+    const[salary, setSalary] = useState(50000);
+
+    // only render if age changes
+    const IncrementAge = useCallback(()=>{
+        setAge(age +1)
+    },[age])
+
+    // only render if salary changes
+    const IncrementSalary = useCallback(()=>{
+        setSalary(salary+1000)
+    },[salary])
+
+    return(
+        <>
+            <Title />
+            <Count text= "Age" count = {age}  />
+            <Button handleClick = {IncrementAge} > Increment Age </Button>
+            <Count text="salary" count={salary} />
+            <Button handleClick = {IncrementSalary} > Increment Salary </Button>
+        
+        </>
+    )
+}
+
+export default ParrentComponent;
+
+
+
+
+
+// stateless component
+
+import React, {memo} from "react";
+function Title(){
+    console.log("Rendering title");
+    return(
+        <>
+            <h2> Use Callback Hook</h2>
+        </>
+    )
+}
+export default memo(Title);
+
+
+// component with props or reference 
+
+import React, {memo} from "react";
+
+function Count({text, count}){
+    console.log(`Rendering ${text}`)
+    return(
+        <>
+            <div> {text} - {count} </div>
+        </>
+    )
+}
+export default memo(Count);
+
+
+
+// component with function reference as a props
+
+import React, {memo} from "react";
+
+function Button({handleClick, children}){
+
+    console.log("Rendering button", children);
+
+    return(
+        <>
+            <button onClick={handleClick} > {children} </button>
+        </>
+    )
+}
+
+export default memo(Button)
+
+
+
+
