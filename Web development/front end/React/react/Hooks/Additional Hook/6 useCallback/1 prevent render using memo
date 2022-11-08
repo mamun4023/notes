@@ -1,0 +1,43 @@
+
+// if the component stateless or propsless then using memo it will not re-render again and again
+// if have props and state then we have to use useCallback
+
+import React, {memo} from "react";
+
+function Title(){
+    console.log("Rendering title");
+
+    return(
+        <>
+            <h2> Use Callback Hook</h2>
+        
+        </>
+    )
+}
+
+export default memo(Title);
+
+
+
+
+
+
+import { useState } from 'react';
+import Title from './title';
+
+
+function App(){
+  const [count, setCount] = useState(0);
+
+  return(
+    <>
+
+      {/* Title component render only one */}
+      <Title />
+      <button onClick={()=>setCount(prev => prev+1)} > {count}</button>
+    
+    </>
+  )
+}
+
+export default App;
