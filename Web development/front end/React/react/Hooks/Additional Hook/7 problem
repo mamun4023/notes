@@ -1,0 +1,38 @@
+//getting slow after puting input in input box
+
+
+import React, {useState, useTransition} from 'react';
+
+const LIST_SIZE = 20000;
+
+function App(){
+const[input, setInput] = useState();
+const[list, setList] = useState([]);
+
+const HandleChange =(e)=>{
+  setInput(e.target.value);
+  const l = [];
+  for(let i = 0; i<LIST_SIZE; i++){
+    l.push(e.target.value);
+  }
+  setList(l);
+}
+
+  return(
+      <div>
+       
+        <input type= "text" value= {input} onChange = {HandleChange} />
+          
+
+          {
+            list.map((item, index)=>{
+              return <div key={index} > {item} </div>
+            })
+          }
+
+      </div>
+  )
+}
+
+
+export default App;
