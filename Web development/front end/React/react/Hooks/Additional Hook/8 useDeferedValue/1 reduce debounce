@@ -1,0 +1,58 @@
+
+import React, {useState, useTransition} from 'react';
+import Data from './data';
+
+function App(){
+const[input, setInput] = useState();
+
+const HandleChange = (e)=>{
+  setInput(e.target.value)
+}
+
+  return(
+      <div>
+        <input type= "text" value= {input} onChange = {HandleChange} />
+
+          <Data data = {input} />
+      </div>
+  )
+}
+
+export default App;
+
+
+
+
+
+import React, { useState, useMemo, useDeferredValue } from "react";
+
+function Defered({data}){
+    const [list, setList] =  useState([]);
+
+    const deferedValue = useDeferredValue(data)
+
+    const listMemo = useMemo(()=>{
+        let l = [];
+    for(let i = 0; i<10000; i++){
+        l.push(deferedValue);
+    }
+
+    setList(l);
+    },[deferedValue])
+    
+    return(
+        <div>
+        
+            {
+                list.map((d, index)=>{
+                    return(
+                        <div key={index}> {d} </div>
+                    )
+                })
+            }
+        
+        </div>
+    )
+}
+
+export default Defered;
