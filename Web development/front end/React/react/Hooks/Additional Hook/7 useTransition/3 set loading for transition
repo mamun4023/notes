@@ -1,0 +1,45 @@
+// transition is all about prioritizing code 
+// what is render with high priority
+
+
+import React, {useState, useTransition} from 'react';
+
+const LIST_SIZE = 20000;
+
+function App(){
+const[input, setInput] = useState();
+const[list, setList] = useState([]);
+const [isPending, startTransition] = useTransition();
+
+
+const HandleChange =(e)=>{
+  setInput(e.target.value);    // high priority statement
+
+  // all the code is low priority into the startTransition hook
+  startTransition(()=>{
+    const l = [];
+    for(let i = 0; i<LIST_SIZE; i++){
+      l.push(e.target.value);
+    }
+    setList(l);             // low priority statement
+  })
+}
+
+  return(
+      <div>
+        <input type= "text" value= {input} onChange = {HandleChange} />
+          
+
+          { isPending? "loding..." :
+            list.map((item, index)=>{
+              return <div key={index} > {item} </div>
+            })
+          }
+
+      </div>
+  )
+}
+
+
+
+export default App;
