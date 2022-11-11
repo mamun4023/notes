@@ -1,0 +1,8 @@
+
+function myFunction(){
+	a = 10;
+}
+
+myFunction()
+let sum = a+a;
+console.log(sum);
