@@ -1,0 +1,33 @@
+
+import Navbar from './components/navbar';
+import {makeStyles} from '@mui/styles'
+import {Button} from '@mui/material'
+
+
+const useStyles = makeStyles({
+  btn : {
+    backgroundColor : 'red',
+    color: 'white'
+  }
+})
+
+function App(){
+
+  const classes = useStyles();
+
+  return(
+    <>
+
+       {/* <Navbar /> */}
+
+       <Button 
+          variant='contained' 
+          className= {classes.btn}
+          > ddd</Button>
+       
+       <Button variant='contained'> ddd</Button>
+    </>
+  )
+}
+
+export default App;
