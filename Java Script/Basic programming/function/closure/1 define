@@ -1,0 +1,15 @@
+function myFunction() {
+  let counter = 0;
+  return ()=> {
+  			counter += 1; 
+  			return counter;
+  		}
+};
+
+let add = myFunction();
+
+console.log(add())
+console.log(add())
+console.log(add())
+
+console.dir(add);
