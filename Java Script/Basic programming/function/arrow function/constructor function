@@ -1,0 +1,11 @@
+
+
+// Arrow function can not be constructor funciton
+
+const add = (data)=>{
+	this.data = data;
+}
+
+let obj = new add(10)
+
+console.log(obj.data)
