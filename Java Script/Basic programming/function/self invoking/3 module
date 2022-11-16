@@ -1,0 +1,13 @@
+
+//Usually the module pattern is implemented using self-invoking functions. In the module pattern, 
+//we keep the reference to the function’s returned object. In such case we consider 
+//the return value as the public API of the module:
+
+
+var module = (function() {
+  // private
+  return {
+    // public
+  };
+}());
+
