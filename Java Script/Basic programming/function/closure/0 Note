@@ -3,9 +3,9 @@
 
 
 function temporary(){
-	let dd = 0;  // parent scope
+	let counter = 0;  // parent scope
 	return function(){   // closure function
-		dd = dd + 1;
+		counter = counter + 1;
 	}
 }
 
