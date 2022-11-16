@@ -1,3 +1,8 @@
+
+// A function that don't need to call
+// it's call instantly
+
+
 (function(){
   console.log("hello self invoking function")
 })();
