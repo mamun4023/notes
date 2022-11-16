@@ -1,8 +1,0 @@
-
-function myFunction(data){
-	this.data = data;
-}
-
-let obj = new myFunction(10)
-
-console.log(obj.data)
