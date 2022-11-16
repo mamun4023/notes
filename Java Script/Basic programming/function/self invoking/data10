@@ -9,6 +9,7 @@ myFunction();
 
 // self invoking funciton 
 // don't need to call 
+// will be invoked right after it has been defined
 (function(){
 	console.log("self invoking funciton")
 }())
