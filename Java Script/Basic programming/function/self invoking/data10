@@ -1,0 +1,14 @@
+// define function
+function myFunction(){
+	console.log("primitive funciton")
+}
+
+// called function
+myFunction();
+
+
+// self invoking funciton 
+// don't need to call 
+(function(){
+	console.log("self invoking funciton")
+}())
