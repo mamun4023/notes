@@ -1,0 +1,10 @@
+
+// return value of first test case 
+const ages = [3, 10, 18, 20, 50, 40];
+
+let result = ages.find(checkAge)
+console.log(result)
+
+function checkAge(age) {
+  return age > 18;
+}
