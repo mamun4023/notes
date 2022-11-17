@@ -1,16 +1,14 @@
 
-<script type="text/javascript">
-	
-	array.prototype.myUcase = function(){
-	{
-		var i;
-		for(i=0; i<this.length; i++)
-		{
-			this[i]= this[i].toUpperCase();
-		}
-	};
 
-	var cars =['bmw','tesla','corola'];
-	document.write( cars.myUcase());
+// making a function 
 
-</script>
+Array.prototype.myUcase = function() {
+  for (let i = 0; i < this.length; i++) {
+    this[i] = this[i].toUpperCase();
+  }
+};
+
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.myUcase()
+console.log(fruits)
