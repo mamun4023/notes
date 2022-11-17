@@ -1,9 +1,5 @@
 
-<script type="text/javascript">
-   
    var cars = ['BMW','Tesla','Pageroo'];
         
       cars.reverse() ;                 
    document.write(cars);               
-
-</script>
