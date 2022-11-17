@@ -1,0 +1,20 @@
+// return true if any of the  array element pass the test
+
+let ages = [3, 30, 18, 20];
+
+let data =  ages.some(checkAdult);   // taking a callback function
+console.log(data)
+
+function checkAdult(age){           // call back function definition
+	return age > 18
+}
+
+
+
+// exmaple 2
+
+let ages = [3, 30, 18, 20];
+// arro function  inserted as callback function
+let data =  ages.some((element)=> element > 18);
+console.log(data)
+
