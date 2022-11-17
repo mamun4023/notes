@@ -1,9 +1,10 @@
 
-<script type="text/javascript">
-  
 
-  var a1 = ['A','B','C','D'];
 
-  document.write(a1.valueOf());     //convert an array to primitive value
 
-</script>
+let arr = [10,20,30];
+let arr2 = arr.valueOf();  // shallow copy
+// let arr2 = arr          // same as previous line
+arr2.push(200)
+console.log(arr)
+
