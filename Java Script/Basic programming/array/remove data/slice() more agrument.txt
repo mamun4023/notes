@@ -1,11 +1,6 @@
+let data = [10, 20, 30, 40, 50];
 
-<script type="text/javascript">
-  
+// copy 1 to 2 index data
+let result = data.slice(1, 3)
 
-  var a1 = ['1','2','3','4'];
-
-  var add = a1.slice(0,3);             // from 0 to 3 printed
-
-  document.write(add);
-
-</script>
+console.log(result);
