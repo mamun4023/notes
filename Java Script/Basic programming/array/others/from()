@@ -1,0 +1,5 @@
+// create an array from string
+let text = "ABCD EFG"
+const result = Array.from(text);
+
+console.log(myArr)
