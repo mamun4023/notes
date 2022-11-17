@@ -1,9 +1,7 @@
+	// setting length 
 
-<script type="text/javascript">
-	
-	var cars =['BMW','TESLA','COROLA'];
-	document.write( cars.length);
+	let arr = [];
+	let len = arr.length = 10;
 
-
-
-</script>
+	console.log(arr)
+	console.log(arr.length)
