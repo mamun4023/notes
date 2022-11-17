@@ -1,0 +1,7 @@
+// conveting string to number
+
+let data = '23.3';
+console.log(typeof data)
+let result = Number(data);  // convet into number from string
+console.log(typeof result)
+
