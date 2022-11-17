@@ -1,0 +1,11 @@
+// it take callback function and return new array
+// after applying callback function logic
+
+const numbers = [10, 20, 30, 40];
+const result = numbers.map(myFunction)
+
+console.log(result)
+
+function myFunction(num) {
+  return num * 2;
+}
