@@ -1,6 +1,0 @@
-let data = [10, 20, 30, 40, 50];
-
-// copy 1 to 2 index data
-let result = data.slice(1, 3)
-
-console.log(result);

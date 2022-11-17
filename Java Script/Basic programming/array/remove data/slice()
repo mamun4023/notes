@@ -1,0 +1,8 @@
+
+let data = [10, 20, 30, 40, 50];
+
+let result = data.slice(1, 3)    // index 1 to 3
+// let result = data.slice(3)    // index 4 to end 
+// let result = data.slice(-3)    // end to 3  (end to start)
+
+console.log(result);
