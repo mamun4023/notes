@@ -1,0 +1,22 @@
+// example 1 
+let data = [10, 10, 10];
+
+let result = data.reduce(myFunction, 0)   //  total value 
+
+console.log(result)
+
+function myFunction(total, num){
+	return total + num
+}
+
+
+
+// Example 2
+const numbers = [10,10];
+let result = numbers.reduce(getSum, 100);   // 100 is total value 
+
+console.log(result)
+
+function getSum(total, num) {
+  return total - num;
+}
