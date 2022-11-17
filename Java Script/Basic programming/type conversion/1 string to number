@@ -5,3 +5,10 @@ console.log(typeof data)
 let result = Number(data);  // convet into number from string
 console.log(typeof result)
 
+
+
+// examples
+console.log(Number(" "))
+console.log(Number(""))
+console.log(Number("23 56"))
+console.log(Number("fdf"))
