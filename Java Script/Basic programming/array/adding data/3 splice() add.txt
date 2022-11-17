@@ -1,9 +1,13 @@
+// first 1 means position and second 1 means number of items to delete  that is start from the position
 
-<script type="text/javascript">
-   
    var cars = ['BMW','Tesla','Pageroo'];
-        
-      cars.splice(1,1,"DDD")    // first 1 means position and second 1 means items to delete 
-   document.write(cars);       
+   cars.splice(1, 2,"DDD")    
+   console.log(cars); 
+   
 
-</script>
+// just deleting item from array 
+// first 1 means position and second 2 means number of items to delete  that is start from the position
+
+   var cars = ['BMW','Tesla','Pageroo'];
+   cars.splice(1, 2)    
+   console.log(cars);       
