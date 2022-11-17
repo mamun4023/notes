@@ -1,0 +1,11 @@
+
+
+// The isArray() method returns true if an object is an array, otherwise false.
+ 	var cars = ['BMW','Tesla','Pageroo'];
+
+ 	let result = Array.isArray(cars);
+ 	console.log(result);
+
+
+ 	let text = "W3Schools";
+	console.log(Array.isArray(text));
