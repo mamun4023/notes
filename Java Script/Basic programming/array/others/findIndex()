@@ -1,0 +1,10 @@
+
+
+// return first test result 
+  const ages = [3, 10, 18, 20, 40, 50];
+
+  console.log(ages.findIndex(checkAge));
+
+  function checkAge(age) {
+    return age > 18;
+  }
