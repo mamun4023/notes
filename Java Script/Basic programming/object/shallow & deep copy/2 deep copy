@@ -1,0 +1,15 @@
+
+// not effect to another object
+
+
+let obj1 = {name : "tohid"};   
+
+let obj2 = {
+	name : obj1.name         // deep copy
+}
+
+obj2.name = "ddd"
+
+
+console.log(obj1)
+
