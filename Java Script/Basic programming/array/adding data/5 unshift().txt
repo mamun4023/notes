@@ -1,8 +1,15 @@
-
-<script type="text/javascript">
+// add data begining of the array
    
    var cars = ['BMW','Tesla','Pageroo'];
    cars.unshift('ddd');      //add in the first position and set index from 0
    document.write(cars);
 
-</script>
+
+
+// we can add more data same time 
+
+
+let arr = [10,20,30];
+arr.unshift(100, 200)
+console.log(arr);
+
