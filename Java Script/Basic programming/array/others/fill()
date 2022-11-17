@@ -1,0 +1,6 @@
+
+// replace all the element with the filed data
+const ages = [3, 10, 18, 20, 50, 40];
+
+let result = ages.fill("100")
+console.log(result)
