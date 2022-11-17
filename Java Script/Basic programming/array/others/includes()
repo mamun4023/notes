@@ -1,6 +1,6 @@
-
-const fruits = ["Banana", "Orange", "Apple", "Mango"];
+const fruits = ["Banana", "Orange", "Mango", "Apple", "Mango"];
 let result = fruits.includes("Mango");
  	
 console.log(result);
 console.log(fruits.includes('mang'))
+console.log(fruits.includes("Mango", 3)); // start search from index = 3
