@@ -1,0 +1,11 @@
+// obj1 & obj2 have the same memory location
+// obj2 is just a reference of the obj1
+
+
+let obj1 = {name : "tohid"};   
+
+let obj2 = obj;  // shallow copy
+
+obj2.name = "ddd"
+
+console.log(obj1)
