@@ -1,0 +1,8 @@
+
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+const result = fruits.entries();
+
+for (let x of result) {
+  console.log(x);      	// x[0] is key
+}						// x[1] value
