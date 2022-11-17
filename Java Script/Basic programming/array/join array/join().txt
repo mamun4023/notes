@@ -1,7 +1,7 @@
 
-<script type="text/javascript">
-   
-   var cars = ['BMW','Tesla','Pageroo'];
-   document.write(cars.join('*'));
+ 	   var cars = ['BMW','Tesla','Pageroo'];
+   	let result = cars.join('')    // return a string
+   	console.log(result)
+   	console.log(cars.join(' '));  // return word by word
+   	console.log(cars.join('*'))	 // return with * joined
 
-</script>
