@@ -11,3 +11,11 @@
    var cars = ['BMW','Tesla','Pageroo'];
    cars.splice(1, 2)    
    console.log(cars);       
+
+
+// Just adding data 
+// first 1 means position and second 0 means number of items to delete  that is start from the position
+   
+   var cars = ['BMW','Tesla','Pageroo'];
+   cars.splice(1, 0, "dddd")    
+   console.log(cars);       
