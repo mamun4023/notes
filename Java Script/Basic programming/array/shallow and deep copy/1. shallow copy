@@ -1,0 +1,8 @@
+// arr2 is just a reference of arr
+
+let arr = [10,20,30];
+
+let arr2 = arr;  // shallow capy
+arr2.push(200)
+
+console.log(arr)
