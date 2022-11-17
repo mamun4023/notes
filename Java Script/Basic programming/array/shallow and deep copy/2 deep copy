@@ -1,0 +1,8 @@
+// arr & arr2 are different memory address
+
+let arr = [10,20,30];
+
+let arr2 = [...arr, 100]   // deep copy
+arr2.push(200)
+
+console.log(arr)
