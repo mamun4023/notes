@@ -1,0 +1,10 @@
+
+// its  a iterative method for an array
+// return index and vlaue 
+
+let arr = [10,20,30,40];
+
+arr.forEach((value, index) =>{
+	console.log(index ,'->', value)
+})
+
