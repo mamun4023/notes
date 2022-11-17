@@ -1,0 +1,5 @@
+// return a new array that match a condition
+
+const ages = [3, 10, 18, 20, 50, 40];
+let result = ages.filter(data => data > 15)
+console.log(result)
