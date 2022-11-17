@@ -1,7 +1,7 @@
+// convet array to string including comma
 
-<script type="text/javascript">
-   
-   var cars = ['BMW','Tesla','Pageroo'];
-   document.write(cars.toString());
+let arr = [10,20,30];
 
-</script>
+let str = arr.toString();
+
+console.log(str);
