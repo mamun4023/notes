@@ -4,6 +4,8 @@
 // https://www.freecodecamp.org/news/javascript-closures-explained-with-example/
 
 
+
+
 function temporary(){
 	let counter = 0;  // parent scope
 	return function(){   // closure function
@@ -15,3 +17,9 @@ const add = temporary();
 console.dir(add)
 add();
 add();
+
+
+Advantage 
+
+	They allow you to attach variables to an execution context. Variables in closures can help you maintain a state that you can use later.
+	They provide data encapsulation. They help remove redundant code.
