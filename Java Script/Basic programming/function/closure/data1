@@ -1,11 +1,14 @@
-function makeAdder(x) {
-  return function (y) {
-    return x + y;
-  };
+// Variables in closures can help you maintain a state that you can use later.
+
+function myFunction(){
+	let counter = 0;
+	return (data)=>{
+		counter+=data;
+		return counter;
+	}
 }
 
-const add5 = makeAdder(5);
-const add10 = makeAdder(10);
 
-console.log(add5(2)); // 7
-console.log(add10(2)); // 12
+let add = myFunction();
+console.log(add(10));   // increasing by 10 
+console.log(add(10));
