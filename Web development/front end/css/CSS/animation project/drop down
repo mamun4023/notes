@@ -1,0 +1,77 @@
+
+
+
+<div class="container">
+	hover
+	<div class="inner">
+			<div>
+				AA
+			</div>
+			<div>
+				BB
+			</div>
+			<div>
+				CC
+			</div>
+			<div>
+				DD
+			</div>
+	</div>
+
+
+</div>
+
+
+
+<style type="text/css">
+	
+	.container{
+
+		width: 100px;
+		background: gray;
+		transition: height 1s;
+	}
+
+	.inner{
+		
+		width: 100px;
+		background: red;
+		display: none;
+		animation: slide-down 1s ;
+		animation-fill-mode: forwards;
+		
+	}
+
+	.container:hover .inner{
+		display: block;
+	
+		
+	}
+
+	 @keyframes slide-down {
+            0% {
+           
+                opacity: 0;
+                height: 0%;
+            }
+
+            20%{
+            	opacity: 0.02;
+            }
+
+            50%{
+            	pacity: 0.01;
+            }
+
+            80%{
+            	pacity: 0.8;
+            }
+  
+            100% {
+                opacity: 1;
+                height: 200px;
+                
+            }
+        }
+
+</style>
