@@ -1,0 +1,65 @@
+import React, { useState } from "react";
+import {motion, AnimatePresence} from 'framer-motion'
+
+
+export default function AnimatedTable(){
+  const [data, setData]= useState([
+    {
+      id : 1,
+      name : "Tohid"
+    },
+    {
+      id : 2,
+      name : "Akram"
+    },
+    {
+      id : 3,
+      name : "Azad"
+    }
+  ])
+
+
+  const Add = ()=>{
+    setData(prev => {
+      return [...prev, {id : Math.random(), name : "tohid"}]
+    })
+  }
+
+  const Delete = (id)=>{
+    setData(data.filter((d)=>d.id !== id))
+
+  }
+  
+  return(
+    <>
+
+
+        <div>
+            <button onClick={Add}>Add</button>
+           <ul style={{listStyleType : "none"}}>
+              <AnimatePresence>
+                {data.map(data =>
+                  <motion.li 
+                    key={data.id} 
+                    layout
+                    style = {{padding : 8, borderBottom : '1px solid gray'}}
+                    initial = {{opacity : 0}}
+                    animate = {{opacity : 1}}
+                    exit = {{opacity : 0}}
+                    transition = {{layout: {type : 'spring'}}}
+                    
+                  >
+                      {data.name}
+                      <button
+                        style = {{marginLeft : 5}}
+                        onClick={()=>Delete(data.id)}
+                      >X</button>
+                  </motion.li>
+                )}
+              </AnimatePresence>
+           </ul>
+        </div>
+    
+    </>
+  )
+}
