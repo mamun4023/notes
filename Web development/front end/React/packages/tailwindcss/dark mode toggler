@@ -1,0 +1,40 @@
+import React, {useEffect, useState} from 'react'
+
+function App() {
+
+  const [theme, setTheme] = useState(null)
+  const [data, setData] = useState(['Heading 1', 'Heading 2', 'Heading 3', 'Heading 4'])
+  
+  useEffect(()=>{
+    if(theme === 'dark'){
+      document.documentElement.classList.add('dark')
+    }else{
+      document.documentElement.classList.remove('dark')
+    }
+  },[theme])
+
+  const SwtichHandler = ()=>{
+    setTheme(theme === 'dark'? 'light' : 'dark')
+  }
+  
+  return (
+    <div className='h-40 w-40 text-slate-600 dark:bg-black'>
+       
+        <button
+          onClick={SwtichHandler}
+        >toglle</button>
+       <ul className='divide-y divide-slate-200 dark:bg-black'>
+          {
+            data.map(data =>
+              <li className='p-2'>
+                {data}
+              </li>
+            )
+          }
+
+       </ul>
+    </div>
+  );
+}
+
+export default App;
