@@ -1,3 +1,9 @@
+
+
+// using context api we can send data parent to child but not child to parent components
+
+
+
 import React, { createContext }  from "react";
 import About from "./about";
 
