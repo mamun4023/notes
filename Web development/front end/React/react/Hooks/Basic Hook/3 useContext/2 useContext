@@ -1,0 +1,40 @@
+import React, { createContext }  from "react";
+import About from "./about";
+
+
+export const UserContext = createContext();
+
+export default function App(){
+  return(
+    <>
+      
+      <UserContext.Provider value={"parent to child context API"}>
+        <About />
+      </UserContext.Provider>
+    
+    </>
+  )
+}
+
+
+import React from "react"
+
+import {UserContext} from './App';
+
+export default function About(props){
+
+    return(
+        <div>
+            <UserContext.Consumer>
+                {
+                    data =>{
+                        return(
+                            <div> {data} </div>
+                        )
+                    }
+                }
+            </UserContext.Consumer>
+            
+        </div>
+    )
+}
