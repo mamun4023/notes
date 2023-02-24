@@ -1,0 +1,6 @@
+props-drilling : Sending props from parent component to child component using nesting is called props drilling. 
+
+context API : Context Api is a way to send props from parent to child components without props drilling. it can send directly to child component
+
+redux : its a state management system for using state in any component without following any hierachical order 
+
