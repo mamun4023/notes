@@ -1,0 +1,41 @@
+import React  from "react";
+import About from "./about";
+
+
+export default function App(){
+  return(
+    <>
+      
+      <About name = "App compoent" />
+    
+    </>
+  )
+}
+
+
+
+
+
+import Service from './service';
+
+export default function About(props){
+
+    return(
+        <div>
+            <Service name = {props}/>
+            
+        </div>
+    )
+}
+
+
+
+export default function Service(props){
+
+    return(
+        <>
+           
+            <div> {props.name.name} </div>
+        </>
+    )
+}
