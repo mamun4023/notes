@@ -1,0 +1,45 @@
+import React, {useState, useMemo} from "react";
+
+
+export default function App(){
+  
+  const [number, setNumber] = useState(0);
+  const [count, setCount] = useState(0);
+
+  // const calculation = calculationFunction(number);
+
+  const calculation = useMemo(()=> {return calculationFunction(number)}, [number])
+
+  console.log(calculation)
+  
+  return(
+    <>
+
+       <input 
+        type= "text"
+        onChange={(e)=>setNumber(e.target.value)}
+       
+       />
+
+
+        <button
+          onClick={()=>setCount(prev => prev+1)}
+        >
+          {count}
+        </button>
+    
+    </>
+  )
+}
+
+
+
+function calculationFunction(number){
+  let sum = 0;
+  for(let i = 0; i<2000000000; i++){
+    sum = sum+i;
+  }
+
+  return sum+number;
+
+}
