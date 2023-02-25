@@ -1,0 +1,8 @@
+1. create new user
+    CREATE USER "userName" WITH PASSWORD 'password';
+
+2. Make super user permission
+    ALTER USER 'userName' WITH SUPERUSER;
+    
+    
+ 
