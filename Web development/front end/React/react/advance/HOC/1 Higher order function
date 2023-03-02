@@ -13,3 +13,20 @@ function HigherOrderFunction(){
 let add =  HigherOrderFunction();
 
 add()
+
+
+
+
+function counterGenerator(){
+	let i = 0;
+	return function(){
+		console.log(++i)
+	}
+}
+
+
+let counter =  counterGenerator();
+
+counter();
+counter();
+counter();
