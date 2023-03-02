@@ -1,1 +1,16 @@
-, a higher-order component is a function that takes a component and returns a new component.
+A higher-order component is a function that takes a component and returns a new component.
+
+
+
+
+const HOC = (Component) => {
+  return (props) => {
+    return <Component {...props} />;
+  };
+};
+
+const App = () => {
+  return <div>Argument Component</div>;
+};
+
+export default HOC(App);
