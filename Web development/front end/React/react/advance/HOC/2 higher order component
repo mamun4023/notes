@@ -1,3 +1,37 @@
 Higher-Order Components (HOC) is a pattern in React that enables the creation of reusable logic for components. 
 HOC is a function that takes a component as an input and returns a new component with some additional features. 
 In this way, HOC enables you to abstract away common functionality from components and reuse it across different components.
+
+
+
+
+import React from "react";
+
+//  WithTitle component is a HOC 
+const WithTitle = (WrapComponent, title) => {
+  return (props) => {
+    return (
+      <div>
+        <h1> {title} </h1>
+        <WrapComponent {...props} />
+      </div>
+    );
+  };
+};
+
+export default WithTitle;
+
+
+
+import HOC from "./HOC";
+
+const MyComponent = () => {
+  return (
+    <div>
+      <p>This is my COmponent</p>
+    </div>
+  );
+};
+
+export default HOC(MyComponent, "my Title");
+
