@@ -1,0 +1,15 @@
+// function that return another function is called higher order function
+
+
+function HigherOrderFunction(){
+	let a = 10;
+	let b = 10
+	return function(){
+		console.log(a+b)
+	}
+}
+
+
+let add =  HigherOrderFunction();
+
+add()
