@@ -1,0 +1,22 @@
+import { useCallback, useState } from "react";
+
+const useToggle = (values, startIndex = 0) => {
+  const [index, setIndex] = useState(startIndex);
+
+  const toggle = useCallback(
+    () =>
+      setIndex((prevIndex) =>
+        prevIndex >= values.length - 1 ? 0 : prevIndex + 1
+      ),
+    [values]
+  );
+
+  return [values[index], toggle];
+};
+
+export default function App() {
+  const [currentValue, toggleValue] = useToggle(["a", "b", "c", "d"], 2);
+  return (
+    <button onClick={toggleValue}> "currentValue" : {currentValue}</button>
+  );
+}
