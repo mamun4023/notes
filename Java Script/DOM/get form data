@@ -1,0 +1,32 @@
+
+
+
+
+<script type="text/javascript">
+    
+    function MyForm(){
+        const form = document.loginForm;
+        const name = form.name.value;
+        const email = form.email.value;
+
+        
+        const user = {
+            name : name,
+            email : email
+        }
+
+        console.log(user)
+
+
+
+        return false;
+    }
+
+</script>
+
+
+<form name="loginForm" onsubmit=" return MyForm()" method="post">
+    <input type="text" name="name" />
+    <input type="text" name="email" />
+    <input type="submit"  value="submit" />
+</form>
