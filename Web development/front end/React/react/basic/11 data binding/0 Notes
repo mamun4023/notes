@@ -1,0 +1,12 @@
+Data binding is the coupling and synchronization of two data sources; when data changes in
+an element, the bound element gets updated to reflect this change. Data binding is used for 
+many reasons, such as linking an application's user interface (UI) to the data it displays, 
+for data entry,
+
+
+there are two way of binding 
+ 1 one way binidng  (https://www.geeksforgeeks.org/reactjs-data-binding)
+ 2 two way binding
+ 
+ 
+ 
