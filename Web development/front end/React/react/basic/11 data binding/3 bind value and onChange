@@ -1,0 +1,19 @@
+import React, { useState } from "react";
+
+const useDataBind = () => {
+  const [value, setVal] = useState("");
+  const onChange = (e) => setVal(e.target.value);
+  return { value, onChange };
+};
+
+const Demo = (props) => {
+  const nameProps = useDataBind();
+  return (
+    <>
+      <input {...nameProps} placeholder="Enter name here" />
+      <h1>Hello {nameProps.value}</h1>
+    </>
+  );
+};
+
+export default Demo;
