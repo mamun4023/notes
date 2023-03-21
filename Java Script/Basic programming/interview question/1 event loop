@@ -1,0 +1,13 @@
+
+
+What is Event loop?
+
+The event loop is a programming design pattern that waits for and dispatches events.
+JavaScript has a runtime model based on an event loop, which is responsible for executing the code, collecting and processing events.
+event loop works in a cyclic manner, where it continually checks whether or not the call stack is empty. If it is empty, new functions 
+are added from the event queue. If it is not, then the current function call is processed.
+
+
+
+https://www.loginradius.com/blog/engineering/understanding-event-loop/
+
