@@ -1,0 +1,8 @@
+Higher order function : A function which takes another function as an argument or returns a function is known as a higher order function.
+
+Do : 
+ 1. Passing a function as an argument to another function
+ 2. Returning a function from another function
+ 
+ 
+ 
