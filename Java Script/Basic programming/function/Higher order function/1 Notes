@@ -1,8 +1,28 @@
-Higher order function : A function which takes another function as an argument or returns a function is known as a higher order function.
+what is Higher order function ? 
+A function which takes another function as an argument or returns a function is known as a higher order function.
 
 Do : 
  1. Passing a function as an argument to another function
- 2. Returning a function from another function
+ 2. Or returning a function from another function
  
  
- 
+            // Callback function, passed as a parameter in the higher order function
+           function callbackFunction(){
+               console.log('I am  a callback function');
+           }
+
+           // higher order function
+           function higherOrderFunction(func){
+               console.log('I am higher order function')
+               func()
+           }
+
+           higherOrderFunction(callbackFunction);
+
+
+
+Benefits of HOF:
+
+Higher order functions can help improve the legibility of your code by making it more concise
+and easy to understand. This can help speed up the development process and make it easier to 
+debug code.
