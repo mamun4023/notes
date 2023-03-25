@@ -19,7 +19,8 @@ Do :
 
            higherOrderFunction(callbackFunction);
 
-
+There are many Built-in HOF  Functions in JS
+ Map(), filter(), reduce(), find() and more 
 
 Benefits of HOF:
 
