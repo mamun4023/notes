@@ -27,3 +27,6 @@ Benefits of HOF:
 Higher order functions can help improve the legibility of your code by making it more concise
 and easy to understand. This can help speed up the development process and make it easier to 
 debug code.
+
+
+reference : https://www.freecodecamp.org/news/higher-order-functions-in-javascript-explained/
