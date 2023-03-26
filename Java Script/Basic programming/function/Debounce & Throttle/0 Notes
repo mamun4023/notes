@@ -1,0 +1,13 @@
+
+Throttling will delay executing a function. It's let the function call after a certain period of time.
+Debouncing will prevent sequential calls into a single call of function.
+
+
+
+
+https://www.freecodecamp.org/news/javascript-debounce-example/
+
+
+
+example : https://web.archive.org/web/20220117092326/http://demo.nimius.net/debounce_throttle
+
