@@ -2,7 +2,7 @@ Assume "students" is a collection
 
 
 1. Remove all the documents from collection
-    db.students.remove()
+    db.students.remove({})
     
 2. Remove single document from collection
     db.students.remove({id : 10},1)    // 1 refer single document
