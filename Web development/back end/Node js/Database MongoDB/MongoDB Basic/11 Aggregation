@@ -13,4 +13,6 @@ Assume "students" is a collection
 4. Skip first 10 documents from collection
     db.students.find().skip(10)
     
-5. 
+5. Sorting the collection   (1 means accending -1 means descending order)
+    db.students.find({ }).sort( { age : -1 } )   
+
