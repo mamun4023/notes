@@ -1,0 +1,51 @@
+import { Navigation, Pagination, Scrollbar, A11y, EffectCube } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/swiper-bundle.min.css";
+
+import AppButton from "./button";
+export default function App() {
+  return (
+    <div>
+      <Swiper
+        // install Swiper modules
+        modules={[Navigation, Pagination, Scrollbar, A11y, EffectCube]}
+        spaceBetween={50}
+        navigation
+        parallax={true}
+        pagination={{ clickable: true }}
+        onSwiper={(swiper) => console.log(swiper)}
+        onSlideChange={() => console.log("slide change")}
+        effect="cube"
+        slidesPerView={1}
+      >
+        <SwiperSlide>
+          <img
+            style={{ height: "400px", width: "100%" }}
+            src="http://wowslider.com/sliders/demo-18/data1/images/hongkong1081704.jpg"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            style={{ height: "400px", width: "100%" }}
+            src="https://wowslider.com/sliders/demo-18/data1/images/shanghai.jpg"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            style={{ height: "400px", width: "100%" }}
+            src="https://soliloquywp.com/wp-content/uploads/2018/11/nb_ist_cover.jpg"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            style={{ height: "400px", width: "100%" }}
+            src="https://jssors8.azureedge.net/demos/image-slider/img/px-beach-daylight-fun-1430675-image.jpg"
+          />
+        </SwiperSlide>
+
+      
+      </Swiper>
+    </div>
+  );
+}
