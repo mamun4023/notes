@@ -1,0 +1,64 @@
+const mongoose = require("mongoose");
+
+const todoSchema = mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  age: {
+    type: Number,
+    required: true,
+  },
+});
+
+todoSchema.methods = {
+  findActive: function () {
+    return mongoose.model("todo").find(); // return async
+  },
+};
+
+todoSchema.statics = {
+  findJs: function () {
+    return this.find({ name: /h/i });
+  },
+};
+
+module.exports = mongoose.model("todo", todoSchema);
+
+
+
+
+
+
+const express = require("express");
+const mongoose = require("mongoose");
+const app = express();
+const todoModel = require("./schema");
+
+const db_string = "mongodb://127.0.0.1:27017/test";
+
+mongoose.connect(db_string).then(() => {
+  console.log("DB is connected");
+});
+
+app.post("/todo", (req, res) => {
+  let data = new todoModel({
+    name: "hamid",
+    age: 10,
+  });
+
+  data.save().then((result) => {
+    res.send(result);
+  });
+});
+
+app.get("/todo", async (req, res) => {
+  // let todo = new todoModel();
+  // let data = await todo.findActive();
+  let data = await todoModel.findJs();
+  res.send(data);
+});
+
+app.listen(3000, () => {
+  console.log("server is running...");
+});
