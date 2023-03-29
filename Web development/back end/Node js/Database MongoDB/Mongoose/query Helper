@@ -1,0 +1,31 @@
+
+const todoSchema = mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  age: {
+    type: Number,
+    required: true,
+  },
+});
+
+todoSchema.query = {
+  search: function (arg) {
+    return this.find({ name: new RegExp(arg, "i") });
+  },
+};
+
+
+
+app.get("/todo", async (req, res) => {
+  todoModel
+    .find()
+    .select({ _id: 0, __v: 0 })
+    .search("ha")
+    .then((result) => {
+      res.send(result);
+    });
+
+});
+
