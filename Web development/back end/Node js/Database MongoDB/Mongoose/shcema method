@@ -1,0 +1,36 @@
+const express = require("express");
+const app = express();
+const TodoModel = require("./schema");
+
+app.get("/todo", async(req, res) => {
+  const todo = new TodoModel();
+  const data = await todo.findActive();
+});
+
+app.listen(3000, () => {
+  console.log("server is running...");
+});
+
+
+
+
+const mongoose = require("mongoose");
+
+const todoSchema = mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  age: {
+    type: Number,
+    required: true,
+  },
+});
+
+todoSchema.methods = {
+  findActive: function () {
+    return mongoose.model("todo").find();  // return async 
+  },
+};
+
+module.exports = mongoose.model("todo", todoSchema);
