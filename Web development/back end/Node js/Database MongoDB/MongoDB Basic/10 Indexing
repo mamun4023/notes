@@ -24,6 +24,9 @@ about that you have to indexing only unique value of documents.
     db.posts.dropIndex({id : 1})
 
 
+6. show index
+    db.collection_name.getIndexes()
+  
 
 referenc : https://www.mongodb.com/docs/manual/indexes/
 
