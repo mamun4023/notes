@@ -1,15 +1,10 @@
 
-
-
-<script type="text/javascript">
-	
-	var d = 10;
-	function func() {
-		document.write(d);
-			}
-	func();
+// global scope 	
+var d = 10;
+function func() {
+   document.write(d);
+}
+func();
 
 	
-
-</script>
     
