@@ -1,8 +1,5 @@
 
 
-
-<script type="text/javascript">
-
 function Emp(id,name){
 	this.id = id;
 	this.name = name;
@@ -13,6 +10,3 @@ function permanentEmp(id,name){
 }
 
 document.write( new permanentEmp(111,"Tohid").name);
-
-</script>
-    
