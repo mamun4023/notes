@@ -1,9 +1,6 @@
 
 
 
-<script type="text/javascript">
-	
-	
 
 	function func() {
 		window.d = 10;
@@ -13,5 +10,4 @@
 
 	document.write(window.d);
 
-</script>
     
