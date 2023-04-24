@@ -1,0 +1,23 @@
+import { useState } from "react";
+
+export default function App() {
+   const [value, toggleValue] = useTogggle(false);
+
+   return (
+      <div>
+         <button onClick={toggleValue}>{value.toString()}</button>
+         <button onClick={() => toggleValue(true)}>make true</button>
+         <button onClick={() => toggleValue(false)}>Make false</button>
+      </div>
+   );
+}
+
+const useTogggle = (defaultValue) => {
+   const [value, setValue] = useState(defaultValue);
+
+   function toggleValue(value) {
+      setValue((prev) => (typeof value === "boolean" ? value : !prev));
+   }
+
+   return [value, toggleValue];
+};
