@@ -1,0 +1,16 @@
+Generators provide a new way to work with functions and iterators.
+
+Using a generator,
+
+ -- we can stop the execution of a function from anywhere inside the function
+ -- and continue executing code from a halted position
+ 
+ 
+ 
+ // define a generator function
+function* generator_function() {
+   ... .. ...
+}
+
+// creating a generator
+const generator_obj = generator_function();
