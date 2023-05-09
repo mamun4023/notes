@@ -1,8 +1,4 @@
 
-email : mamun754023@gmail.com
-pass : Rohsid 01734754023
-
-
 
 1. initialize the git
 	git init
