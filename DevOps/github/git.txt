@@ -1,3 +1,4 @@
+ 
 
 
 1. initialize the git
@@ -113,5 +114,8 @@
 	git remote -v
 
 
+
+
+visual practise Link : https://git-school.github.io/visualizing-git
 	
 	 
