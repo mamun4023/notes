@@ -15,7 +15,6 @@
 
 5. show git status / unstage positiono
 	git status
-
 	
 6. staging single the file 
 	git add 'fileName.ex'
@@ -45,7 +44,6 @@
 
 14 see the latest changes
 	git diff
-
 
 15. find diffrence between two commit
 	git diff commitNumber1	commitNumber2
@@ -84,12 +82,20 @@
 26. merging with master branch
 	git merge branchName
 
-27.  remove code from file
+27.  Save code into temporary file
 	git stash
 
-28. back to previos data
+28. Back to last stash (stash is stack)
 	git stash pop
 
-29. 
+29. Show all stash
+	git stash list
+
+30. Go into a particular Stash
+	git stash pop stash@{2}      // 2 is stash number
+	
+31. Clear stash list 
+	git stash clear
+
 	
 	 
