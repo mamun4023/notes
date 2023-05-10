@@ -83,9 +83,11 @@
 4. Create a new branch and switch
 	git checkout -b branchName
 
-5. merging with master branch
+5. merging with master branch (keep the history of the all commit)
 	git merge branchName
-	
+
+6. Rebase (its make a new commit)
+	git rebase branch name
 	
 
 ============ STASH Commands ========== 
@@ -104,6 +106,12 @@
 	
 5. Clear stash list 
 	git stash clear
+
+
+============ REMOTE Commands ========== 
+1. Check repository 
+	git remote -v
+
 
 	
 	 
