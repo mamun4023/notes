@@ -69,32 +69,40 @@
 
 22  git pull
 
+============ BRANCH Commands ========== 
 
-23. create a branch
+1. create a branch
 	git branch firstBranch
 
-24. show branch 
+2. show branch 
 	git branch 
 
-25. switch to another branch
+3. switch to another branch
 	git checkout BranchName
+	
+4. Create a new branch and switch
+	git checkout -b branchName
 
-26. merging with master branch
+5. merging with master branch
 	git merge branchName
+	
+	
 
-27.  Save code into temporary file
+============ STASH Commands ========== 
+	
+1.  Save code into temporary file
 	git stash
 
-28. Back to last stash (stash is stack)
+2. Back to last stash (stash is stack)
 	git stash pop
 
-29. Show all stash
+3. Show all stash
 	git stash list
 
-30. Go into a particular Stash
+4. Go into a particular Stash
 	git stash pop stash@{2}      // 2 is stash number
 	
-31. Clear stash list 
+5. Clear stash list 
 	git stash clear
 
 	
