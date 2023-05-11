@@ -70,6 +70,8 @@
 
 22  git pull
 
+
+
 ============ BRANCH Commands ========== 
 
 1. create a branch
@@ -83,12 +85,18 @@
 	
 4. Create a new branch and switch
 	git checkout -b branchName
+		
+6. delete a branch (we have to switch another branch)
+  	git branch -D test_branch
+
+7  rename the branch 
+  	git branch -m oldName newName
 
 5. merging with master branch (keep the history of the all commit)
 	git merge branchName
 
-6. Rebase (its make a new commit)
-	git rebase branch name
+8. Rebase (its make a new commit)
+	git rebase branchName
 	
 
 ============ STASH Commands ========== 
