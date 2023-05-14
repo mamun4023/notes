@@ -1,0 +1,87 @@
+Access and refresh tokens are used in web applications for authentication and authorization purposes.
+
+Access tokens are used to grant access to protected resources on a web server. When a user logs in to a web application, 
+the server generates an access token and sends it back to the client. The client can then use this token to access resources 
+on the server that require authentication.
+
+Refresh tokens, on the other hand, are used to obtain a new access token when the current one expires. Access tokens typically
+have a short lifespan, and the server can invalidate them after a certain amount of time or if the user logs out. When the access 
+token expires, the client can use the refresh token to obtain a new access token without requiring the user to log in again.
+
+In summary, access tokens are used to access protected resources on the server, and refresh tokens are used to obtain a new access token when the current one expires.
+
+
+
+============================== CODE =================================
+
+const express = require("express");
+const app = express();
+const jwt = require("jsonwebtoken");
+const bodyParser = require("body-parser");
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+app.post("/login", (req, res) => {
+   let email = "tohid@gmail.com";
+
+   const accessToken = jwt.sign({ email: email }, "accessSecret", {
+      expiresIn: "2m",
+   });
+   const refreshToken = jwt.sign({ email: email }, "refreshSecret", {
+      expiresIn: "10m",
+   });
+   //Ps. The expiresIn time is just for testing purpose you can    change it later accordingly.
+   return res.status(200).json({ accessToken, refreshToken });
+});
+
+function isAuthenticated(req, res, next) {
+   try {
+      let token = req.get("authorization");
+      if (!token) {
+         return res.status(404).json({
+            success: false,
+            msg: "Token not                                   found",
+         });
+      }
+      token = token.split(" ")[1];
+      const decoded = jwt.verify(token, "accessSecret");
+      req.email = decoded.email;
+      next();
+   } catch (error) {
+      return res.status(401).json({ success: false, msg: error.message });
+      // console.error(error);
+   }
+}
+
+app.post("/refresh", (req, res) => {
+   const { email, refreshToken } = req.body;
+   const isValid = verifyRefresh(email, refreshToken);
+   if (!isValid) {
+      return res
+         .status(401)
+         .json({ success: false, error: "Invalid token,try login again" });
+   }
+   const accessToken = jwt.sign({ email: email }, "accessSecret", {
+      expiresIn: "2m",
+   });
+   return res.status(200).json({ success: true, accessToken });
+});
+
+function verifyRefresh(email, token) {
+   try {
+      const decoded = jwt.verify(token, "refreshSecret");
+      return decoded.email === email;
+   } catch (error) {
+      // console.error(error);
+      return false;
+   }
+}
+
+app.get("/user", isAuthenticated, (req, res) => {
+   res.send("working");
+});
+
+app.listen(3000, () => {
+   console.log("server is running...");
+});
