@@ -1,0 +1,51 @@
+// import Swiper core and required modules
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+
+const SwiperButtonNext = ({ children }) => {
+   const swiper = useSwiper();
+   return <button onClick={() => swiper.slideNext()}>{children}</button>;
+};
+
+const SwiperButtonPrv = ({ children }) => {
+   const swiper = useSwiper();
+   return (
+      <button style={{ padding: 10 }} onClick={() => swiper.slidePrev()}>
+         {children}
+      </button>
+   );
+};
+
+export default function App() {
+   return (
+      <div>
+         <Swiper
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            navigation
+            spaceBetween={20}
+            slidesPerView={1}
+         >
+            <SwiperButtonNext>Next</SwiperButtonNext>
+            <SwiperButtonPrv>prev</SwiperButtonPrv>
+
+            <SwiperSlide>
+               <img src=" https://jssors8.azureedge.net/demos/image-slider/img/faded-monaco-scenery-evening-dark-picjumbo-com-image.jpg" />
+            </SwiperSlide>
+            <SwiperSlide>
+               <img src="https://jssors8.azureedge.net/demos/image-slider/img/px-beach-daylight-fun-1430675-image.jpg" />
+            </SwiperSlide>
+
+            <SwiperSlide>
+               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ63RDANWrto9CpgepRgTTK6cTzhuuLr8S_1i11YAkiCyMk_MiUmTros2ziRE5DxOHOSPE&usqp=CAU" />
+            </SwiperSlide>
+         </Swiper>
+      </div>
+   );
+}
