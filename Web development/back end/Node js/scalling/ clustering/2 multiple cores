@@ -30,3 +30,10 @@ if(cluster.isPrimary){
     })
     
 }
+
+
+
+
+
+// loadtest for both server
+ loadtest -n 100 -c 100 --rps 200 http://localhost:3000
