@@ -1,0 +1,41 @@
+const express = require('express');
+const os = require('os');
+const cluster = require('cluster');
+
+const cpuNumbers = os.cpus().length;
+
+if(cluster.isPrimary){
+    for(let i = 0; i<cpuNumbers; i++){
+        cluster.fork()
+    }
+
+    cluster.on('exit', ()=>{
+        cluster.fork();
+    })
+}else{
+    const app = express();
+    app.get('/', async(req, res)=>{
+        let result = 0;
+
+        for(let i = 0; i<2000000000; i++){
+            result+=i;
+        }
+
+        return res.json({"processID" : process.pid, result })
+    })
+    app.get('/dd', async(req, res)=>{
+        let result = 0;
+
+        for(let i = 0; i<2000000000; i++){
+            result+=i;
+        }
+
+        return res.json({"processID" : process.pid, result })
+    })
+
+    app.listen(3000, ()=>{
+        console.log(`PORT 3000 PID  ${process.pid}`)
+    })
+}
+
+
