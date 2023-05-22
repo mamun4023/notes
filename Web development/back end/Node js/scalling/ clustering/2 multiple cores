@@ -17,25 +17,16 @@ if(cluster.isPrimary){
     app.get('/', async(req, res)=>{
         let result = 0;
 
-        for(let i = 0; i<2000000000; i++){
+        for(let i = 0; i<50_000_000; i++){
             result+=i;
         }
 
         return res.json({"processID" : process.pid, result })
     })
-    app.get('/dd', async(req, res)=>{
-        let result = 0;
 
-        for(let i = 0; i<2000000000; i++){
-            result+=i;
-        }
-
-        return res.json({"processID" : process.pid, result })
-    })
 
     app.listen(3000, ()=>{
         console.log(`PORT 3000 PID  ${process.pid}`)
     })
+    
 }
-
-
