@@ -1,0 +1,61 @@
+import React from "react";
+import { FormikProvider, useFormik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+
+import "./App.css";
+
+export default function App() {
+   const validationSchema = Yup.object().shape({
+      title: Yup.string().required("Title is required"),
+   });
+
+   const formik = useFormik({
+      initialValues: {
+         title: "",
+      },
+      validationSchema: validationSchema,
+      onSubmit: (values) => {
+         console.log(values);
+      },
+   });
+
+   const {
+      errors,
+      touched,
+      values,
+      isSubmitting,
+      handleSubmit,
+      getFieldProps,
+   } = formik;
+   return (
+      <div>
+         <FormikProvider value={formik}>
+            <Form
+               encType="multipart/form-data"
+               autoComplete="off"
+               noValidate
+               onSubmit={handleSubmit}
+            >
+               <Field
+                  type="text"
+                  name="title"
+                  // style={
+                  //    errors.title && touched.title
+                  //       ? { border: "1px solid red" }
+                  //       : null
+                  // }
+                  className={
+                     errors.title && touched.title ? " border-red-700" : null
+                  }
+                  {...getFieldProps("title")}
+               />
+               <ErrorMessage
+                  name="title"
+                  render={(msg) => <p className="text-red-600">{msg}</p>}
+               />
+               <button type="submit">Submit</button>
+            </Form>
+         </FormikProvider>
+      </div>
+   );
+}
