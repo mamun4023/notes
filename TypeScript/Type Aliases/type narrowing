@@ -1,0 +1,13 @@
+type ID  = number | string;
+
+// narrowing 
+function PrintId(id : ID){
+    if(typeof id === 'string'){
+        console.log(id.toUpperCase())
+    }else{
+        console.log(id)
+    }
+}
+
+PrintId(1)
+PrintId("hello")
