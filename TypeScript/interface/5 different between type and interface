@@ -1,0 +1,27 @@
+
+// interface allow duplicated 
+interface Book{
+    title : string,
+    writter : string
+}
+
+interface Book{
+    price : number
+}
+
+const book: Book = {
+    title : 'The Habits',
+    writter : 'H M Akd',
+    price : 10
+   
+}
+
+// type does not allow to duplicated 
+type Book{
+    title : string,
+    writter : string
+}
+
+type Book{
+    price : number
+}
