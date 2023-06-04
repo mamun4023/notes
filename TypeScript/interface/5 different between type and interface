@@ -1,5 +1,8 @@
 
 // interface allow duplicated 
+// interface only use for object
+// interface does not allow primitive type like
+// interface id = string    
 interface Book{
     title : string,
     writter : string
@@ -17,6 +20,11 @@ const book: Book = {
 }
 
 // type does not allow to duplicated 
+// it is use for object and primitieve data like 
+// type allow to define primitive type
+//type id = string;
+
+
 type Book{
     title : string,
     writter : string
@@ -25,3 +33,5 @@ type Book{
 type Book{
     price : number
 }
+
+
