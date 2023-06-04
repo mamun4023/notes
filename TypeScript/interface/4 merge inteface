@@ -1,0 +1,17 @@
+
+// automatic merging two interface 
+interface Book{
+    title : string,
+    writter : string
+}
+
+interface Book{
+    price : number
+}
+
+const book: Book = {
+    title : 'The Habits',
+    writter : 'H M Akd',
+    price : 10
+   
+}
