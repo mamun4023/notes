@@ -1,0 +1,47 @@
+
+​ What is Shell ?
+  A shell is a computer program that exposes an operating system's services to a human user or other programs.
+  
+  
+  A Shell provides you with an interface to the Unix system. It gathers input from you and executes programs based on that input. 
+  When a program finishes executing, it displays that program's output. Shell is an environment in which we can run our commands, 
+  programs, and shell scripts. There are different flavors of a shell, just as there are different flavors of operating systems. 
+  Each flavor of shell has its own set of recognized commands and functions.
+  
+  
+​ Shell Prompt
+  The prompt, $, which is called the command prompt, is issued by the shell. While the prompt is displayed, you can type a command.
+  Shell reads your input after you press Enter.
+
+
+
+​ Shell Types
+  an Unix, there are two major types of shells −
+      • Bourne shell − If you are using a Bourne-type shell, the $ character is the default prompt.
+      • C shell − If you are using a C-type shell, the % character is the default prompt.
+  The Bourne Shell has the following subcategories −
+      • Bourne shell (sh)
+      • Korn shell (ksh)
+      • Bourne Again shell (bash)
+      • POSIX shell (sh)
+  The different C-type shells follow −
+      • C shell (csh)
+      • TENEX/TOPS C shell (tcsh)
+  The original Unix shell was written in the mid-1970s by Stephen R. Bourne while he was at the AT&T Bell Labs in New Jersey.
+  
+  
+  
+​ Shell Scripts
+  The basic concept of a shell script is a list of commands, which are listed in the order of execution. A good shell script will have comments,
+
+  Shell scripts have 
+   # variable
+   # conditional 
+   # read and write file
+   # and several operations	
+   
+   
+   
+   
+
+
