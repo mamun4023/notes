@@ -40,8 +40,15 @@
    # read and write file
    # and several operations	
    
-   
-   
+  
+​ How to run Shell Scripts 
+   # put commands in your script file (text.sh)
+      echo "Hello script"
+   # Save the file with .sh extension (text.sh)
+   # Allow permission to executable mode 
+      $chmod +x test.sh
+   # run the script
+      $./test.sh
    
 
 
