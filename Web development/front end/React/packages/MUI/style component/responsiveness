@@ -1,0 +1,14 @@
+
+const AppButton = styled(Button)(({ theme}) => ({
+    [theme.breakpoints.up("mobile")]: {
+       backgroundColor: "orange",
+    },
+    [theme.breakpoints.up("tablet")]: {
+       backgroundColor: "yellow",
+       color: "black",
+    },
+    [theme.breakpoints.up("desktop")]: {
+       backgroundColor: "green",
+       color: "white",
+    },
+}));
