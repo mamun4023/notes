@@ -1,0 +1,5 @@
+const AppButton = styled(Button)(({ theme, status }) => ({
+   backgroundColor: status ? "red" : "orange",
+}));
+
+<AppButton status = {true} >buttonText </AppButton>
