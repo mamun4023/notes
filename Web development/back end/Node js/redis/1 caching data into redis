@@ -1,0 +1,34 @@
+const { default: axios } = require("axios");
+const { json } = require("body-parser");
+const express = require("express");
+const app = express();
+const redis = require("redis");
+
+const client = redis.createClient();
+
+client.on("error", (err) => console.log("Redis client error", err));
+
+client.connect().then(() => {
+   console.log("Redis connected");
+});
+
+app.get("/", async (req, res) => {
+   const cachedData = await client.get("user");
+
+   if (cachedData) {
+      return res.json(JSON.parse(cachedData));
+   }
+
+   const response = await axios.get(
+      "https://jsonplaceholder.typicode.com/albums"
+   );
+
+   client.set("user", JSON.stringify(response.data));
+   return res.json({
+      data: response.data,
+   });
+});
+
+app.listen(3000, () => {
+   console.log("Server is running");
+});
