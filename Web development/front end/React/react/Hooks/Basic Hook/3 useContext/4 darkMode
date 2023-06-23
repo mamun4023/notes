@@ -1,0 +1,102 @@
+
+// Create Context for darkmode
+
+import { createContext, useReducer } from "react";
+const initialState = {
+   darkMode: false,
+};
+
+export const darkModeContext = createContext(initialState);
+
+const Reducer = (state = initialState, action) => {
+   switch (action.type) {
+      case "LIGHT": {
+         return {
+            darkMode: false,
+         };
+      }
+      case "DARK": {
+         return {
+            darkMode: true,
+         };
+      }
+      case "TOGGLE": {
+         return {
+            darkMode: !state.darkMode,
+         };
+      }
+
+      default:
+         return state;
+   }
+};
+
+export const DarkMode = ({ children }) => {
+   const [state, dispatch] = useReducer(Reducer, initialState);
+   return (
+      <darkModeContext.Provider value={{ darkMode: state.darkMode, dispatch }}>
+         {children}
+      </darkModeContext.Provider>
+   );
+};
+
+
+
+// Wrap index.js page
+
+import { DarkMode } from "./context";
+
+const root = createRoot(document.getElementById("root"));
+
+root.render(
+   <DarkMode>
+      <App />
+   </DarkMode>
+);
+
+
+
+// using Darkmode here
+
+import Sidebar from "./sidebar";
+import { darkModeContext } from "./context";
+
+export default function App() {
+   const { darkMode } = useContext(darkModeContext);
+
+   return (
+      <div
+         className="h-screen"
+         style={{
+            background: darkMode ? "black" : "white",
+            color: darkMode ? "white" : "black",
+         }}
+      >
+         <Sidebar />
+      </div>
+   );
+}
+
+
+
+// changing darkmode
+import { useContext } from "react";
+
+import { darkModeContext } from "./context";
+
+export default function Sidebar() {
+   const { dispatch } = useContext(darkModeContext);
+   return (
+      <div>
+         Sidebar
+         <button className="p-2"> Light </button>
+         <button onClick={() => dispatch({ type: "TOGGLE" })}>dark</button>
+      </div>
+   );
+}
+
+
+
+
+
+
