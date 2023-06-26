@@ -1,0 +1,42 @@
+
+// without any data
+
+export default function SSG() {
+   return (
+      <div>
+         <h1> Static site geration </h1>
+      </div>
+   );
+}
+
+
+// with data 
+
+export default function SSG() {
+   const Data = [
+      {
+         id: 1,
+         name: "Tohid",
+         title: "Web Developer",
+      },
+      {
+         id: 2,
+         name: "Hasan",
+         title: "UI Designer",
+      },
+      {
+         id: 3,
+         name: "Akram",
+         title: "UX Designer",
+      },
+   ];
+
+   return (
+      <div>
+         <h1> Static site geration </h1>
+         {Data.map((data) => (
+            <div key={data.id}> {data.name} </div>
+         ))}
+      </div>
+   );
+}
