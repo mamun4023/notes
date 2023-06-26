@@ -1,0 +1,28 @@
+// CSR
+"use client";
+import { useEffect, useState } from "react";
+
+export default function Dashboard() {
+   const [data, setData] = useState([]);
+
+   const FetchAPi = async () => {
+      const res = await fetch("https://jsonplaceholder.typicode.com/users");
+      const data = await res.json();
+      setData(data);
+   };
+
+   useEffect(() => {
+      FetchAPi();
+   });
+   return (
+      <div>
+         <h2> Client side rendering</h2>
+
+         {data.length == 0 ? (
+            <div>Loading... </div>
+         ) : (
+            data.map((d) => <div key={d.id}> {d.name} </div>)
+         )}
+      </div>
+   );
+}
