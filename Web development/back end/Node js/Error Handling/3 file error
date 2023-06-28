@@ -1,0 +1,40 @@
+const express = require("express");
+const app = express();
+const fs = require("fs");
+
+app.get("/", (req, res) => {
+   res.status(200).json({
+      message: "main route",
+   });
+});
+
+app.get("/file", (req, res, next) => {
+   fs.readFileSync("/data.text", (err, result) => {
+      if (err) {
+         next(err);
+      }
+   });
+});
+
+app.get("/user", (req, res) => {
+   // res.send(a);
+   console.log(ddd);
+});
+
+// handle unexpected value error
+app.use((err, req, res, next) => {
+   console.log("error : ", err.message);
+   return res.status(404).json({
+      error: err.message,
+   });
+});
+
+app.use("*", (req, res) => {
+   res.status(500).json({
+      message: "Route does not exist",
+   });
+});
+
+app.listen(3000, () => {
+   console.log("server runing at 3000");
+});
