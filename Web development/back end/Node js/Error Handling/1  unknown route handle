@@ -1,0 +1,12 @@
+const express = require("express");
+const app = express();
+
+app.use("*", (req, res) => {
+   res.status(500).json({
+      message: "Route does not exist",
+   });
+});
+
+app.listen(3000, () => {
+   console.log("server runing at 3000");
+});
