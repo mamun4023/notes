@@ -77,8 +77,10 @@ Check the manual for more detail (man ls).
 
 15. shutdown : To shutdown the computer from terminal
 	shutdown -h 
+ 	shutdown -h 21:00
+	shutdown -h now | at 23:00 2023-07-01
 	where time can be 0 if you want to shutdown now or specify the exact time such as 10:30.
-
+	
 16. restart : Restart the computer
 	restart
 	Package Management
