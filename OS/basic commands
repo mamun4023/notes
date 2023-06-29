@@ -25,8 +25,9 @@ Check the manual for more detail (man ls).
 3. pwd : print the current/working directory
 	pwd
 	
-4. mkdir : make/create directory.
+4. mkdir/rmdir : create/remove directory.
 	mkdir dirName
+	rmdir dirName
 
 5. rm : remove/delete file/directory
 	rm useless.sh
