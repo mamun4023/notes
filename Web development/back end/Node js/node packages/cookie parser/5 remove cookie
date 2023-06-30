@@ -1,0 +1,28 @@
+const express = require("express");
+const app = express();
+const cookieParser = require("cookie-parser");
+
+app.use(cookieParser("secret"));
+
+app.get("/", (req, res) => {
+   res.cookie("token", "tokendjfldjfldfldf", {
+      httpOnly: true,
+      signed: true,
+      // maxAge: "",
+      // expires: "",
+   });
+   res.send("cooke saved");
+});
+
+// app.get("/", (req, res) => {
+//    let token = req.signedCookies.token;
+//    console.log(token);
+// });
+
+app.get("/remove", (req, res) => {
+   res.clearCookie("token").send(" Cookie has been cleared");
+});
+
+app.listen(3000, () => {
+   console.log("server runing at 3000");
+});
