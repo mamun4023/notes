@@ -1,0 +1,17 @@
+const express = require("express");
+const app = express();
+const cookieParser = require("cookie-parser");
+
+app.use(cookieParser("secret"));
+
+ app.get("/", (req, res) => {
+    res.cookie("token", "tokendjfldjfldfldf", {
+       httpOnly: true,
+       signed: true,
+    });
+    res.send("cooke saved");
+ });
+
+app.listen(3000, () => {
+   console.log("server runing at 3000");
+});
