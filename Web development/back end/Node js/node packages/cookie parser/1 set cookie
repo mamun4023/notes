@@ -6,7 +6,11 @@ const cookieParser = require("cookie-parser");
 app.use(cookieParser());
 
 app.get("/", (req, res) => {
-   res.cookie("token", "tokendjfldjfldfldf", { httpOnly: true });
+   res.cookie("token", "tokendjfldjfldfldf", { 
+      httpOnly: true   // not be accesible in client side
+      maxAge : 1000  // millisecond
+      expires: new Date("26 july 2021")
+   });
    res.send("cooke saved");
 });
 
