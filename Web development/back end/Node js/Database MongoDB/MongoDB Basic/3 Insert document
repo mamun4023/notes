@@ -1,16 +1,33 @@
 Assume that "students" is a current collection name 
 
-
 1. Insert single document
     db.students.insert({"name" : "Tohid", age : "20"})
+        or 
+    db.students.insertOne({"name" : "Tohid", "age" : "20"})
     
 2. Insert multiple documents
     db.students.insert(
-      [
-        { "name" : "Tohid"},
-        { "name" : "Akram"},
-        { "name" : "Iftikar"}
-      ]
-   )
-   
-3.
+          [
+            { "name" : "Tohid"},
+            { "name" : "Akram"},
+            { "name" : "Iftikar"}
+          ]
+    )
+        or 
+    db.students.insertMany(
+          [
+            { "name" : "Tohid"},
+            { "name" : "Akram"},
+            { "name" : "Iftikar"}
+          ]
+    )
+
+
+Additional Methods
+
+    db.collection.updateOne() when used with the upsert: true option.
+    db.collection.updateMany() when used with the upsert: true option.
+    db.collection.findAndModify() when used with the upsert: true option.
+    db.collection.findOneAndUpdate() when used with the upsert: true option.
+    db.collection.findOneAndReplace() when used with the upsert: true option.
+    db.collection.bulkWrite().
