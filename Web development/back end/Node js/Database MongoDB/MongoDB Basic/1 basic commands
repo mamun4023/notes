@@ -13,4 +13,5 @@
 5. Drop Database
     db.dropDatabase()
 
-6
+6. display collections under databse
+    show collections
