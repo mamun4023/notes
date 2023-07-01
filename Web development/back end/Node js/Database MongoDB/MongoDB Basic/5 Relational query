@@ -1,7 +1,7 @@
 Assume "students" is a collection
 
 
-1. Filter data with greater than (>)  relationla operator
+1. Filter data with greater than (>)  relational operator
     db.students.find({id : {$gt : 1}})
 
 
