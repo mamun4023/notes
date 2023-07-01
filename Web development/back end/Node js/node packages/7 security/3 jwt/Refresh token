@@ -1,0 +1,94 @@
+const express = require("express");
+const app = express();
+const jwt = require("jsonwebtoken");
+const bodyParser = require("body-parser");
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+// verify access token
+function isAuthenticated(req, res, next) {
+   let token = req.header("token");
+   if (!token) {
+      return res.status(404).json({
+         message: "There is no token",
+      });
+   }
+   try {
+      const verified = jwt.verify(token, "accessSecret");
+      req.user = verified;
+      next();
+   } catch (err) {
+      res.status(404).json({
+         error: "Token is invalid",
+      });
+   }
+}
+
+// verify refresh token
+function isVerifyToken(req, res, next) {
+   const { refreshToken } = req.body;
+
+   if (!refreshToken) {
+      return res.status(404).json({
+         error: "there is no refresh token",
+      });
+   }
+
+   try {
+      const verified = jwt.verify(refreshToken, "refreshSecret");
+      req.user = verified;
+      next();
+   } catch (err) {
+      return res.status(404).json({
+         error: "Refresh token is invalid",
+      });
+   }
+}
+
+app.post("/login", (req, res) => {
+   const { email } = req.body;
+   if (!email) {
+      return res.status(400).json({
+         success: false,
+         error: "enter email",
+      });
+   }
+
+   const accessToken = jwt.sign({ email: email }, "accessSecret", {
+      expiresIn: "20s",
+   });
+
+   const refreshToken = jwt.sign({ email: email }, "refreshSecret", {
+      expiresIn: "24h",
+   });
+   return res.header("token", accessToken).json({
+      message: "Login successful",
+      accesToken: accessToken,
+      refreshToken: refreshToken,
+   });
+});
+
+app.post("/refresh", isVerifyToken, (req, res) => {
+   const email = req.user.email;
+
+   const accesToken = jwt.sign({ email: email }, "accessSecret", {
+      expiresIn: "20s",
+   });
+
+   return res.status(202).json({
+      accesToken: accesToken,
+   });
+});
+
+app.get("/protected", isAuthenticated, (req, res, next) => {
+   res.status(202).json({
+      user: req.user,
+   });
+
+   next();
+});
+
+app.listen(4000, () => {
+   console.log("server is running...");
+});
