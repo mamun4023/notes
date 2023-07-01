@@ -1,0 +1,27 @@
+
+
+// to save cookie in browser must have set
+// backend
+app.use(cors({ 
+  origin: [
+      "http://localhost:3000"
+   ],
+  credentials: true, 
+}));
+
+
+
+// frontend 
+
+   fetch("http://localhost:4000/login", {
+         method: "POST",
+         headers: {
+            "Content-Type": "application/json",
+         },
+         credentials: "include",
+         body: JSON.stringify(data),
+      }).then((res) => {
+         const respnse = res.json();
+         console.log(respnse);
+      });
+   };
