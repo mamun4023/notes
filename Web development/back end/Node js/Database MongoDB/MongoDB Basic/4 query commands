@@ -12,4 +12,7 @@ Assume "students" is a collection name
 4. Find collection using id
     db.students.find({"id" : "2"})
 
-5. 
+5. Find data of inner object
+    db.students.find({"name.firstName" : "Tohid"})
+
+6. 
