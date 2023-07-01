@@ -1,13 +1,14 @@
+// backend
 
 
 // to save cookie in browser must have set
-// backend
 app.use(cors({ 
   origin: [
       "http://localhost:3000"
    ],
   credentials: true, 
 }));
+
 
 
 
