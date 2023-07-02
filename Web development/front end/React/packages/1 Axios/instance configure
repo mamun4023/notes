@@ -1,0 +1,19 @@
+
+const Axios = axios.create({
+   baseURL: "https://jsonplaceholder.typicode.com",
+   timeout: 1000,
+   headers: {
+      "Content-Type": "Appliction/json",
+      common: {
+         Authorization: "Auth TOken",
+      },
+   },
+});
+
+export default function App() {
+   Axios.get("/posts").then((res) => {
+      console.log(res.data);
+   });
+
+   return <div className=" flex justify-center items-center">WOkring</div>;
+}
