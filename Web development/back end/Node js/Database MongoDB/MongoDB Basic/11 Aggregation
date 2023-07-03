@@ -16,3 +16,53 @@ Assume "students" is a collection
 5. Sorting the collection   (1 means accending -1 means descending order)
     db.students.find({ }).sort( { age : -1 } )   
 
+
+
+
+
+	Aggregation Framework
+
+1 . Match Staage
+	 {$match:  {city : "New York"}}
+	 {$match:  {age : {$gre : 23 }}
+	 {$match: {$and : [{gender : 'male'}, {age : {$gte : 23}}]}}
+	 
+	
+2. Group Stage
+
+	{$group:  {_id : "$name"}}
+	{$group:  {_id : {age : "$age, gender : "$gender"}}
+
+3. Math & Group
+	aggregate([
+	   {$match:  {city : "New York"}},
+	   {$group:  {_id : "$name"}}	
+	])	
+	
+
+4. Count all documents
+	aggregate({$count : "allDocumentsCount"})
+
+
+5. Sort Stage
+	{$sort : {name : 1}  // asscending order
+	{$sort : {name : -1} // descending order
+
+
+6. Project stage
+	{$project: {_id: 0, name : 1}}
+	{$project: {_id : 0, "company.title" : 1}}
+	$project: {"newtitle" : "$name"}}
+
+
+	
+7. Limit stage
+	
+	{$limit: 100}
+
+
+
+7. Lookup
+
+	aggregate(
+	{$lookup : {from : 'authors', localField : 'authorid', foreignField : '_id', as : "Authors"}})
