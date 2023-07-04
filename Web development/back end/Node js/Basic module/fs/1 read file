@@ -1,19 +1,8 @@
 const fs = require("fs");
-let data = "";
 
+// asynchronous read
 fs.readFile("input.txt", (err, result) => {
    if (!err) {
-      data = result.toString();
-      let arr = data.split(" ");
-      let longStr = 0;
-      let longString = "";
-      for (let data of arr) {
-         if (data.length > longStr) {
-            longStr = data.length;
-            longString = data;
-         }
-      }
-
-      console.log(longString);
+      console.log(result.toString());
    }
 });
