@@ -6,3 +6,9 @@ fs.readFile("input.txt", (err, result) => {
       console.log(result.toString());
    }
 });
+
+
+
+// synchronous read
+const data = fs.readFileSync("input.txt").toString();
+console.log(data);
