@@ -1,0 +1,11 @@
+const fs = require("fs");
+
+// // async delete
+fs.unlink("index.txt", (err) => {
+   if (!err) {
+      console.log("file has been Deleted");
+   }
+});
+
+// sync delete
+fs.unlinkSync("index.txt");
