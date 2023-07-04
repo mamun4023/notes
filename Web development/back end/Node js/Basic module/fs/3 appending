@@ -1,0 +1,9 @@
+const fs = require("fs");
+
+fs.appendFile("index.txt", "Async Append ", (err) => {
+   if (!err) {
+      console.log("appended");
+   }
+});
+
+fs.appendFileSync("index.txt", "Sync Append ");
