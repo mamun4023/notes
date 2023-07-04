@@ -1,0 +1,11 @@
+const fs = require("fs");
+
+// asynchronous writing
+fs.writeFile("index.txt", "writting ddd", (err) => {
+   if (!err) {
+      console.log("file has been written");
+   }
+});
+
+// synchronous writing
+fs.writeFileSync("index.txt", "Sync file write");
