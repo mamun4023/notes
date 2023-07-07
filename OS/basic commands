@@ -282,8 +282,18 @@ https://www.linode.com/docs/guides/use-killall-and-kill-to-stop-processes-on-lin
 
 
 
-
-
+============ process ====================
+ 1. How to force kill process in Linux
+	Use the pidof command to find the process ID of a running program or app
+	$ pidof appname
+2. To kill process in Linux with PID immediately:
+	$ kill -9 pid
+3. Want to kill process in Linux with application name forcefully? Try:
+	$ killall -9 appname
+4. You can sent -15 (SIGTERM) signal to process requesting it to terminate gracefully:
+	$ killall -15 your-app-name
+	AND
+kill -15 pid
 
 
 
