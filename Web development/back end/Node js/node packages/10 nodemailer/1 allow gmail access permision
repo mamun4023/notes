@@ -1,7 +1,6 @@
 	
 	1. first, signin with your prefer google account
-	2. go  https://myaccount.google.com/lesssecureapps
-	3. make it on
+	2. go  2 factor-auth then
+	3. generate app password and use it 
 	
 	
-	warn : Don't allow this service for secured email 
