@@ -1,0 +1,117 @@
+const express = require("express");
+const app = express();
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+const conn = mongoose
+   .connect("mongodb://127.0.0.1:27017/test1")
+   .then(() => {
+      console.log("DB Connected");
+   })
+   .catch((err) => {
+      console.log("DB Disconnected");
+   });
+
+const patientSchema = new mongoose.Schema({
+   name: String,
+   balance: Number,
+});
+
+const patientModel = new mongoose.model("Patient", patientSchema);
+
+const doctorSchema = new mongoose.Schema({
+   name: String,
+   balance: Number,
+});
+
+const doctorModel = new mongoose.model("Doctor", doctorSchema);
+
+app.post("/patient", async (req, res) => {
+   const { name, balance } = req.body;
+
+   const newPatient = new patientModel({
+      name,
+      balance,
+   });
+
+   const response = await newPatient.save();
+
+   res.status(202).json({
+      message: "Patient added",
+      data: response,
+   });
+});
+
+app.get("/patient", async (req, res) => {
+   const result = await patientModel.find();
+   res.status(200).json({
+      message: "Data fetch successful",
+      data: result,
+   });
+});
+
+app.post("/doctor", async (req, res) => {
+   const { name, balance } = req.body;
+
+   const newDoctor = new doctorModel({
+      name,
+      balance,
+   });
+
+   const response = await newDoctor.save();
+
+   res.status(202).json({
+      message: "Doctor added",
+      data: response,
+   });
+});
+
+app.get("/doctor", async (req, res) => {
+   const result = await doctorModel.find();
+   res.status(200).json({
+      message: "Data fetch successful",
+      data: result,
+   });
+});
+
+app.post("/withdraw/:id", async (req, res) => {
+   const session = await mongoose.startSession();
+   try {
+      session.startTransaction();
+
+      await patientModel.updateOne(
+         { _id: req.params.id },
+         {
+            balance: 10000,
+         }
+      );
+
+      // wrong code to throw trasaction aborted
+      // await patientModel.updateOne(
+      //    { _id: 10 },
+      //    {
+      //       balance: 100,
+      //    }
+      // );
+
+      await session.commitTransaction();
+      return res.status(200).json({
+         message: "Success",
+      });
+   } catch (err) {
+      await session.abortTransaction();
+      return res.status(404).json({
+         message: "Failed",
+      });
+   } finally {
+      session.endSession();
+      console.log("Session end");
+   }
+});
+
+app.listen(3000, () => {
+   console.log("Server is running");
+});
