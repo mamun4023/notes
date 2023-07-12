@@ -1,0 +1,23 @@
+
+ 
+ Transaction Blook with try catch in mongoose 
+ 
+ const session = await mongoose.startSession();
+   try {
+      session.startTransaction();
+
+      // multiple operation 
+
+      await session.commitTransaction();
+      console.log("success")
+      
+   } catch (err) {
+   
+      await session.abortTransaction();
+      console.log("Aborted")
+      
+   } finally {
+   
+      session.endSession();
+      console.log("Session end");
+   }
