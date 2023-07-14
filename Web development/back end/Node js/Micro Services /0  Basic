@@ -1,0 +1,93 @@
+
+NodeJS_Microservices
+  |
+  ---> Order
+  ------> server.js (Running on PORT 8081)
+  |
+  ---> Payment
+  ------> server.js (Running on PORT 8082)
+  |
+  ---> API-Gateway
+  ------> server.js (Running on Port 9091)
+
+
+
+🙂 Whenever a client makes a request to the API-Gateway, We have defined some routes (Using prefixes) that redirect the request to the appropriate 
+service (Depends which route is called). Payment and Order services are independent means If one fails other will not be affected.
+
+🔥 Also we can add Auth or Middlewares so that no one can call the services directly or without Authentication. We have implemented a very basic architecture.
+
+
+======== Order server.js ======
+
+const express = require("express");
+const app = express();
+
+const port = 8081;
+app.get("/order-list", (req,res)=>{
+    res.send("order list");
+});
+
+app.get("/", (req,res)=>{
+    res.send("Order called");
+});
+
+app.listen(port, ()=>{
+    console.log("Listening at localhost "+ port);    
+})
+
+
+========== Payment Server.js =========
+
+Payment server.js
+const express = require("express");
+const app = express();
+
+const port = 8082;
+app.get("/payment-list", (req,res)=>{
+    res.send("payment server");
+});
+
+app.get("/", (req,res)=>{
+    res.send("Payment called");
+});
+
+app.listen(port, ()=>{
+    console.log("Listening at localhost "+ port);    
+})
+
+
+
+
+
+============ API-Gateway ==========
+
+const gateway = require("fast-gateway");
+
+const port = 9001;
+const server = gateway({
+    routes: [
+        {
+            prefix: "/order",
+            target: "http://localhost:8081/",
+            hooks: {}
+        },
+        {
+            prefix: "/payment",
+            target: "http://localhost:8082/",
+            hooks: {}
+        }
+    ]
+});
+
+server.get('/mytesting', (req,res)=> {
+    res.send("Gateway Called");
+})
+
+server.start(port).then(server=>{
+    console.log("Gateway is running "+port);
+})
+
+
+
+ref : https://dev.to/lovepreetsingh/implementing-microservice-architecture-in-node-js-1fg3
