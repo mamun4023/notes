@@ -1,0 +1,44 @@
+import { CardElement, Elements, useElements, useStripe } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import { useEffect, useState } from "react";
+
+const stripePromise = loadStripe(
+   "pk_test_51MoJltEwjV4lPmeGyNxaw6WcF1DWymTp9BCIEjZoxhoPfsOEbU0g2qoepHDUE8d640APadkFC387HvVLt1mJc5nk00geJoEBSl"
+);
+
+export default function Stripe() {
+   return (
+      <div>
+         <Elements stripe={stripePromise}>
+            <CheckoutForm />
+         </Elements>
+      </div>
+   );
+}
+
+function CheckoutForm() {
+   const stripe = useStripe();
+   const elements = useElements();
+
+   const handler = async (e) => {
+      e.preventDefault();
+
+      const { error, paymentMethod } = await stripe.createPaymentMethod({
+         type: "card",
+         card: elements.getElement(CardElement),
+      });
+
+      if (!error) {
+         console.log(paymentMethod);
+      }
+   };
+   return (
+      <div>
+         <form onSubmit={handler}>
+            <CardElement />
+
+            <button>submit</button>
+         </form>
+      </div>
+   );
+}
