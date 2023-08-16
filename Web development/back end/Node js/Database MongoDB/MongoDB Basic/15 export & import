@@ -19,3 +19,7 @@
   2. put command mongorestore -d  dbName  folderName/
 
   like mongorestore -d final demo/
+
+
+
+refence : https://www.youtube.com/watch?v=u5fMslpVoW4
