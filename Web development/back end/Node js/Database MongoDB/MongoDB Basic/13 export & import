@@ -1,0 +1,21 @@
+
+#export all the databse 
+  1. Go to a particular directory where you want to export then
+  2. put command "mongodump"
+
+
+#export a particular db
+  mongodump -d dbName
+
+
+#export a single collection
+ mongodump -d dbName -c collectionName
+
+
+
+
+#Import a databse 
+  1. Go to a particular directory where database is located then
+  2. put command mongorestore -d  dbName  folderName/
+
+  like mongorestore -d final demo/
