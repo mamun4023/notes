@@ -1,0 +1,15 @@
+function* func(){
+
+   console.log("first call");
+   yield 100;
+
+   console.log("second call");
+   yield 200
+}
+
+
+const generator = func();
+
+console.log( generator.next()); 
+console.log(generator.next());
+console.log(generator.next());
