@@ -1,0 +1,14 @@
+function* generatorFunc(data) {
+
+    let x = yield "hello";
+
+    console.log(x);
+
+    yield 10;
+    
+}
+
+const generator = generatorFunc();
+
+console.log(generator.next())
+console.log(generator.next(10))
