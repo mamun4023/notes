@@ -1,0 +1,16 @@
+// generator function
+
+function* generatorFunc(data) {
+    
+    yield 10;
+    yield 20;
+    yield 30;
+
+}
+
+const generator = generatorFunc();
+
+// use loop in 
+for(let value of generator){
+   console.log(value)
+}
