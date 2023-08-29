@@ -1,0 +1,29 @@
+
+
+async function getPromise(url){
+
+   const promise = new Promise(async(resolve, reject)=>{
+      const res = await fetch(url);
+      const data = await res.json();
+
+      if(data.length){
+         resolve(data)
+      }
+      reject(new Error("Error Happend"))
+
+   })
+
+   return promise;
+}
+
+
+const users = getPromise("https://jsonplaceholder.typicode.com/users");
+const posts = getPromise("https://jsonplaceholder.typicode.com/posts")
+
+//  return quick completion 
+Promise.race([posts, users ])
+   .then(res=>{
+      console.log(res)
+   }).catch(err=>{
+      console.log(err)
+   })
