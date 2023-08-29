@@ -18,6 +18,7 @@ async function getPromise(url){
 const users = getPromise("https://jsonplaceholder.typicode.com/users");
 const posts = getPromise("https://jsonplaceholder.typicode.com/posts")
 
+// wait until all the data has been fetch
 Promise.all([users, posts])
    .then(res=>{
       console.log(res)
