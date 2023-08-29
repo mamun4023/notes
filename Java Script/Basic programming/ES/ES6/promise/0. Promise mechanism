@@ -1,0 +1,15 @@
+
+// will work one for one execution of promise 
+
+const promise = new Promise(function(resolve, reject){
+
+	resolve("working");
+	reject("not wokring")
+})
+
+
+promise.then((res)=>{
+	console.log(res)
+}).catch(err=>{
+	console.log(err)
+})
