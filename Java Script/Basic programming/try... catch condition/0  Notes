@@ -1,0 +1,19 @@
+
+A try / catch block is basically used to handle errors in JavaScript. 
+You use this when you don't want an error in your script to break your code.
+
+
+  try{
+    //...
+    }catch(e){
+    //...
+    }
+
+
+
+// return reference error
+try{
+  getData();        // not defined
+}catch(er){
+  console.log(err)
+}
