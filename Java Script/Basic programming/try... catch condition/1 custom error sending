@@ -1,0 +1,11 @@
+let num =prompt("insert a number ")
+
+try {
+ 
+  if(isNaN(num)) throw "Not a number (☉｡☉)!" 
+  else if (num>40) throw "should be less than 40"
+  else if (num <= 30) throw "enter greater than 30" 
+
+}catch(e){
+  console.log(e) 
+}
