@@ -1,0 +1,58 @@
+const express = require('express');
+const app = express();
+const env = require('dotenv').config()
+const PORT = process.env.PORT;
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
+const bodyParser = require('body-parser')
+const aws = require('aws-sdk');
+const multer = require('multer');
+
+const upload = multer({
+  storage : multer.memoryStorage(),
+  limits : {
+    fileSize : 5 * 1024 * 1024 // 5 MB limit
+  }
+})
+
+
+
+
+app.use(bodyParser.urlencoded({extended : true}));
+app.use(bodyParser.json())
+
+
+
+aws.config.update({
+  accessKeyId : "access_key",
+  secretAccessKey : "secret_key",
+})
+
+
+const s3 = new aws.S3();
+
+
+
+app.post('/upload', upload.single("file"), (req, res)=> {
+  const params = {
+    Bucket: 'bucket_name',
+    Key: req.file.originalname,
+    Body: req.file.buffer,
+  };
+
+  s3.upload(params, (err, data)=>{
+
+    if(err){
+      console.log(err)
+      return res.status(500).send("Error uploading file")
+    }
+
+    res.send("file uploded")
+  })
+
+})
+
+
+
+app.listen(PORT, ()=>{
+    console.log("server running at :", PORT)
+})
