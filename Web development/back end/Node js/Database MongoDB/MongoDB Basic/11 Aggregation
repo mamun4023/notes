@@ -1,5 +1,14 @@
-Assume "students" is a collection
 
+There are two type o aggregation
+	* Single purpose aggregation method 
+	* Aggregation pipeline 
+
+
+
+******** Single purpose aggregation method ********
+
+
+Assume "students" is a collection
 
 1. Count all the documents in the collection
     db.students.count()
@@ -20,13 +29,14 @@ Assume "students" is a collection
 
 
 
-	Aggregation Framework
+************ Aggregation Framework  ****************
 
-1 . Match Staage
+1 . Match Stages
+	[
 	 {$match:  {city : "New York"}}
 	 {$match:  {age : {$gre : 23 }}
 	 {$match: {$and : [{gender : 'male'}, {age : {$gte : 23}}]}}
-	 
+	]
 	
 2. Group Stage
 
