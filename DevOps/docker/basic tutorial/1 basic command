@@ -1,3 +1,6 @@
+0. install docker 
+	sudo apt install dokcer.io
+
 1. show docker version
 	docker -version	
 	docker -v
