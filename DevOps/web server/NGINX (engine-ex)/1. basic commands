@@ -1,0 +1,4 @@
+1 . Install nginx on ubuntu 
+      sudo apt install nginx
+2. check status of nginx
+      sudo systemctl status
