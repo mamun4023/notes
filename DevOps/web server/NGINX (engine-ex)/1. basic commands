@@ -1,4 +1,24 @@
 1 . Install nginx on ubuntu 
       sudo apt install nginx
+
 2. check status of nginx
       sudo systemctl status
+
+3. start server 
+      sudo systemctl start nginx  
+      sudo service start nginx ( without systemd)
+       sudo systemctl enable nginx  ( auto start at boot time/ os starting time)
+
+4. stop server 
+      sudo systemctl stop nginx
+
+5. restart server
+      sudo systemctl restart nginx  
+
+6. reload nginx 
+      sudo systemctl reload nginx  
+
+7. server configuration test
+      sudo nginx -t
+
+
