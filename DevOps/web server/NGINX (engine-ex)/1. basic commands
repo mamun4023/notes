@@ -25,4 +25,5 @@
 7. server configuration test
       sudo nginx -t
 
-
+8. Show all server configuration
+      sudo nginx -T
