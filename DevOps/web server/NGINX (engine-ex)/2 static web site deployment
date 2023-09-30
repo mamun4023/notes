@@ -1,0 +1,38 @@
+
+######### Must have installed Nginx in your machine ############
+
+
+1. Choose a static web site templete from github
+2. Start nginx server
+3. download projcet code into Nginx server for static site
+    go on root directroy
+        cd /
+        cd var/www
+    make a folder with appropriate name and clone site from github
+      git clone ...................
+
+
+4. configure nginx server
+    go to root directory 
+      cd /
+      cd etc/nginx/
+      cd conf.d/
+
+    create a file with conf extension
+      project.conf
+
+    put the bellow code
+
+
+    server {
+	    listen 80 default_server;
+	    root /var/www/projectFolder name;          
+	    
+      index index.html
+	    server_name _;
+	    
+      location / {
+		    try_files $uri $uri/ =404;
+	    }
+
+}
