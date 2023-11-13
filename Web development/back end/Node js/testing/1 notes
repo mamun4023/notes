@@ -1,1 +1,8 @@
 we will use jest and supertest
+
+==> install jest 
+==> write into script
+  "test" : "jest --watchAll --detectOpenHandles"
+
+==> run the test with npm run test
+
