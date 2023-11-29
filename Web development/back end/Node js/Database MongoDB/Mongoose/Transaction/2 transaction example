@@ -1,0 +1,152 @@
+const express = require('express');
+const app = express();
+const mongoose = require('mongoose');
+
+
+
+const uri = 'mongodb://localhost:27017/testDB';
+const uri2 = "mongodb+srv://mamun4023:mamun01734754023@cluster0.apqm0xs.mongodb.net/?retryWrites=true&w=majority"
+
+
+mongoose.connect(uri2)
+    .then(()=>{
+        console.log("BD Connected")
+    }).catch(()=>{
+        console.log("DB is not Connected")
+    })
+
+
+
+
+const userSchema = new mongoose.Schema({
+    name : {
+        type : String,
+        required : true
+    },
+    email : {
+        type : String,
+        required : true
+    }
+})
+
+const userModel = mongoose.model('User', userSchema)
+
+const walletShema = new mongoose.Schema({
+    userId : {
+        type : mongoose.Types.ObjectId
+    },
+    balance : {
+        type : Number,
+        default : 0
+    },
+    currency : {
+        type : String,
+        required : true
+    }
+})
+
+const walletModel = mongoose.model('Wallet', walletShema)
+
+
+
+// Not applied ACID Transaction
+app.get('/tran', async(req, res, next)=>{
+
+    try{
+
+        
+        const user = await userModel.create(
+            {
+                name : "tohid",
+                email : "tohid@gmail.com"
+            }
+          
+        )
+    
+        const wallet = await walletModel.create(
+            {
+                userId : user?._id,
+                 // currency : "USD"
+            }
+        )
+
+        return res.status(200).json({
+            message : "User has been created",
+            user,
+            wallet
+        })
+
+    }catch(err){
+
+        console.log(err)
+        next();
+    }
+
+})
+
+
+// // Applied ACID Transaction 
+// app.get('/tran', async(req, res, next)=>{
+
+//     const session = await mongoose.startSession();
+//      session.startTransaction();
+//     try{
+
+        
+//         const user = await userModel.create(
+//             [{
+//                 name : "tohid",
+//                 email : "tohid@gmail.com"
+//             }],
+//             {session : session}
+//         )
+
+
+//         const wallet = await walletModel.create(
+//             [{
+//                 userId : user[0]?._id,
+//                 // currency : "USD"
+//             }],
+//             {session : session}
+            
+//         )
+    
+//         await session.commitTransaction();
+     
+//         return res.status(200).json({
+//             message : "User has been created",
+//             user,
+//             wallet
+//         })
+
+//     }catch(err){
+//         session.abortTransaction();
+
+//         return res.status(400).json({
+//             message : "Faild"
+//         })
+        
+//         // next(err)
+//     }finally{
+//         session.endSession();
+       
+//     }
+
+// })
+
+
+// Error handling middleware for other errors
+app.use((err, req, res, next) => {
+    console.error('Error: ', err.stack);
+    res.status(500).send('Internal Server Error');
+});
+
+
+// server will never stop for occuring error
+process.on('uncaughtException', (err) => {
+    console.log(`Caught exception: ${err}`);
+  });
+
+app.listen(3000, ()=>{
+    console.log("server runing....")
+})
