@@ -1,0 +1,104 @@
+const express = require('express');
+const app = express();
+const mongoose = require('mongoose');
+
+
+
+const uri = 'mongodb://localhost:27017/testDB';
+// const uri2 = "mongodb+srv://mamun4023:mamun01734754023@cluster0.apqm0xs.mongodb.net/?retryWrites=true&w=majority"
+
+
+mongoose.connect(uri)
+    .then(()=>{
+        console.log("BD Connected")
+    }).catch(()=>{
+        console.log("DB is not Connected")
+    })
+
+
+
+
+const userSchema = new mongoose.Schema({
+    name : {
+        type : String,
+        required : true
+    },
+    email : {
+        type : String,
+        required : true
+    },
+    amount : {
+        type : Number
+    }
+})
+
+userSchema.post('save', async(data)=>{
+    console.log("from post", data)
+    await walletModel.create({
+        balance : data.amount,
+        userId : "ddddddd",
+        currency : "TAKA"
+    })
+})
+
+const userModel = mongoose.model('User', userSchema)
+
+const walletShema = new mongoose.Schema({
+    userId : {
+        type : String
+    },
+    balance : {
+        type : Number,
+        default : 0
+    },
+    currency : {
+        type : String,
+        required : true
+    }
+})
+
+const walletModel = mongoose.model('Wallet', walletShema)
+
+
+
+app.get('/create', async(req, res, next)=>{
+    
+    try{
+
+        const user = await userModel.create(
+            {
+                name : "tohid",
+                email : "tohid@gmail.com",
+                amount : 100
+            }
+        )
+ 
+        return res.status(200).json({
+            message : "User has been created",
+            user,
+        })
+
+    }catch(err){
+        console.log(err)
+        next();
+    }
+
+})
+
+
+
+// Error handling middleware for other errors
+app.use((err, req, res, next) => {
+    console.error('Error: ', err.stack);
+    res.status(500).send('Internal Server Error');
+});
+
+
+// server will never stop for occuring error
+process.on('uncaughtException', (err) => {
+    console.log(`Caught exception: ${err}`);
+  });
+
+app.listen(3000, ()=>{
+    console.log("server runing....")
+})
