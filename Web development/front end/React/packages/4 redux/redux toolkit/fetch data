@@ -1,0 +1,55 @@
+
+import axios from "axios"
+import {createSlice, createAsyncThunk} from "@reduxjs/toolkit"
+
+
+const initialState = {
+    data : [],
+    status : 'idle',
+    error : null
+}
+
+
+// create thunk for fetching
+// action
+export const fetchUser = createAsyncThunk('data/fetchUser', async()=>{
+
+    try{
+
+        const response = await axios.get('https://jsonplaceholder.typicode.com/users') 
+        // const data = await respons.json();
+        console.log(response)
+        return response.data;
+    }catch(err){
+        throw err
+    }
+
+})
+
+
+const dataSlice = createSlice({
+    name : 'data',
+    initialState,
+    reducers : {},
+    extraReducers : (builder)=>{
+        builder.addCase(fetchUser.pending, (state)=>{
+            state.status = 'loading'
+        })
+        .addCase(fetchUser.fulfilled, (state, action)=>{
+            state.status = 'succeeded',
+            state.data = action.payload
+        })
+
+        .addCase(fetchUser.rejected, (state, action)=>{
+            state.status = 'failed',
+            state.error = action.error.message
+        })
+    }
+})
+
+export default dataSlice.reducer
+
+
+
+
+
