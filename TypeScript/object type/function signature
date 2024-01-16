@@ -1,0 +1,8 @@
+// function signature 
+let fuc : (a:number, b : number) => void  
+
+fuc = (a:number, b:number):void=>{ 
+    console.log(a+b)
+}
+
+console.log(fuc(10, 20))
