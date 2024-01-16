@@ -1,0 +1,6 @@
+// it is assigned as HTMLELEMENT
+// but we need form element
+const form1 = document.querySelector('signin_form')
+
+// here assign correct form element
+const form2 = document.querySelector('signup-from') as HTMLFormElement
