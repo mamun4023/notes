@@ -1,0 +1,35 @@
+//Avoiding recreating the initial state 
+
+function initializeFunction(startCounter){
+   console.log("Called only one ")
+   return {
+      counter : startCounter
+   };
+}
+
+
+function reducer (state, action){
+   if(action === "Add"){
+      return{
+         ...state,
+         counter : state.counter + 1
+      } 
+   }
+}
+
+
+export default function App(){
+   const startCounter = 10
+   const [state, dispatch] = useReducer(reducer, startCounter, initializeFunction);
+  
+   console.log(state)
+  
+   return(
+      <div>
+         {state.counter}
+         <button onClick={()=> dispatch( "Add")} >
+            add
+         </button>
+      </div>
+   )
+}
