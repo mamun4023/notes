@@ -58,3 +58,17 @@ reproducibility, and consistency in application development and deployment workf
 9. Push a docker image on you local repository to docker hub
 	docker push 
 	docker push "image name"
+
+
+16. create a new image of an edited container on the local repo
+	docker commit 
+	docker commit "id" "image name"
+
+
+17. Export a docker image into a tar file in your local system  / like download in you machine 
+	docker export
+	docker export --output = "latest.tar" myContainer
+
+18.  import the content of a tar file into your local repository
+	docker import
+	docker import /home/eduraca/download/demo.tgz
