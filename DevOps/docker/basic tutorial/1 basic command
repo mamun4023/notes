@@ -1,3 +1,9 @@
+
+Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers. 
+The service has both free and premium tiers. The software that hosts the containers is called Docker Engine. 
+It was first released in 2013 and is developed by Docker, Inc.
+
+================= Basic Command ===============================
 0. install docker 
 	sudo apt install dokcer.io
 
@@ -19,45 +25,8 @@
 4. login in docker hub
 	docker login
 
-5. get / download docker image into local machine
-	docker pull imageName
-
-6. show docker all images 
-	docker images
-
-7. show image id
-	docker images -q
-
-9. remove docker images from local repository
-	 docker rmi imageID(c6e3cd9aae36)
 
 
 
----------- docker containers ----------
 
-10. show running containers
-	docker ps 
-	docker ps -a
-
-11. run a docker container
-	docker run -it ubuntu 
-
-12. start the container 
-	docker start  containerID (e3aecdf0acd6)
-
-
-13. stop the container 
-	docker stop containerID(e3aecdf0acd6)	
-
-14. show memory statistics
-	docker stats
-
-15. show docker statistics 	
-	docker system df
-
-16. delete all docker containers
-	docker system prune
-
-17. delete all docker images	
-	docker system prune -a
 
