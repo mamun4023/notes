@@ -51,5 +51,10 @@ reproducibility, and consistency in application development and deployment workf
 5. Delete all docker images	
 	  docker system prune -a
 
-6. Docker Ignore file (same as gitignore)
-	.dockerignore 
+6. To compile the Dockerfile for building custom docker images
+	docker build
+	docker build -t myUbuntuImage 
+
+9. Push a docker image on you local repository to docker hub
+	docker push 
+	docker push "image name"
