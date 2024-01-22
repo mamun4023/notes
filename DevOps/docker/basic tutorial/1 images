@@ -1,1 +1,51 @@
 
+
+
+Docker images are lightweight, standalone, and executable packages that include everything needed
+to run a piece of software, including the code, runtime, libraries, and system tools. Docker is a 
+platform for containerization, and containers are instances of these images.
+
+
+Here are some key concepts related to Docker images:
+
+1. Base Image: The foundation of a Docker image, it contains the basic operating system and essential tools. 
+Images are often built on top of existing base images, and this layered approach helps in reusability and efficiency.
+
+2. Layers: Docker images are made up of multiple layers. Each layer represents a set of filesystem changes. 
+Layers are cached, and when you build a new image, Docker can reuse existing layers if the commands in your 
+Dockerfile haven't changed. This makes image creation and distribution more efficient.
+
+3. Dockerfile: A Dockerfile is a script containing instructions for building a Docker image. It specifies the base image, 
+adds dependencies, copies files, and sets configuration. When you build an image using a Dockerfile, it creates a new layer for each instruction.
+
+4. Registry: Docker images can be stored and shared in Docker registries. The default public registry is Docker Hub, 
+but you can use private registries or set up your own registry to manage and distribute images.
+
+5. Containerization: Containers are instances of Docker images. When you run a Docker image, it creates a container. 
+Containers are isolated environments that run applications and their dependencies, making it easy to deploy and manage 
+applications consistently across different environments.
+
+Docker images have become a standard way of packaging and distributing software, enabling developers to build, share, 
+and run applications seamlessly across various environments. They simplify the process of software deployment and enhance scalability, 
+reproducibility, and consistency in application development and deployment workflows.
+
+
+
+======================= Docker Images Command =====================================================
+
+1. Get / Download docker image from docker Hub into local machine
+	  CMD : docker pull imageName
+    exp : docker pull ubuntu
+
+2. Show docker all images 
+	 CMD : docker images
+
+3. Show image id
+	  CMD : docker images -q
+
+4. Remove docker images from local repository
+	  CMD : docker rmi imageID
+    exp : docker rmi c6e3cd9aae36
+
+5. Delete all docker images	
+	  docker system prune -a
