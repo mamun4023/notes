@@ -1,0 +1,8 @@
+21.  control any existing docker service (container/compose/swarm/other....)
+	docker service 
+	docker service ls
+	docker service ps
+	docker service scale
+	docker service stop
+	docker service logs
+	docker service rm
