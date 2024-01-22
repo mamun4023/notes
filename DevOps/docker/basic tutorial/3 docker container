@@ -1,0 +1,26 @@
+
+
+A container is an isolated environment for your code. This means a container has no knowledge of your operating system, or your files.
+
+===================== Docker container Command ======================
+
+1. Show running containers
+	    docker ps 
+  	  docker ps -a
+
+2. Run a docker container (flag -it means interactive mode)
+	    docker run -it ubuntu 
+
+12. Start the container 
+	    docker start containerID (e3aecdf0acd6)
+
+
+13. Stop the container 
+	    docker stop containerID(e3aecdf0acd6)	
+
+
+16. Delete all docker containers
+	    docker system prune
+
+17. Delete all docker images	
+	    docker system prune -a
