@@ -50,3 +50,6 @@ reproducibility, and consistency in application development and deployment workf
 
 5. Delete all docker images	
 	  docker system prune -a
+
+6. Docker Ignore file (same as gitignore)
+	.dockerignore 
