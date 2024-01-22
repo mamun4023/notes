@@ -5,6 +5,7 @@ Docker images are lightweight, standalone, and executable packages that include 
 to run a piece of software, including the code, runtime, libraries, and system tools. Docker is a 
 platform for containerization, and containers are instances of these images.
 
+Docker images are templates used to create docker container.
 
 Here are some key concepts related to Docker images:
 
