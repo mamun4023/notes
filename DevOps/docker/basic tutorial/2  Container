@@ -31,3 +31,7 @@ A Container is a running instance of image.
 	CMD : sudo docker exec -it containerName bash
 	Exp : sudo docker exec -it website bash
 
+19. to access an running container and perform operations inside the container
+	docker exec
+	docker exec -it "id" bash
+
