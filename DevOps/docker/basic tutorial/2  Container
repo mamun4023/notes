@@ -1,6 +1,8 @@
 
 
 A container is an isolated environment for your code. This means a container has no knowledge of your operating system, or your files.
+		Or
+A Container is a running instance of image.
 
 ===================== Docker container Command ======================
 
