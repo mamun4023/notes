@@ -26,3 +26,8 @@ A Container is a running instance of image.
 
 17. Delete all docker images	
 	docker system prune -a
+
+18. Enter into Container
+	CMD : sudo docker exec -it containerName bash
+	Exp : sudo docker exec -it website bash
+
