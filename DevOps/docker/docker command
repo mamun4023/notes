@@ -57,27 +57,6 @@
 
 
 
------------------ advance command ------------
 
-19. power multi-container applications where various services will be hosted inside different container
-	docker compose 
-	docker -compose build
-	docker -compose up
-
-20. create a network of docker engines/ hosts to execute containers inparallel(for scalling up and high availability)
-	docker swarm
-	docker swarm init --advertise -addr 192.168.1.100
-	docker swarm join
-	docker swarm join-token
-	docker swarm leave
-
-21.  control any existing docker service (container/compose/swarm/other....)
-	docker service 
-	docker service ls
-	docker service ps
-	docker service scale
-	docker service stop
-	docker service logs
-	docker service rm
 
                                                                                                                                                                                                                                                                                                   
