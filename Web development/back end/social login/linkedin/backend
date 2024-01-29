@@ -1,0 +1,65 @@
+const express = require('express');
+const app = express();
+const axios = require('axios')
+const bodyParser = require('body-parser')
+const cors = require('cors')
+
+
+const clientID = "77dpu86k9m25q3";
+const clientSecret = "05KJ6ScNTZhV3eWY";
+const redirectURL = "http://localhost:5173/linkedin"
+
+// const code = "AQThObvFG5OWTC62ypmukDd0w6KqInevyv6WExNGckUe8QUjNHB3c4alNj3O2uajca1IN5ZSegQObXuKcSV6sGx-VAm2mAmxqUJAq_YAEcCp6F18OOybCGveZEVFlko6yxa7KD8JU-dy5Ta0-D2yfA2Yi0WENiqAkjVhdmsasRE8GezNFZjrk54wk1wFnFTbDVa9hSzKJrnnTKcHBuI"
+
+
+app.use(cors())
+app.use(bodyParser.urlencoded({extended : true}))
+app.use(bodyParser.json());
+
+
+app.post('/accessToken', async(req, res)=>{
+  const code = req.body.code;
+
+  // const response = await axios.get("https://jsonplaceholder.typicode.com/users")
+
+  // res.status(200).json({
+  //   data : response.data
+  // })
+
+
+
+  const data = {
+    grant_type : "authorization_code",
+    code : code,
+    client_id : clientID,
+    client_secret : clientSecret,
+    redirect_uri : redirectURL
+  }
+  const response = await axios.post('https://www.linkedin.com/oauth/v2/accessToken',data, {headers : {
+    'Content-Type': 'application/x-www-form-urlencoded',
+  }})
+   
+
+  
+  const token = response?.data?.access_token;
+  console.log("acces token : ", token)
+  const userProfile = await axios.get("https://api.linkedin.com/v2/userinfo", {headers: { Authorization: `Bearer ${token}` } })
+
+
+  // console.log("errr", userProfile?.data)
+
+  res.json({
+    // data : response.data,
+    data : userProfile.data
+  })
+
+
+
+})
+
+
+
+
+app.listen(3000, ()=>{
+    console.log("server running at : 3000", )
+})
