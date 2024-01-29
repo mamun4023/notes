@@ -1,0 +1,81 @@
+import axios from 'axios';
+import React, { useState } from 'react';
+
+import { useLinkedIn } from 'react-linkedin-login-oauth2';
+// You can use provided image shipped by this package or using your own
+import linkedin from 'react-linkedin-login-oauth2/assets/linkedin.png';
+
+const clientID = "77dpu86k9m25q3";
+const clientSecret = "05KJ6ScNTZhV3eWY";
+const redirectURL = "http://localhost:5173/linkedin"
+
+export default function LinkedInPage() {
+  const { linkedInLogin } = useLinkedIn({
+    clientId:  clientID,
+    redirectUri: redirectURL, // for Next.js, you can use `${typeof window === 'object' && window.location.origin}/linkedin`
+    // redirectUri : "https://cyberforcehq-pros.auth.us-west-1.amazoncognito.com/oauth2/idpresponse",
+    onSuccess: (code) => {
+      console.log(code);
+
+      // const data = {
+      //   grant_type : "authorization_code",
+      //   code : code,
+      //   client_id : clientID,
+      //   client_secret : clientSecret,
+      //   redirect_uri : redirectURL
+      // }
+      // axios.post('https://www.linkedin.com/oauth/v2/accessToken',data, {headers : {
+      //   'Content-Type': 'application/x-www-form-urlencoded',
+      // }})
+      //   .then(res =>{
+      //     const resData = res?.data;
+
+      //     console.log(resData)
+      //   }).catch(err=>{
+      //     console.log("err", err)
+      //   })
+
+      axios.post('http://localhost:3000/accessToken', {code})
+       .then(res =>{
+          const resData = res?.data;
+    
+          console.log(resData)
+       })
+
+
+    },
+    scope: "openid email profile",
+    onError: (error) => {
+      console.log(error);
+    },
+  });
+
+
+// const linkedInLogin = async()=>{
+
+    
+//     const response_type = "code&"
+//     const client_id = "77dpu86k9m25q3"
+//     const redirect_uri = `https://www.google.com`
+//     const state = "dfdf32D23#"
+//     const scope = "openid%20email%20profile"
+
+//     const headers = {
+//         'Access-Control-Allow-Origin' : 'http://localhost:3000',
+//         'Access-Control-Allow-Credentials' : 'true'
+//     }
+//     const response = await axios.get("https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=77dpu86k9m25q3&redirect_uri=https://www.google.com&scope=openid%20email%20profile", headers)
+//     const data = await response.json();
+
+//     console.log(data)
+// }
+
+  return (
+    <img
+      onClick={linkedInLogin}
+      src={linkedin}
+      alt="Sign in with Linked In"
+      style={{ maxWidth: '180px', cursor: 'pointer' }}
+    />
+  );
+}
