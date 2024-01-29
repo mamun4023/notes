@@ -1,0 +1,28 @@
+import Linkedin from "./linkedin"
+import {Routes, Route} from 'react-router-dom'
+import RedirectPage from './redirect';
+import {LinkedInCallback} from 'react-linkedin-login-oauth2'
+
+export default function App() {
+
+   return (
+      <div className="w-full h-screen">
+
+            <Routes> 
+           
+               <Route path="/" element = {<Linkedin />} />
+               <Route  path="/linkedin" element={<LinkedInCallback/>} />
+               {/* <Route path="/linkedin" element= {<RedirectPage/>} /> */}
+            
+            </Routes>
+
+
+         
+
+
+      </div>
+   )
+}
+
+
+
