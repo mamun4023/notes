@@ -1,0 +1,40 @@
+
+import { useGoogleLogin } from '@react-oauth/google';
+import axios from 'axios'
+
+function App() {
+ 
+const login = useGoogleLogin({
+  onSuccess: (repo) => {
+    console.log(repo)
+    axios.get(`https://www.googleapis.com/oauth2/v3/userinfo?access_token=${repo?.access_token}`)
+      .then(res =>{
+         console.log(res?.data)
+      })
+  },
+  onError : (err)=>{
+    console.log(err)
+  }
+});
+  return (
+    <div className="App">
+     
+      <button onClick={() => login()}>Sign in with Google 🚀</button>;
+    </div>
+  );
+}
+
+export default App;
+
+
+
+## wrapping index.js
+
+import { GoogleOAuthProvider } from '@react-oauth/google';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <GoogleOAuthProvider clientId="796452068807-7tm03ddd05f9oonndppbki2puf4i3flb.apps.googleusercontent.com">.
+    <App />
+    </GoogleOAuthProvider>
+);
