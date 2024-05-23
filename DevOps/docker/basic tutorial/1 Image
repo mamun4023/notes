@@ -35,18 +35,18 @@ reproducibility, and consistency in application development and deployment workf
 ======================= Docker Images Command =====================================================
 
 1. Get / Download docker image from docker Hub into local machine
-	  CMD : docker pull imageName
-    exp : docker pull ubuntu
+	CMD : docker pull imageName
+    	exp : docker pull ubuntu
 
 2. Show docker all images 
-	 CMD : docker images
+	CMD : docker images
 
 3. Show image id
-	  CMD : docker images -q
+	CMD : docker images -q
 
 4. Remove docker images from local repository
-	  CMD : docker rmi imageID
-    exp : docker rmi c6e3cd9aae36
+	CMD : docker rmi imageID
+    	exp : docker rmi c6e3cd9aae36
 
 5. Delete all docker images	
 	  docker system prune -a
