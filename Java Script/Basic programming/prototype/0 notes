@@ -1,3 +1,7 @@
+In JavaScript, prototypes are a key feature that enables inheritance and object-oriented programming. 
+Every JavaScript object has a prototype, which is another object that the first object inherits properties 
+and methods from. This allows you to share functionality across multiple objects without duplicating code.
+
 To add a new property to a constructor, you must add it into the constructor function:
 
 
