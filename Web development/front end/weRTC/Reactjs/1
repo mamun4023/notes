@@ -1,0 +1,84 @@
+
+   import React, { useState, useEffect, useRef } from 'react';
+   import Peer from 'peerjs';
+
+    const VideoChat = () => {
+     const [peerId, setPeerId] = useState('');
+     const [remotePeerId, setRemotePeerId] = useState('');
+     const [remoteStream, setRemoteStream] = useState(null);
+     const localVideoRef = useRef(null);
+     const remoteVideoRef = useRef(null);
+     const peerInstance = useRef(null);
+
+     useEffect(() => {
+       const peer = new Peer(undefined, {
+         host: 'localhost',
+         port: 9000,
+         path: '/'
+       });
+
+       peer.on('open', id => {
+         setPeerId(id);
+         console.log(id)
+       });
+
+       
+
+       peer.on('call', call => {
+         navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+           .then(stream => {
+             call.answer(stream);
+             localVideoRef.current.srcObject = stream;
+             call.on('stream', remoteStream => {
+               remoteVideoRef.current.srcObject = remoteStream;
+               setRemoteStream(remoteStream);
+             });
+           })
+           .catch(err => console.error(err));
+       });
+
+       peerInstance.current = peer;
+
+       return () => {
+         peer.destroy();
+       };
+     }, []);
+
+     const callPeer = id => {
+       navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+         .then(stream => {
+           localVideoRef.current.srcObject = stream;
+           const call = peerInstance.current.call(id, stream);
+           call.on('stream', remoteStream => {
+             remoteVideoRef.current.srcObject = remoteStream;
+             setRemoteStream(remoteStream);
+           });
+         })
+         .catch(err => console.error(err));
+     };
+
+     return (
+       <div>
+         <h1>PeerJS Video Chat</h1>
+         <div>
+           <video ref={localVideoRef} autoPlay playsInline />
+           <video ref={remoteVideoRef} autoPlay playsInline />
+         </div>
+         <div>
+           <p>Your ID: {peerId}</p>
+           <input
+             type="text"
+             value={remotePeerId}
+             onChange={e => setRemotePeerId(e.target.value)}
+             placeholder="Enter remote peer ID"
+           />
+           <button onClick={() => callPeer(remotePeerId)}>Call</button>
+         </div>
+
+		 </div>
+
+
+	 )
+}
+
+export default VideoChat;
