@@ -1,4 +1,4 @@
-1. Can not able to stop container 
+1. Can not able to stop container ( restart PC after run command)
 
   sudo apt-get purge --auto-remove apparmor
   sudo service docker restart
