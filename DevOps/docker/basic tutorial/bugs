@@ -1,0 +1,5 @@
+1. Can not able to stop container 
+
+  sudo apt-get purge --auto-remove apparmor
+  sudo service docker restart
+  docker system prune --all --volumes
