@@ -1,3 +1,46 @@
 
 
+Run a React application on docker container and develop on live reaload.
+
+1. As it is an vite file that is why we need to change the vite.config.js file. Put the bellow code
+    
+    import { defineConfig } from "vite";
+    import react from "@vitejs/plugin-react";
+
+    export default defineConfig({
+       base: "/",
+       plugins: [react()],
+       preview: {
+        port: 8080,
+        strictPort: true,
+       },
+       server: {
+        port: 8080,
+        strictPort: true,
+        host: true,
+        origin: "http://0.0.0.0:8080",
+       },
+    });
+
+
+
+2. Docker file 
+
+  FROM node:alpine
+  WORKDIR /app
+  COPY package.json .
+  RUN npm install
+  COPY . .
+  EXPOSE 8000
+  CMD ["npm", "run", "dev"]
+
+3. Build and image 
+    docker build -t app .
+
+4. Run Container
+    docker run -it -p 8000:8000 -v $(pwd):/app  app 
+
+
+
+
 Ref : https://www.youtube.com/watch?v=obC9uizZF3M&t=802s
