@@ -1,0 +1,17 @@
+1. create app and in the root file create a docker file
+
+    FROM node:alpine
+    WORKDIR /app
+    COPY package.json .
+    RUN npm install
+    COPY . .
+    EXPOSE 3000
+    CMD ["npm", "start"]
+
+2. Build and image 
+    docker build -t api .
+
+3. Run a container of api image
+    docker run -it -p 3000:3000 -v $(pwd):/app api 
+
+4. Now you can write you code and develop application
