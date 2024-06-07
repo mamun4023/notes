@@ -1,13 +1,81 @@
 
 
+1. install vite 
+  npm create vite@latest
+
+2. run bellow command
+  npm install -D jest @testing-library/react ts-jest @types/jest ts-node @testing-library/jest-dom jest-environment-jsdom @testing-library/user-event
 
 
 
+3. create jest.setup.ts in root  and put inside
+    import "@testing-library/jest-dom";
+
+
+4. create a jest.config.js in root dir
+
+  export default {
+  testEnvironment: "jsdom",
+  transform: {
+    "^.+\\.tsx?$": "ts-jest",
+  },
+
+  moduleNameMapper: {
+    "\\.(css|less|sass|scss)$": "identity-obj-proxy",
+    "^.+\\.svg$": "jest-transformer-svg",
+  },
+
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
+};
+    
+
+
+5. To install this package, run:
+    npm install -D identity-obj-proxy jest-transformer-svg
+
+
+6. create a User.tsx compnent
+
+    const Users = () => {
+    return (
+      <div>
+        <h1>Users</h1>
+        <ul>
+          <li>name 1</li>
+          <li>name 2</li>
+        </ul>
+      </div>
+    );
+  };
+  
+  export default Users;
+
+
+7. create User.spec.tsx file and put inside
+    import { render, screen } from "@testing-library/react";
+    import Users from "./Users";
+    
+    describe("User", () => {
+      test("renders heading", async () => {
+        render(<Users />);
+        expect(screen.getByRole("heading", { name: "Users" })).toBeInTheDocument();
+      });
+    
+      test("renders a list of users", async () => {
+        render(<Users />);
+        const users = await screen.findAllByRole("listitem");
+        expect(users).toHaveLength(2);
+      });
+    });
 
 
 
+8. update tsconfig.json file. just inlucde the jest.setup.ts file
+    "include": ["src", "./jest.setup.ts"],
 
 
+9. Now run the test 
+    npm run test
 
 
 
