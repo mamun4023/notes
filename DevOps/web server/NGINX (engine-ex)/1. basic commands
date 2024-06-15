@@ -4,8 +4,8 @@
 # to find the configuration file in ubunut
       $ cd /etc/nginx
 
-2. check status of nginx
-      systemctl status
+2. check status of nginx server
+      systemctl status nginx
 
 3. start server 
       systemctl start nginx  
