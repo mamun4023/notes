@@ -27,3 +27,6 @@
 
 8. Show all server configuration
       sudo nginx -T
+
+9. See Nginx verserion
+      sudo nginx -v
