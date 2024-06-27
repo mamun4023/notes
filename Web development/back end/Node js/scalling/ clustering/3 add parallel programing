@@ -1,0 +1,42 @@
+const express = require("express");
+const os = require("os");
+const cluster = require("cluster");
+
+const NUM_OF_CUP = os.availableParallelism()
+
+if (cluster.isPrimary) {
+  for (let i = 0; i < NUM_OF_CUP; i++) {
+    cluster.fork();
+  }
+
+  cluster.on("exit", (worker) => {
+    console.log("exist process is ",worker.process.pid)
+  });
+} else {
+  const app = express();
+
+  // slower routes
+  app.get("/", async (req, res) => {
+    let result = 0;
+
+    for (let i = 0; i < 20_000_000_000; i++) {
+      result += 1;
+    }
+
+     return  res.json({
+      processID: process.pid,
+      result,
+    });
+  });
+
+  // fast route
+  app.get("/worker", async (req, res) => {
+    return res.json({
+      processId: process.pid,
+    });
+  });
+
+  app.listen(3000, () => {
+    console.log(`server running at ${3000} PID ${process.pid}`);
+  });
+}
