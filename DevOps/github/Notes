@@ -95,8 +95,9 @@
 5. merging with master branch (keep the history of the all commit)
 	git merge branchName
 
-8. Rebase (its make a new commit)
-	git rebase branchName
+8. Rebase (move to the all commit into one branch). have to rebase from both branch ( ref : https://www.youtube.com/watch?v=f1wnYdLEpgI)
+	git rebase master
+	git rebase newBranch
 	
 
 ============ STASH Commands ========== 
@@ -117,9 +118,24 @@
 	git stash clear
 
 
+
+
+============ Undo Commands ========== 
+1. Revert is used to back previous commit. It does not remove the commit history
+	git revert "commit id"
+
+2. Reset is used to back previous commit. It removes the commit history
+	git reset "commit id"
+
+3. Ammend is used to modify most recent commit 
+	git commit --amend -m "Added lines to README.md"
+
+
 ============ REMOTE Commands ========== 
 1. Check repository 
 	git remote -v
+
+
 
 
 
