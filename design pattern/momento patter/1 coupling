@@ -1,0 +1,21 @@
+
+
+// Example to Tightly coupling
+
+
+// add age parameter in constructor 
+public class User{
+    public String name;
+    public User(String name, int age){
+        this.name = name;
+    }
+}
+ 
+
+// not able to compile cause highly coupled
+public class Main{
+  public static void main (String[]arg){
+	User obj = new User("Tohid");
+	System.out.print(obj.name);
+  }
+}
