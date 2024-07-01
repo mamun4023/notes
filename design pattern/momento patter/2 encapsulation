@@ -1,0 +1,37 @@
+
+
+
+* Encapsulation is bundling of data and methods and  operating on this data into one unit.
+
+public class Account{
+    private float balance;
+    
+    public void deposit(float amount){
+        if(amount > 0)
+            balance += amount;
+    }
+    
+    public void withdraw(float amount){
+        if(balance >= amount){
+            balance -= amount;
+        }
+    }
+    
+    public float getBalance(){
+        return balance;
+    }
+}
+ 
+
+
+
+ public class Main{
+  public static void main (String[]arg){
+    var account = new Account();
+    account.deposit(10);
+    account.deposit(10)
+    
+    System.out.print(account.getBalance());
+    
+  }
+}
