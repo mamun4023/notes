@@ -1,0 +1,72 @@
+
+
+======================== Problem ============================
+
+public class Account{
+
+    public void connect (){
+	    System.out.print ("Connect");
+    }
+
+    public void authenticate (){
+	    System.out.print ("Authenticate");
+    }
+
+    public void disconnect (){
+	    System.out.print ("Disconnect");
+    }
+
+    public void sendEmail(){
+      connect();
+      authenticate();
+      // Send Email 
+      disconnect();
+  }
+}
+
+
+// calling 4 methods 
+public class Main{
+  public static void main (String[]arg){
+    var mailService = new Account();
+   // mailService.connect();         will show on authcomplete 
+   // mailService.authenticate(); // will show on authcomplete 
+    mailService.sendMail();
+   // mailService.disconnect();  // will show on authcomplete 
+  }
+}
+
+
+
+======================== Solution ============================
+
+public class Account{
+
+    private void connect (){
+	    System.out.print ("Connect");
+    }
+
+    private void authenticate (){
+	    System.out.print ("Authenticate");
+    }
+
+    private void disconnect (){
+	    System.out.print ("Disconnect");
+    }
+
+    public void sendEmail(){
+      connect();
+      authenticate();
+      // Send Email 
+      disconnect();
+  }
+}
+
+
+// calling 
+public class Main{
+  public static void main (String[]arg){
+    var mailService = new Account();
+    mailService.sendMail();
+  }
+}
