@@ -1,0 +1,32 @@
+public abstract class UIControl{
+    public abstract void draw();
+}
+
+
+public class CheckBox extends UIControl{
+    public void draw(){
+        System.out.print("Drawing a checkbox ");
+    }
+}
+
+
+
+public class TextBox extends UIControl{
+    public void draw(){
+        System.out.print("Drawing a textbox");
+    }
+}
+
+
+
+
+public class Main{
+	public static void main(String[] args) {
+		drawUIControl(new TextBox());  
+    drawUIControl(new CheckBox());
+	}
+	
+	public static void drawUIControl(UIControl control){
+	    control.draw();
+	}
+}
