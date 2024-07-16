@@ -1,0 +1,111 @@
+import { useState } from "react";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+
+import "swiper/css";
+
+import { GrPrevious } from "react-icons/gr";
+import { GrNext } from "react-icons/gr";
+
+const SlideNext = ({ children }) => {
+    const swiper = useSwiper();
+    return <button onClick={() => swiper.slideNext()}>{children}</button>;
+};
+
+const SlidePrev = ({ children }) => {
+    const swiper = useSwiper();
+    console.log("next", swiper);
+    return (
+        <button style={{ padding: 10 }} onClick={() => swiper.slidePrev()}>
+            {children}
+        </button>
+    );
+};
+
+export default function App() {
+    const [isBeginning, setIsBeginning] = useState(true);
+    const [isEnd, setIsEnd] = useState(false);
+    const handleSlideChange = (swiper) => {
+        setIsBeginning(swiper.isBeginning);
+        setIsEnd(swiper.isEnd);
+    };
+
+
+    return (
+        <div className="h-screen flex justify-center items-center">
+            <div className=" relative h-60 w-[500px] bg-slate-500 scale-75 md:scale-100">
+                <Swiper
+                    spaceBetween={30}
+                    slidesPerView={1}
+                    navigation={{
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    }}
+                    onSlideChange={(swiper) => handleSlideChange(swiper)}
+                >
+                    <SwiperSlide>
+                        <img
+                            className="h-60 w-full"
+                            src="https://soliloquywp.com/wp-content/uploads/2017/10/fullwidth-image-slider-in-wordpress.jpg"
+                        />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <img
+                            className="w-full h-60"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnzApyh1ZmbXLBUg_iFRio23hzRyAJfwBRfnVozXdEnu-NK4jFt2_gsYujKf-CbT6Cr_A&usqp=CAU"
+                        />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <img
+                            className="w-full h-60"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd2GVQoZpNJANnFmG-XKv7-1oIJKrfXBr5CqKeOjk7w-jNxaGVau6rIVKrR8lqpU5boQ0&usqp=CAU"
+                        />
+                    </SwiperSlide>
+                    {!isBeginning && (
+                        <div className={`swiper-button-prev`}>
+                            <SlidePrev>
+                                <GrPrevious />
+                            </SlidePrev>
+                        </div>
+                    )}
+                    {!isEnd && (
+                        <div className={`swiper-button-next`}>
+                            <SlideNext>
+                                <GrNext />
+                            </SlideNext>
+                        </div>
+                    )}
+                </Swiper>
+            </div>
+        </div>
+    );
+}
+
+
+
+
+// css styling
+
+
+.swiper-button-next, .swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000; /* Change color as needed */
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .swiper-button-prev {
+    left: 10px;
+  }
+  
+  .swiper-button-next {
+    right: 10px;
+  }
