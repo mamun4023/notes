@@ -1,0 +1,16 @@
+
+// real function file
+package main
+
+func sum(a int, b int) int {
+	return a + b
+}
+
+
+// test file
+func TestSum(t *testing.T) {
+	convey.Convey("should be success", t, func() {
+		result := sum(10, 10)
+		convey.So(result, convey.ShouldEqual, 20)
+	})
+}
