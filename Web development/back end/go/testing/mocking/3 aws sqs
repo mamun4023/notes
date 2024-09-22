@@ -1,0 +1,90 @@
+
+
+// mock file
+// mock_sqs_client.go
+package main
+
+import (
+	"context"
+
+	"github.com/aws/aws-sdk-go-v2/service/sqs"
+	"github.com/stretchr/testify/mock"
+)
+
+type MockSQSClient struct {
+	mock.Mock
+}
+
+func (m *MockSQSClient) SendMessage(ctx context.Context, params *sqs.SendMessageInput) (*sqs.SendMessageOutput, error) {
+	args := m.Called(ctx, params)
+	return args.Get(0).(*sqs.SendMessageOutput), args.Error(1)
+}
+
+// func (m *MockSQSClient) ReceiveMessage(ctx context.Context, params *sqs.ReceiveMessageInput) (*sqs.ReceiveMessageOutput, error) {
+// 	args := m.Called(ctx, params)
+// 	return args.Get(0).(*sqs.ReceiveMessageOutput), args.Error(1)
+// }
+
+// func (m *MockSQSClient) DeleteMessage(ctx context.Context, params *sqs.DeleteMessageInput) (*sqs.DeleteMessageOutput, error) {
+// 	args := m.Called(ctx, params)
+// 	return args.Get(0).(*sqs.DeleteMessageOutput), args.Error(1)
+// }
+
+
+
+
+
+
+
+
+
+
+// test file
+
+
+// sqs_service_test.go
+package main
+
+import (
+	"context"
+	"testing"
+
+	"github.com/aws/aws-sdk-go-v2/aws"
+	"github.com/aws/aws-sdk-go-v2/service/sqs"
+	"github.com/smartystreets/goconvey/convey"
+	"github.com/stretchr/testify/mock"
+)
+
+func TestSendMessage(t *testing.T) {
+	convey.Convey("Given a mock SQS client", t, func() {
+		mockSQS := new(MockSQSClient)
+		messageId := "12345"
+		mockSendMessageOutput := &sqs.SendMessageOutput{
+			MessageId: aws.String(messageId),
+		}
+
+		// Define the expected inputs and outputs for the mock
+		mockSQS.On("SendMessage", mock.Anything, mock.AnythingOfType("*sqs.SendMessageInput")).
+			Return(mockSendMessageOutput, nil)
+
+		convey.Convey("When SendMessage is called", func() {
+			ctx := context.Background()
+			input := &sqs.SendMessageInput{
+				MessageBody: aws.String("test message"),
+				QueueUrl:    aws.String("queue-url"),
+			}
+
+			result, err := mockSQS.SendMessage(ctx, input)
+
+			convey.Convey("Then it should not return an error", func() {
+				convey.So(err, convey.ShouldBeNil)
+			})
+
+			convey.Convey("And it should return the expected message ID", func() {
+				convey.So(*result.MessageId, convey.ShouldEqual, messageId)
+			})
+		})
+	})
+}
+
+
