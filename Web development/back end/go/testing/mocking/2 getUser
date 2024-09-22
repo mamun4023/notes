@@ -1,0 +1,45 @@
+
+
+// mock file
+type MockDB struct {
+	mock.Mock
+}
+
+type User struct {
+	Id   int
+	Name string
+}
+
+func (m *MockDB) GetUser(id int) (User, error) {
+	args := m.Called(id)
+	return args.Get(0).(User), args.Error(1)
+}
+
+
+
+// test file
+
+func TestUser(t *testing.T) {
+	convey.Convey("User database", t, func() {
+		MockDB := new(MockDB)
+		user := User{Id: 1, Name: "Tohid"}
+		convey.Convey("When the user exists", func() {
+			MockDB.On("GetUser", 1).Return(user, nil)
+			convey.Convey("Then the correct user is required", func() {
+				result, err := MockDB.GetUser(1)
+				convey.So(err, convey.ShouldBeNil)
+				convey.So(result, convey.ShouldEqual, user)
+			})
+		})
+
+		convey.Convey("user should be equal", func() {
+			expected := "user not found"
+			MockDB.On("GetUser", 2).Return(User{}, errors.New(expected))
+
+			_, err := MockDB.GetUser(2)
+			convey.So(err, convey.ShouldNotBeNil)
+			convey.So(err.Error(), convey.ShouldEqual, expected)
+		})
+
+	})
+}
