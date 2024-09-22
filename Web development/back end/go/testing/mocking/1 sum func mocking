@@ -1,0 +1,53 @@
+
+// mock the sum function
+
+package main
+
+import (
+	"github.com/stretchr/testify/mock"
+)
+
+type MockMathOperations struct {
+	mock.Mock
+}
+
+func (m *MockMathOperations) Sum(a int, b int) int {
+	args := m.Called(a, b)
+	return args.Int(0)
+}
+
+
+
+
+
+
+// test file
+
+package main
+    
+import (
+	"errors"
+	"testing"
+
+	"github.com/smartystreets/goconvey/convey"
+)
+
+func TestSum(t *testing.T) {
+	convey.Convey("Subject : Testing Sum function", t, func() {
+		mockMath := new(MockMathOperations)
+		convey.Convey("Should be equal", func() {
+			mockMath.On("Sum", 2, 3).Return(5)
+			result := mockMath.Sum(2, 3)
+			convey.So(result, convey.ShouldEqual, 5)
+		})
+
+		convey.Convey("Should not be equal", func() {
+			mockMath.On("Sum", 2, 3).Return(5)
+			result := mockMath.Sum(2, 3)
+			convey.So(result, convey.ShouldNotEqual, 6)
+		})
+
+		mockMath.AssertExpectations(t)
+	})
+
+}
