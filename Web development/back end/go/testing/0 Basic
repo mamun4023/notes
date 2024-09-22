@@ -1,0 +1,6 @@
+
+
+// testing with goConvey 
+
+steps :
+  1. Install go convey in global mode user terminal
