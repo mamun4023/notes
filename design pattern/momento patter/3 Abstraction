@@ -38,6 +38,7 @@ public class Main{
 
 
 
+Abstruction is reducing complexity by hiding unnecessary details
 ======================== Solution ============================
 
 public class Account{
