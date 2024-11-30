@@ -1,0 +1,399 @@
+React provides a flexible ecosystem that allows developers to apply various design patterns to build scalable, 
+maintainable, and efficient applications. Here are some common design patterns used in React:
+
+
+
+1. Container-Presentational Pattern
+Separates the logic of data fetching and state management (Container) from the UI rendering (Presentational).
+Use Case: When you want to keep components focused on specific responsibilities (logic vs. UI).
+
+
+
+// Presentational Component
+function UserList({ users }) {
+  return (
+    <ul>
+      {users.map(user => (
+        <li key={user.id}>{user.name}</li>
+      ))}
+    </ul>
+  );
+}
+
+// Container Component
+function UserListContainer() {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/users')
+      .then(res => res.json())
+      .then(setUsers);
+  }, []);
+
+  return <UserList users={users} />;
+}
+
+
+
+
+2. Higher-Order Component (HOC)
+A function that takes a component and returns a new component with additional props or functionality.
+Use Case: Reusing logic across multiple components.
+
+function withAuth(Component) {
+  return function AuthenticatedComponent(props) {
+    const isLoggedIn = useAuth(); // Custom hook for auth state
+    if (!isLoggedIn) return <p>Please log in</p>;
+    return <Component {...props} />;
+  };
+}
+
+// Usage
+const Dashboard = withAuth(() => <div>Welcome to your dashboard!</div>);
+
+
+
+
+
+3. Render Props
+A technique for sharing code between components using a prop whose value is a function.
+Use Case: Reusable logic while maintaining component composition.
+
+function DataFetcher({ url, children }) {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch(url)
+      .then(res => res.json())
+      .then(setData);
+  }, [url]);
+
+  return children(data);
+}
+
+// Usage
+function App() {
+  return (
+    <DataFetcher url="/api/items">
+      {data => (
+        <ul>
+          {data.map(item => (
+            <li key={item.id}>{item.name}</li>
+          ))}
+        </ul>
+      )}
+    </DataFetcher>
+  );
+}
+
+
+4. Context API (Provider-Consumer Pattern)
+Description: Used for managing and sharing state across the component tree without prop drilling.
+Use Case: When global state (e.g., theme, user data) needs to be accessible throughout the app.
+
+const ThemeContext = React.createContext();
+
+function ThemeProvider({ children }) {
+  const [theme, setTheme] = useState('light');
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+}
+
+function ThemedButton() {
+  const { theme } = useContext(ThemeContext);
+  return <button style={{ background: theme === 'light' ? '#fff' : '#333' }}>Click me</button>;
+}
+
+
+
+5. Custom Hooks
+Description: Encapsulates reusable logic in a function that uses React hooks.
+Use Case: Abstracting logic to keep components clean and reusable.
+
+function useFetchData(url) {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch(url)
+      .then(res => res.json())
+      .then(setData);
+  }, [url]);
+
+  return data;
+}
+
+// Usage
+function ItemList() {
+  const data = useFetchData('/api/items');
+  return (
+    <ul>
+      {data.map(item => (
+        <li key={item.id}>{item.name}</li>
+      ))}
+    </ul>
+  );
+}
+
+
+
+
+6. Controlled and Uncontrolled Components
+Controlled: Components where React manages the form state.
+Uncontrolled: Components where the DOM directly manages the state (e.g., ref).
+
+
+Example: Controlled:
+function ControlledInput() {
+  const [value, setValue] = useState('');
+
+  return <input value={value} onChange={e => setValue(e.target.value)} />;
+}
+
+
+Example: Uncontrolled:
+function UncontrolledInput() {
+  const inputRef = useRef();
+
+  const handleClick = () => {
+    console.log(inputRef.current.value);
+  };
+
+  return (
+    <>
+      <input ref={inputRef} />
+      <button onClick={handleClick}>Log Value</button>
+    </>
+  );
+}
+
+
+React provides a flexible ecosystem that allows developers to apply various design patterns to build scalable, maintainable, and efficient applications. Here are some common design patterns used in React:
+
+1. Container-Presentational Pattern
+Description: Separates the logic of data fetching and state management (Container) from the UI rendering (Presentational).
+Use Case: When you want to keep components focused on specific responsibilities (logic vs. UI).
+Example:
+
+jsx
+Copy code
+// Presentational Component
+function UserList({ users }) {
+  return (
+    <ul>
+      {users.map(user => (
+        <li key={user.id}>{user.name}</li>
+      ))}
+    </ul>
+  );
+}
+
+// Container Component
+function UserListContainer() {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/users')
+      .then(res => res.json())
+      .then(setUsers);
+  }, []);
+
+  return <UserList users={users} />;
+}
+2. Higher-Order Component (HOC)
+Description: A function that takes a component and returns a new component with additional props or functionality.
+Use Case: Reusing logic across multiple components.
+Example:
+
+jsx
+Copy code
+function withAuth(Component) {
+  return function AuthenticatedComponent(props) {
+    const isLoggedIn = useAuth(); // Custom hook for auth state
+    if (!isLoggedIn) return <p>Please log in</p>;
+    return <Component {...props} />;
+  };
+}
+
+// Usage
+const Dashboard = withAuth(() => <div>Welcome to your dashboard!</div>);
+3. Render Props
+Description: A technique for sharing code between components using a prop whose value is a function.
+Use Case: Reusable logic while maintaining component composition.
+Example:
+
+jsx
+Copy code
+function DataFetcher({ url, children }) {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch(url)
+      .then(res => res.json())
+      .then(setData);
+  }, [url]);
+
+  return children(data);
+}
+
+// Usage
+function App() {
+  return (
+    <DataFetcher url="/api/items">
+      {data => (
+        <ul>
+          {data.map(item => (
+            <li key={item.id}>{item.name}</li>
+          ))}
+        </ul>
+      )}
+    </DataFetcher>
+  );
+}
+4. Context API (Provider-Consumer Pattern)
+Description: Used for managing and sharing state across the component tree without prop drilling.
+Use Case: When global state (e.g., theme, user data) needs to be accessible throughout the app.
+Example:
+
+jsx
+Copy code
+const ThemeContext = React.createContext();
+
+function ThemeProvider({ children }) {
+  const [theme, setTheme] = useState('light');
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+}
+
+function ThemedButton() {
+  const { theme } = useContext(ThemeContext);
+  return <button style={{ background: theme === 'light' ? '#fff' : '#333' }}>Click me</button>;
+}
+5. Custom Hooks
+Description: Encapsulates reusable logic in a function that uses React hooks.
+Use Case: Abstracting logic to keep components clean and reusable.
+Example:
+
+jsx
+Copy code
+function useFetchData(url) {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch(url)
+      .then(res => res.json())
+      .then(setData);
+  }, [url]);
+
+  return data;
+}
+
+// Usage
+function ItemList() {
+  const data = useFetchData('/api/items');
+  return (
+    <ul>
+      {data.map(item => (
+        <li key={item.id}>{item.name}</li>
+      ))}
+    </ul>
+  );
+}
+6. Controlled and Uncontrolled Components
+Controlled: Components where React manages the form state.
+Uncontrolled: Components where the DOM directly manages the state (e.g., ref).
+Example: Controlled:
+
+jsx
+Copy code
+function ControlledInput() {
+  const [value, setValue] = useState('');
+
+  return <input value={value} onChange={e => setValue(e.target.value)} />;
+}
+Example: Uncontrolled:
+
+jsx
+Copy code
+function UncontrolledInput() {
+  const inputRef = useRef();
+
+  const handleClick = () => {
+    console.log(inputRef.current.value);
+  };
+
+  return (
+    <>
+      <input ref={inputRef} />
+      <button onClick={handleClick}>Log Value</button>
+    </>
+  );
+}
+
+
+
+7. Compound Component Pattern
+Description: A pattern where multiple components work together to provide a cohesive API.
+Use Case: Designing components like tabs, modals, or dropdowns.
+
+
+function Tabs({ children }) {
+  const [activeTab, setActiveTab] = useState(0);
+
+  return React.Children.map(children, (child, index) =>
+    React.cloneElement(child, { activeTab, setActiveTab, index })
+  );
+}
+
+function Tab({ index, activeTab, setActiveTab, children }) {
+  return (
+    <div onClick={() => setActiveTab(index)} style={{ cursor: 'pointer' }}>
+      {activeTab === index ? <b>{children}</b> : children}
+    </div>
+  );
+}
+
+// Usage
+function App() {
+  return (
+    <Tabs>
+      <Tab>Tab 1</Tab>
+      <Tab>Tab 2</Tab>
+      <Tab>Tab 3</Tab>
+    </Tabs>
+  );
+}
+
+
+8. State Reducer Pattern
+Description: Manages complex state logic in a reducer function, often paired with useReducer.
+Use Case: Managing multiple related state variables or implementing custom state logic.
+
+function counterReducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return { count: state.count + 1 };
+    case 'decrement':
+      return { count: state.count - 1 };
+    default:
+      throw new Error('Unknown action');
+  }
+}
+
+function Counter() {
+  const [state, dispatch] = useReducer(counterReducer, { count: 0 });
+
+  return (
+    <>
+      <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
+      <span>{state.count}</span>
+      <button onClick={() => dispatch({ type: 'increment' })}>+</button>
+    </>
+  );
+}
+
