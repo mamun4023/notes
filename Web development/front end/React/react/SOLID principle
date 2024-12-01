@@ -80,4 +80,35 @@ const UserCard = ({ user }) => (
 );
 
 
+5. Dependency Inversion Principle (DIP)
+High-level modules should not depend on low-level modules; both should depend on abstractions.
+Implementation:
+- Use dependency injection via context or props to decouple components.
+- Utilize React Context API for shared state and avoid tightly coupling components.
 
+=======================================Code =================================================
+
+const ThemeContext = React.createContext('light');
+
+const ThemeProvider = ({ children }) => {
+  const [theme, setTheme] = React.useState('light');
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
+
+const ThemedButton = () => {
+  const { theme } = React.useContext(ThemeContext);
+  return <button className={`btn-${theme}`}>Click Me</button>;
+};
+
+
+
+======================================================================================
+================= Benefits of Using SOLID in React ====================================
+- Easier to maintain and scale applications.
+- Promotes reusability of components and logic.
+- Improves readability and separation of concerns.
+- Simplifies testing by breaking down components and logic into smaller units.
