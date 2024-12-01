@@ -1,0 +1,72 @@
+Break the component into smaller, focused components, each with a single responsibility.
+
+=========== InputField.js =========================
+import React from "react";
+
+const InputField = ({ value, onChange, onAdd }) => (
+  <div>
+    <input
+      type="text"
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+    />
+    <button onClick={onAdd}>Add Todo</button>
+  </div>
+);
+
+export default InputField;
+
+
+================ TodoList.js ==========================
+import React from "react";
+
+const TodoList = ({ todos, onDelete }) => (
+  <ul>
+    {todos.map((todo, index) => (
+      <li key={index}>
+        {todo} <button onClick={() => onDelete(index)}>Delete</button>
+      </li>
+    ))}
+  </ul>
+);
+
+export default TodoList;
+
+
+
+
+================== TodoApp.js =======================
+
+import React, { useState } from "react";
+import InputField from "./InputField";
+import TodoList from "./TodoList";
+
+const TodoApp = () => {
+  const [todos, setTodos] = useState([]);
+  const [inputValue, setInputValue] = useState("");
+
+  const handleAddTodo = () => {
+    if (inputValue.trim()) {
+      setTodos([...todos, inputValue]);
+      setInputValue("");
+    }
+  };
+
+  const handleDeleteTodo = (index) => {
+    setTodos(todos.filter((_, i) => i !== index));
+  };
+
+  return (
+    <div>
+      <h1>Todo App</h1>
+      <InputField
+        value={inputValue}
+        onChange={setInputValue}
+        onAdd={handleAddTodo}
+      />
+      <TodoList todos={todos} onDelete={handleDeleteTodo} />
+    </div>
+  );
+};
+
+export default TodoApp;
