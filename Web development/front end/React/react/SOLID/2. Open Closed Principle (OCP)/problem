@@ -1,1 +1,20 @@
-========== problem statement =============
+========== Problem statement =============
+
+Problem 1: A Notification Component
+You’re tasked with building a notification system that shows success, error, and info messages.
+
+Initially, you create this component:
+
+const Notification = ({ type, message }) => {
+  let style = {};
+  if (type === "success") style = { color: "green" };
+  else if (type === "error") style = { color: "red" };
+  else if (type === "info") style = { color: "blue" };
+
+  return <div style={style}>{message}</div>;
+};
+
+Issues
+- Closed to Extension: If new notification types (e.g., "warning") are required, you have to modify the component, which violates the closed for modification part of OCP.
+- Hard to Maintain: As more types are added, the component becomes more complex, leading to spaghetti code.
+
