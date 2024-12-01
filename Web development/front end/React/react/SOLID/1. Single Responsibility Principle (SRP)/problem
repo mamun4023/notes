@@ -1,0 +1,57 @@
+Suppose you are building a Todo App. Here’s an example of a component that violates SRP:
+
+import React, { useState } from "react";
+
+const TodoApp = () => {
+  const [todos, setTodos] = useState([]);
+  const [inputValue, setInputValue] = useState("");
+
+  const handleAddTodo = () => {
+    if (inputValue.trim()) {
+      setTodos([...todos, inputValue]);
+      setInputValue("");
+    }
+  };
+
+  const handleDeleteTodo = (index) => {
+    const newTodos = todos.filter((_, i) => i !== index);
+    setTodos(newTodos);
+  };
+
+  return (
+    <div>
+      <h1>Todo App</h1>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+      />
+      <button onClick={handleAddTodo}>Add Todo</button>
+      <ul>
+        {todos.map((todo, index) => (
+          <li key={index}>
+            {todo} <button onClick={() => handleDeleteTodo(index)}>Delete</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default TodoApp;
+
+
+
+
+=============== What's Wrong? ======================
+1. Multiple Responsibilities in One Component:
+  - Managing the state of todos.
+  - Handling input changes.
+  - Adding and deleting todos.
+  - Rendering the UI.
+
+2. Tightly Coupled Code: 
+  - For simple changes have to deal with entire component
+  - Modify or test a specific feature is harder 
+  - Making the code harder to maintain and test
+
