@@ -1,0 +1,59 @@
+Solution 1:
+Use smaller, focused prop interfaces to pass only the required data.
+
+interface UserProps {
+    user: { name: string };
+    onClick: () => void;
+}
+
+const UserComponent: React.FC<UserProps> = ({ user, onClick }) => (
+    <div onClick={onClick}>{user.name}</div>
+);
+
+Benefits:
+- Clearer interface.
+- Easier to use and maintain the component.
+
+
+Solution 2:
+Split the context into smaller, focused contexts.
+
+const UserContext = React.createContext({ name: 'John', age: 30 });
+const ThemeContext = React.createContext('light');
+
+const UserComponent = () => {
+    const user = React.useContext(UserContext);
+    return <div>{user.name}</div>;
+};
+
+Benefits:
+- Components subscribe only to the data they need.
+- Reduces unnecessary re-renders.
+
+
+Solution 3:
+Break down the component into smaller, focused components.
+
+const UserName = ({ user }) => <p>{user.name}</p>;
+const ThemeWrapper = ({ theme, children }) => (
+    <div style={{ background: theme === 'dark' ? '#333' : '#fff' }}>{children}</div>
+);
+
+const ProfileCard = ({ user, onClick, theme }) => (
+    <ThemeWrapper theme={theme}>
+        <UserName user={user} />
+        <button onClick={onClick}>Click Me</button>
+    </ThemeWrapper>
+);
+
+Benefits:
+- Easier to test and maintain individual parts.
+- Components become more reusable.
+
+
+Summary of Solutions:
+1. Use Focused Props: Pass only the props a component needs.
+2. Split Contexts: Provide only relevant data through separate contexts.
+3. Break Down Components: Divide large components into smaller ones with single responsibilities.
+
+Result: Cleaner, reusable, and maintainable components in React that follow the Interface Segregation Principle.
