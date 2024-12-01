@@ -1,0 +1,49 @@
+
+
+Problem 1: Too Many Props (Bloated Interfaces)
+A component is given a lot of props it doesn't need, which makes the interface harder to use and maintain.
+
+const LargeComponent = ({ user, theme, isAdmin, items, onClick }) => {
+    return <div onClick={onClick}>{user.name}</div>; // Only uses `user` and `onClick`.
+};
+
+Issues:
+- The component receives unrelated props like theme, isAdmin, and items.
+- Hard to understand which props are actually necessary.
+
+
+
+Problem 2: Bloated Context
+A context provides a large set of values, but components consuming it only need a small part.
+
+const AppContext = React.createContext({
+    user: { name: 'John', age: 30 },
+    theme: 'light',
+    isAdmin: true,
+});
+
+const UserComponent = () => {
+    const context = React.useContext(AppContext);
+    return <div>{context.user.name}</div>; // Only needs `user`.
+};
+
+
+Issues:
+- Unnecessary data (theme, isAdmin) is passed to components.
+- Leads to tighter coupling and more re-renders.
+
+
+
+Problem 3: Overloaded Components
+A component tries to handle too many responsibilities, making it hard to reuse or modify.
+
+const ProfileCard = ({ user, onClick, theme }) => (
+    <div style={{ background: theme === 'dark' ? '#333' : '#fff' }} onClick={onClick}>
+        <p>{user.name}</p>
+    </div>
+);
+
+Issues:
+- The component mixes UI (theme handling) and logic (user and onClick).
+- Hard to reuse ProfileCard for different themes or layouts.
+
