@@ -50,4 +50,34 @@ const Button = ({ variant, children }) => {
 // Usage
 <Button variant="primary">Click Me</Button>;
 
+3. Liskov Substitution Principle (LSP)
+Derived classes or components should be replaceable with their base class or component without altering the program's correctness.
+Implementation:
+- Ensure that child components respect the expectations of their parent.
+- Avoid breaking contracts established by prop types or component interfaces.
+
+============================== `ErrorText` extends `Text`'s behavior without breaking its contract. ================
+const Text = ({ content }) => <p>{content}</p>;
+
+const ErrorText = ({ content }) => <Text content={`Error: ${content}`} />;
+
+
+
+4. Interface Segregation Principle (ISP)
+Components should not be forced to depend on props they don’t use.
+Implementation:
+- Pass only the required props to components.
+- Use composition instead of inheritance to avoid bloating components with unnecessary props.
+
+======================== Code ====================================================
+
+const Avatar = ({ image }) => <img src={image} alt="Avatar" />;
+const UserCard = ({ user }) => (
+  <div>
+    <Avatar image={user.avatar} />
+    <h2>{user.name}</h2>
+  </div>
+);
+
+
 
