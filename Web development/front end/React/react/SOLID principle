@@ -1,0 +1,34 @@
+A SOLID pattern in React.js refers to applying the SOLID principles—a set of five design principles for building 
+maintainable and scalable software systems—in React applications. These principles were originally conceptualized 
+for object-oriented programming but can be adapted to functional and component-based paradigms like React.
+
+Here’s how each principle can be applied in React:
+
+
+1. Single Responsibility Principle (SRP)
+A component should have one and only one reason to change. It should do one thing and do it well.
+
+Implementation:
+- Split large components into smaller, reusable ones.
+- Delegate logic to custom hooks or utility functions instead of cluttering the component.
+
+
+
+========================== Separate data fetching logic into a custom hook ======================
+const useUserData = (userId) => {
+  const [user, setUser] = React.useState(null);
+
+  React.useEffect(() => {
+    fetch(`/api/user/${userId}`)
+      .then((response) => response.json())
+      .then((data) => setUser(data));
+  }, [userId]);
+
+  return user;
+};
+
+const UserProfile = ({ userId }) => {
+  const user = useUserData(userId);
+
+  return user ? <h1>{user.name}</h1> : <p>Loading...</p>;
+};
