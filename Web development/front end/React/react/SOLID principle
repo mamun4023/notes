@@ -32,3 +32,22 @@ const UserProfile = ({ userId }) => {
 
   return user ? <h1>{user.name}</h1> : <p>Loading...</p>;
 };
+
+
+2. Open/Closed Principle (OCP)
+Components or modules should be open for extension but closed for modification.
+Implementation:
+- Use props to make components customizable without changing their internal logic.
+- Implement Higher-Order Components (HOCs) or render props for extending functionality.
+
+=================================Code ====================================================
+
+const Button = ({ variant, children }) => {
+  const className = variant === 'primary' ? 'btn-primary' : 'btn-secondary';
+  return <button className={className}>{children}</button>;
+};
+
+// Usage
+<Button variant="primary">Click Me</Button>;
+
+
