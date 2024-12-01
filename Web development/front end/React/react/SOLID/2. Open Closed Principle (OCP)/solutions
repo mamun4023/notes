@@ -1,0 +1,122 @@
+Solution 1: Composition
+Use composition to decouple the logic for styles and types from the component itself.
+
+const Notification = ({ style, children }) => {
+  return <div style={style}>{children}</div>;
+};
+
+// Extend via Composition
+const SuccessNotification = ({ message }) => (
+  <Notification style={{ color: "green" }}>{message}</Notification>
+);
+
+const ErrorNotification = ({ message }) => (
+  <Notification style={{ color: "red" }}>{message}</Notification>
+);
+
+const InfoNotification = ({ message }) => (
+  <Notification style={{ color: "blue" }}>{message}</Notification>
+);
+
+Benefits
+- The base Notification is closed for modification.
+- New notifications can be added without altering the base component.
+
+
+
+Solution 2: Configuration with Objects
+
+You can use a configuration object to map types to styles, keeping the component logic clean.
+
+const styles = {
+  success: { color: "green" },
+  error: { color: "red" },
+  info: { color: "blue" },
+};
+
+const Notification = ({ type, message }) => {
+  return <div style={styles[type]}>{message}</div>;
+};
+
+Benefits
+- You can easily extend functionality by adding a new entry in the styles object without changing the component.
+jsx
+
+// Adding a new type
+styles.warning = { color: "orange" };
+
+
+
+
+Solution 3: Higher-Order Components (HOCs)
+Encapsulate the style logic in an HOC.
+
+const withStyle = (Component, style) => (props) => {
+  return (
+    <div style={style}>
+      <Component {...props} />
+    </div>
+  );
+};
+
+// Base Component
+const Message = ({ message }) => <div>{message}</div>;
+
+// Styled Variants
+const SuccessMessage = withStyle(Message, { color: "green" });
+const ErrorMessage = withStyle(Message, { color: "red" });
+const InfoMessage = withStyle(Message, { color: "blue" });
+
+
+Benefits
+- The base Message component is unmodified.
+- You can create any styled variant by wrapping it with the HOC.
+
+
+Solution 4: Using Context for Dynamic Themes
+Use React Context to define styles dynamically.
+
+
+const NotificationContext = React.createContext();
+
+const NotificationProvider = ({ children }) => {
+  const styles = {
+    success: { color: "green" },
+    error: { color: "red" },
+    info: { color: "blue" },
+  };
+
+  return (
+    <NotificationContext.Provider value={styles}>
+      {children}
+    </NotificationContext.Provider>
+  );
+};
+
+const Notification = ({ type, message }) => {
+  const styles = React.useContext(NotificationContext);
+  return <div style={styles[type]}>{message}</div>;
+};
+
+// Usage
+<NotificationProvider>
+  <Notification type="success" message="Operation successful!" />
+  <Notification type="error" message="Something went wrong." />
+</NotificationProvider>;
+
+
+Benefits
+- The Notification component is completely independent of styles.
+- Styles can be modified or extended dynamically through the context
+
+
+Conclusion
+By applying the Open/Closed Principle:
+
+- You avoid modifying the core Notification component.
+- You make the system more flexible, maintainable, and scalable.
+- New functionality (like additional notification types) can be added with minimal effort.
+
+Among the solutions:
+- Use composition for simplicity.
+- Use context for dynamic themes in larger applications.
